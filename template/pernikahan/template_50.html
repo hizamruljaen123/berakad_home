@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Wedding Invitation | Green, Black & White Theme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        .ornament {
+            position: relative;
+        }
+        
+        .ornament::before, .ornament::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 40px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            top: 50%;
+        }
+        
+        .ornament::before {
+            left: -50px;
+        }
+        
+        .ornament::after {
+            right: -50px;
+        }
+        
+        .vines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .vines svg {
+            position: absolute;
+            opacity: 0.15;
+        }
+        
+        .vines svg:nth-child(1) {
+            top: -50px;
+            left: -50px;
+            transform: rotate(45deg);
+        }
+        
+        .vines svg:nth-child(2) {
+            bottom: -50px;
+            right: -50px;
+            transform: rotate(225deg);
+        }
+        
+        .dotted-line {
+            border: 1px dashed #4ade80;
+            border-width: 1px 0 0 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-2xl mx-auto my-8 md:my-12 px-4">
+        <!-- Outer Border -->
+        <div class="border-8 border-black relative">
+            <!-- White Border Inside -->
+            <div class="absolute inset-0 border-4 border-transparent" style="box-shadow: inset 0 0 0 4px #fff;"></div>
+            
+            <!-- Invitation Card -->
+            <div class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white px-8 py-10 md:px-12 md:py-16 relative overflow-hidden">
+                <!-- Decorative Vines -->
+                <div class="vines">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-feather"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17" y1="15" x2="9" y2="15"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-feather"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17" y1="15" x2="9" y2="15"></line></svg>
+                </div>
+                
+                <!-- Header Section -->
+                <header class="text-center mb-8 relative">
+                    <div class="text-lg md:text-xl font-light text-gray-300 mb-4">With joy in our hearts, we invite you to celebrate</div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 relative" style="font-family: 'Cormorant Garamond', serif;">
+                        <span class="ornament">The Wedding</span>
+                    </h1>
+                    
+                    <div class="flex justify-center items-center mb-8">
+                        <div class="w-16 h-16 rounded-full border-2 border-green-400 flex items-center justify-center mx-4">
+                            <div class="w-14 h-14 rounded-full border border-white flex items-center justify-center">
+                                <span class="text-xs">❤️</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl md:text-3xl mb-2" style="font-family: 'Cormorant Garamond', serif;">Michael <span class="text-green-300">&</span> Sarah</h2>
+                    <div class="text-sm text-gray-300">Saturday, the fifteenth of December</div>
+                </header>
+                
+                <!-- Details Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-black bg-opacity-40 p-6 border border-gray-700 relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-3 py-1 text-xs">Ceremony</div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-church text-xl mr-4 text-green-300"></i>
+                            <div>
+                                <div class="text-sm text-gray-400">Venue</div>
+                                <div class="text-lg font-medium">Saint Mary Cathedral</div>
+                                <div class="text-sm">123 Chapel Street, Greenville</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-xl mr-4 text-green-300"></i>
+                            <div>
+                                <div class="text-sm text-gray-400">Time</div>
+                                <div class="text-lg font-medium">4:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black bg-opacity-40 p-6 border border-gray-700 relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-3 py-1 text-xs">Reception</div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-glass-cheers text-xl mr-4 text-green-300"></i>
+                            <div>
+                                <div class="text-sm text-gray-400">Venue</div>
+                                <div class="text-lg font-medium">The Grand Ballroom</div>
+                                <div class="text-sm">456 Luxury Avenue, Greenville</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-xl mr-4 text-green-300"></i>
+                            <div>
+                                <div class="text-sm text-gray-400">Time</div>
+                                <div class="text-lg font-medium">6:30 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RSVP Section -->
+                <div class="text-center mb-8">
+                    <div class="dotted-line my-6 mx-auto w-1/3"></div>
+                    <p class="text-gray-300 mb-6 text-sm md:text-base">Formal Attire Requested | Please RSVP by November 30th</p>
+                    <div class="flex justify-center gap-4">
+                        <button class="bg-green-700 hover:bg-green-600 text-white px-6 py-2 rounded-sm transition-colors duration-300 tracking-wider font-medium flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>Accept
+                        </button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-sm transition-colors duration-300 tracking-wider font-medium flex items-center">
+                            <i class="fas fa-times-circle mr-2"></i>Regret
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Footer Section -->
+                <footer class="text-center text-xs text-gray-400">
+                    <div class="dotted-line my-4 mx-auto w-1/4"></div>
+                    <p>"Love is not about how many days, months or years you've been together.<br>
+                    Love is about how much you love each other every single day."</p>
+                </footer>
+            </div>
+        </div>
+        
+        <!-- Additional Details -->
+        <div class="mt-8 bg-black p-6 text-white">
+            <h3 class="text-xl text-center font-serif mb-6 text-green-300">Wedding Party</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="w-16 h-16 mx-auto rounded-full border-2 border-green-300 mb-2 overflow-hidden">
+                        <div class="w-full h-full bg-gray-700 flex items-center justify-center">
+                            <i class="fas fa-user text-xl text-green-300"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-medium">John Doe</h4>
+                    <p class="text-xs text-gray-400">Best Man</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 mx-auto rounded-full border-2 border-green-300 mb-2 overflow-hidden">
+                        <div class="w-full h-full bg-gray-700 flex items-center justify-center">
+                            <i class="fas fa-user text-xl text-green-300"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-medium">Jane Smith</h4>
+                    <p class="text-xs text-gray-400">Maid of Honor</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 mx-auto rounded-full border-2 border-green-300 mb-2 overflow-hidden">
+                        <div class="w-full h-full bg-gray-700 flex items-center justify-center">
+                            <i class="fas fa-user text-xl text-green-300"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-medium">Robert Johnson</h4>
+                    <p class="text-xs text-gray-400">Groomsman</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 mx-auto rounded-full border-2 border-green-300 mb-2 overflow-hidden">
+                        <div class="w-full h-full bg-gray-700 flex items-center justify-center">
+                            <i class="fas fa-user text-xl text-green-300"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-medium">Emily Brown</h4>
+                    <p class="text-xs text-gray-400">Bridesmaid</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

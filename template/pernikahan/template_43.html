@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan | Lautan Cinta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e6f7ff;
+            overflow-x: hidden;
+        }
+        
+        .wave-bg {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2346b2f7" fill-opacity="0.2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+        
+        .handwriting {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .ocean-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 8px solid #2a7ec5;
+            position: relative;
+        }
+        
+        .ocean-circle::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.4);
+            top: -4px;
+            left: -4px;
+        }
+        
+        .bubble {
+            position: absolute;
+            background-color: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        .boat {
+            animation: gentleRock 5s infinite ease-in-out;
+            transform-origin: bottom;
+        }
+        
+        @keyframes gentleRock {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        
+        .seashell {
+            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.1));
+        }
+        
+        .fish {
+            animation: swim 20s linear infinite;
+        }
+        
+        @keyframes swim {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100vw); }
+        }
+        
+        .card-flip:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .card-flip {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-front, .flip-back {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        .flip-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Floating Bubbles -->
+    <div id="bubble-container"></div>
+    
+    <!-- Header Section -->
+    <header class="text-center pt-16 pb-32 wave-bg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center mb-8">
+                <div class="ocean-circle flex items-center justify-center">
+                    <div class="text-4xl text-blue-800">
+                        <i class="fas fa-anchor"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="handwriting text-5xl md:text-6xl text-blue-900 mb-4">Undangan Pernikahan</h1>
+            <p class="text-blue-700 text-xl mb-8">Dua Hati Bersatu Dalam Samudra Cinta</p>
+            
+            <div class="relative flex justify-center">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150'><path fill='%231e88e5' d='M200,50 Q250,100 300,50 Q350,0 400,50 L400,150 L0,150 L0,50 Q50,0 100,50 Q150,100 200,50' /></svg>" 
+                     class="w-64 h-auto" alt="Wave">
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/4">
+                    <div class="bg-yellow-300 w-20 h-20 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-heart text-red-500 text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Couple Section -->
+    <section class="py-12 bg-white relative">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="handwriting text-4xl text-blue-900 mb-4">Pasangan Pengantin</h2>
+                <div class="w-24 h-2 bg-blue-200 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-16">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-40 h-40 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg overflow-hidden border-4 border-white">
+                        <img src="https://i.imgur.com/JhW5W9H.png" alt="Pengantin Pria" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-900">Aditya</h3>
+                    <p class="text-blue-700">Putra dari Bpk. Joko & Ibu Rina</p>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 w-40 h-40 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg overflow-hidden border-4 border-white">
+                        <img src="https://i.imgur.com/yKb90ZN.png" alt="Pengantin Wanita" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-900">Ayu</h3>
+                    <p class="text-blue-700">Putri dari Bpk. Budi & Ibu Sari</p>
+                </div>
+            </div>
+            
+            <!-- Ocean theme illustration -->
+            <div class="relative h-48 flex items-center justify-center">
+                <!-- Fish -->
+                <div class="fish absolute left-0 top-1/2 transform -translate-y-1/2">
+                    <svg width="60" height="30" viewBox="0 0 60 30">
+                        <path fill="#FF7F66" d="M60,15 Q45,30 30,15 Q15,0 0,15 Q15,30 30,15 Q45,0 60,15" />
+                        <circle cx="45" cy="10" r="2" fill="white"/>
+                        <circle cx="45" cy="10" r="1" fill="black"/>
+                    </svg>
+                </div>
+                
+                <!-- Boat with couple -->
+                <div class="boat">
+                    <svg width="180" height="100" viewBox="0 0 180 100">
+                        <!-- Boat -->
+                        <path fill="#A67C52" d="M20,70 Q90,100 160,70 L160,60 L20,60 Z" />
+                        <rect x="85" y="30" width="10" height="30" fill="#8B4513" />
+                        <path fill="#FFFFFF" d="M90,30 L90,10 L140,30 Z" />
+                        <circle cx="95" cy="65" r="10" fill="#FFD4B8" />
+                        <circle cx="105" cy="65" r="10" fill="#FFD4B8" />
+                        
+                        <!-- Simple faces -->
+                        <circle cx="92" cy="63" r="1.5" fill="#333"/>
+                        <circle cx="102" cy="63" r="1.5" fill="#333"/>
+                        <path d="M93,68 Q95,70 97,68" stroke="#333" fill="transparent" stroke-width="0.5"/>
+                        <path d="M103,68 Q105,70 107,68" stroke="#333" fill="transparent" stroke-width="0.5"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-blue-800 italic">
+                    "Seperti ombak yang selalu kembali ke pantai,<br>
+                    hati kami selalu kembali satu sama lain."
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Event Details -->
+    <section class="py-12 bg-blue-50 relative">
+        <div class="wave-divider-top">
+            <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path fill="#fff" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+                <path fill="#fff" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+                <path fill="#fff" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="handwriting text-4xl text-blue-900 mb-4">Detail Acara</h2>
+                <div class="w-24 h-2 bg-blue-200 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Akad Nikah -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+                    <div class="absolute top-4 right-4 text-blue-300 text-3xl">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-ring text-blue-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Akad Nikah</h3>
+                        <p class="text-blue-700">Pengikat Suci</p>
+                    </div>
+                    
+                   
+                    <p class="text-blue-700">Minggu, 9 Juni 2024</p>
+                    <p class="text-blue-700">Pukul 09:00 - 10:00 WIB</p>
+                    <p class="text-blue-700">Bertempat di Masjid Agung Baiturrahman</p>
+                </div>
+                
+                <!-- Resepsi -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+                    <div class="absolute top-4 right-4 text-blue-300 text-3xl">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-blue-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Resepsi</h3>
+                        <p class="text-blue-700">Merayakan Cinta</p>
+                    </div>
+                    
+                    <p class="text-blue-700">Minggu, 9 Juni 2024</p>
+                    <p class="text-blue-700">Pukul 11:00 - Selesai</p>
+                    <p class="text-blue-700">Bertempat di Gedung Bahari Indah</p>
+                </div>
+            </div>
+            
+            <!-- Closing -->
+            <div class="text-center mt-16">
+                <h2 class="handwriting text-4xl text-blue-900 mb-4">Sampai Jumpa!</h2>
+                <p class="text-blue-700 text-xl mb-8">
+                    Kehadiran Anda adalah hadiah terindah bagi kami.
+                </p>
+                
+                <!-- Seashell Illustration -->
+                <div class="flex justify-center">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f0f0f0' d='M32,10c-11,0-20,9-20,20s9,20,20,20c11,0,20-9,20-20S43,10,32,10z M32,45c-8.3,0-15-6.7-15-15s6.7-15,15-15s15,6.7,15,15S40.3,45,32,45z'/%3E%3Cpath fill='%23e0e0e0' d='M52,30c0-11-9-20-20-20S12,19,12,30s9,20,20,20S52,41,52,30z M32,15c8.3,0,15,6.7,15,15s-6.7,15-15,15S17,38.3,17,30S23.7,15,32,15z'/%3E%3Cpath fill='%23d0d0d0' d='M32,50c-11,0-20-9-20-20s9-20,20-20s20,9,20,20S43,50,32,50z M32,10c-8.3,0-15,6.7-15,15s6.7,15,15,15s15-6.7,15-15S40.3,10,32,10z'/%3E%3C/svg%3E"
+                         class="seashell w-16 h-auto" alt="Seashell">
+                </div>
+            </div>
+        </div>
+        
+        <div class="wave-divider-bottom">
+            <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path fill="#fff" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+                <path fill="#fff" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+                <path fill="#fff" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+            </svg>
+        </div>
+    </section>
+</body>
+</html>

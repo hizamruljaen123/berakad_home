@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Edo Style | Sakura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Yuji+Syuku&family=Shippori+Mincho:wght@400;700&display=swap');
+        
+        body {
+            background-color: #f9f4e9;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zM9 15h2v2H9zm5-5h2v2h-2zM5 5h2v2H5zm76 76h2v2h-2zm-75 3h2v2H6zm3-75h2v2H9z' fill='%23c8a98e' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            overflow-x: hidden;
+        }
+        
+        .japanese-font {
+            font-family: 'Noto Serif JP', serif;
+        }
+        
+        .brush-font {
+            font-family: 'Yuji Syuku', serif;
+        }
+        
+        .mincho-font {
+            font-family: 'Shippori Mincho', serif;
+        }
+        
+        .scroll {
+            background-color: #fffaf0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            border-right: 15px solid #c0a080;
+            border-left: 15px solid #c0a080;
+            border-top: 2px solid #c0a080;
+            border-bottom: 2px solid #c0a080;
+        }
+        
+        .scroll-end {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-color: #a08060;
+            border-radius: 5px;
+            z-index: -1;
+        }
+        
+        .scroll-top {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-color: #a08060;
+            border-radius: 5px;
+            z-index: -1;
+        }
+        
+        .sakura {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+            animation: falling linear infinite;
+        }
+        
+        @keyframes falling {
+            0% {
+                transform: translate(0, -10vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(-50vw + 100px), 100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .ink-effect {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 Q30,10 40,20 T60,20 T80,20" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: contain;
+        }
+        
+        .gold-leaf {
+            background-color: #d4af37;
+            background-image: linear-gradient(145deg, rgba(212,175,55,1) 0%, rgba(242,227,160,1) 50%, rgba(212,175,55,1) 100%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .pebble-border {
+            border: 2px solid #806050;
+            border-radius: 50px 15px;
+        }
+        
+        .pinggiran {
+            position: absolute;
+            width: 94%;
+            height: 94%;
+            top: 3%;
+            left: 3%;
+            border: 1px solid #806050;
+            z-index: -1;
+        }
+        
+        .hanafuda {
+            background-image: url('https://i.imgur.com/JqwlJpZ.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+        }
+        
+        .wave-divider {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" ><path d="M1200,0H0V120H1200C1200,120,0,60,0,60S1200,0,1200,0Z" class="shape-fill" fill="%23c0a080"></path></svg>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        @keyframes sealZoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .seal {
+            animation: sealZoom 3s infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-800 min-h-screen relative overflow-hidden">
+    <!-- Sakura Animation -->
+    <div id="sakura-container"></div>
+    
+    <!-- Cover Scroll -->
+    <section class="min-h-screen flex items-center justify-center p-4 md:p-8">
+        <div class="scroll max-w-2xl w-full p-8 md:p-12 relative fade-in scroll-pebble">
+            <div class="pinggiran"></div>
+            <div class="scroll-top"></div>
+            <div class="scroll-end"></div>
+            
+            <!-- Japanese pattern decoration -->
+            <div class="absolute top-4 right-4 w-16 h-16 opacity-20">
+                <img src="https://i.imgur.com/KiQxYAk.png" alt="Japanese Pattern">
+            </div>
+            
+            <div class="text-center">
+                <div class="hanafuda w-24 h-24 mx-auto mb-6"></div>
+                
+                <h1 class="brush-font text-4xl md:text-5xl text-red-700 mb-2">結婚式のご案内</h1>
+                <p class="mincho-font text-lg mb-6">Kekkonshiki no Goannai</p>
+                
+                <div class="ink-effect pb-8 mb-8">
+                    <h2 class="brush-font text-3xl md:text-4xl text-gray-800 leading-tight">
+                        <div class="inline-block gold-leaf text-white px-4 py-1 rounded-full mb-4">謹啓</div>
+                        <p>桜舞い散るこの良き日に</p>
+                        <p>末永き契りを結ぶこととなりました</p>
+                    </h2>
+                </div>
+                
+                <div class="flex justify-center my-12">
+                    <img src="https://i.imgur.com/FeYo9qI.png" alt="Japanese Couple" class="w-64 filter drop-shadow-lg">
+                </div>
+                
+                <p class="japanese-font text-xl md:text-2xl text-gray-700 leading-relaxed">
+                    <span class="block gold-leaf text-white inline-block px-3 py-1 rounded-full mb-4">ご挨拶</span>
+                    <span class="mincho-font block">謹んでご案内申し上げます</span>
+                </p>
+                
+                <div class="mt-8 p-4 border-t-2 border-b-2 border-amber-200">
+                    <p class="mincho-font text-sm md:text-base">
+                        この度 私どもは結婚式を<br class="md:hidden">
+                        挙げる運びとなりました<br>
+                        つきましては 日頃お世話になっております<br class="md:hidden">
+                        皆様に ご臨席賜りたく<br>
+                        謹んでご案内申し上げます
+                    </p>
+                </div>
+                
+                <div class="wave-divider w-full h-12 mt-12"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Couple Section -->
+    <section class="py-12 bg-amber-50 bg-opacity-30">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="scroll p-8 md:p-12 rounded-lg relative fade-in">
+                <div class="pinggiran"></div>
+                <div class="scroll-top"></div>
+                <div class="scroll-end"></div>
+                
+                <div class="text-center mb-12">
+                    <div class="hanafuda w-20 h-20 mx-auto mb-4"></div>
+                    <h2 class="brush-font text-3xl md:text-4xl text-red-700 mb-2">新郎新婦</h2>
+                    <p class="mincho-font">Shinrō Shinpu</p>
+                    <div class="w-24 h-1 bg-red-200 mx-auto mt-3"></div>
+                </div>
+                
+                <!-- Couple Circle -->
+                <div class="relative max-w-md mx-auto mb-12">
+                    <img src="https://i.imgur.com/xuQwXhG.png" alt="Couple Circle" class="w-full">
+                    <div class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white bg-cover bg-center shadow-lg" style="background-image: url('https://i.imgur.com/4NQm6y9.jpg');"></div>
+                        <p class="brush-font text-center text-red-700 mt-3 text-xl">太郎</p>
+                        <p class="japanese-font text-center text-xs">Tokyo, Japan</p>
+                    </div>
+                    <div class="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white bg-cover bg-center shadow-lg" style="background-image: url('https://i.imgur.com/WnTVqQv.jpg');"></div>
+                        <p class="brush-font text-center text-red-700 mt-3 text-xl">花子</p>
+                        <p class="japanese-font text-center text-xs">Kyoto, Japan</p>
+                    </div>
+                </div>
+                
+                <div class="max-w-md mx-auto">
+                    <div class="bg-white p-6 rounded-lg border border-amber-200 shadow-sm relative">
+                        <div class="absolute -top-3 -left-3 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow">
+                            <i class="fas fa-quote-left text-white"></i>
+                        </div>
+                        <p class="mincho-font italic text-gray-700">
+                            "月日は百代の過客にして、行かふ年も又旅人也。<br>
+                            舟の上に生涯をうかべ、馬の口とらえて老をむかふる物は、<br class="hidden md:block">
+                            日々旅にして、旅を栖とす。"
+                        </p>
+                        <p class="text-right mincho-font text-sm mt-2">- 松尾芭蕉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="py-16 bg-white bg-opacity-70">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="scroll p-8 md:p-12 rounded-lg relative">
+                <div class="pinggiran"></div>
+                <div class="scroll-top"></div>
+                <div class="scroll-end"></div>
+                
+                <div class="text-center mb-12">
+                    <div class="hanafuda w-20 h-20 mx-auto mb-4"></div>
+                    <h2 class="brush-font text-3xl md:text-4xl text-red-700 mb-2">式次第</h2>
+                    <p class="mincho-font">Shikijidai</p>
+                    <div class="w-24 h-1 bg-red-200 mx-auto mt-3"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <!-- Shinto Ceremony -->
+                    <div class="bg-amber-50 p-6 rounded-lg border border-amber-200 relative">
+                        <div class="absolute -top-4 -left-4 w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow">
+                            <i class="fas fa-torii-gate text-white text-xl"></i>
+                        </div>
+                        <h3 class="brush-font text-2xl text-red-700 ml-12 mb-4">神前式</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-calendar-day text-red-700"></i>
+                                </div>
+                                <div>
+                                    <p class="mincho-font text-sm text-gray-500">日付</p>
+                                    <p class="font-semibold">2025年3月15日</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-clock text-red-700"></i>
+                                </div>
+                                <div>
+                                    <p class="mincho-font text-sm text-gray-500">時間</p>
+                                    <p class="font-semibold">午前11時</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-map-marker-alt text-red-700"></i>
+                                </div>
+                                <div>
+                                    <p class="mincho-font text-sm text-gray-500">場所</p>
+                                    <p class="font-semibold">明治神宮</p>
+                                    <p class="text-xs">東京都渋谷区代々木神園町1-1</p>
+                                    <a href="#" class="text-red-600 text-xs mt-1 block">
+                                        <i class="fas fa-location-arrow mr-1"></i> 地図を見る
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Reception -->
+                    <div class="bg-amber-50 p-6 rounded-lg border border-amber-200 relative">
+                        <div class="absolute -top-4 -left-4 w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow">
+                            <i class="fas fa-utensils text-white text-xl"></i>
+                        </div>
+                        <h3 class="brush-font text-2xl text-red-700 ml-12 mb-4">披露宴</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-calendar-day text-red-700"></i>
+                                </div>
+                                <div>
+                                    <p class="mincho-font text-sm text-gray-500">日付</p>
+                                    <p class="font-semibold">2025年3月15日</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-clock text-red-700"></i>
+                                </div>
+                                <div>
+                                    <p class="mincho-font text-sm text-gray-500">時間</p>
+                                    <p class="font-semibold">午後2時</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-red-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-map-marker-alt text-red-700"></i>
+                                </div>
+                                <div>
+                                    <p class="mincho-font text-sm text-gray-500">場所</p>
+                                    <p class="font-semibold">椿山荘</p>
+                                    <p class="text-xs">東京都文京区関口2-10-8</p>
+                                    <a href="#" class="text-red-600 text-xs mt-1 block">
+                                        <i class="fas fa-location-arrow mr-1"></i> 地図を見る
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Countdown -->
+                <div class="mt-16 bg-white p-6 rounded-lg border border-amber-200 max-w-md mx-auto">
+                    <h3 class="brush-font text-2xl text-center text-red-700 mb-4">カウントダウン</h3>
+                    
+                    <div class="flex justify-between text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-red-600" id="nihon-days">00</div>
+                            <div class="mincho-font text-sm text-gray-500">日</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-red-600" id="nihon-hours">00</div>
+                            <div class="mincho-font text-sm text-gray-500">時間</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-red-600" id="nihon-minutes">00</div>
+                            <div class="mincho-font text-sm text-gray-500">分</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-red-600" id="nihon-seconds">00</div>
+                            <div class="mincho-font text-sm text-gray-500">秒</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="mt-12 relative max-w-md mx-auto">
+                    <img src="https://i.imgur.com/ZjNxVdG.jpg" alt="Japanese Map" class="w-full rounded-lg filter sepia">
+                    <div class="absolute top-1/3 left-1/4 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center shadow-lg text-white">
+                        <i class="fas fa-map-pin"></i>
+                    </div>
+                    <div class="absolute bottom-1/3 right-1/4 w-8 h-8 bg-red-600 rounded-full flex items-center justify-center shadow-lg text-white">
+                        <i class="fas fa-map-pin"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- RSVP -->
+    <section class="py-16 bg-amber-50 bg-opacity-30">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="scroll p-8 md:p-12 rounded-lg relative">
+                <div class="pinggiran"></div>
+                <div class="scroll-top"></div>
+                <div class="scroll-end"></div>
+                
+                <div class="text-center mb-12">
+                    <div class="hanafuda w-20 h-20 mx-auto mb-4"></div>
+                    <h2 class="brush-font text-3xl md:text-4xl text-red-700 mb-2">出欠返信</h2>
+                    <p class="mincho-font">Shukketsu Henshin</p>
+                    <div class="w-24 h-1 bg-red-200 mx-auto mt-3"></div>
+                </div>
+                
+                <form class="max-w-md mx-auto space-y-4">
+                    <div>
+                        <label class="block mincho-font text-gray-700 mb-2">お名前</label>
+                        <input type="text" class="w-full px-4 py-2 border border-amber-200 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block mincho-font text-gray-700 mb-2">ご住所</label>
+                        <input type="text" class="w-full px-4 py-2 border border-amber-200 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block mincho-font text-gray-700 mb-2">メール/電話</label>
+                        <input type="text" class="w-full px-4 py-2 border border-amber-200 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block mincho-font text-gray-700 mb-2">ご出席</label>
+                        <div class="flex flex-wrap gap-4">
+                            <label class="inline-flex items-center mincho-font">
+                                <input type="radio" name="attendance" class="form-radio text-red-600 border-gray-300 focus:ring-red-500" checked>
+                                <span class="ml-2">出席</span>
+                            </label>
+                            <label class="inline-flex items-center mincho-font">
+                                <input type="radio" name="attendance" class="form-radio text-red-600 border-gray-300 focus:ring-red-500">
+                                <span class="ml-2">欠席</span>
+                            </label>
+                            <label class="inline-flex items-center mincho-font">
+                                <input type="radio" name="attendance" class="form-radio text-red-600 border-gray-300 focus:ring-red-500">
+                                <span class="ml-2">未定</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block mincho-font text-gray-700 mb-2">ご芳志</label>
+                        <select class="w-full px-4 py-2 border border-amber-200 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <option>現金 (ご祝儀袋持参)</option>
+                            <option>銀行振込 (詳細は別途連絡)</option>
+                            <option>ギフト券</option>
+                            <option>その他</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block mincho-font text-gray-700 mb-2">ご芳名</label>
+                        <textarea rows="3" class="w-full px-4 py-2 border border-amber-200 rounded focus:ring-2 focus:ring-red-500 focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white brush-font text-2xl py-3 px-4 rounded-lg shadow-lg transform transition hover:scale-105 active:scale-95">
+                        送信
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Closing -->
+    <section class="py-20 relative">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="scroll p-8 md:p-12 rounded-lg text-center relative">
+                <div class="pinggiran"></div>
+                <div class="scroll-top"></div>
+                <div class="scroll-end"></div>
+                
+                <div class="seal absolute top-4 right-4 w-24 h-24 bg-red-600 rounded-full flex items-center justify-center text-white brush-font text-xl shadow-lg">
+                    寿
+                </div>
+                
+                <div class="brush-font text-3xl md:text-4xl text-red-700 mb-6">
+                    <p>末永くお見守り下さいませ</p>
+                </div>
+                
+                <div class="mt-8 mb-6">
+                    <img src="https://i.imgur.com/F8kSxc0.png" alt="Japanese Couple" class="w-48 mx-auto">
+                </div>
+                
+                <h3 class="brush-font text-3xl md:text-4xl text-red-700 mb-2">
+                    <div class="flex justify-center items-center gap-4">
+                        <span>太郎</span>
+                        <span class="text-2xl">&</span>
+                        <span>花子</span>
+                    </div>
+                </h3>
+                <p class="mincho-font text-gray-600 text-sm">Taro & Hanako</p>
+                
+                <div class="flex justify-center space-x-6 my-8">
+                    <a href="#" class="text-gray-600 hover:text-red-600 text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-red-600 text-2xl">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-red-600 text-2xl">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </div>
+                
+                <div class="w-24 h-1 bg-red-200 mx-auto my-6"></div>
+                
+                <div>
+                    <p class="mincho-font text-sm text-gray-600">
+                        この縁を大切に育てて参りますので<br>
+                        末永くお見守りください
+                    </p>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-red-200 text-xs text-gray-500 mincho-font">
+                    <p>#桜の下であなたと #縁結び #令和の結婚</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Floating Lantern -->
+    <div class="fixed bottom-6 right-6 z-10">
+        <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition cursor-pointer animate-pulse">
+            <i class="fas fa-lantern text-white text-2xl"></i>
+        </div>
+    </div>
+    
+    <script>
+        // Create Sakura flowers
+        function createSakura() {
+            const container = document.getElementById('sakura-container');
+            const sakura = document.createElement('div');
+            sakura.className = 'sakura';
+            
+            // Random size (between 10-25px)
+            const size = Math.random() * 15 + 10;
+            sakura.style.width = `${size}px`;
+            sakura.style.height = `${size}px`;
+            
+            // Random position (across viewport width)
+            const startPosition = Math.random() * 100;
+            sakura.style.left = `${startPosition}vw`;
+            
+            // Random animation duration (10-20s)
+            const duration = Math.random() * 10 + 15;
+            sakura.style.animationDuration = `${duration}s`;
+            
+            // Set image
+            sakura.style.backgroundImage = "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"%23ff7fa6\" d=\"M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2M8 6C9.1 6 10 6.9 10 8C10 9.1 9.1 10 8 10C6.9 10 6 9.1 6 8C6 6.9 6.9 6 8 6M16 6C17.1 6 18 6.9 18 8C18 9.1 17.1 10 16 10C14.9 10 14 9.1 14 8C14 6.9 14.9 6 16 6M15.3 12C14.9 12 14.5 12.1 14.1 12.3L12 13.4L9.9 12.3C9.1 11.9 8.1 12 7.5 12.5C6.8 13.1 6.7 14.1 7.1 14.9L9.2 18L8 19.2C7.2 20 7.2 21.3 8 22C8.7 22.7 9.9 22.7 10.7 21.9L12 20.6L13.3 21.9C14.1 22.6 15.3 22.6 16 22C16.7 21.3 16.7 20.1 15.9 19.3L14.8 18.1L16.9 14.9C17.3 14.1 17.2 13.1 16.6 12.5C16.1 12.1 15.7 12 15.3 12Z\" /></svg>')";
+            
+            container.appendChild(sakura);
+            
+            // Remove sakura after animation completes
+            setTimeout(() => {
+                sakura.remove();
+            }, duration * 1000);
+        }
+        
+        // Create multiple sakura at intervals
+        function startSakura() {
+            setInterval(createSakura, 300);
+        }
+        
+        // Countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('March 15, 2025 11:00:00 GMT+0900').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('nihon-days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('nihon-hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('nihon-minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('nihon-seconds').innerHTML = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Lantern click
+        document.addEventListener('DOMContentLoaded', function() {
+            startSakura();
+            
+            const lantern = document.querySelector('.fa-lantern');
+            lantern.parentElement.addEventListener('click', function() {
+                // Create a bloom effect
+                for(let i = 0; i < 30; i++) {
+                    setTimeout(createSakura, i * 100);
+                }
+                
+                alert('感謝のお気持ちを表します!\n(Gratitude for your kind attention!)');
+            });
+        });
+    </script>
+</body>
+</html>
