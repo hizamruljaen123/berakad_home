@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Hizam & Cindy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f5f0;
+            color: #5a372a;
+        }
+        
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .bg-floral {
+            background-image: url('https://www.transparenttextures.com/patterns/floral.png');
+            background-repeat: repeat;
+            background-blend-mode: overlay;
+        }
+        
+        .envelope {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+        
+        .envelope:hover {
+            transform: rotateY(30deg);
+        }
+        
+        .music-note {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .countdown-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(233,219,205,0.8) 100%);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .lyric-highlight {
+            background: linear-gradient(transparent 60%, rgba(233,219,205,0.8) 40%);
+            display: inline;
+        }
+    </style>
+</head>
+<body class="bg-floral">
+    <div class="max-w-4xl mx-auto px-4 py-10">
+        <!-- Floating Music Notes -->
+        <div class="fixed top-0 left-0 right-0 z-0 pointer-events-none">
+            <i class="fa-solid fa-music text-amber-300 opacity-20 music-note absolute" style="top:10%; left:10%;"></i>
+            <i class="fa-solid fa-music text-amber-300 opacity-20 music-note absolute" style="top:30%; right:15%;"></i>
+            <i class="fa-solid fa-music text-amber-300 opacity-20 music-note absolute" style="bottom:20%; left:20%;"></i>
+            <i class="fa-solid fa-music text-amber-300 opacity-20 music-note absolute" style="bottom:30%; right:25%;"></i>
+        </div>
+        
+        <!-- Header Section -->
+        <header class="text-center mb-12 relative z-10">
+            <div class="inline-block p-2 mb-2 border-b-2 border-b-amber-300">
+                <h1 class="dancing-script text-3xl md:text-5xl text-amber-700">Bersyukur Diatemukan</h1>
+            </div>
+            <div class="flex justify-center items-center gap-4 mb-4">
+                <div class="w-20 border-t border-amber-300"></div>
+                <p class="uppercase tracking-widest text-sm text-amber-700">Undangan Pernikahan</p>
+                <div class="w-20 border-t border-amber-300"></div>
+            </div>
+            <div class="dancing-script text-4xl md:text-6xl font-bold text-amber-900">
+                <span class="inline-block transform -rotate-6">Hizam</span>
+                <span class="mx-2 text-amber-700">&</span>
+                <span class="inline-block transform rotate-6">Cindy</span>
+            </div>
+        </header>
+        
+        <!-- Couple Photo -->
+        <div class="relative my-12 rounded-xl overflow-hidden shadow-xl max-w-md mx-auto">
+            <div class="absolute inset-0 bg-gradient-to-t from-amber-900/70 to-transparent"></div>
+            <img src="https://images.unsplash.com/photo-1522962506059-a2f2d8ec00f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                 alt="Hizam & Cindy" class="w-full aspect-square object-cover">
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-center">
+                <p class="dancing-script text-3xl text-white">
+                    <span class="inline-block transform -rotate-3">Dengan</span> 
+                    <span class="inline-block transform rotate-3">Basmalah</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- Invitation Content -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl shadow-md p-8 mb-12 relative z-10">
+            <div class="text-center mb-8">
+                <h2 class="dancing-script text-4xl text-amber-900 mb-4">Kepada Yth.</h2>
+                <p class="mb-6">Bapak/Ibu/Saudara/i</p>
+                <p class="bg-amber-50 inline-block px-4 py-2 rounded-full font-medium">______________</p>
+            </div>
+            
+            <div class="text-center mb-8">
+                <p class="mb-4">Dengan memohon rahmat dan ridho Allah Subhanahu wa Ta'ala,</p>
+                <p class="mb-6">kami bermaksud menyelenggarakan acara pernikahan:</p>
+                
+                <div class="grid gap-2 mb-6">
+                    <div class="flex justify-between max-w-xs mx-auto">
+                        <span class="w-12 h-px bg-amber-300 mt-3"></span>
+                        <h3 class="dancing-script text-2xl text-amber-700">Akad Nikah</h3>
+                        <span class="w-12 h-px bg-amber-300 mt-3"></span>
+                    </div>
+                    <p><i class="far fa-calendar-alt mr-2 text-amber-600"></i> Sabtu, 12 Agustus 2023</p>
+                    <p><i class="far fa-clock mr-2 text-amber-600"></i> 09.00 - 11.00 WIB</p>
+                    <p><i class="fas fa-map-marker-alt mr-2 text-amber-600"></i> Masjid Al-Ikhlas, Jakarta</p>
+                </div>
+                
+                <div class="grid gap-2">
+                    <div class="flex justify-between max-w-xs mx-auto">
+                        <span class="w-12 h-px bg-amber-300 mt-3"></span>
+                        <h3 class="dancing-script text-2xl text-amber-700">Resepsi</h3>
+                        <span class="w-12 h-px bg-amber-300 mt-3"></span>
+                    </div>
+                    <p><i class="far fa-calendar-alt mr-2 text-amber-600"></i> Sabtu, 12 Agustus 2023</p>
+                    <p><i class="far fa-clock mr-2 text-amber-600"></i> 18.00 - selesai</p>
+                    <p><i class="fas fa-map-marker-alt mr-2 text-amber-600"></i> Ballroom Hotel Grand Sahid, Jakarta</p>
+                </div>
+            </div>
+            
+            <!-- Countdown -->
+            <div class="py-4 mb-8">
+                <div class="countdown-box rounded-xl p-4 max-w-md mx-auto text-center">
+                    <h4 class="text-sm uppercase tracking-wider mb-2 text-amber-800">Menuju Hari Bahagia</h4>
+                    <div id="countdown" class="flex justify-center gap-2">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold bg-amber-100 rounded-md px-3 py-2" id="days">00</div>
+                            <div class="text-xs mt-1">Hari</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold bg-amber-100 rounded-md px-3 py-2" id="hours">00</div>
+                            <div class="text-xs mt-1">Jam</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold bg-amber-100 rounded-md px-3 py-2" id="minutes">00</div>
+                            <div class="text-xs mt-1">Menit</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold bg-amber-100 rounded-md px-3 py-2" id="seconds">00</div>
+                            <div class="text-xs mt-1">Detik</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Song Lyrics Highlights -->
+            <div class="bg-amber-50/50 border border-amber-200 rounded-xl p-6 mb-8">
+                <div class="text-center mb-4">
+                    <h3 class="dancing-script text-3xl text-amber-800">Bersyukur Diatemukan</h3>
+                    <p class="text-sm text-amber-600">Dan kini, kita akan memulai kisah suci...</p>
+                </div>
+                
+                <div class="space-y-4 text-center italic">
+                    <p>"<span class="lyric-highlight">Bersyukur aku dipertemukan di hangat cintamu yang setia terjaga</span>"</p>
+                    <p>"<span class="lyric-highlight">Dengan mas kawin seluruh dunia dan waktu dibayar oleh rasa sayang dan janjiku</span>"</p>
+                    <p>"<span class="lyric-highlight">Menjalani hidup hingga ujung nanti</span>"</p>
+                    <p>"<span class="lyric-highlight">Tunai, tunai, atas nama cinta dan restu</span>"</p>
+                </div>
+            </div>
+            
+            <!-- RSVP -->
+            <div class="text-center mb-8">
+                <h3 class="dancing-script text-3xl text-amber-900 mb-4">Konfirmasi Kehadiran</h3>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-check"></i> Hadir
+                    </a>
+                    <a href="#" class="bg-white border border-amber-600 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-times"></i> Tidak Hadir
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Gifts -->
+            <div class="text-center border-t pt-8">
+                <h3 class="dancing-script text-2xl text-amber-900 mb-4">Amplop Digital</h3>
+                <p class="mb-6">Untuk yang ingin memberikan doa dan hadiah pernikahan:</p>
+                <div class="envelope inline-block transform transition duration-300 hover:scale-105">
+                    <div class="relative w-24 h-16 bg-amber-400 rounded-lg shadow-md">
+                        <div class="absolute top-0 left-0 right-0 h-1/2 bg-amber-500 rounded-t-lg"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="w-8 h-6 bg-white rounded-full shadow-inner"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 flex justify-center">
+                            <div class="w-20 h-4 bg-amber-300 rounded-b-lg"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 grid gap-4 max-w-xs mx-auto">
+                    <a href="#" class="bg-amber-800 hover:bg-amber-900 text-white px-4 py-3 rounded-lg flex items-center justify-center gap-3">
+                        <i class="fab fa-gopuram"></i> Bank Transfer
+                    </a>
+                    <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Closing Message -->
+        <div class="text-center mb0-8">
+            <p class="mb-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami,</p>
+            <p>apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+            
+            <div class="my-8">
+                <p class="dancing-script text-2xl text-amber-700 mb-2">Wassalamualaikum wr. wb.</p>
+                <p class="text-amber-900">Keluarga Besar Hizam & Cindy</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="text-center text-xs text-amber-700/70 mt-12">
+            <p>Dibuat dengan ♡ oleh Hizam & Cindy</p>
+            <p class="mt-1">"<span class="lyric-highlight">Dalam surga kelak kita bertemu lagi, mempersembahkan cinta yang abadi</span>"</p>
+        </footer>
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('August 12, 2023 09:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Play animation when scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.envelope, .lyric-highlight');
+            
+            function checkScroll() {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight * 0.75) {
+                        el.classList.add('animate');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        });
+    </script>
+</body>
+</html>
