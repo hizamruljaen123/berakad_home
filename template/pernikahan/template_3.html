@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f7f5;
+        }
+        
+        .ornament {
+            position: relative;
+            height: 30px;
+            margin: 20px 0;
+        }
+        
+        .ornament:before, .ornament:after {
+            content: "";
+            position: absolute;
+            width: 40%;
+            height: 1px;
+            top: 50%;
+            background: #c0a080;
+        }
+        
+        .ornament:before {
+            left: 0;
+        }
+        
+        .ornament:after {
+            right: 0;
+        }
+        
+        .ornament-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #c0a080;
+            font-size: 16px;
+        }
+        
+        .invitation-container {
+            max-width: 600px;
+            border: 1px solid #e0d6c2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .paper-texture {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXBlci10ZXh0dXJlIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTUiIGhlaWdodD0iMTUiPjxyZWN0IHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgZmlsbD0iI2ZmZmZmZiIvPjxyZWN0IHg9IjEiIHk9IjEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmOGY2ZjQiLz48L3BhdHRlcm4+PC9kZWZzPiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhcGVyLXRleHR1cmUpIi8+PC9zdmc+');
+            background-color: #fffcf8;
+        }
+        
+        .floral-border {
+            border-top: 8px solid transparent;
+            border-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMDAgMjAiPjxkZWZzPjxzdHlsZT4uZmxvcmFsIHtmaWxsOiNjMGEwODB9PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTAgMTBjNSAwIDEwLTUgMTAtMTBjMTAgMTAgMTAgMTAgMjAgMTBjLTUgMC0xMCA1LTEwIDEwQzEwIDIwIDEwIDIwIDAgMTB6IiBjbGFzcz0iZmxvcmFsIi8+PHBhdGggZD0iTTQwIDEwYzUgMCAxMC01IDEwLTEwYzEwIDEwIDEwIDEwIDIwIDEwYy01IDAtMTAgNS0xMCAxMEM1MCAyMCA1MCAyMCA0MCAxMHoiIGNsYXNzPSJmbG9yYWwiLz48cGF0aCBkPSJNODAgMTBjNSAwIDEwLTUgMTAtMTBjMTAgMTAgMTAgMTAgMjAgMTBjLTUgMC0xMCA1LTEwIDEwQzkwIDIwIDkwIDIwIDgwIDEweiIgY2xhc3M9ImZsb3JhbCIvPjwvc3ZnPg==') 10;
+            border-image-width: 8px;
+            border-image-repeat: round;
+        }
+        
+        .couple-names {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .date-number {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .date-number:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #c0a080;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .date-number:hover:after {
+            transform: scaleX(1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .heartBeat {
+            animation: heartBeat 1.5s infinite;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="invitation-container paper-texture fade-in w-full">
+        <!-- Floral border top -->
+        <div class="floral-border"></div>
+        
+        <div class="p-8 sm:p-12">
+            <!-- Header with decoration -->
+            <div class="text-center mb-6">
+                <div class="ornament">
+                    <div class="ornament-center"><i class="fas fa-heart"></i></div>
+                </div>
+                <h1 class="text-xl sm:text-2xl tracking-wider text-gray-700">WEDDING INVITATION</h1>
+                <div class="ornament">
+                    <div class="ornament-center"><i class="fas fa-heart"></i></div>
+                </div>
+            </div>
+            
+            <!-- Couple names -->
+            <div class="text-center my-12">
+                <h2 class="text-gray-500 text-sm sm:text-base tracking-widest mb-6">JOYFULLY INVITE YOU TO CELEBRATE THEIR MARRIAGE</h2>
+                <h1 class="couple-names text-3xl sm:text-5xl text-gray-800 mb-4">
+                    <span class="block">Alexandre</span>
+                    <span class="text-2xl sm:text-3xl">&</span>
+                    <span class="block">Sophie</span>
+                </h1>
+                <p class="text-gray-600 text-sm mt-4">"In the symphony of life, we found our perfect harmony."</p>
+            </div>
+            
+            <!-- Date and location -->
+            <div class="text-center my-12">
+                <div class="mb-8">
+                    <div class="text-gray-700 text-sm tracking-widest mb-2">THE CEREMONY WILL BE HELD ON</div>
+                    <div class="date-number text-3xl sm:text-4xl text-gray-800 font-medium mb-2">15</div>
+                    <div class="text-lg text-gray-700 mb-1 uppercase">June</div>
+                    <div class="text-gray-700">2024</div>
+                </div>
+                
+                <div class="mb-2">
+                    <i class="far fa-clock text-gray-600 mr-2"></i>
+                    <span class="text-gray-700">At 3:00 in the afternoon</span>
+                </div>
+                
+                <div>
+                    <i class="fas fa-church text-gray-600 mr-2"></i>
+                    <span class="text-gray-700">Notre-Dame Cathedral, Paris</span>
+                </div>
+            </div>
+            
+            <!-- Quote -->
+            <div class="text-center my-12 italic text-gray-600 px-4 sm:px-8 py-4 border-t border-b border-gray-100">
+                <p class="mb-2">"Love is composed of a single soul inhabiting two bodies."</p>
+                <p class="text-sm">— Aristotle</p>
+            </div>
+            
+            <!-- RSVP -->
+            <div class="text-center mt-12">
+                <div class="ornament">
+                    <div class="ornament-center"><i class="fas fa-heart"></i></div>
+                </div>
+                <p class="text-gray-700 text-sm mb-6">KINDLY RESPOND BY MAY 1ST, 2024</p>
+                <button class="heartBeat bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 uppercase tracking-wider text-sm transition-all duration-300">
+                    Confirm Attendance
+                </button>
+            </div>
+        </div>
+        
+        <!-- Floral border bottom -->
+        <div class="floral-border rotate-180"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate the invitation elements sequentially
+            const elements = document.querySelectorAll('.ornament, h1, h2, p, button');
+            
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            // Heart beat effect on hover
+            const heartBtns = document.querySelectorAll('.fa-heart');
+            heartBtns.forEach(heart => {
+                heart.addEventListener('mouseenter', function() {
+                    this.classList.add('heartBeat');
+                });
+                
+                heart.addEventListener('mouseleave', function() {
+                    this.classList.remove('heartBeat');
+                });
+            });
+            
+            // RSVP button interaction
+            const rsvpBtn = document.querySelector('button');
+            rsvpBtn.addEventListener('click', function() {
+                alert('Merci pour votre confirmation! Nous avons hâte de vous voir ce jour spécial.');
+            });
+        });
+    </script>
+</body>
+</html>

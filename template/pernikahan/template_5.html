@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Nikah 8-bit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            color: #e6e6e6;
+            image-rendering: pixelated;
+        }
+        
+        .pixel-border {
+            border: 4px solid #ff69b4;
+            box-shadow: 
+                0 0 0 4px #ff1493,
+                0 0 0 8px #ff69b4;
+            position: relative;
+        }
+        
+        .pixel-border::before, .pixel-border::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ff1493;
+        }
+        
+        .pixel-border::before {
+            top: -8px;
+            left: -8px;
+        }
+        
+        .pixel-border::after {
+            bottom: -8px;
+            right: -8px;
+        }
+        
+        .heart {
+            display: inline-block;
+            position: relative;
+            width: 16px;
+            height: 16px;
+            transform: rotate(45deg);
+            background-color: #ff6b81;
+            margin: 0 4px;
+        }
+        
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #ff6b81;
+            border-radius: 50%;
+        }
+        
+        .heart:before {
+            top: -8px;
+            left: 0;
+        }
+        
+        .heart:after {
+            top: 0;
+            left: -8px;
+        }
+        
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+        
+        .glow {
+            animation: glow-animation 2s infinite alternate;
+        }
+        
+        @keyframes glow-animation {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff1493, 0 0 20px #ff1493;
+            }
+            100% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff1493, 0 0 40px #ff1493;
+            }
+        }
+        
+        .btn-8bit {
+            position: relative;
+            display: inline-block;
+            padding: 12px 24px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 16px;
+            color: white;
+            background-color: #ff1493;
+            border: none;
+            box-shadow: 
+                0 5px 0 #c2185b,
+                0 10px 5px rgba(0, 0, 0, 0.5);
+            transition: all 0.1s;
+        }
+        
+        .btn-8bit:active {
+            top: 5px;
+            box-shadow: 
+                0 2px 0 #c2185b,
+                0 5px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #c2185b;
+            transition: all 0.1s;
+            z-index: 100;
+        }
+        
+        .music-toggle:active {
+            transform: translateY(5px);
+            box-shadow: 0 2px 0 #c2185b;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+    <audio id="bgMusic" loop>
+        <source src="https://sndup.net/bmh/d" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="music-toggle" id="musicToggle">
+        <i class="fas fa-music text-white"></i>
+    </div>
+
+    <div class="w-full max-w-2xl p-6 bg-indigo-900 pixel-border mb-8">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-5xl font-bold mb-2 text-pink-500 glow">UNDANGAN NIKAH</h1>
+            <div class="flex justify-center mb-4">
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+            </div>
+            <p class="text-sm md:text-base mb-4">Kepada Yth. :</p>
+            <p class="text-xl md:text-2xl text-yellow-300 mb-6">NAMA TAMU</p>
+            <p class="text-sm md:text-base">Kami mengundang Anda untuk menyaksikan pernikahan kami</p>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="text-center">
+                <div class="p-4 bg-indigo-800">
+                    <h3 class="text-xl text-pink-300 mb-2">Mempelai Pria</h3>
+                    <p class="text-lg text-yellow-200">Nama Pria</p>
+                    <p class="text-sm">Putra dari</p>
+                    <p class="text-sm">Bapak A & Ibu B</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="p-4 bg-indigo-800">
+                    <h3 class="text-xl text-pink-300 mb-2">Mempelai Wanita</h3>
+                    <p class="text-lg text-yellow-200">Nama Wanita</p>
+                    <p class="text-sm">Putri dari</p>
+                    <p class="text-sm">Bapak C & Ibu D</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mb-8">
+            <div class="mb-2 flex justify-center items-center">
+                <div class="w-1/4 h-1 bg-pink-500"></div>
+                <div class="px-4 text-pink-400">BERITA BAIK</div>
+                <div class="w-1/4 h-1 bg-pink-500"></div>
+            </div>
+            <p class="text-2xl md:text-3xl text-yellow-300 mb-2">Hari Minggu</p>
+            <p class="text-xl text-pink-400 mb-2">12 November 2023</p>
+            <p class="text-sm mb-2">Pukul 10.00 WIB - Selesai</p>
+            <p class="text-lg text-green-300 font-bold mb-4">Rumah Mempelai Wanita</p>
+            <p class="text-xs md:text-sm mb-4">Jalan Khayalan No. 8, Kota Pixel</p>
+        </div>
+        
+        <div class="flex justify-center">
+            <button class="btn-8bit" id="rsvpBtn">KONFIRMASI KEHADIRAN</button>
+        </div>
+    </div>
+    
+    <div class="flex justify-center space-x-4 mb-8">
+        <div class="text-center">
+            <div class="w-24 h-24 bg-indigo-800 pixel-border mb-2 flex items-center justify-center">
+                <i class="fas fa-map-marker-alt text-3xl text-yellow-300"></i>
+            </div>
+            <p class="text-xs">Lokasi</p>
+        </div>
+        <div class="text-center">
+            <div class="w-24 h-24 bg-indigo-800 pixel-border mb-2 flex items-center justify-center">
+                <i class="fas fa-gift text-3xl text-yellow-300"></i>
+            </div>
+            <p class="text-xs">Hadiah</p>
+        </div>
+        <div class="text-center">
+            <div class="w-24 h-24 bg-indigo-800 pixel-border mb-2 flex items-center justify-center">
+                <i class="fas fa-praying-hands text-3xl text-yellow-300"></i>
+            </div>
+            <p class="text-xs">Doa</p>
+        </div>
+    </div>
+    
+    <div class="w-full max-w-lg p-4 bg-indigo-800 pixel-border">
+        <p class="text-center text-sm md:text-base">
+            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, 
+            supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. 
+            Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+        </p>
+        <p class="text-center text-pink-300 mt-2">(QS. Ar-Rum: 21)</p>
+    </div>
+    
+    <script>
+        // Music toggle
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        
+        musicToggle.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicToggle.innerHTML = '<i class="fas fa-music text-white"></i>';
+            } else {
+                bgMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-volume-mute text-white"></i>';
+            }
+        });
+        
+        // RSVP button effect
+        const rsvpBtn = document.getElementById('rsvpBtn');
+        
+        rsvpBtn.addEventListener('click', () => {
+            // Create confetti
+            for (let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+            
+            // Show alert (in a real app, this would open a form)
+            alert('Terima kasih telah mengkonfirmasi kehadiran Anda!\nKami tidak sabar bertemu Anda di hari bahagia kami.');
+        });
+        
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            
+            // Random color
+            const colors = ['#ff1493', '#ff69b4', '#ffff00', '#00ff00', '#00ffff', '#6495ed'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.backgroundColor = randomColor;
+            
+            // Random position
+            const xPos = Math.random() * window.innerWidth;
+            confetti.style.left = `${xPos}px`;
+            confetti.style.top = '-10px';
+            
+            // Random size
+            const size = Math.random() * 10 + 5;
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            
+            document.body.appendChild(confetti);
+            
+            // Animation
+            const animationDuration = Math.random() * 3 + 2;
+            
+            confetti.style.transition = `all ${animationDuration}s linear`;
+            confetti.style.opacity = '1';
+            
+            setTimeout(() => {
+                confetti.style.top = `${window.innerHeight}px`;
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+            }, 10);
+            
+            // Remove after animation
+            setTimeout(() => {
+                confetti.remove();
+            }, animationDuration * 1000);
+        }
+    </script>
+</body>
+</html>

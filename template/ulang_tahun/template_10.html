@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Scientist Lab - Birthday Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a202c; /* Dark gray */
+            color: #e2e8f0; /* Light gray */
+        }
+        .title-font {
+            font-family: 'Creepster', cursive;
+        }
+        .glowing-text {
+            text-shadow: 0 0 5px #48bb78, 0 0 10px #48bb78, 0 0 15px #48bb78, 0 0 20px #48bb78; /* Green glow */
+        }
+        .beaker-icon::before {
+            content: "🧪"; /* Flask emoji or use an SVG */
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+        .radioactive-icon::before {
+            content: "☢️";
+            font-size: 1.5rem;
+        }
+        .animated-bubble {
+            animation: bubble-float 5s ease-in-out infinite;
+        }
+        @keyframes bubble-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .input-field {
+            background-color: #2d3748; /* Darker gray */
+            border-color: #4a5568; /* Medium gray */
+            color: #e2e8f0;
+        }
+        .input-field:focus {
+            border-color: #48bb78; /* Green */
+            box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.5);
+        }
+        .btn-primary {
+            background-color: #48bb78; /* Green */
+            color: #1a202c;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #38a169; /* Darker green */
+        }
+        .countdown-item {
+            background-color: #2d3748;
+            border: 1px solid #48bb78;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="container mx-auto max-w-3xl bg-gray-800 shadow-2xl rounded-lg overflow-hidden my-10">
+        <!-- Header Section -->
+        <header class="bg-green-600 p-8 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <!-- Background pattern like bubbling liquid or circuit board -->
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="labPattern" patternUnits="userSpaceOnUse" width="50" height="50"><circle cx="10" cy="10" r="3" fill="rgba(255,255,255,0.3)" class="animated-bubble delay-1000"></circle><circle cx="30" cy="30" r="5" fill="rgba(255,255,255,0.2)" class="animated-bubble"></circle><path d="M0 25 H50 M25 0 V50" stroke="rgba(255,255,255,0.1)" stroke-width="1"></path></pattern></defs><rect width="100%" height="100%" fill="url(#labPattern)"></rect></svg>
+            </div>
+            <h1 class="title-font text-5xl md:text-6xl text-gray-900 glowing-text relative z-10">Dr. [Name]'s Mad Lab Bash!</h1>
+            <p class="text-xl text-gray-800 mt-2 relative z-10">Get Ready for Some Experimental Fun!</p>
+            <div class="absolute top-4 right-4 text-5xl opacity-50 animated-bubble">🧬</div>
+            <div class="absolute bottom-4 left-4 text-5xl opacity-50 animated-bubble" style="animation-delay: 1s;">🧪</div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-6 md:p-10 space-y-8">
+            <section class="text-center">
+                <h2 class="text-3xl font-semibold text-green-400 mb-2">You're Invited to a Birthday Experiment!</h2>
+                <p class="text-lg">Join us as we celebrate <strong class="text-yellow-400">[Birthday Person's Name]'s</strong> <strong class="text-yellow-400">[Age]th</strong> Birthday!</p>
+                <p class="mt-4 text-md">Prepare for mind-blowing experiments, bubbling potions, and shockingly good times!</p>
+            </section>
+
+            <!-- Event Details -->
+            <section class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-green-500/50 transition-shadow duration-300">
+                    <div class="text-4xl mb-3 text-green-400">📅</div>
+                    <h3 class="text-xl font-bold text-green-300 mb-1">Date of Experiment</h3>
+                    <p class="text-lg">[Date of Party, e.g., October 26th, 2025]</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-green-500/50 transition-shadow duration-300">
+                    <div class="text-4xl mb-3 text-green-400">⏰</div>
+                    <h3 class="text-xl font-bold text-green-300 mb-1">Lab Hours</h3>
+                    <p class="text-lg">[Time of Party, e.g., 2:00 PM - 5:00 PM]</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-green-500/50 transition-shadow duration-300">
+                    <div class="text-4xl mb-3 text-green-400">📍</div>
+                    <h3 class="text-xl font-bold text-green-300 mb-1">Secret Laboratory</h3>
+                    <p class="text-lg">[Location of Party]</p>
+                    <p class="text-sm text-gray-400">[Address Line 2, if any]</p>
+                </div>
+            </section>
+
+            <!-- Countdown Timer -->
+            <section class="text-center p-6 bg-gray-700 rounded-lg">
+                <h3 class="text-2xl font-semibold text-green-400 mb-4">Countdown to Contamination!</h3>
+                <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 max-w-md mx-auto">
+                    <div class="countdown-item p-3 rounded">
+                        <span id="days" class="text-3xl font-bold text-yellow-400">00</span>
+                        <span class="block text-xs text-gray-300">Days</span>
+                    </div>
+                    <div class="countdown-item p-3 rounded">
+                        <span id="hours" class="text-3xl font-bold text-yellow-400">00</span>
+                        <span class="block text-xs text-gray-300">Hours</span>
+                    </div>
+                    <div class="countdown-item p-3 rounded">
+                        <span id="minutes" class="text-3xl font-bold text-yellow-400">00</span>
+                        <span class="block text-xs text-gray-300">Minutes</span>
+                    </div>
+                    <div class="countdown-item p-3 rounded">
+                        <span id="seconds" class="text-3xl font-bold text-yellow-400">00</span>
+                        <span class="block text-xs text-gray-300">Seconds</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activities Section -->
+            <section>
+                <h3 class="text-2xl font-semibold text-green-400 mb-4 text-center"><span class="beaker-icon"></span>Top Secret Experiments Include:</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 md:pl-0 text-lg text-gray-300 columns-1 md:columns-2">
+                    <li>DIY Slime Station</li>
+                    <li>Volcano Eruptions</li>
+                    <li>Edible Potions Lab</li>
+                    <li>Glow-in-the-Dark Discoveries</li>
+                    <li>Building Molecule Models</li>
+                    <li>Static Electricity Fun</li>
+                </ul>
+            </section>
+
+            <!-- RSVP Section -->
+            <section class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold text-center text-green-400 mb-4">RSVP: Report Your Findings!</h3>
+                <form id="rsvpForm" class="space-y-4 max-w-lg mx-auto">
+                    <div>
+                        <label for="guestName" class="block text-sm font-medium text-gray-300">Scientist Name:</label>
+                        <input type="text" id="guestName" name="guestName" required class="mt-1 block w-full rounded-md input-field shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm p-2">
+                    </div>
+                    <div>
+                        <label for="guestCount" class="block text-sm font-medium text-gray-300">Number of Assistant Scientists Attending:</label>
+                        <input type="number" id="guestCount" name="guestCount" min="1" value="1" required class="mt-1 block w-full rounded-md input-field shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Will you be joining the experiment?</label>
+                        <div class="mt-2 space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="attendance" value="yes" class="form-radio h-4 w-4 text-green-500 border-gray-600 focus:ring-green-400" checked>
+                                <span class="ml-2 text-gray-300">Affirmative! (Yes)</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="attendance" value="no" class="form-radio h-4 w-4 text-red-500 border-gray-600 focus:ring-red-400">
+                                <span class="ml-2 text-gray-300">Negative! (No)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary font-bold py-3 px-6 rounded-lg text-lg shadow-md hover:shadow-lg transition-all duration-150 ease-in-out transform hover:scale-105">
+                            <span class="radioactive-icon"></span> Submit RSVP by [RSVP Date]
+                        </button>
+                    </div>
+                </form>
+                <p id="rsvpMessage" class="mt-4 text-center text-yellow-400"></p>
+            </section>
+
+            <!-- Contact Info -->
+            <section class="text-center text-sm text-gray-400">
+                <p>For any classified inquiries, contact Head Scientist: [Parent's Name]</p>
+                <p>Phone: [Phone Number] | Email: [Email Address]</p>
+                <p class="mt-2"><strong class="text-yellow-500">Warning:</strong> Extreme fun may be contagious!</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-green-700 p-6 text-center">
+            <p class="text-gray-900">&copy; <span id="year"></span> [Birthday Person's Name]'s Laboratory of Fun. All experiments patented.</p>
+            <div class="mt-2">
+                <a href="#" class="text-gray-900 hover:text-yellow-300 mx-2">Share on LabBook</a> |
+                <a href="#" class="text-gray-900 hover:text-yellow-300 mx-2">Tweet Experiment</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date("[Date of Party, e.g., October 26, 2025 14:00:00]").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "<p class='col-span-4 text-2xl text-red-500'>The Experiment Has Begun!</p>";
+            }
+        }, 1000);
+
+        // Set current year in footer
+        document.getElementById("year").innerText = new Date().getFullYear();
+
+        // RSVP Form Submission
+        const rsvpForm = document.getElementById('rsvpForm');
+        const rsvpMessage = document.getElementById('rsvpMessage');
+        if (rsvpForm) {
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const guestName = document.getElementById('guestName').value;
+                const attendance = document.querySelector('input[name="attendance"]:checked').value;
+                
+                if (attendance === 'yes') {
+                    rsvpMessage.textContent = `Thanks, Scientist ${guestName}! We've logged your affirmative. Prepare for experimentation!`;
+                    rsvpMessage.className = 'mt-4 text-center text-green-400';
+                } else {
+                    rsvpMessage.textContent = `Understood, Scientist ${guestName}. Your negative response has been recorded. You'll be missed in the lab!`;
+                    rsvpMessage.className = 'mt-4 text-center text-yellow-500';
+                }
+                rsvpForm.reset();
+            });
+        }
+
+        // Placeholder for social media sharing
+        // In a real application, these would trigger actual sharing dialogs
+        document.querySelectorAll('footer a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Social sharing feature coming soon to this laboratory!');
+            });
+        });
+    </script>
+</body>
+</html>

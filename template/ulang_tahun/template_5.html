@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Modern - Birthday Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            pink: '#ff2a6d',
+                            blue: '#05d9e8',
+                            purple: '#7700ff',
+                            yellow: '#f9f871'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f0f;
+            color: #f5f5f5;
+        }
+        .syne {
+            font-family: 'Syne', sans-serif;
+        }
+        .glow {
+            text-shadow: 0 0 10px currentColor;
+        }
+        .neon-border {
+            position: relative;
+        }
+        .neon-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid #05d9e8;
+            box-shadow: 0 0 10px #05d9e8, inset 0 0 10px #05d9e8;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .noise-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-blend-mode: overlay;
+            background-size: 200px;
+        }
+        .glitch {
+            position: relative;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff2a6d;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #05d9e8;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            5% { clip: rect(70px, 9999px, 71px, 0); }
+            10% { clip: rect(29px, 9999px, 83px, 0); }
+            15% { clip: rect(16px, 9999px, 91px, 0); }
+            20% { clip: rect(2px, 9999px, 23px, 0); }
+            25% { clip: rect(46px, 9999px, 25px, 0); }
+            30% { clip: rect(31px, 9999px, 81px, 0); }
+            35% { clip: rect(92px, 9999px, 5px, 0); }
+            40% { clip: rect(8px, 9999px, 51px, 0); }
+            45% { clip: rect(70px, 9999px, 40px, 0); }
+            50% { clip: rect(21px, 9999px, 70px, 0); }
+            55% { clip: rect(46px, 9999px, 43px, 0); }
+            60% { clip: rect(83px, 9999px, 86px, 0); }
+            65% { clip: rect(54px, 9999px, 99px, 0); }
+            70% { clip: rect(30px, 9999px, 92px, 0); }
+            75% { clip: rect(71px, 9999px, 18px, 0); }
+            80% { clip: rect(13px, 9999px, 6px, 0); }
+            85% { clip: rect(13px, 9999px, 92px, 0); }
+            90% { clip: rect(62px, 9999px, 97px, 0); }
+            95% { clip: rect(87px, 9999px, 44px, 0); }
+            100% { clip: rect(91px, 9999px, 59px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            5% { clip: rect(52px, 9999px, 74px, 0); }
+            10% { clip: rect(79px, 9999px, 85px, 0); }
+            15% { clip: rect(75px, 9999px, 5px, 0); }
+            20% { clip: rect(67px, 9999px, 61px, 0); }
+            25% { clip: rect(14px, 9999px, 79px, 0); }
+            30% { clip: rect(1px, 9999px, 66px, 0); }
+            35% { clip: rect(86px, 9999px, 30px, 0); }
+            40% { clip: rect(23px, 9999px, 98px, 0); }
+            45% { clip: rect(85px, 9999px, 72px, 0); }
+            50% { clip: rect(71px, 9999px, 75px, 0); }
+            55% { clip: rect(2px, 9999px, 48px, 0); }
+            60% { clip: rect(30px, 9999px, 16px, 0); }
+            65% { clip: rect(59px, 9999px, 50px, 0); }
+            70% { clip: rect(41px, 9999px, 62px, 0); }
+            75% { clip: rect(2px, 9999px, 82px, 0); }
+            80% { clip: rect(47px, 9999px, 73px, 0); }
+            85% { clip: rect(3px, 9999px, 27px, 0); }
+            90% { clip: rect(26px, 9999px, 55px, 0); }
+            95% { clip: rect(42px, 9999px, 97px, 0); }
+            100% { clip: rect(38px, 9999px, 49px, 0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen noise-bg bg-black py-10 px-4">
+    <div class="max-w-4xl mx-auto bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
+        <!-- Header Section -->
+        <div class="relative h-64 bg-gradient-to-r from-neon-purple to-neon-pink overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute inset-0 bg-[radial-gradient(circle,_transparent_20%,_#000_70%)]"></div>
+                <div class="grid grid-cols-12 gap-2 h-full">
+                    <div class="col-span-1 bg-neon-blue opacity-20"></div>
+                    <div class="col-span-2 bg-neon-pink opacity-10"></div>
+                    <div class="col-span-1 bg-neon-purple opacity-15"></div>
+                    <div class="col-span-3 bg-neon-blue opacity-5"></div>
+                    <div class="col-span-2 bg-neon-pink opacity-20"></div>
+                    <div class="col-span-1 bg-neon-purple opacity-10"></div>
+                    <div class="col-span-2 bg-neon-blue opacity-15"></div>
+                </div>
+            </div>
+            
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center z-10 px-4">
+                    <p class="text-neon-blue text-sm tracking-widest mb-2 glow">YOU'RE INVITED TO</p>
+                    <h1 class="syne text-5xl md:text-6xl font-bold mb-2 text-white glitch" data-text="ALEX'S 18TH">ALEX'S 18TH</h1>
+                    <p class="text-neon-pink tracking-wide glow">BIRTHDAY BASH</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="p-8 md:p-12 neon-border">
+            <!-- Date and Time -->
+            <div class="text-center mb-12">
+                <div class="inline-block mb-4">
+                    <div class="flex items-center justify-center">
+                        <div class="w-12 h-px bg-neon-blue"></div>
+                        <div class="px-4">
+                            <p class="text-gray-400">SATURDAY</p>
+                            <p class="syne text-3xl font-bold text-white">DECEMBER 12</p>
+                            <p class="text-gray-400">9:00 PM - 2:00 AM</p>
+                        </div>
+                        <div class="w-12 h-px bg-neon-pink"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Location Details -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-neon-blue transition duration-300">
+                    <h2 class="syne text-2xl font-bold text-white mb-3">The Venue</h2>
+                    <p class="text-neon-blue font-medium mb-1">Neon Nightclub</p>
+                    <p class="text-gray-400 mb-3">123 Downtown Avenue</p>
+                    <p class="text-gray-400">Metro City, MC 12345</p>
+                </div>
+                
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-neon-pink transition duration-300">
+                    <h2 class="syne text-2xl font-bold text-white mb-3">The Vibe</h2>
+                    <p class="text-neon-pink font-medium mb-1">DJ & Dance Floor</p>
+                    <p class="text-gray-400 mb-3">VIP Lounge Access</p>
+                    <p class="text-gray-400">Dress Code: Neon & Black</p>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="flex items-center justify-center mb-12">
+                <div class="w-16 h-px bg-gray-800"></div>
+                <div class="mx-4">
+                    <svg class="w-6 h-6 text-neon-yellow" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                </div>
+                <div class="w-16 h-px bg-gray-800"></div>
+            </div>
+            
+            <!-- Additional Details -->
+            <div class="text-center mb-12">
+                <h2 class="syne text-2xl font-bold text-white mb-4">What to Expect</h2>
+                <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto">
+                    <div class="p-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-black border border-neon-blue flex items-center justify-center">
+                            <svg class="w-6 h-6 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 font-medium">Live DJ</p>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-black border border-neon-pink flex items-center justify-center">
+                            <svg class="w-6 h-6 text-neon-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 font-medium">Food & Drinks</p>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-black border border-neon-purple flex items-center justify-center">
+                            <svg class="w-6 h-6 text-neon-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 font-medium">Photo Booth</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RSVP Section -->
+            <div class="text-center">
+                <p class="italic text-gray-400 mb-6">"Let's make this night one to remember."</p>
+                
+                <a href="#" class="inline-block px-8 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium rounded-full hover:from-neon-purple hover:to-neon-blue transition duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/20">
+                    RSVP BY NOVEMBER 30
+                </a>
+                
+                <p class="mt-6 text-sm text-gray-500">
+                    For questions, please contact James at<br>
+                    james@email.com or (555) 123-4567
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="bg-black p-4 text-center text-gray-500 text-sm border-t border-gray-800">
+            <p>#Alex18 | Share your photos with our hashtag</p>
+        </div>
+    </div>
+</body>
+</html>

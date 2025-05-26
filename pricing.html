@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berakad.site - Paket Undangan Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #b8c6db 100%);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .vip-feature li:before {
+            color: #8b5cf6;
+        }
+        
+        .wave-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-shape svg {
+            position: relative;
+            display: block;
+            width: calc(200% + 1.3px);
+            height: 150px;
+        }
+        
+        .wave-shape .shape-fill {
+            fill: #FFFFFF;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fas fa-ring text-pink-500 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-gray-800">Berakad<span class="text-pink-500">.site</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#fitur" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Fitur</a>
+                        <a href="#pricing" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Paket</a>
+                        <a href="#testimoni" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Testimoni</a>
+                        <a href="#faq" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                    </div>
+                </div>
+                <div class="md:ml-10 md:flex md:items-center space-x-2">
+                    <a href="#order" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
+                        Buat Undangan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Hero -->
+    <section class="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-20 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Pilih Paket Undangan Anda</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">Berbagai pilihan paket undangan digital untuk semua kebutuhan dan budget</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#pricing" class="bg-white hover:bg-gray-100 text-pink-600 font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
+                        Lihat Paket
+                    </a>
+                    <a href="#order" class="border-2 border-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
+                        Konsultasi Gratis
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="wave-shape">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Paket Undangan Digital</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Pilih paket yang sesuai dengan kebutuhan dan budget Anda</p>
+                <div class="mt-6 flex justify-center">
+                    <div class="inline-flex rounded-md shadow-sm" role="group">
+                        <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-pink-500 focus:text-pink-500">
+                            Bayar Sekali
+                        </button>
+                        <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-r border-gray-200 rounded-r-md hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-pink-500 focus:text-pink-500">
+                            Langganan Tahunan <span class="ml-2 px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">Hemat 20%</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Simple Package -->
+                <div class="pricing-card bg-white rounded-xl shadow-md overflow-hidden border-2 border-gray-100 hover:border-pink-200">
+                    <div class="p-6 sm:p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Simple</h3>
+                        <p class="text-gray-600 mb-6">Paket dasar untuk undangan sederhana</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900">Rp25<span class="text-xl">rb</span></span>
+                            <span class="text-gray-500">/acara</span>
+                        </div>
+                        <a href="#order" class="block w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-500 hover:bg-gray-600">
+                            Pilih Paket Ini
+                        </a>
+                    </div>
+                    <div class="px-6 pt-6 pb-8 bg-gray-50">
+                        <ul class="feature-list space-y-3 text-left text-gray-700">
+                            <li>Template Standar pilihan</li>
+                            <li>1 Halaman undangan</li>
+                            <li>Dompet digital (QRIS)</li>
+                            <li>Link khusus</li>
+                            <li>1x revisi minor</li>
+                            <li>Masa aktif 30 hari</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Plus Package (Popular) -->
+                <div class="pricing-card bg-white rounded-xl shadow-xl overflow-hidden border-2 border-purple-300 relative hover:border-purple-400 transform hover:scale-105">
+                    <div class="popular-badge">PALING EKONOMIS</div>
+                    <div class="p-6 sm:p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Plus</h3>
+                        <p class="text-gray-600 mb-6">Paket lengkap dengan fitur ekstra</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900">Rp50<span class="text-xl">rb</span></span>
+                            <span class="text-gray-500">/acara</span>
+                            <div class="mt-1 text-sm text-green-600 font-medium">Hemat 35% dari paket Simple</div>
+                        </div>
+                        <a href="#order" class="block w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-pink-500 hover:bg-pink-600">
+                            Pilih Paket Ini
+                        </a>
+                    </div>
+                    <div class="px-6 pt-6 pb-8 bg-gray-50">
+                        <ul class="feature-list space-y-3 text-left text-gray-700">
+                            <li class="font-semibold">Semua fitur Simple</li>
+                            <li>Template Premium pilihan</li>
+                            <li>Halaman tamu & ucapan</li>
+                            <li>Peta lokasi acara</li>
+                            <li>Konfirmasi kehadiran (RSVP)</li>
+                            <li>Countdown timer</li>
+                            <li>2x revisi</li>
+                            <li>Masa aktif 60 hari</li>
+                            <li>Prioritas pengerjaan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- VIP Package -->
+                <div class="pricing-card bg-white rounded-xl shadow-md overflow-hidden border-2 border-purple-100 hover:border-purple-200">
+                    <div class="p-6 sm:p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">VIP</h3>
+                        <p class="text-gray-600 mb-6">Paket eksklusif dengan fitur lengkap</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900">Rp100<span class="text-xl">rb</span></span>
+                            <span class="text-gray-500">/acara</span>
+                            <div class="mt-1 text-sm text-green-600 font-medium">Hemat 50% dari paket Plus</div>
+                        </div>
+                        <a href="#order" class="block w-full py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-500 hover:bg-purple-600">
+                            Pilih Paket Ini
+                        </a>
+                    </div>
+                    <div class="px-6 pt-6 pb-8 bg-gray-50">
+                        <ul class="feature-list vip-feature space-y-3 text-left text-gray-700">
+                            <li class="font-semibold">Semua fitur Plus</li>
+                            <li>Template Premium eksklusif</li>
+                            <li>Animasi khusus</li>
+                            <li>Halaman gallery foto</li>
+                            <li>Custom domain (domain Anda sendiri)</li>
+                            <li>Backsound musik</li>
+                            <li>Video pasangan</li>
+                            <li>Unlimited revisi</li>
+                            <li>Masa aktif 1 tahun</li>
+                            <li>Dukungan prioritas 24/7</li>
+                            <li>Prioritas pengerjaan tercepat</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="mt-16 bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">Perbandingan Fitur Paket</h3>
+                </div>
+                <div class="divide-y divide-gray-200">
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center">
+                        <div class="col-span-1">
+                            <h4 class="font-medium text-gray-600">Fitur</h4>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-medium text-gray-600">Simple</h4>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-medium text-gray-600">Plus</h4>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-medium text-gray-600">VIP</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature rows -->
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center bg-gray-50">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Template Standar</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Template Premium</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center bg-gray-50">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Template Eksklusif</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Halaman Tamu</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center bg-gray-50">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Konfirmasi Hadir</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Peta Lokasi</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center bg-gray-50">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Gallery Foto</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Custom Domain</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-times text-red-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center bg-gray-50">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Jumlah Revisi</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-sm font-medium">1x</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-sm font-medium">2x</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-sm font-medium">Unlimited</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 px-6 py-4 items-center">
+                        <div class="col-span-1">
+                            <p class="text-gray-700">Masa Aktif</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-sm font-medium">30 hari</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-sm font-medium">60 hari</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-sm font-medium">1 tahun</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Mengapa Memilih Berakad.site?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Kami memberikan nilai lebih dari sekedar undangan digital</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div class="w-20 h-20 mx-auto bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-pink-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Proses Super Cepat</h3>
+                    <p class="text-gray-600">Undangan siap dalam 1-3 jam setelah konfirmasi pembayaran (VIP dalam 1 jam).</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div class="w-20 h-20 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-headset text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Dukungan 24/7</h3>
+                    <p class="text-gray-600">Tim kami siap membantu Anda kapan saja, termasuk di hari libur.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div class="w-20 h-20 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Garansi 100%</h3>
+                    <p class="text-gray-600">Jika tidak puas, kami akan mengembalikan uang Anda tanpa pertanyaan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order CTA -->
+    <section class="py-16 bg-gradient-to-r from-pink-500 to-purple-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="relative">
+                <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                    <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg floating">
+                        <i class="fas fa-gift text-pink-500 text-3xl"></i>
+                    </div>
+                </div>
+                
+                <h2 class="text-3xl font-bold mb-6 pt-12">Sudah Tentukan Pilihan Paket?</h2>
+                <p class="text-xl mb-8">Mulai buat undangan digital profesional Anda sekarang! Tersedia konsultasi gratis untuk membantu memilih paket terbaik.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#order" class="bg-white hover:bg-gray-100 text-pink-600 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                        Order Sekarang
+                    </a>
+                    <a href="#" class="border-2 border-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                        <i class="fab fa-whatsapp mr-2"></i> Chat WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Pertanyaan Umum</h2>
+                <p class="text-lg text-gray-600">Temukan jawaban untuk pertanyaan yang sering diajukan</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="divide-y divide-gray-200">
+                    <div class="p-6">
+                        <button class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-lg font-medium text-gray-900">Apa perbedaan paket Simple, Plus, dan VIP?</h3>
+                            <i class="fas fa-chevron-down text-pink-500"></i>
+                        </button>
+                        <div class="mt-2 text-gray-600">
+                            <p>Perbedaan utama ada pada template, fitur, jumlah revisi, dan masa aktif undangan:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li><strong>Paket Simple:</strong> Template standar, 1 halaman, masa aktif 30 hari</li>
+                                <li><strong>Paket Plus:</strong> Template premium, fitur RSVP dan peta, masa aktif 60 hari</li>
+                                <li><strong>Paket VIP:</strong> Template eksklusif, fitur lengkap termasuk gallery foto, custom domain, masa aktif 1 tahun</li>
+                            </ul>
+                            <p class="mt-2">Lihat tabel perbandingan di atas untuk detail lengkap.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <button class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-lg font-medium text-gray-900">Apa yang terjadi setelah masa aktif undangan habis?</h3>
+                            <i class="fas fa-chevron-down text-pink-500"></i>
+                        </button>
+                        <div class="mt-2 text-gray-600">
+                            <p>Setelah masa aktif habis, undangan Anda tidak akan bisa diakses lagi. Namun Anda bisa memperpanjang dengan diskon 50% dari harga paket asli, atau memindahkan data ke akun premium baru.</p>
+                            <p class="mt-2">Undangan VIP memiliki masa aktif terpanjang (1 tahun) yang biasanya cukup untuk semua kebutuhan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <button class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-lg font-medium text-gray-900">Bisakah saya upgrade paket setelah memesan?</h3>
+                            <i class="fas fa-chevron-down text-pink-500"></i>
+                        </button>
+                        <div class="mt-2 text-gray-600">
+                            <p>Ya, Anda bisa upgrade paket kapan saja cukup dengan membayar selisih harganya. Misalnya dari Simple ke Plus (Rp50.000 - Rp25.000 = Rp25.000).</p>
+                            <p class="mt-2">Proses upgrade biasanya selesai dalam 1 jam kerja dan semua data akan tetap aman.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <button class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-lg font-medium text-gray-900">Apakah ada biaya tersembunyi?</h3>
+                            <i class="fas fa-chevron-down text-pink-500"></i>
+                        </button>
+                        <div class="mt-2 text-gray-600">
+                            <p>Tidak ada. Harga yang tertera sudah termasuk semua fitur yang disebutkan untuk masing-masing paket. Satu-satunya biaya tambahan adalah jika Anda meminta custom design khusus di luar template yang tersedia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <button class="flex justify-between items-center w-full text-left">
+                            <h3 class="text-lg font-medium text-gray-900">Bagaimana jika saya memilih paket Simple dan kemudian ingin menambahkan fitur seperti RSVP?</h3>
+                            <i class="fas fa-chevron-down text-pink-500"></i>
+                        </button>
+                        <div class="mt-2 text-gray-600">
+                            <p>Anda bisa upgrade ke paket Plus atau membayar untuk tambahan fitur tertentu. Namun secara ekonomis, upgrade paket biasanya lebih menguntungkan daripada menambahkan fitur per-item.</p>
+                            <p class="mt-2">Kami sarankan diskusikan kebutuhan Anda sejak awal melalui WhatsApp untuk mendapatkan rekomendasi paket terbaik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Berakad.site</h3>
+                    <p class="text-gray-400">Platform pembuatan undangan online praktis dan ekonomis untuk segala acara.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Paket Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Paket Simple</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Paket Plus</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Paket VIP</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Paket Custom</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Perbandingan Paket</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cara Pemesanan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Panduan Penggunaan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontak Kami</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> hello@berakad.site
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2"></i> 0812-3456-7890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 Berakad.site. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // FAQ accordion functionality
+        document.querySelectorAll('#faq button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+        
+        // Staggered animation for pricing cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-fadeIn');
+                    }, index * 150);
+                }
+            });
+        }, {threshold: 0.1});
+        
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fadeIn {
+                animation: fadeIn 0.8s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Paradise Wedding - Sari & Budi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico:wght@400&family=Open+Sans:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --ocean-blue: #0ea5e9;
+            --deep-blue: #0284c7;
+            --sand-beige: #f5f5dc;
+            --coral: #ff7f7f;
+            --seafoam: #20b2aa;
+            --white-foam: #f0f8ff;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--seafoam) 50%, var(--sand-beige) 100%);
+            min-height: 100vh;
+        }
+        
+        .beach-font {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .casual-font {
+            font-family: 'Caveat', cursive;
+        }
+        
+        .wave-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            animation: wave 10s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }
+        
+        .floating-shells {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .shell {
+            position: absolute;
+            opacity: 0.6;
+            animation: float linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .fade-up {
+            animation: fadeUp 1s ease-out forwards;
+        }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .sun-glow {
+            animation: sunGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes sunGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
+        }
+        
+        .ocean-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 248, 255, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(14, 165, 233, 0.2);
+        }
+        
+        .coral-gradient {
+            background: linear-gradient(135deg, var(--coral) 0%, var(--ocean-blue) 100%);
+        }
+        
+        .beach-texture {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4 relative overflow-x-hidden">
+    <!-- Floating shells background -->
+    <div class="floating-shells">
+        <i class="fas fa-shell shell text-2xl text-white" style="left: 10%; animation-duration: 15s; animation-delay: 0s;"></i>
+        <i class="fas fa-starfish shell text-xl text-yellow-200" style="left: 20%; animation-duration: 18s; animation-delay: 3s;"></i>
+        <i class="fas fa-fish shell text-lg text-blue-200" style="left: 30%; animation-duration: 20s; animation-delay: 6s;"></i>
+        <i class="fas fa-shell shell text-xl text-pink-200" style="left: 40%; animation-duration: 16s; animation-delay: 2s;"></i>
+        <i class="fas fa-hippo shell text-lg text-blue-300" style="left: 50%; animation-duration: 22s; animation-delay: 8s;"></i>
+        <i class="fas fa-starfish shell text-xl text-yellow-300" style="left: 60%; animation-duration: 17s; animation-delay: 4s;"></i>
+        <i class="fas fa-fish shell text-lg text-cyan-200" style="left: 70%; animation-duration: 19s; animation-delay: 7s;"></i>
+        <i class="fas fa-shell shell text-xl text-white" style="left: 80%; animation-duration: 21s; animation-delay: 5s;"></i>
+        <i class="fas fa-starfish shell text-lg text-yellow-200" style="left: 90%; animation-duration: 14s; animation-delay: 9s;"></i>
+    </div>
+
+    <!-- Main container -->
+    <div class="max-w-md mx-auto bg-white bg-opacity-95 rounded-3xl shadow-2xl overflow-hidden relative">
+        <!-- Header with beach scene -->
+        <div class="relative h-80 coral-gradient beach-texture flex items-center justify-center text-white">
+            <div class="absolute top-6 right-6 w-16 h-16 bg-yellow-400 rounded-full sun-glow flex items-center justify-center">
+                <i class="fas fa-sun text-2xl text-yellow-800"></i>
+            </div>
+            
+            <div class="absolute top-4 left-4">
+                <i class="fas fa-palm-tree text-4xl text-green-400"></i>
+            </div>
+            
+            <div class="text-center z-10 fade-up">
+                <div class="beach-font text-5xl mb-2">Beach Wedding</div>
+                <div class="w-24 h-px bg-white mx-auto mb-4"></div>
+                <div class="text-lg casual-font">Join us by the ocean</div>
+            </div>
+            
+            <!-- Wave animation at bottom -->
+            <div class="wave-animation"></div>
+        </div>
+
+        <!-- Couple names -->
+        <div class="py-12 px-8 text-center ocean-card">
+            <div class="scale-in">
+                <div class="beach-font text-6xl text-blue-600 mb-4">Sari</div>
+                <div class="flex items-center justify-center my-6">
+                    <div class="w-12 h-px bg-blue-300"></div>
+                    <i class="fas fa-anchor text-blue-400 mx-4 text-xl"></i>
+                    <div class="w-12 h-px bg-blue-300"></div>
+                </div>
+                <div class="beach-font text-6xl text-blue-600">Budi</div>
+            </div>
+            
+            <div class="mt-8 casual-font text-2xl text-gray-600 fade-up" style="animation-delay: 0.5s;">
+                are tying the knot by the sea!
+            </div>
+        </div>
+
+        <!-- Wedding details -->
+        <div class="px-8 py-8 bg-gradient-to-b from-blue-50 to-cyan-50">
+            <!-- Date & Time -->
+            <div class="ocean-card rounded-2xl p-6 mb-6 text-center fade-up" style="animation-delay: 0.7s;">
+                <i class="fas fa-calendar-alt text-3xl text-blue-500 mb-3"></i>
+                <div class="casual-font text-2xl text-gray-700 mb-2">Beach Ceremony</div>
+                <div class="text-3xl font-bold text-blue-600 mb-1">15 Agustus 2024</div>
+                <div class="text-lg text-gray-600">Minggu, 16:00 WIB</div>
+                <div class="text-sm text-gray-500 mt-2">Sunset ceremony by the shore</div>
+            </div>
+
+            <!-- Location -->
+            <div class="ocean-card rounded-2xl p-6 mb-6 text-center fade-up" style="animation-delay: 0.9s;">
+                <i class="fas fa-umbrella-beach text-3xl text-coral mb-3"></i>
+                <div class="casual-font text-2xl text-gray-700 mb-2">Beach Venue</div>
+                <div class="text-xl font-semibold text-gray-800 mb-1">Pantai Sanur Paradise</div>
+                <div class="text-gray-600 mb-4">Jl. Pantai Sanur No. 45<br>Denpasar, Bali</div>
+                <div class="flex gap-2">
+                    <button onclick="openMaps()" class="coral-gradient text-white px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-all transform hover:scale-105 flex-1">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Location
+                    </button>
+                    <button onclick="weatherInfo()" class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-600 transition-all transform hover:scale-105 flex-1">
+                        <i class="fas fa-sun mr-2"></i>Weather
+                    </button>
+                </div>
+            </div>
+
+            <!-- Beach Activities -->
+            <div class="ocean-card rounded-2xl p-6 mb-6 fade-up" style="animation-delay: 1.1s;">
+                <div class="text-center mb-4">
+                    <i class="fas fa-volleyball-ball text-3xl text-yellow-500 mb-2"></i>
+                    <div class="casual-font text-xl text-gray-700">Beach Activities</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div class="bg-blue-100 rounded-lg p-3">
+                        <i class="fas fa-swimming-pool text-blue-500 text-lg mb-2"></i>
+                        <div class="text-sm font-medium">Beach Games</div>
+                    </div>
+                    <div class="bg-yellow-100 rounded-lg p-3">
+                        <i class="fas fa-music text-yellow-500 text-lg mb-2"></i>
+                        <div class="text-sm font-medium">Live Music</div>
+                    </div>
+                    <div class="bg-pink-100 rounded-lg p-3">
+                        <i class="fas fa-camera text-pink-500 text-lg mb-2"></i>
+                        <div class="text-sm font-medium">Photo Booth</div>
+                    </div>
+                    <div class="bg-green-100 rounded-lg p-3">
+                        <i class="fas fa-cocktail text-green-500 text-lg mb-2"></i>
+                        <div class="text-sm font-medium">Beach Bar</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP -->
+            <div class="text-center fade-up" style="animation-delay: 1.3s;">
+                <div class="casual-font text-2xl text-gray-700 mb-4">Join Our Beach Party</div>
+                <button onclick="showRSVP()" class="coral-gradient text-white px-8 py-3 rounded-full text-lg font-medium hover:opacity-90 transition-all transform hover:scale-105 w-full">
+                    <i class="fas fa-reply mr-2"></i>RSVP Now
+                </button>
+            </div>
+
+            <!-- Beach Registry -->
+            <div class="mt-8 ocean-card rounded-2xl p-6 text-center fade-up" style="animation-delay: 1.5s;">
+                <i class="fas fa-gift text-3xl text-coral mb-3"></i>
+                <div class="casual-font text-xl text-gray-700 mb-2">Beach Honeymoon Fund</div>
+                <div class="text-sm text-gray-600 mb-4">Help us create magical memories on our honeymoon adventure!</div>
+                <button onclick="copyAccount()" class="bg-gradient-to-r from-blue-400 to-cyan-400 text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-all">
+                    <i class="fas fa-piggy-bank mr-2"></i>Honeymoon Fund: 9876543210
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="coral-gradient beach-texture text-white text-center py-8 px-8 relative">
+            <div class="absolute top-4 left-4">
+                <i class="fas fa-anchor text-2xl opacity-60"></i>
+            </div>
+            <div class="absolute top-4 right-4">
+                <i class="fas fa-ship text-2xl opacity-60"></i>
+            </div>
+            
+            <div class="casual-font text-xl mb-2">Love is an Ocean</div>
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <i class="fas fa-heart text-xl"></i>
+                <div class="beach-font text-2xl">Sari & Budi</div>
+                <i class="fas fa-heart text-xl"></i>
+            </div>
+            <div class="text-sm opacity-80">Families & Friends</div>
+            
+            <!-- Social links -->
+            <div class="mt-4 flex justify-center space-x-4">
+                <button onclick="shareWedding('instagram')" class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-instagram text-xl"></i>
+                </button>
+                <button onclick="shareWedding('whatsapp')" class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </button>
+                <button onclick="shareWedding('facebook')" class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-facebook text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openMaps() {
+            alert('🏖️ Opening maps to Pantai Sanur Paradise!\n\nGet ready for a beautiful beach wedding! 🌊');
+        }
+
+        function weatherInfo() {
+            alert('☀️ Weather Forecast:\n\n🌡️ 28°C - Perfect beach weather!\n🌤️ Partly sunny with gentle sea breeze\n🌊 Low tide during ceremony\n\nPerfect conditions for our beach wedding! 🏖️');
+        }
+
+        function showRSVP() {
+            const name = prompt('🏖️ Welcome to our beach wedding!\n\nPlease enter your name:');
+            if (name) {
+                const attending = confirm(`Hello ${name}! 🌊\n\nWill you be joining us for our sunset beach ceremony?\n\n(Don\'t forget to bring your beach wedding attire! 👙🩳)`);
+                if (attending) {
+                    const guests = prompt('🎉 Wonderful! How many guests will be attending?\n\n(Including yourself)');
+                    alert(`🏖️ Thank you ${name}!\n\n✅ Confirmed for ${guests || 1} guest(s)\n🌅 See you at sunset by the ocean!\n🐚 Can\'t wait to celebrate with you! 💙`);
+                } else {
+                    alert('😔 We\'ll miss you at our beach celebration!\n\n🌊 Thanks for letting us know.\nWishing you were here! 💙🏖️');
+                }
+            }
+        }
+
+        function copyAccount() {
+            navigator.clipboard.writeText('9876543210').then(() => {
+                alert('🏖️ Honeymoon fund account copied!\n\n🌴 Thank you for helping us create magical memories!\n🐚 Your generosity means the world to us! 💙');
+            }).catch(() => {
+                alert('🏖️ Honeymoon Fund Account: 9876543210\n\nPlease copy manually.\n🌴 Thank you for your generosity! 🙏💙');
+            });
+        }
+
+        function shareWedding(platform) {
+            const messages = {
+                instagram: '📸 Check out our beach wedding invitation on Instagram! #BeachWedding #SariAndBudi 🏖️💙',
+                whatsapp: '🏖️ You\'re invited to our beach wedding! Join Sari & Budi by the ocean! 🌊💙',
+                facebook: '🌅 Save the date! Sari & Budi are getting married by the beach! 🏖️💙'
+            };
+            alert(`📱 Sharing on ${platform}:\n\n${messages[platform]}`);
+        }
+
+        // Add intersection observer for animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0s';
+                        entry.target.classList.add('fade-up');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.ocean-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Celebration - Birthday Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .birthday-container {
+            max-width: 800px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .header-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa06b 100%);
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+        .fun-heading {
+            font-family: 'Fredoka One', cursive;
+            color: #ff6b6b;
+        }
+        .birthday-person {
+            font-size: 3.5rem;
+            margin: 15px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .balloon {
+            display: inline-block;
+            animation: float 6s ease-in-out infinite;
+            margin: 0 10px;
+            font-size: 2rem;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .balloon:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .balloon:nth-child(3) {
+            animation-delay: 2s;
+        }
+        .balloon:nth-child(4) {
+            animation-delay: 3s;
+        }
+        .balloon:nth-child(5) {
+            animation-delay: 4s;
+        }
+        .event-card {
+            border-radius: 15px;
+            border: none;
+            transition: all 0.3s;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-rsvp {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa06b 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .btn-rsvp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(135deg, #ff5252 0%, #ff8547 100%);
+            color: white;
+        }
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background-color: #fff3f3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #ff6b6b;
+            font-size: 1.5rem;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6b6b;
+            opacity: 0.8;
+            animation: confetti-fall 5s linear infinite;
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+        }
+        .age-badge {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa06b 100%);
+            border-radius: 50%;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            font-family: 'Fredoka One', cursive;
+        }
+    </style>
+</head>
+<body>
+    <!-- Generate confetti -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const colors = ['#ff6b6b', '#ffa06b', '#ffd166', '#06d6a0', '#118ab2'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.width = `${Math.random() * 10 + 5}px`;
+                confetti.style.height = `${Math.random() * 10 + 5}px`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                confetti.style.animationDelay = `${Math.random() * 5}s`;
+                body.appendChild(confetti);
+            }
+        });
+    </script>
+
+    <div class="container py-5">
+        <div class="birthday-container mx-auto">
+            <!-- Header Banner -->
+            <div class="header-banner">
+                <h3 class="mb-0">YOU'RE INVITED TO</h3>
+                <h1 class="birthday-person">Sarah's Birthday!</h1>
+                <div class="mb-3">
+                    <span class="balloon">🎈</span>
+                    <span class="balloon">🎂</span>
+                    <span class="balloon">🎁</span>
+                    <span class="balloon">🎉</span>
+                    <span class="balloon">🎊</span>
+                </div>
+                <div class="age-badge">30</div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="p-4 p-md-5">
+                <div class="text-center mb-5">
+                    <h2 class="fun-heading mb-4">Join Us For A Celebration!</h2>
+                    <p class="lead">
+                        Help us celebrate Sarah's 30th birthday with food, drinks, and lots of fun!
+                    </p>
+                </div>
+                
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="event-card p-4 h-100 text-center">
+                            <div class="icon-circle">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h3 class="fun-heading mb-3">When</h3>
+                            <p class="mb-1 fw-bold">Saturday, August 15, 2023</p>
+                            <p>7:00 PM - 11:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="event-card p-4 h-100 text-center">
+                            <div class="icon-circle">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3 class="fun-heading mb-3">Where</h3>
+                            <p class="mb-1 fw-bold">Sunset Rooftop Lounge</p>
+                            <p>123 Party Street, Celebration City</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="event-card p-4 h-100 text-center">
+                            <div class="icon-circle">
+                                <i class="fas fa-glass-cheers"></i>
+                            </div>
+                            <h3 class="fun-heading mb-3">What</h3>
+                            <p class="mb-1 fw-bold">Cocktail Party</p>
+                            <p>Drinks, Dinner & Dancing</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="event-card p-4">
+                                <h3 class="fun-heading mb-3">Party Details</h3>
+                                <p class="mb-3">
+                                    We've planned a night of celebration with delicious food, signature cocktails, 
+                                    and dancing under the stars. Dress to impress and bring your best dance moves!
+                                </p>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-6">
+                                        <div class="p-3 bg-light rounded">
+                                            <h5 class="mb-1">Dress Code</h5>
+                                            <p class="mb-0 small">Cocktail Attire</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="p-3 bg-light rounded">
+                                            <h5 class="mb-1">Theme</h5>
+                                            <p class="mb-0 small">Tropical Vibes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="small text-muted mb-0">
+                                    No gifts necessary, just your presence and good vibes!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button class="btn btn-rsvp mb-3">
+                        <i class="fas fa-envelope me-2"></i> RSVP BY AUGUST 1, 2023
+                    </button>
+                    <p class="small text-muted mt-3">
+                        Questions? Contact John at 555-123-4567
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="bg-light p-3 text-center">
+                <p class="mb-0">We can't wait to celebrate with you!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

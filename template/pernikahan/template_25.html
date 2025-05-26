@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watercolor Dreams - Wedding Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            pink: '#f8c8dc',
+                            blue: '#c8e7f8',
+                            lavender: '#e0c8f8',
+                            mint: '#c8f8e0',
+                            peach: '#f8e0c8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+            color: #5a5a5a;
+        }
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .watercolor-bg {
+            background-image: url('https://i.imgur.com/JgxTxJ3.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+        }
+        .watercolor-border {
+            position: relative;
+        }
+        .watercolor-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 15px solid transparent;
+            border-image: url('https://i.imgur.com/JgxTxJ3.png') 30 stretch;
+            pointer-events: none;
+            opacity: 0.2;
+        }
+        .pastel-gradient {
+            background: linear-gradient(135deg, rgba(248,200,220,0.3) 0%, rgba(200,231,248,0.3) 50%, rgba(224,200,248,0.3) 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden relative">
+        <!-- Watercolor background effect -->
+        <div class="absolute inset-0 watercolor-bg"></div>
+        
+        <!-- Content container -->
+        <div class="relative z-10 p-8 md:p-12 watercolor-border">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <p class="text-gray-500 tracking-widest text-sm mb-3">WE ARE GETTING MARRIED</p>
+                <h1 class="serif-font text-5xl md:text-6xl font-light mb-3 text-gray-700">Olivia & William</h1>
+                <p class="text-sm tracking-wider mb-6">— SEPTEMBER 5, 2024 —</p>
+                
+                <div class="w-24 h-px bg-pastel-lavender mx-auto"></div>
+            </div>
+            
+            <!-- Invitation text -->
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <p class="serif-font text-xl text-gray-600 italic mb-6">
+                    "Two souls with but a single thought, two hearts that beat as one."
+                </p>
+                
+                <p class="mb-8">
+                    Together with their families, they joyfully request the honor of your presence as they exchange vows and begin their new life together.
+                </p>
+            </div>
+            
+            <!-- Event details -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="pastel-gradient rounded-lg p-6 text-center">
+                    <h2 class="serif-font text-2xl mb-3 text-gray-700">Ceremony</h2>
+                    <p class="font-light mb-1">Saturday, September 5, 2024</p>
+                    <p class="font-light mb-3">Three o'clock in the afternoon</p>
+                    <p class="text-sm mb-1">Willow Gardens</p>
+                    <p class="text-sm">123 Blossom Avenue, Meadowbrook</p>
+                </div>
+                
+                <div class="pastel-gradient rounded-lg p-6 text-center">
+                    <h2 class="serif-font text-2xl mb-3 text-gray-700">Reception</h2>
+                    <p class="font-light mb-1">Following the ceremony</p>
+                    <p class="font-light mb-3">Five o'clock in the evening</p>
+                    <p class="text-sm mb-1">The Glass Pavilion</p>
+                    <p class="text-sm">123 Blossom Avenue, Meadowbrook</p>
+                </div>
+            </div>
+            
+            <!-- Details section -->
+            <div class="flex flex-col md:flex-row gap-6 mb-12">
+                <div class="flex-1 text-center p-4 border-t border-b border-pastel-blue">
+                    <h3 class="serif-font text-xl mb-2 text-gray-700">Attire</h3>
+                    <p class="text-sm">Garden Formal</p>
+                </div>
+                
+                <div class="flex-1 text-center p-4 border-t border-b border-pastel-pink">
+                    <h3 class="serif-font text-xl mb-2 text-gray-700">Accommodations</h3>
+                    <p class="text-sm">Information provided upon RSVP</p>
+                </div>
+                
+                <div class="flex-1 text-center p-4 border-t border-b border-pastel-lavender">
+                    <h3 class="serif-font text-xl mb-2 text-gray-700">Gifts</h3>
+                    <p class="text-sm">Your presence is our present</p>
+                </div>
+            </div>
+            
+            <!-- RSVP section -->
+            <div class="text-center mb-8">
+                <a href="#" class="inline-block px-8 py-3 bg-white border border-pastel-lavender text-gray-700 rounded-full hover:bg-pastel-lavender hover:text-gray-800 transition duration-300">
+                    RSVP by August 5, 2024
+                </a>
+            </div>
+            
+            <!-- Footer -->
+            <div class="text-center">
+                <p class="text-sm text-gray-500">
+                    Please visit our wedding website for more details
+                </p>
+                <p class="serif-font text-lg text-gray-600 mt-2">
+                    oliviaandwilliam.com
+                </p>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="absolute top-4 left-4 w-16 h-16 opacity-20">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,0 C50,50 0,50 0,50 C0,50 50,50 50,100 C50,100 50,50 100,50 C100,50 50,50 50,0" fill="#e0c8f8"/>
+                </svg>
+            </div>
+            <div class="absolute bottom-4 right-4 w-16 h-16 opacity-20">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,0 C50,50 0,50 0,50 C0,50 50,50 50,100 C50,100 50,50 100,50 C100,50 50,50 50,0" fill="#c8e7f8"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

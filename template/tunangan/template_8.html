@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tunangan Bali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Tangerine:wght@700&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #f9f4e8;
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper-3.png');
+            overflow-x: hidden;
+        }
+        
+        .balinese-pattern {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,50 Q25,20 50,50 T100,50" fill="none" stroke="%23d4a88a" stroke-width="1" opacity="0.3"/></svg>');
+            background-size: 100px;
+        }
+        
+        .invitation-card {
+            border: 8px solid #d9b38c;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+        }
+        
+        .title {
+            font-family: 'Tangerine', cursive;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            color: #5e2c04;
+        }
+        
+        .balinese-divider {
+            width: 70%;
+            height: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0,10 Q25,15 50,10 T100,10" fill="none" stroke="%23a05c38" stroke-width="1"/></svg>');
+            background-repeat: repeat-x;
+            background-size: contain;
+            margin: 20px auto;
+            opacity: 0.6;
+        }
+        
+        .btn-bali {
+            transition: all 0.3s ease;
+            border: 2px solid #a05c38;
+            font-weight: 600;
+        }
+        
+        .btn-bali:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(160, 92, 56, 0.2);
+        }
+        
+        .bali-ornament {
+            position: absolute;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .modal-content {
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper-3.png');
+            border: 4px solid #d9b38c;
+        }
+        
+        .petals {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .petal {
+            position: absolute;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10,0 C15,0 20,5 20,10 C20,15 15,20 10,20 C5,20 0,15 0,10 C0,5 5,0 10,0 Z" fill="%23e8c3a1"/></svg>');
+            background-size: contain;
+            animation: float-down 15s linear infinite;
+        }
+        
+        @keyframes float-down {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        .banten {
+            width: 80px;
+            height: 80px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23f0e0c5" stroke="%23a05c38" stroke-width="1"/><path d="M50,10 L55,40 L85,50 L55,60 L50,90 L45,60 L15,50 L45,40 Z" fill="%23d4a88a"/></svg>');
+            background-size: contain;
+            position: absolute;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 balinese-pattern">
+    <div class="petals" id="petals"></div>
+    
+    <!-- Balinese ornaments -->
+    <div class="bali-ornament top-0 left-0 w-32 h-32 transform -rotate-12">
+        <div class="banten"></div>
+    </div>
+    <div class="bali-ornament bottom-0 right-0 w-40 h-40 transform rotate-12">
+        <div class="banten"></div>
+    </div>
+    
+    <!-- Main invitation card -->
+    <div class="invitation-card bg-white max-w-2xl mx-auto p-8 md:p-12 relative overflow-hidden rounded-sm">
+        <div class="absolute inset-0 border-4 border-transparent" style="box-shadow: inset 0 0 15px rgba(160, 92, 56, 0.4);"></div>
+        
+        <div class="text-center relative z-10">
+            <!-- Header with Balinese pattern -->
+            <div class="mb-6">
+                <h1 class="title text-6xl md:text-7xl mb-2">
+                    Om Swastyastu
+                </h1>
+                <p class="text-sm text-gray-600">Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa</p>
+            </div>
+            
+            <!-- Couple names -->
+            <div class="py-4 border-t border-b border-amber-200 my-6">
+                <h2 class="text-3xl md:text-4xl font-medium text-amber-900">
+                    <span class="block">I Made Sukaarta</span>
+                    <span class="text-2xl text-amber-700 px-4">&</span>
+                    <span class="block">Ni Ketut Purnami</span>
+                </h2>
+            </div>
+            
+            <!-- Balinese divider -->
+            <div class="balinese-divider"></div>
+            
+            <!-- Invitation text -->
+            <div class="text-amber-900 mt-6">
+                <p class="mb-4">Dengan penuh suka cita, kami bermaksud menyelenggarakan upacara:</p>
+                
+                <h3 class="text-2xl font-bold text-amber-800 mb-6">MADEWA SANGKAKALA<br>(Pertunangan)</h3>
+                
+                <div class="bg-amber-50 px-4 py-6 rounded border border-amber-200 my-6 text-left">
+                    <div class="space-y-4">
+                        <p>
+                            <span class="font-semibold text-amber-800">Hari/Tanggal:</span> 
+                            <br>Redite, 30 Juli 2023
+                        </p>
+                        <p>
+                            <span class="font-semibold text-amber-800">Waktu:</span> 
+                            <br>Pukul 10:00 - selesai
+                        </p>
+                        <p>
+                            <span class="font-semibold text-amber-800">Tempat:</span> 
+                            <br>Merajan Agung, Br. Abiansemal
+                        </p>
+                        <p>
+                            <span class="font-semibold text-amber-800">Alamat:</span> 
+                            <br>Jalan Raya Abiansemal No. 45, Badung
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="italic my-6 text-amber-700">"Mpu Kuturan ring Candra Bhairawa, satata ngawangun jagat, ngardi bhuwana alit yan tatanen satata kabyawah ring swah"</p>
+                
+                <p class="mb-6">Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan terima kasih.</p>
+            </div>
+            
+            <!-- Call to action -->
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openRSVPModal()" class="btn-bali bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-sm text-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-leaf"></i>
+                    <span>Konfirmasi Kehadiran</span>
+                </button>
+                
+                <button onclick="openLocation()" class="btn-bali bg-transparent text-amber-800 hover:bg-amber-50 px-6 py-2 rounded-sm text-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Petunjuk Lokasi</span>
+                </button>
+            </div>
+            
+            <!-- Footer -->
+            <div class="mt-12 text-amber-800 italic">
+                <p>Om Śāntiḥ Śāntiḥ Śāntiḥ Oṃ</p>
+                <p class="mt-2 font-medium">Keluarga I Made Sukaarta & Ni Ketut Purnami</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="modal-content rounded-sm p-6 w-full max-w-md mx-4">
+            <div class="flex justify-between items-start">
+                <h3 class="text-2xl text-amber-800 font-bold">Konfirmasi Kehadiran</h3>
+                <button onclick="closeRSVPModal()" class="text-amber-700 hover:text-amber-900">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="mt-6 space-y-4">
+                <div>
+                    <label for="name" class="block text-amber-800 mb-1">Nama Lengkap</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border border-amber-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-amber-500">
+                </div>
+                
+                <div>
+                    <label for="guests" class="block text-amber-800 mb-1">Jumlah Tamu</label>
+                    <select id="guests" class="w-full px-4 py-2 border border-amber-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-amber-500">
+                        <option value="1">1 Orang</option>
+                        <option value="2">2 Orang</option>
+                        <option value="3">3 Orang</option>
+                        <option value="4">4 Orang</option>
+                        <option value="5+">5+ Orang</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="message" class="block text-amber-800 mb-1">Panjer (Pesan)</label>
+                    <textarea id="message" rows="3" class="w-full px-4 py-2 border border-amber-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-amber-500"></textarea>
+                </div>
+                
+                <button type="button" onclick="submitRSVP()" class="w-full bg-amber-600 text-white py-2 px-4 rounded-sm hover:bg-amber-700 flex items-center justify-center gap-2 mt-4">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Kirim Panglipuran</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Confirmation Toast -->
+    <div id="confirmationToast" class="fixed bottom-4 right-4 bg-green-700 text-white px-6 py-2 rounded-sm shadow-lg hidden flex items-center gap-2 z-50">
+        <i class="fas fa-check-circle"></i>
+        <span>Konfirmasi kehadiran telah terkirim!</span>
+    </div>
+    
+    <script>
+        // Create floating petals animation
+        function createPetals() {
+            const container = document.getElementById('petals');
+            
+            for (let i = 0; i < 15; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                
+                // Random properties
+                const size = Math.random() * 20 + 10;
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 15 + 10;
+                const delay = Math.random() * 15;
+                const opacity = Math.random() * 0.6 + 0.2;
+                
+                petal.style.left = `${left}%`;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size}px`;
+                petal.style.animationDuration = `${animationDuration}s`;
+                petal.style.animationDelay = `${delay}s`;
+                petal.style.opacity = opacity;
+                
+                container.appendChild(petal);
+            }
+        }
+        
+        // RSVP Modal functions
+        function openRSVPModal() {
+            document.getElementById('rsvpModal').classList.remove('hidden');
+        }
+        
+        function closeRSVPModal() {
+            document.getElementById('rsvpModal').classList.add('hidden');
+        }
+        
+        function submitRSVP() {
+            closeRSVPModal();
+            showToast();
+        }
+        
+        function showToast() {
+            const toast = document.getElementById('confirmationToast');
+            toast.classList.remove('hidden');
+            
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+        
+        function openLocation() {
+            alert('Anda akan diarahkan ke peta lokasi di Google Maps');
+            // In real implementation: window.open('https://maps.google.com?q=...', '_blank');
+        }
+        
+        // Initialize effects when page loads
+        window.onload = function() {
+            createPetals();
+        };
+    </script>
+</body>
+</html>

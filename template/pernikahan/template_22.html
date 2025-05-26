@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustic Bohemian - Wedding Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f4e9;
+            color: #5d4037;
+        }
+        .boho-container {
+            background-color: #fff;
+            border: 15px solid #f8f4e9;
+            outline: 2px solid #d7ccc8;
+            max-width: 850px;
+        }
+        .boho-header {
+            font-family: 'Amatic SC', cursive;
+        }
+        .couple-names {
+            font-family: 'Amatic SC', cursive;
+            font-size: 5rem;
+            color: #7d5a50;
+        }
+        .floral-divider {
+            height: 40px;
+            background-image: url('https://i.imgur.com/8FHqzTH.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.6;
+        }
+        .event-card {
+            background-color: #f8f4e9;
+            border-radius: 8px;
+            border-left: 4px solid #a5978b;
+        }
+        .btn-rsvp {
+            background-color: #7d5a50;
+            border: none;
+            color: #fff;
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            border-radius: 0;
+        }
+        .btn-rsvp:hover {
+            background-color: #5d4037;
+            color: #fff;
+        }
+        .leaf-decoration {
+            position: absolute;
+            width: 150px;
+            opacity: 0.2;
+        }
+        .top-right {
+            top: 20px;
+            right: 20px;
+            transform: rotate(45deg);
+        }
+        .bottom-left {
+            bottom: 20px;
+            left: 20px;
+            transform: rotate(225deg);
+        }
+        .boho-border {
+            border: 1px solid #d7ccc8;
+            padding: 20px;
+        }
+        .date-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #a5978b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+        }
+        .date-day {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1;
+            font-family: 'Amatic SC', cursive;
+        }
+        .date-month {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="boho-container mx-auto p-4 p-md-5 position-relative shadow">
+            <img src="https://i.imgur.com/JgxTxJ3.png" class="leaf-decoration top-right">
+            <img src="https://i.imgur.com/JgxTxJ3.png" class="leaf-decoration bottom-left">
+            
+            <div class="text-center mb-4">
+                <h3 class="boho-header mb-0" style="font-size: 2rem;">We're Getting Married</h3>
+            </div>
+            
+            <div class="boho-border mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center">
+                        <img src="https://images.unsplash.com/photo-1508872558182-ffc7f1b387f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                             alt="Wildflowers" class="img-fluid rounded-circle mb-3" style="max-width: 180px;">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h1 class="couple-names">Emma & Noah</h1>
+                        <div class="floral-divider my-3"></div>
+                        <div class="date-circle">
+                            <span class="date-day">18</span>
+                            <span class="date-month">Sept</span>
+                        </div>
+                        <p class="mb-0">Two thousand twenty-four</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                             alt="Rustic setting" class="img-fluid rounded-circle mb-3" style="max-width: 180px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <p class="lead">
+                    Join us for a celebration of love, laughter, and happily ever after
+                </p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="event-card p-4">
+                        <h3 class="boho-header mb-3" style="font-size: 2.5rem;">Ceremony</h3>
+                        <p><strong>4:00 PM</strong></p>
+                        <p>Wildflower Meadow</p>
+                        <p class="mb-0 small">Please arrive 30 minutes early</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="event-card p-4">
+                        <h3 class="boho-header mb-3" style="font-size: 2.5rem;">Reception</h3>
+                        <p><strong>6:00 PM</strong></p>
+                        <p>Rustic Barn at Meadowlark</p>
+                        <p class="mb-0 small">Dinner & dancing to follow</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <p>
+                    <strong>Meadowlark Farm</strong><br>
+                    456 Countryside Lane, Willowbrook
+                </p>
+                <p class="fst-italic mb-4">"And so the adventure begins..."</p>
+                <button class="btn btn-rsvp">KINDLY RESPOND BY AUGUST 18, 2024</button>
+                <p class="mt-4 small text-muted">Attire: Casual Elegant | Outdoor Event</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

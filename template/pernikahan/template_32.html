@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNDANGAN FYP VIRAL | #NikahTrending</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --tiktok-pink: #fe2c55;
+            --tiktok-teal: #25f4ee;
+            --tiktok-black: #121212;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--tiktok-black);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .tiktok-gradient {
+            background: linear-gradient(90deg, var(--tiktok-pink) 0%, var(--tiktok-teal) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .tiktok-gradient-bg {
+            background: linear-gradient(90deg, var(--tiktok-pink) 0%, var(--tiktok-teal) 100%);
+        }
+        
+        .tiktok-border {
+            border: 3px solid var(--tiktok-teal);
+            box-shadow: 0 0 20px var(--tiktok-pink);
+        }
+        
+        .pulse-animation {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .flicker {
+            animation: flicker 2s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 22%, 24%, 55% { opacity: 0.5; }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .float-animation {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px var(--tiktok-teal), 
+                         0 0 20px var(--tiktok-teal),
+                         0 0 30px var(--tiktok-pink);
+        }
+        
+        .rotate-animation {
+            animation: rotate 15s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .scroll-text {
+            animation: scroll 30s linear infinite;
+            white-space: nowrap;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .heart-beat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .gradient-animation {
+            background-size: 300% 300%;
+            background-image: linear-gradient(-45deg, var(--tiktok-pink) 0%, var(--tiktok-teal) 25%, var(--tiktok-pink) 51%, var(--tiktok-teal) 100%);
+            animation: gradientAnimation 8s ease infinite;
+        }
+        
+        @keyframes gradientAnimation { 
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-4 px-4">
+    <!-- Main container with TikTok aesthetic -->
+    <div class="w-full max-w-md mx-auto bg-black rounded-xl overflow-hidden relative pulse-animation">
+        <!-- TikTok logo watermark -->
+        <div class="absolute top-2 left-2 z-30 rounded-full bg-black p-1 opacity-80">
+            <div class="flex items-center">
+                <div class="w-5 h-5 relative">
+                    <div class="absolute inset-0 bg-white rounded-sm"></div>
+                    <div class="absolute top-0 left-0 w-2 h-2 bg-black rounded-sm"></div>
+                    <div class="absolute bottom-0 right-0 w-2 h-2 bg-black rounded-sm"></div>
+                    <div class="absolute top-0 right-0 w-3 h-2 bg-white rounded-sm"></div>
+                    <div class="absolute bottom-0 left-0 w-3 h-2 bg-white rounded-sm"></div>
+                </div>
+                <span class="ml-1 text-white font-bold text-xs">TikTok</span>
+            </div>
+        </div>
+        
+        <!-- Video reel effect -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 via-blue-500 to-purple-500 z-30"></div>
+        
+        <!-- Main content area -->
+        <div class="relative">
+            <!-- Video overlay with gradient -->
+            <div class="relative h-96 w-full overflow-hidden flex items-center justify-center">
+                <div class="absolute inset-0 gradient-animation opacity-70 z-0"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black z-10"></div>
+                
+                <!-- Moving rings background -->
+                <div class="absolute w-72 h-72 rounded-full border-4 border-pink-500 opacity-20 rotate-animation"></div>
+                <div class="absolute w-64 h-64 rounded-full border-4 border-teal-400 opacity-20 rotate-animation" style="animation-direction: reverse;"></div>
+                
+                <!-- Interactive elements -->
+                <div class="absolute right-3 bottom-20 flex flex-col items-center space-y-2 z-20">
+                    <div class="flex flex-col items-center">
+                        <button class="bg-black bg-opacity-60 rounded-full p-3 hover:bg-opacity-80 transition-all">
+                            <i class="fas fa-heart text-2xl text-pink-500 hover:text-red-600 transition"></i>
+                        </button>
+                        <span class="text-white text-sm font-bold mt-1 like-count">2.4K</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <button class="bg-black bg-opacity-60 rounded-full p-3 hover:bg-opacity-80 transition-all">
+                            <i class="fas fa-comment text-2xl text-white hover:text-blue-400 transition"></i>
+                        </button>
+                        <span class="text-white text-sm font-bold mt-1">387</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <button class="bg-black bg-opacity-60 rounded-full p-3 hover:bg-opacity-80 transition-all">
+                            <i class="fas fa-share text-2xl text-white hover:text-green-400 transition"></i>
+                        </button>
+                        <span class="text-white text-sm font-bold mt-1">156</span>
+                    </div>
+                </div>
+                
+                <!-- Profile circle float -->
+                <div class="absolute top-3 left-3 z-20 float-animation">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-teal-400 flex items-center justify-center border-2 border-white">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <!-- Main couple info -->
+                <div class="relative z-10 text-center px-4 w-full">
+                    <div class="flex items-center justify-center mb-2">
+                        <div class="tiktok-gradient text-5xl font-black tracking-tighter neon-text">UNDANGAN</div>
+                    </div>
+                    <div class="text-4xl tiktok-gradient font-black mb-4">PERNIKAHAN</div>
+                    
+                    <div class="flex items-center justify-center space-x-4 mb-6">
+                        <div>
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-yellow-400 flex items-center justify-center border-4 border-white">
+                                <i class="fas fa-crown text-white"></i>
+                            </div>
+                            <div class="text-sm font-bold mt-1">@aisyah_p</div>
+                        </div>
+                        
+                        <div class="heart-beat">💖</div>
+                        
+                        <div>
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-teal-400 flex items-center justify-center border-4 border-white">
+                                <i class="fas fa-king text-white"></i>
+                            </div>
+                            <div class="text-sm font-bold mt-1">@muhammad_ali</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content section with animated effects -->
+            <div class="p-6 bg-gradient-to-b from-gray-900 to-black relative">
+                <!-- Scrolling hashtags -->
+                <div class="overflow-hidden mb-4 bg-black bg-opacity-60 py-2 rounded-full">
+                    <div class="scroll-text">
+                        <span class="text-pink-400 font-bold">#NikahTrending</span>
+                        <span class="mx-4 text-blue-400 font-bold">#UndanganFYP</span>
+                        <span class="text-teal-400 font-bold">#EndGame</span>
+                        <span class="mx-4 text-purple-400 font-bold">#PengantinTikTok</span>
+                        <span class="text-yellow-400 font-bold">#DreamWedding</span>
+                    </div>
+                </div>
+                
+                <!-- Super interactive save the date -->
+                <div class="mb-6 slide-in">
+                    <div class="flex items-center justify-center mb-3">
+                        <div class="text-2xl font-bold tiktok-gradient mr-2">SAVE THE DATE!</div>
+                        <i class="fas fa-calendar-alt text-pink-500 text-xl"></i>
+                    </div>
+                    <div class="tiktok-border p-4 rounded-lg text-center relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-20 h-20 rounded-full bg-pink-500 opacity-20"></div>
+                        <div class="absolute -bottom-10 -left-10 w-20 h-20 rounded-full bg-teal-500 opacity-20"></div>
+                        <div class="text-4xl font-black text-white">20 JULI 2024</div>
+                        <div class="text-lg mt-1 text-gray-300">09.00 WIB - Selesai</div>
+                    </div>
+                </div>
+                
+                <!-- Location with map icon animation -->
+                <div class="mb-6 slide-in" style="animation-delay: 0.2s;">
+                    <div class="flex items-center justify-center mb-3">
+                        <div class="text-2xl font-bold tiktok-gradient mr-2">LOKASI ACARA</div>
+                        <i class="fas fa-map-marked-alt text-teal-400 text-xl"></i>
+                    </div>
+                    <div class="bg-gray-800 bg-opacity-60 p-4 rounded-lg relative">
+                        <div class="absolute top-0 right-0 p-2">
+                            <i class="fas fa-location-dot text-pink-500 pulse-animation"></i>
+                        </div>
+                        <div class="text-xl font-bold mb-1">Grand Ballroom Hotel Marina</div>
+                        <div class="text-gray-300">Jl. Pantai Indah Kapuk No. 88</div>
+                        <div class="text-gray-300">Jakarta Utara</div>
+                        <button onclick="openMaps()" class="mt-3 bg-black text-white px-4 py-2 rounded-full flex items-center justify-center w-full hover:bg-gray-900 transition-all hover:scale-[1.02] active:scale-95">
+                            <i class="fas fa-map-marker-alt mr-2 text-teal-400"></i> BUKA DI MAPS
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Couple showcase with photo grid effect -->
+                <div class="mb-6 slide-in" style="animation-delay: 0.4s;">
+                    <div class="grid grid-cols-3 gap-1">
+                        <div class="bg-pink-500 aspect-square"></div>
+                        <div class="bg-teal-400 aspect-square"></div>
+                        <div class="bg-purple-500 aspect-square"></div>
+                        <div class="bg-yellow-400 aspect-square"></div>
+                        <div class="bg-white aspect-square flex items-center justify-center">
+                            <div class="text-3xl font-black text-black">A & M</div>
+                        </div>
+                        <div class="bg-pink-400 aspect-square"></div>
+                        <div class="bg-blue-500 aspect-square"></div>
+                        <div class="bg-teal-500 aspect-square flex items-center justify-center">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div class="bg-green-400 aspect-square"></div>
+                    </div>
+                </div>
+                
+                <!-- RSVP with confetti effect -->
+                <div class="mb-6 slide-in" style="animation-delay: 0.6s;">
+                    <button onclick="showConfetti()" class="w-full tiktok-gradient-bg text-white font-bold py-3 px-4 rounded-full flex items-center justify-center hover:opacity-90 transition-all transform hover:scale-[1.02] active:scale-95">
+                        <i class="fas fa-paper-plane mr-2"></i> KONFIRMASI KEHADIRAN
+                    </button>
+                </div>
+                
+                <!-- Countdown timer -->
+                <div class="mb-6 slide-in bg-black bg-opacity-40 p-4 rounded-lg text-center" style="animation-delay: 0.8s;">
+                    <div class="text-lg font-bold mb-2 tiktok-gradient">COUNTDOWN WEDDING</div>
+                    <div class="flex justify-center space-x-2">
+                        <div class="bg-black rounded-lg p-2 w-16">
+                            <div class="text-2xl font-bold" id="days">00</div>
+                            <div class="text-xs">Hari</div>
+                        </div>
+                        <div class="flex items-center text-xl">:</div>
+                        <div class="bg-black rounded-lg p-2 w-16">
+                            <div class="text-2xl font-bold" id="hours">00</div>
+                            <div class="text-xs">Jam</div>
+                        </div>
+                        <div class="flex items-center text-xl">:</div>
+                        <div class="bg-black rounded-lg p-2 w-16">
+                            <div class="text-2xl font-bold" id="minutes">00</div>
+                            <div class="text-xs">Menit</div>
+                        </div>
+                        <div class="flex items-center text-xl">:</div>
+                        <div class="bg-black rounded-lg p-2 w-16">
+                            <div class="text-2xl font-bold" id="seconds">00</div>
+                            <div class="text-xs">Detik</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- QR Code with animation -->
+                <div class="mb-4 slide-in bg-white p-4 rounded-lg flex flex-col items-center" style="animation-delay: 1s;">
+                    <div class="w-32 h-32 bg-gradient-to-br from-pink-500 to-teal-400 rounded-lg flex items-center justify-center mb-2 pulse-animation">
+                        <div class="grid grid-cols-4 gap-1 p-2">
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-white rounded-sm"></div>
+                            <div class="w-6 h-6 bg-white rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-white rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-white rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                            <div class="w-6 h-6 bg-white rounded-sm"></div>
+                            <div class="w-6 h-6 bg-black rounded-sm"></div>
+                        </div>
+                    </div>
+                    <div class="text-black font-medium text-center">
+                        <div>Scan untuk info lengkap</div>
+                        <div class="text-sm">Gift & Wedding Registry</div>
+                    </div>
+                </div>
+                
+                <!-- Comment section -->
+                <div class="mb-4 py-3 px-4 bg-black bg-opacity-40 rounded-lg slide-in" style="animation-delay: 1.2s;">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="text-sm font-bold tiktok-gradient">KOMENTAR (24 BARU)</div>
+                        <button class="text-xs bg-black bg-opacity-60 px-2 py-1 rounded-full">LIHAT SEMUA</button>
+                    </div>
+                    
+                    <div class="space-y-2 comment-container">
+                        <div class="flex">
+                            <div class="w-8 h-8 rounded-full bg-pink-500 flex-shrink-0 flex items-center justify-center text-white">
+                                U
+                            </div>
+                            <div class="ml-2">
+                                <div class="text-xs font-bold text-pink-400">@user_anonim</div>
+                                <div class="text-sm">Undangannya viral banget! Keren 💯🔥</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="w-8 h-8 rounded-full bg-teal-400 flex-shrink-0 flex items-center justify-center text-black">
+                                S
+                            </div>
+                            <div class="ml-2">
+                                <div class="text-xs font-bold text-teal-300">@sahabat_mempelai</div>
+                                <div class="text-sm">Pasti hadir! Udah nggak sabar 🥳</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="w-8 h-8 rounded-full bg-purple-500 flex-shrink-0 flex items-center justify-center text-white">
+                                F
+                            </div>
+                            <div class="ml-2">
+                                <div class="text-xs font-bold text-purple-300">@family</div>
+                                <div class="text-sm">Selamat untuk kalian berdua ❤️</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3 flex items-center relative">
+                        <input type="text" placeholder="Tambah komentar..." class="bg-black bg-opacity-70 text-sm rounded-full py-2 px-4 pr-10 w-full focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        <button class="absolute right-2 text-pink-500">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Footer with elegant touch -->
+                <div class="text-center pt-4 mt-6 border-t border-gray-800 slide-in" style="animation-delay: 1.4s;">
+                    <p class="text-gray-400 text-sm">Dengan hormat mengundang Bapak/Ibu/Saudara/i</p>
+                    <p class="text-gray-400 text-sm mb-2">untuk memberikan doa restu pada hari bahagia kami</p>
+                    
+                    <div class="h-[1px] bg-gradient-to-r from-transparent via-pink-500 via-teal-400 to-transparent my-3"></div>
+                    
+                    <div class="neon-text font-bold text-lg">Keluarga Besar</div>
+                    <div class="tiktok-gradient text-xl font-black tracking-wider">AISYAH & MUHAMMAD</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Like counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Like counter
+            const likeCount = document.querySelector('.like-count');
+            let likes = 2400;
+            const likeInterval = setInterval(() => {
+                likes += Math.floor(Math.random() * 3) + 1;
+                likeCount.textContent = likes > 3000 ? '3.0K+' : likes.toLocaleString();
+                
+                if (likes > 3000) {
+                    clearInterval(likeInterval);
+                }
+            }, 2000);
+            
+            // Countdown timer
+            const weddingDate = new Date('July 20, 2024 09:00:00').getTime();
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Add hover effects to all interactive elements
+            const interactives = document.querySelectorAll('button, .hashtag, .comment-container div');
+            interactives.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    el.classList.add('transform', 'scale-[1.02]');
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.classList.remove('transform', 'scale-[1.02]');
+                });
+            });
+        });
+        
+        function openMaps() {
+            alert('🚀 Membuka Google Maps untuk lokasi acara!\n\nGrand Ballroom Hotel Marina\nJl. Pantai Indah Kapuk No. 88\nJakarta Utara');
+        }
+        
+        function showConfetti() {
+            alert('🎉 Terima kasih sudah konfirmasi kehadiran!\n\nKami sangat berharap bisa bertemu dengan Anda pada hari bahagia kami 💖');
+            
+            // Create confetti effect
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            const container = document.querySelector('body');
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = '50%';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.zIndex = '9999';
+                confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                
+                container.appendChild(confetti);
+                
+                const animationDuration = Math.random() * 3 + 2;
+                
+                confetti.animate([
+                    { top: '-10px', opacity: 1 },
+                    { top: '100vh', opacity: 0 }
+                ], {
+                    duration: animationDuration * 1000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.9, 1)'
+                });
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, animationDuration * 1000);
+            }
+        }
+        
+        // Add comments on click
+        document.querySelector('.comment-container').addEventListener('click', function() {
+            const comments = [
+                {user: "@teman_sekolah", initial: "T", color: "bg-yellow-400", textColor: "text-yellow-300", msg: "Wah keren banget undangannya! 👏"},
+                {user: "@distant_relative", initial: "D", color: "bg-indigo-500", textColor: "text-indigo-300", msg: "Selamat yaa, semoga bahagia selalu ❤️"},
+                {user: "@colleague", initial: "C", color: "bg-orange-500", textColor: "text-orange-300", msg: "Undangan paling kreatif yang pernah aku lihat!"},
+                {user: "@bestfriend", initial: "B", color: "bg-red-500", textColor: "text-red-300", msg: "Akhirnya nikah juga kalian! So happy for you guys 🥲"}
+            ];
+            
+            const randomComment = comments[Math.floor(Math.random() * comments.length)];
+            
+            const newComment = document.createElement('div');
+            newComment.className = "flex mt-2 animate-[fadeIn_0.5s_ease-in-out]";
+            newComment.innerHTML = `
+                <div class="w-8 h-8 rounded-full ${randomComment.color} flex-shrink-0 flex items-center justify-center text-white">
+                    ${randomComment.initial}
+                </div>
+                <div class="ml-2">
+                    <div class="text-xs font-bold ${randomComment.textColor}">${randomComment.user}</div>
+                    <div class="text-sm">${randomComment.msg}</div>
+                </div>
+            `;
+            
+            this.appendChild(newComment);
+            
+            // Auto scroll to bottom
+            this.scrollTop = this.scrollHeight;
+        });
+    </script>
+</body>
+</html>

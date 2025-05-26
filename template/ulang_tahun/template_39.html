@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Science Lab Theme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;700&family=Share+Tech+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f3460, #16537e, #1e88e5);
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(0, 255, 127, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 20, 147, 0.2) 0%, transparent 50%);
+            font-family: 'Roboto Mono', monospace;
+            min-height: 100vh;
+        }
+        
+        .lab-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 255, 127, 0.3);
+            border-radius: 20px;
+        }
+        
+        .beaker {
+            animation: bubble-reaction 3s ease-in-out infinite;
+        }
+        
+        @keyframes bubble-reaction {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .dna-helix {
+            animation: dna-spin 8s linear infinite;
+        }
+        
+        @keyframes dna-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .molecule {
+            position: absolute;
+            animation: molecule-float 6s ease-in-out infinite;
+        }
+        
+        @keyframes molecule-float {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0.7;
+            }
+            33% { 
+                transform: translate(30px, -20px) rotate(120deg);
+                opacity: 1;
+            }
+            66% { 
+                transform: translate(-20px, -30px) rotate(240deg);
+                opacity: 0.8;
+            }
+        }
+        
+        .test-tube {
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                transparent 30%, 
+                #00ff7f 30%, 
+                #32cd32 70%, 
+                #228b22 100%);
+            border-radius: 0 0 20px 20px;
+            animation: liquid-bubble 2s ease-in-out infinite;
+        }
+        
+        @keyframes liquid-bubble {
+            0%, 100% { 
+                background: linear-gradient(to bottom, 
+                    transparent 0%, 
+                    transparent 30%, 
+                    #00ff7f 30%, 
+                    #32cd32 70%, 
+                    #228b22 100%);
+            }
+            50% { 
+                background: linear-gradient(to bottom, 
+                    transparent 0%, 
+                    transparent 25%, 
+                    #ff1493 25%, 
+                    #ff69b4 65%, 
+                    #c71585 100%);
+            }
+        }
+        
+        .atom-orbit {
+            animation: orbit 4s linear infinite;
+        }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+        
+        .periodic-element {
+            background: linear-gradient(145deg, #00bcd4, #0097a7);
+            border: 2px solid #00acc1;
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .periodic-element::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: element-shine 3s linear infinite;
+        }
+        
+        @keyframes element-shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .periodic-element:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 127, 0.5);
+        }
+        
+        .lab-button {
+            background: linear-gradient(45deg, #4caf50, #8bc34a);
+            border: 2px solid #00ff7f;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0, 255, 127, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .lab-button:hover {
+            background: linear-gradient(45deg, #8bc34a, #4caf50);
+            box-shadow: 0 0 25px rgba(0, 255, 127, 0.6);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .formula-text {
+            font-family: 'Share Tech Mono', monospace;
+            color: #00ff7f;
+            text-shadow: 0 0 10px rgba(0, 255, 127, 0.5);
+        }
+        
+        .reaction-effect {
+            background: radial-gradient(circle, rgba(255, 20, 147, 0.2), transparent);
+            animation: reaction-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes reaction-pulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+        }
+        
+        .microscope {
+            animation: microscope-focus 4s ease-in-out infinite;
+        }
+        
+        @keyframes microscope-focus {
+            0%, 100% { filter: blur(0px); }
+            50% { filter: blur(1px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Molecules -->
+    <div class="position-fixed w-100 h-100" style="pointer-events: none; z-index: 1;">
+        <div class="molecule" style="top: 10%; left: 10%; font-size: 2rem;">⚛️</div>
+        <div class="molecule" style="top: 20%; left: 80%; font-size: 1.5rem; animation-delay: 1s;">🧬</div>
+        <div class="molecule" style="top: 60%; left: 15%; font-size: 1.8rem; animation-delay: 2s;">🔬</div>
+        <div class="molecule" style="top: 70%; left: 85%; font-size: 1.3rem; animation-delay: 3s;">⚗️</div>
+    </div>
+
+    <div class="container py-5">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <div class="microscope d-inline-block mb-4" style="font-size: 4rem;">🔬</div>
+            <h1 class="display-2 text-white fw-bold mb-3" style="font-family: 'Orbitron', monospace; text-shadow: 0 0 20px rgba(0, 255, 127, 0.5);">
+                LAB EXPERIMENT #2025
+            </h1>
+            <h2 class="display-4 formula-text" style="font-family: 'Share Tech Mono', monospace;">
+                BIRTHDAY = FUN + SCIENCE²
+            </h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Main Lab Container -->
+                <div class="lab-container p-5 mb-4">
+                    <!-- Scientist Info -->
+                    <div class="text-center mb-5">
+                        <div class="row justify-content-center align-items-center mb-4">
+                            <div class="col-auto">
+                                <div class="dna-helix" style="font-size: 3rem;">🧬</div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="beaker" style="font-size: 3rem;">⚗️</div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="atom-orbit position-relative d-inline-block">
+                                    <div style="font-size: 2rem;">⚛️</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="display-3 text-white fw-bold mb-3" style="font-family: 'Orbitron', monospace;">
+                            DR. MAYA PATEL
+                        </h3>
+                        <p class="h4 text-info">is conducting a special experiment for her</p>
+                        <div class="display-1 text-warning fw-bold">30th</div>
+                        <p class="h4 text-info">BIRTHDAY LAB SESSION!</p>
+                    </div>
+
+                    <!-- Lab Experiment Details -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="periodic-element rounded-4 p-4 h-100">
+                                <h5 class="fw-bold mb-3">🧪 EXPERIMENT PARAMETERS</h5>
+                                <div class="lh-lg formula-text">
+                                    <p class="mb-2"><strong>📅 Date:</strong> Saturday, September 14, 2025</p>
+                                    <p class="mb-2"><strong>⏰ Time:</strong> 3:00 PM - 8:00 PM</p>
+                                    <p class="mb-2"><strong>🏢 Laboratory:</strong> Science Discovery Center</p>
+                                    <p class="mb-0"><strong>📍 Location:</strong> 789 Innovation Drive, City</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="periodic-element rounded-4 p-4 h-100">
+                                <h5 class="fw-bold mb-3">🔬 RESEARCH ACTIVITIES</h5>
+                                <div class="lh-lg formula-text">
+                                    <p class="mb-2">🧪 Chemistry Experiments</p>
+                                    <p class="mb-2">🔬 Microscopy Sessions</p>
+                                    <p class="mb-2">⚛️ Physics Demonstrations</p>
+                                    <p class="mb-0">🚀 Rocket Launch Activity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Tubes Display -->
+                    <div class="text-center mb-5">
+                        <h5 class="text-white fw-bold mb-4">🧪 ACTIVE EXPERIMENTS</h5>
+                        <div class="row justify-content-center g-3">
+                            <div class="col-auto">
+                                <div class="test-tube mx-auto" style="width: 30px; height: 120px; border: 2px solid #fff;"></div>
+                                <small class="text-info d-block mt-2">Solution A</small>
+                            </div>
+                            <div class="col-auto">
+                                <div class="test-tube mx-auto" style="width: 30px; height: 120px; border: 2px solid #fff; animation-delay: 0.5s;"></div>
+                                <small class="text-info d-block mt-2">Solution B</small>
+                            </div>
+                            <div class="col-auto">
+                                <div class="test-tube mx-auto" style="width: 30px; height: 120px; border: 2px solid #fff; animation-delay: 1s;"></div>
+                                <small class="text-info d-block mt-2">Solution C</small>
+                            </div>
+                            <div class="col-auto">
+                                <div class="test-tube mx-auto" style="width: 30px; height: 120px; border: 2px solid #fff; animation-delay: 1.5s;"></div>
+                                <small class="text-info d-block mt-2">Solution D</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Countdown Timer -->
+                    <div class="reaction-effect rounded-4 p-4 mb-5 border border-success">
+                        <h5 class="text-center text-warning fw-bold mb-4">⏱️ EXPERIMENT COUNTDOWN</h5>
+                        <div id="countdown" class="row text-center g-2">
+                            <div class="col-3">
+                                <div class="periodic-element rounded-3 p-3">
+                                    <div id="days" class="h2 fw-bold mb-0">00</div>
+                                    <small>DAYS</small>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="periodic-element rounded-3 p-3">
+                                    <div id="hours" class="h2 fw-bold mb-0">00</div>
+                                    <small>HOURS</small>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="periodic-element rounded-3 p-3">
+                                    <div id="minutes" class="h2 fw-bold mb-0">00</div>
+                                    <small>MINS</small>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="periodic-element rounded-3 p-3">
+                                    <div id="seconds" class="h2 fw-bold mb-0">00</div>
+                                    <small>SECS</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RSVP Lab Form -->
+                    <div class="bg-dark bg-opacity-50 rounded-4 p-4 mb-5 border border-info">
+                        <h5 class="text-center text-warning fw-bold mb-4">👨‍🔬 JOIN THE RESEARCH TEAM</h5>
+                        <form id="rsvpForm" class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-lg bg-dark text-white border-success" 
+                                       placeholder="Scientist Name" required style="font-family: 'Roboto Mono', monospace;">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-lg bg-dark text-white border-success" 
+                                       placeholder="Lab Email" required style="font-family: 'Roboto Mono', monospace;">
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select form-select-lg bg-dark text-white border-success" required style="font-family: 'Roboto Mono', monospace;">
+                                    <option value="">Research Participation?</option>
+                                    <option value="yes">Yes! Ready to experiment!</option>
+                                    <option value="maybe">Maybe, need safety briefing</option>
+                                    <option value="no">Lab closed for me</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control form-control-lg bg-dark text-white border-success" 
+                                       placeholder="Lab assistants" min="1" max="4" style="font-family: 'Roboto Mono', monospace;">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control bg-dark text-white border-success" rows="3" 
+                                          placeholder="Special research interests or equipment needs" style="font-family: 'Roboto Mono', monospace;"></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="lab-button btn btn-lg px-5 py-3">
+                                    🔬 CONFIRM LAB PARTICIPATION 🔬
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="text-center">
+                        <h5 class="text-info fw-bold mb-4">SHARE THE SCIENTIFIC DISCOVERY!</h5>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <button onclick="shareInvitation('whatsapp')" class="lab-button btn px-4 py-2">
+                                📱 WhatsApp
+                            </button>
+                            <button onclick="shareInvitation('facebook')" class="lab-button btn px-4 py-2">
+                                📘 Facebook
+                            </button>
+                            <button onclick="copyInvitation()" class="lab-button btn px-4 py-2">
+                                📋 Copy Formula
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2025-09-14T15:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (timeLeft < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="col-12"><div class="h2 text-success fw-bold">🔬 EXPERIMENT IN PROGRESS! 🔬</div></div>';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Form
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('🧪 Welcome to the lab team! Your research participation confirmed! 🧪');
+        });
+
+        // Share Functions
+        function shareInvitation(platform) {
+            const text = "Join Dr. Maya's scientific birthday lab experiment! 🔬🧪";
+            const url = window.location.href;
+
+            switch(platform) {
+                case 'whatsapp':
+                    window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`);
+                    break;
+                case 'facebook':
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+                    break;
+            }
+        }
+
+        function copyInvitation() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('🔬 Lab invitation formula copied! Share the discovery! 🔬');
+            });
+        }
+    </script>
+</body>
+</html>

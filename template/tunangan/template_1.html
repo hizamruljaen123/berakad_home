@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan | Tunangan Sarah & Ardi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f0e3;
+            font-family: 'Montserrat', sans-serif;
+            color: #777;
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png"), url('https://pngimg.com/uploads/rose/rose_PNG669.png');
+            background-repeat: repeat, no-repeat;
+            background-position: left top, right bottom;
+            background-size: auto, 300px;
+        }
+
+        .elegant-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .gold-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c0a062, transparent);
+        }
+
+        .cover-image {
+            height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-attachment: fixed;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cover-image:hover {
+            transform: scale(1.05);
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .cover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .floral-divider {
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .floral-divider:before, .floral-divider:after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c0a062, transparent);
+            position: absolute;
+            top: 50%;
+            width: 35%;
+        }
+
+        .floral-divider:before {
+            left: 0;
+        }
+
+        .floral-divider:after {
+            right: 0;
+        }
+
+        .floral-icon {
+            position: relative;
+            color: #c0a062;
+            font-size: 24px;
+            display: inline-block;
+        }
+
+        .couple-names {
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .couple-names:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background-color: #c0a062;
+        }
+
+        .date-box {
+            border: 1px solid #e0d6bd;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .map-container {
+            height: 300px;
+            background-image: url('https://i.pinimg.com/736x/89/25/a1/8925a1190b93c17c749395f6ca9ca894.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(192, 160, 98, 0.1);
+            pointer-events: none;
+        }
+
+        .envelope {
+            width: 200px;
+            height: 120px;
+            background: #faf6f0;
+            border: 1px solid #c0a062;
+            position: relative;
+            margin: 30px auto;
+        }
+
+        .wax-seal {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #b05b3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .footer-ornament {
+            height: 60px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23c0a062" opacity="0.3" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,144C672,149,768,107,864,106.7C960,107,1056,149,1152,160C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .romantic-floral {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .romantic-floral img {
+            position: absolute;
+            opacity: 0.15;
+        }
+        .romantic-floral .left {
+            top: 0; left: 0; width: 250px;
+        }
+        .romantic-floral .right {
+            bottom: 0; right: 0; width: 250px;
+        }
+        .romantic-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: #b97a56;
+            text-shadow: 0 2px 8px #fff6, 0 0 10px #c0a06244;
+        }
+        .soft-glow {
+            box-shadow: 0 0 40px 10px #ffe4e1cc;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="romantic-floral">
+        <img src="https://pngimg.com/uploads/rose/rose_PNG669.png" class="left" />
+        <img src="https://pngimg.com/uploads/rose/rose_PNG669.png" class="right" />
+    </div>
+    <!-- Cover Section -->
+    <div class="cover-image soft-glow parallax flex items-center justify-center relative" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+        <div class="cover-overlay"></div>
+        <div class="flex flex-col items-center justify-center h-full">
+            <h1 class="romantic-title">Sarah & Ardi</h1>
+            <p class="elegant-font text-lg mt-2">Undangan Tunangan</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-3xl mx-auto bg-white py-12 px-6 md:px-12 shadow-md relative -mt-12 z-20 animate-fade-in arabesque-border" style="animation-delay: 0.3s;">
+        <!-- Introduction -->
+        <div class="text-center mb-10">
+            <p class="mb-6 leading-relaxed" style="color: #856442;">Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, perkenankan kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara tunangan putra-putri kami:</p>
+
+            <!-- Bride & Groom Details -->
+            <div class="flex flex-col md:flex-row justify-center gap-10 mb-8">
+                <div>
+                    <h4 class="elegant-font text-xl mb-1">Sarah Septyanti</h4>
+                    <p class="text-xs">Putri pertama dari<br>Bapak Drs. H. Muhammad Ridwan & Ibu Hj. Nur Aisyah, S.Pd.</p>
+                </div>
+
+                <div class="floral-divider flex items-center justify-center md:block md:w-auto">
+                    <div class="floral-icon mx-4 md:mx-0 md:my-2">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="elegant-font text-xl mb-1">Ardi Wicaksono</h4>
+                    <p class="text-xs">Putra kedua dari<br>Bapak Ir. H. Bambang Setiawan & Ibu Hj. Ratna Sari Dewi</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date & Time -->
+        <div class="date-box p-6 mb-10 text-center animate-fade-in" style="animation-delay: 0.5s;">
+            <div class="floral-divider mb-4">
+                <div class="floral-icon">
+                    <i class="far fa-calendar-alt"></i>
+                </div>
+            </div>
+            <h3 class="elegant-font text-2xl mb-2">Hari & Tanggal</h3>
+            <p class="text-2xl elegant-font mb-1" style="color: #c0a062;">Minggu, 4 Februari 2024</p>
+            <p class="text-sm">Pukul 10.00 - 14.00 WIB</p>
+        </div>
+
+        <!-- Location -->
+        <div class="mb-10 animate-fade-in" style="animation-delay: 0.7s;">
+            <div class="floral-divider mb-4">
+                <div class="floral-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+            <h3 class="elegant-font text-2xl text-center mb-4">Tempat Acara</h3>
+            <p class="text-center elegant-font text-xl mb-2">Grand Ballroom Hotel Melati</p>
+            <p class="text-center text-sm mb-4">Jl. Kenanga No. 123, Bandung<br>Lantai 3, Ruang Mawar</p>
+
+            <div class="map-container">
+                <!-- You would replace this with an actual Google Maps iframe -->
+                <div class="w-full h-full flex items-center justify-center bg-gray-100">
+                    <p class="text-gray-500">Peta Lokasi akan ditampilkan di sini</p>
+                </div>
+                <div class="map-overlay"></div>
+            </div>
+        </div>
+
+        <!-- Dress Code -->
+        <div class="text-center mb-10 animate-fade-in" style="animation-delay: 0.9s;">
+            <h3 class="elegant-font text-2xl mb-2">Kode Busana</h3>
+            <p class="elegant-font mb-1" style="color: #c0a062;">Formal - Warna Pastel</p>
+            <p class="text-sm">*Dipersilakan menggunakan warna soft pastel untuk menyesuaikan tema acara</p>
+        </div>
+
+        <!-- RSVP -->
+        <div class="text-center mb-8 animate-fade-in" style="animation-delay: 1.1s;">
+            <button onclick="openRSVP()" class="bg-transparent hover:bg-amber-100 text-gray-800 font-medium py-2 px-8 border border-amber-300 rounded-full transition duration-300 elegant-font" style="border-color: #c0a062; color: #856442;">
+                Konfirmasi Kehadiran
+            </button>
+        </div>
+        
+        <!-- Floral Divider -->
+        <div class="ornamental-divider">
+            <div class="gold-overlay"></div>
+        </div>
+
+        <!-- Envelope -->
+        <div class="envelope animate-fade-in" style="animation-delay: 1.3s; margin-bottom: 40px; border-radius: 10px;">
+            <div class="wax-seal">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+                <p class="text-xs text-center italic">"Doa dan kehadiran Anda sangat kami nantikan"</p>
+            </div>
+        </div>
+
+        <!-- Closing Note -->
+        <div class="text-center mt-10 animate-fade-in" style="animation-delay: 1.5s;">
+            <p class="text-xs mb-4">Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu pada acara ini.</p>
+            <p class="elegant-font italic text-sm" style="color: #c0a062;">- Keluarga Besar Ridwan & Setiawan -</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-ornament mt-12"></div>
+
+    <script>
+        // Add animation classes when scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize elements with opacity 0
+            const animatedElements = document.querySelectorAll('.animate-fade-in');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+            });
+
+            // Slowly fade in when page loads
+            setTimeout(() => {
+                animatedElements.forEach(el => {
+                    el.style.opacity = '1';
+                });
+            }, 100);
+
+            // Play gentle background music (only after interaction)
+            const music = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3');
+            music.volume = 0.2;
+
+            document.addEventListener('click', function initAudio() {
+                music.play().then(() => {
+                    music.pause();
+                    music.currentTime = 0;
+                }).catch(e => console.log('Autoplay prevented'));
+                document.removeEventListener('click', initAudio);
+            });
+        });
+
+        function openRSVP() {
+            // Create floral animation
+            const colors = ['#f8e0e9', '#f8c8dc', '#f4a6c8', '#e695b5'];
+            const container = document.body;
+
+            for (let i = 0; i < 20; i++) {
+                const petal = document.createElement('div');
+                petal.innerHTML = '❁';
+                petal.style.position = 'fixed';
+                petal.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                petal.style.color = colors[Math.floor(Math.random() * colors.length)];
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.top = '-50px';
+                petal.style.zIndex = '9999';
+                petal.style.opacity = Math.random() * 0.7 + 0.3;
+                petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+                container.appendChild(petal);
+
+                const animationDuration = Math.random() * 3 + 2;
+
+                petal.animate([
+                    { top: '-50px', opacity: 0.8 },
+                    { top: '100vh', opacity: 0 }
+                ], {
+                    duration: animationDuration * 1000,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    fill: 'forwards'
+                });
+
+                setTimeout(() => petal.remove(), animationDuration * 1000);
+            }
+
+            // Show RSVP message
+            // alert('Terima kasih atas konfirmasi kehadiran Anda. Silakan hubungi kami di:\n\nSarah: 0811-2345-678\nArdi: 0821-9876-543\n\nuntuk informasi lebih lanjut.');
+            // Show RSVP modal
+            const modal = document.getElementById('rsvpModal');
+            modal.classList.remove('hidden');
+        }
+
+        // Add hover effects to interactive elements
+        const interactiveElements = document.querySelectorAll('button, .date-box');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+            });
+
+            el.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>

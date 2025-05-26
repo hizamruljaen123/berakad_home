@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Adat Minang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f4e9;
+            color: #3a3226;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .border-minang {
+            border: 8px solid #d4a373;
+            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 L100,0 L100,100 L0,100 Z' stroke='%23d4a373' stroke-width='4' fill='none' stroke-dasharray='15,15'/%3E%3C/svg%3E") 20 / 15px;
+        }
+        .ornament-top {
+            position: relative;
+        }
+        .ornament-top:before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 100'%3E%3Cpath d='M0,80 C100,10 150,95 250,40 C350,-15 400,80 500,40 L500,100 L0,100 Z' fill='%23f8f4e9'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .ornament-bottom {
+            position: relative;
+        }
+        .ornament-bottom:after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 100'%3E%3Cpath d='M0,0 L500,0 L500,60 C400,120 350,5 250,60 C150,115 100,0 0,60 Z' fill='%23f8f4e9'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .gold-text {
+            background: linear-gradient(to right, #d4af37, #f9d423);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .rumah-gadang {
+            position: relative;
+            height: 100px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 100'%3E%3Cpath d='M150,0 L300,60 L300,100 L0,100 L0,60 Z' fill='%23d4a373' /%3E%3Cpath d='M140,0 L160,0 L150,20 Z' fill='%23d4a373' /%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .minang-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M20,20 L80,20 L80,40 L60,40 L60,80 L40,80 L40,40 L20,40 Z' fill='none' stroke='%23d4a373' stroke-width='2' /%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-inner {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        .bg-parchment {
+            background-color: #f8f4e9;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 L100,0 L100,100 L0,100 Z' fill='none' stroke='%23d4a373' stroke-width='2' stroke-opacity='0.1'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8 overflow-x-hidden">
+    <div class="w-full max-w-2xl shadow-xl rounded-lg overflow-hidden bg-white">
+        <!-- Cover -->
+        <div class="relative bg-gradient-to-b from-yellow-50 to-amber-100 py-12 px-6 text-center border-b-8 border-amber-200">
+            <div class="ornament-top"></div>
+            <div class="minang-pattern absolute inset-0"></div>
+            <div class="rumah-gadang mx-auto mb-4"></div>
+            
+            <h1 class="title-font text-4xl md:text-5xl font-bold mb-2 gold-text">Undangan Pernikahan</h1>
+            <p class="text-lg italic text-amber-800">"Sah mandi manih, sah bakato janiah"</p>
+            
+            <div class="w-32 h-32 md:w-40 md:h-40 mx-auto mt-8 mb-6 rounded-full overflow-hidden border-4 border-amber-200 shadow-lg">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pasangan" class="w-full h-full object-cover">
+            </div>
+            
+            <h2 class="title-font text-3xl md:text-4xl font-bold mb-1 text-amber-900">Reza & Putri</h2>
+            <p class="text-amber-800">Putra-Putri Minang</p>
+            
+            <div class="absolute bottom-0 left-0 right-0 h-4 bg-amber-200"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="bg-parchment p-6 md:p-8 relative">
+            <div class="text-center mb-8">
+                <p class="text-sm md:text-base italic mb-4 text-amber-800">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:</p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center mb-8">
+                    <div class="w-full md:w-1/2 p-4">
+                        <h3 class="title-font text-2xl font-bold mb-2 text-amber-900">Reza Fahlevi</h3>
+                        <p class="text-sm mb-1 text-amber-800">Putra pertama dari</p>
+                        <p class="font-medium text-amber-800">Bapak Drs. H. Ramli & Ibu Hj. Dewi Ananda</p>
+                        <p class="text-xs italic text-amber-700">Koto Tangah, Padang</p>
+                    </div>
+                    
+                    <div class="text-3xl my-4 md:my-0 md:mx-4 text-amber-500 font-bold">&</div>
+                    
+                    <div class="w-full md:w-1/2 p-4">
+                        <h3 class="title-font text-2xl font-bold mb-2 text-amber-900">Putri Ayunda</h3>
+                        <p class="text-sm mb-1 text-amber-800">Putri pertama dari</p>
+                        <p class="font-medium text-amber-800">Bapak H. Faisal Yunus, S.E. & Ibu Hj. Rina Dwi Astuti</p>
+                        <p class="text-xs italic text-amber-700">Pauh, Padang</p>
+                    </div>
+                </div>
+                
+                <div class="my-6 py-4 border-y-2 border-amber-200 border-dashed">
+                    <h4 class="title-font text-xl font-bold mb-2 text-amber-800">AKAD NIKAH</h4>
+                    <p class="text-lg font-medium mb-1">Sabtu, 12 November 2024</p>
+                    <p class="text-amber-800">Pukul 09.00 - 11.00 WIB</p>
+                    <p class="mt-2 text-amber-800">Masjid Raya Sumatera Barat</p>
+                    <p class="text-sm text-amber-700">Jl. Khatib Sulaiman No.1, Padang</p>
+                </div>
+                
+                <div class="my-6 py-4 border-y-2 border-amber-200 border-dashed">
+                    <h4 class="title-font text-xl font-bold mb-2 text-amber-800">RESEPSI ADAT MINANG</h4>
+                    <p class="text-lg font-medium mb-1">Sabtu, 12 November 2024</p>
+                    <p class="text-amber-800">Pukul 18.00 - 21.00 WIB</p>
+                    <p class="mt-2 text-amber-800">Istana Bundo Kanduang</p>
+                    <p class="text-sm text-amber-700">Jl. Lintas Sumatera, Padang</p>
+                </div>
+            </div>
+            
+            <div class="text-center mb-8">
+                <p class="italic text-sm text-amber-800 mb-6">"Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan kebahagiaan dan kehormatan bagi kami."</p>
+                
+                <div class="flex justify-center space-x-4 mb-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-2 rounded-full border-2 border-amber-300 flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-amber-600 text-xl"></i>
+                        </div>
+                        <p class="text-xs">Lokasi</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-2 rounded-full border-2 border-amber-300 flex items-center justify-center">
+                            <i class="fas fa-calendar-alt text-amber-600 text-xl"></i>
+                        </div>
+                        <p class="text-xs">Simpan Tanggal</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-2 rounded-full border-2 border-amber-300 flex items-center justify-center">
+                            <i class="fas fa-gift text-amber-600 text-xl"></i>
+                        </div>
+                        <p class="text-xs">Kirim Hadiah</p>
+                    </div>
+                </div>
+                
+                <button onclick="playMusic()" class="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-full shadow-md transition duration-300 flex items-center mx-auto">
+                    <i class="fas fa-music mr-2"></i> Putar Musik Adat
+                </button>
+            </div>
+        </div>
+        
+        <!-- Flip Card RSVP -->
+        <div class="flip-card w-full max-w-lg mx-auto px-6 pb-8">
+            <div class="flip-card-inner relative w-full h-64 rounded-lg">
+                <div class="flip-card-front absolute inset-0 bg-amber-50 border-2 border-amber-200 rounded-lg p-6 flex flex-col items-center justify-center text-center shadow-md">
+                    <i class="fas fa-envelope-open-text text-amber-600 text-4xl mb-4"></i>
+                    <h3 class="title-font text-2xl font-bold text-amber-800 mb-2">Konfirmasi Kehadiran</h3>
+                    <p class="text-amber-700">Ketuk untuk mengisi formulir RSVP</p>
+                </div>
+                
+                <div class="flip-card-back absolute inset-0 bg-amber-100 rounded-lg p-6 shadow-md">
+                    <h3 class="title-font text-xl font-bold text-amber-800 mb-4 text-center">Konfirmasi Kehadiran</h3>
+                    <form class="space-y-3">
+                        <div>
+                            <label class="block text-sm text-amber-800 mb-1">Nama</label>
+                            <input type="text" class="w-full px-3 py-2 border border-amber-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-amber-800 mb-1">Jumlah Hadir</label>
+                            <select class="w-full px-3 py-2 border border-amber-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                                <option>1 orang</option>
+                                <option>2 orang</option>
+                                <option>3 orang</option>
+                                <option>4 orang</option>
+                                <option>5 orang atau lebih</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-amber-800 mb-1">Komentar</label>
+                            <textarea class="w-full px-3 py-2 border border-amber-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg font-medium">Kirim Konfirmasi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="bg-gradient-to-t from-amber-100 to-amber-200 py-6 px-6 text-center relative">
+            <div class="ornament-bottom"></div>
+            <p class="text-amber-900 mb-2 font-medium">Atas kehadiran dan doa restunya, kami ucapkan terima kasih.</p>
+            <p class="text-xs italic text-amber-800">"Adat basandi syarak, syarak basandi Kitabullah"</p>
+            
+            <div class="mt-6 flex justify-center space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center hover:bg-amber-700 transition duration-300">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center hover:bg-amber-700 transition duration-300">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center hover:bg-amber-700 transition duration-300">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <div class="mt-4 text-xs text-amber-700">
+                <p>#ResepsiAdatMinang #RezaPutri2024</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="weddingMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+
+    <script>
+        function playMusic() {
+            const music = document.getElementById('weddingMusic');
+            const button = event.currentTarget;
+            
+            if (music.paused) {
+                music.play();
+                button.innerHTML = '<i class="fas fa-pause mr-2"></i> Jeda Musik';
+            } else {
+                music.pause();
+                button.innerHTML = '<i class="fas fa-music mr-2"></i> Putar Musik Adat';
+            }
+        }
+        
+        // Flip card functionality
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.querySelector('.flip-card-inner').classList.toggle('rotate-y-180');
+            });
+        });
+    </script>
+</body>
+</html>

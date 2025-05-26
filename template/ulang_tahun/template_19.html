@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Karnaval Seru</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&family=Roboto:wght@400;700&display=swap');
+        body {
+            background-color: #fef3c7; /* Light yellow */
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+        .invitation-wrapper {
+            background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
+            padding: 20px 0;
+        }
+        .invitation-card {
+            background: #fff;
+            border: 10px solid transparent;
+            border-image: repeating-linear-gradient(-45deg, #ef4444, #ef4444 10px, #3b82f6 10px, #3b82f6 20px, #fbbf24 20px, #fbbf24 30px) 20;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .carnival-tent-top {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 100px;
+            background: repeating-linear-gradient(45deg, #ef4444, #ef4444 20px, #fff 20px, #fff 40px);
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            z-index: 1;
+        }
+        .header-title {
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: #ef4444; /* Red */
+            text-shadow: 3px 3px 0 #fbbf24; /* Yellow shadow */
+            margin-top: 30px; /* Space for tent */
+            position: relative;
+            z-index: 2;
+        }
+        .event-subtitle {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: #3b82f6; /* Blue */
+        }
+        .details-icon {
+            color: #10b981; /* Green */
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .rsvp-button {
+            background-color: #ef4444;
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2rem;
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 3px solid #fbbf24;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .rsvp-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.5);
+        }
+        .footer-banner {
+            background-color: #3b82f6;
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+        .decorative-icon {
+            font-size: 2rem;
+            margin: 0 10px;
+            color: #fbbf24;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+        .countdown-text {
+            font-family: 'Fredoka One', cursive;
+            color: #ef4444;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-9 col-lg-7">
+                    <div class="invitation-card">
+                        <div class="carnival-tent-top"></div>
+                        <div class="text-center mb-4 position-relative" style="z-index: 2;">
+                            <i class="fas fa-star decorative-icon" style="animation-delay: 0.1s;"></i>
+                            <i class="fas fa-magic decorative-icon" style="animation-delay: 0.2s;"></i>
+                            <i class="fas fa-birthday-cake decorative-icon" style="animation-delay: 0.3s;"></i>
+                        </div>
+                        <h1 class="header-title text-center">KARNAVAL SERU!</h1>
+                        <p class="text-center event-subtitle">Ulang Tahun [Nama Anak] yang ke-[Usia]!</p>
+
+                        <div class="my-5 text-center">
+                            <img src="https://via.placeholder.com/200x150.png?text=Foto+Anak+Lucu" alt="Foto [Nama Anak]" class="img-fluid rounded-circle shadow-sm mx-auto d-block mb-3" style="border: 5px solid #fbbf24;">
+                            <p class="lead">Ayo datang dan rayakan bersama kami!</p>
+                        </div>
+
+                        <div class="event-details my-5">
+                            <p class="d-flex align-items-center mb-3"><i class="fas fa-calendar-check details-icon"></i> <strong>Tanggal:</strong> [Tanggal Acara], [Tahun Acara]</p>
+                            <p class="d-flex align-items-center mb-3"><i class="fas fa-clock details-icon"></i> <strong>Waktu:</strong> [Waktu Acara]</p>
+                            <p class="d-flex align-items-center mb-3"><i class="fas fa-map-marked-alt details-icon"></i> <strong>Tempat:</strong> [Lokasi Acara], [Kota]</p>
+                            <p class="d-flex align-items-center mb-3"><i class="fas fa-gifts details-icon"></i> <strong>Akan Ada:</strong> Permainan, Hadiah, Makanan Enak, dan Banyak Kejutan!</p>
+                        </div>
+
+                        <div id="countdown-timer" class="text-center my-4">
+                            <p class="countdown-text">Pesta dimulai dalam: <span id="countdown"></span></p>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <button class="btn rsvp-button" data-toggle="modal" data-target="#rsvpModal">
+                                <i class="fas fa-ticket-alt"></i> Ya, Saya Akan Datang!
+                            </button>
+                        </div>
+
+                        <p class="text-center mt-4 text-muted">
+                            RSVP paling lambat [Tanggal RSVP] ke [Nama Kontak] di [Nomor Telepon RSVP].
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div class="modal fade" id="rsvpModal" tabindex="-1" aria-labelledby="rsvpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 15px; border: 5px solid #3b82f6;">
+                <div class="modal-header" style="background-color: #fbbf24; color: #ef4444; border-bottom: none;">
+                    <h5 class="modal-title font-weight-bold" id="rsvpModalLabel" style="font-family: 'Fredoka One', cursive;">Konfirmasi Kehadiranmu!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #ef4444;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="background-color: #fff8e1;">
+                    <form id="rsvpForm">
+                        <div class="form-group">
+                            <label for="guestName" class="font-weight-bold">Nama Lengkap:</label>
+                            <input type="text" class="form-control" id="guestName" required style="border-color: #3b82f6;">
+                        </div>
+                        <div class="form-group">
+                            <label for="guestCount" class="font-weight-bold">Berapa Orang Akan Hadir?</label>
+                            <input type="number" class="form-control" id="guestCount" min="1" value="1" required style="border-color: #3b82f6;">
+                        </div>
+                        <button type="submit" class="btn btn-block rsvp-button mt-3">Kirim Konfirmasi!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-banner text-center fixed-bottom">
+        Jangan sampai ketinggalan keseruan karnaval ulang tahun [Nama Anak]!
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const guestName = document.getElementById('guestName').value;
+            alert(`Hore, ${guestName}! Sampai jumpa di karnaval! Konfirmasimu sudah kami terima.`);
+            $('#rsvpModal').modal('hide');
+            this.reset();
+        });
+
+        // Countdown Timer
+        const eventDate = new Date("Feb 10, 2025 14:00:00").getTime(); // Ganti dengan tanggal dan waktu acara Anda
+        const countdownElement = document.getElementById('countdown');
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = days + "h : " + hours + "j : " + minutes + "m : " + seconds + "d ";
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.innerHTML = "PESTA SUDAH DIMULAI!";
+                document.getElementById('countdown-timer').innerHTML = "<p class='countdown-text'>PESTA SUDAH DIMULAI!</p>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

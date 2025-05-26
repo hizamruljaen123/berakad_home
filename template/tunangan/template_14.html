@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tunangan Kristiani - Sketsa Tangan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Nanum+Pen+Script&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/rough-notation@0.5.1/dist/rough-notation.umd.min.js"></script>
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #f8f5f2;
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper-3.png');
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .handwritten {
+            font-family: 'Nanum Pen Script', cursive;
+            font-weight: 400;
+        }
+        
+        .sketch-border {
+            position: relative;
+            border: 8px solid transparent;
+            background-clip: padding-box;
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-linecap='square' stroke-dashoffset='0' /%3e%3c/svg%3e");
+        }
+        
+        .sketch-icon {
+            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.2));
+        }
+        
+        .sketch-line {
+            height: 2px;
+            background-image: linear-gradient(to right, #333 50%, transparent 50%);
+            background-size: 16px 2px;
+            background-repeat: repeat-x;
+            margin: 20px 0;
+        }
+        
+        .watercolor-bg {
+            background: linear-gradient(135deg, rgba(255,245,245,0.9) 0%, rgba(255,240,240,0.9) 100%);
+            background-image: url('https://www.transparenttextures.com/patterns/watercolor.png');
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .modal-content {
+            border: 3px solid #333;
+            border-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23333' stroke-width='4' stroke-dasharray='8%2c 12' stroke-linecap='round' stroke-dashoffset='0' /%3e%3c/svg%3e") 1;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <!-- Floating crosses -->
+        <div id="cross1" class="absolute text-7xl text-gray-400 opacity-10" style="left: 15%; top: 20%; transform: rotate(15deg);">✟</div>
+        <div id="cross2" class="absolute text-8xl text-gray-400 opacity-10" style="right: 10%; bottom: 15%; transform: rotate(-5deg);">✟</div>
+        
+        <!-- Sketchy floating elements -->
+        <div class="absolute text-5xl text-gray-500 opacity-20" style="left: 5%; top: 70%;">❦</div>
+        <div class="absolute text-4xl text-gray-500 opacity-20" style="right: 8%; top: 30%;">✿</div>
+    </div>
+    
+    <div class="invitation-card relative z-10 sketch-border watercolor-bg max-w-2xl w-full p-8 md:p-12">
+        <div class="text-center">
+            <!-- Hand-drawn title -->
+            <p class="text-xl mb-2 handwritten tracking-wider" style="font-size: 1.4rem;">Undangan Pertunangan</p>
+            
+            <!-- Main title with animation -->
+            <h1 id="coupleNames" class="text-5xl md:text-6xl font-bold mb-6 handwritten text-center text-gray-800" style="font-family: 'Dancing Script', cursive;">
+                Sarah & Daniel
+            </h1>
+            
+            <div class="sketch-icon inline-block my-4">
+                <i class="fas fa-heart text-4xl text-red-300"></i>
+            </div>
+            
+            <!-- Bible verse with sketch underline -->
+            <div class="relative mb-8">
+                <p class="verse italic text-gray-700">"Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."</p>
+                <p class="text-gray-600">Matius 19:6</p>
+                <div class="absolute bottom-0 left-1/4 w-1/2 h-2px bg-gradient-to-r from-transparent via-gray-500 to-transparent" style="height: 2px;"></div>
+            </div>
+            
+            <!-- Bride and Groom sections -->
+            <div class="flex flex-col md:flex-row justify-center items-center my-8">
+                <div class="text-center mb-8 md:mb-0 md:mr-12">
+                    <h3 class="text-3xl handwritten mb-2" style="font-family: 'Dancing Script', cursive;">Sarah Kristiani</h3>
+                    <p class="text-sm">Putri dari Bapak Markus & Ibu Ruth</p>
+                </div>
+                
+                <div class="sketch-icon text-5xl handwritten mx-4 text-gray-500 floating">
+                    &
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-3xl handwritten mb-2" style="font-family: 'Dancing Script', cursive;">Daniel Samuel</h3>
+                    <p class="text-sm">Putra dari Bapak Yakobus & Ibu Maria</p>
+                </div>
+            </div>
+            
+            <div class="sketch-line w-full my-6"></div>
+            
+            <!-- Date and Location -->
+            <div class="space-y-4 text-left max-w-md mx-auto">
+                <div class="flex items-start">
+                    <i class="fas fa-calendar-alt mt-1 mr-3 text-gray-600"></i>
+                    <div>
+                        <p class="font-semibold">Minggu, 20 Oktober 2024</p>
+                        <p class="text-sm">Pukul 15.00 - Selesai</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <i class="fas fa-church mt-1 mr-3 text-gray-600"></i>
+                    <div>
+                        <p class="font-semibold">Gereja Kasih Sejati</p>
+                        <p class="text-sm">Jl. Bhakti Mulia No.15, Jakarta</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sketch-line w-full my-6"></div>
+            
+            <!-- RSVP Button -->
+            <button id="rsvpBtn" class="rsvp-btn mt-8 px-8 py-3 text-white bg-gradient-to-r from-pink-400 to-rose-500 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 handwritten text-2xl relative overflow-hidden">
+                <span class="relative z-10">Konfirmasi Kehadiran</span>
+                <span class="absolute inset-0 bg-white opacity-10 hover:opacity-15 transition-opacity duration-300"></span>
+            </button>
+            
+            <!-- Closing note -->
+            <div class="mt-10 italic text-gray-600">
+                <p>"Kami sangat mengharapkan doa dan kebersamaan Anda"</p>
+                <p class="mt-2">Keluarga Kristianto & Keluarga Santosa</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="modal-content bg-white rounded-lg max-w-md w-full p-6 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <h3 class="text-2xl font-semibold mb-4 text-center handwritten" style="font-family: 'Dancing Script', cursive;">Konfirmasi Kehadiran</h3>
+            
+            <form id="rsvpForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="name">Nama Anda</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent handwritten" style="font-size: 1.1rem;" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Apakah Anda akan hadir?</label>
+                    <div class="flex flex-wrap gap-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="attendance" value="yes" class="mr-2" checked>
+                            <span class="handwritten">Ya, dengan sukacita</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="attendance" value="no" class="mr-2">
+                            <span class="handwritten">Tidak bisa hadir</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="message">Ayat Alkitab Berkat (opsional)</label>
+                    <textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent handwritten" style="font-size: 1.1rem;" placeholder="Tulis ayat berkat Anda disini..."></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-pink-400 to-rose-500 text-white py-3 px-6 rounded-full shadow hover:shadow-lg transition-all duration-300 handwritten text-xl">
+                    Kirim Konfirmasi
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on load
+            const cross1 = document.getElementById('cross1');
+            const cross2 = document.getElementById('cross2');
+            const coupleNames = document.getElementById('coupleNames');
+            
+            // Initialize Rough Notation for sketch effects
+            const annotations = [];
+            
+            if (typeof RoughNotation !== 'undefined') {
+                // Animate couple names
+                const nameAnnotation = RoughNotation.annotate(coupleNames, {
+                    type: 'underline',
+                    color: '#f9a8d4',
+                    strokeWidth: 2,
+                    padding: 2,
+                    iterations: 1,
+                    roughtness: 1.5
+                });
+                
+                // Animate decorative elements
+                setTimeout(() => {
+                    nameAnnotation.show();
+                    
+                    // Float crosses
+                    cross1.style.transition = 'all 4s ease-in-out';
+                    cross2.style.transition = 'all 4s ease-in-out';
+                    cross1.style.transform = 'rotate(25deg) translateY(20px)';
+                    cross2.style.transform = 'rotate(5deg) translateY(-20px)';
+                    
+                    setTimeout(() => {
+                        cross1.style.transform = 'rotate(15deg) translateY(0)';
+                        cross2.style.transform = 'rotate(-5deg) translateY(0)';
+                        
+                        // Make the crosses pulse gently
+                        setInterval(() => {
+                            cross1.style.opacity = Math.random() > 0.5 ? '0.12' : '0.08';
+                            cross2.style.opacity = Math.random() > 0.5 ? '0.12' : '0.08';
+                        }, 3000);
+                    }, 4000);
+                }, 500);
+            }
+            
+            // RSVP Modal functionality
+            const rsvpBtn = document.getElementById('rsvpBtn');
+            const rsvpModal = document.getElementById('rsvpModal');
+            const closeModal = document.getElementById('closeModal');
+            const rsvpForm = document.getElementById('rsvpForm');
+            
+            rsvpBtn.addEventListener('click', function() {
+                rsvpModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeModal.addEventListener('click', function() {
+                rsvpModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === rsvpModal) {
+                    rsvpModal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Form submission
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const attendance = document.querySelector('input[name="attendance"]:checked').value;
+                const message = document.getElementById('message').value;
+                
+                if (!name) {
+                    alert('Mohon isi nama Anda');
+                    return;
+                }
+                
+                let response = name + ", terima kasih atas konfirmasinya!\n";
+                
+                if (attendance === 'yes') {
+                    response += "Kami bersukacita akan bertemu dengan Anda dalam acara ini!";
+                } else {
+                    response += "Kami mengerti ketidakhadiran Anda dan tetap menghargai doa serta dukungan Anda.";
+                }
+                
+                if (message) {
+                    response += "\n\nTerima kasih untuk ayat berkat yang Anda bagikan:\n" + message;
+                }
+                
+                alert(response);
+                rsvpModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                rsvpForm.reset();
+            });
+            
+            // Add custom colors to Tailwind
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            'handwritten': ['Nanum Pen Script', 'cursive'],
+                            'script': ['Dancing Script', 'cursive']
+                        },
+                        colors: {
+                            'rose-gold': {
+                                300: '#f9a8d4',
+                                400: '#f472b6',
+                                500: '#ec4899'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

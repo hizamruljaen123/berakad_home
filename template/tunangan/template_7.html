@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pertunangan | Rizky & Ani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f7f2;
+            color: #5a4a42;
+            background-image: url("https://www.transparenttextures.com/patterns/rice-paper-3.png"), url('https://pngimg.com/uploads/rose/rose_PNG669.png');
+            background-repeat: repeat, no-repeat;
+            background-position: left top, right bottom;
+            background-size: auto, 220px;
+        }
+        .ornament {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="none" stroke="%23c17a5f" stroke-width="2" d="M50,10 C60,30 80,30 90,50 C80,70 60,70 50,90 C40,70 20,70 10,50 C20,30 40,30 50,10 Z"/></svg>');
+            background-repeat: no-repeat;
+            opacity: 0.6;
+        }
+        .romantic-floral {
+            position: absolute;
+            left: 0; bottom: 0; width: 220px; opacity: 0.13; z-index: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .invitation-card {
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #fff8f6 80%, #ffe4e1 100%);
+            border: 2.5px solid #eab7b7;
+        }
+        .invitation-card:hover {
+            box-shadow: 0 15px 40px -10px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+        }
+        .floral-divider {
+            height: 20px;
+            margin: 20px 0;
+        }
+        .romantic-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.7rem;
+            color: #c17a5f;
+            text-shadow: 0 2px 8px #fff6, 0 0 10px #c17a5f44;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+    <img src="https://pngimg.com/uploads/rose/rose_PNG669.png" class="romantic-floral" alt="rose ornament" />
+    <!-- Ornament decorations -->
+    <div class="ornament top-10 left-10 hidden md:block"></div>
+    <div class="ornament top-10 right-10 hidden md:block"></div>
+    <div class="ornament bottom-10 left-10 hidden md:block"></div>
+    <div class="ornament bottom-10 right-10 hidden md:block"></div>
+
+    <div class="invitation-card bg-white rounded-lg border-2 border-rose-300 p-8 md:p-12 max-w-2xl w-full relative overflow-hidden fade-in">
+        <!-- Watermark effect -->
+        <div class="absolute inset-0 opacity-5 z-0" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path fill=\"none\" stroke=\"%23c17a5f\" stroke-width=\"1\" d=\"M50,20 C60,30 70,30 80,40 C70,50 60,50 50,60 C40,50 30,50 20,40 C30,30 40,30 50,20 Z\"/></svg>'); background-repeat: repeat;"></div>
+        <div class="relative z-10">
+            <!-- Header with couple names -->
+            <div class="text-center mb-8">
+                <p class="text-sm md:text-base uppercase tracking-widest text-amber-600 mb-2">Undangan Pertunangan</p>
+                <h1 class="romantic-title mb-6">Rizky & Ani</h1>
+                <div class="floral-divider flex justify-center items-center">
+                    <span class="block w-8 h-px bg-amber-300 mx-2"></span>
+                    <i class="fas fa-heart text-amber-400 text-sm"></i>
+                    <span class="block w-8 h-px bg-amber-300 mx-2"></span>
+                </div>
+                <p class="text-sm md:text-base mt-4 text-gray-500 italic">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya..." (Ar-Rum: 21)</p>
+            </div>
+
+            <!-- Event details -->
+            <div class="space-y-4 mb-10 text-amber-900">
+                <div class="text-center">
+                    <p class="text-sm text-gray-500 mb-1">Kami mengundang Bapak/Ibu/Saudara/i</p>
+                    <p class="text-lg font-medium mb-6">[Nama Tamu]</p>
+                    <p class="mb-6">Untuk hadir dalam acara pertunangan kami</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 justify-center mb-8">
+                    <div class="text-center">
+                        <h3 class="font-serif text-xl mb-2 text-amber-700">Akad Tunangan</h3>
+                        <p class="text-sm text-gray-600">Sabtu, 12 Agustus 2025</p>
+                        <p class="text-sm text-gray-600">Pukul 10.00 WIB - Selesai</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-serif text-xl mb-2 text-amber-700">Resepsi</h3>
+                        <p class="text-sm text-gray-600">Minggu, 13 Agustus 2025</p>
+                        <p class="text-sm text-gray-600">Pukul 11.00 - 14.00 WIB</p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <h3 class="font-serif text-xl mb-2 text-amber-700">Tempat</h3>
+                    <p class="text-sm text-gray-600">Gedung Serbaguna Baitul Hikmah</p>
+                    <p class="text-sm text-gray-600">Jl. Kenangan Indah No. 123, Jakarta Selatan</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block mt-2 text-amber-600 hover:text-amber-800 transition-all">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Lihat di Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- Countdown timer -->
+            <div class="mb-10 bg-amber-50 rounded-lg p-4 text-center">
+                <h3 class="font-serif text-lg text-amber-700 mb-2">Hitung Mundur Acara</h3>
+                <div id="countdown" class="flex justify-center gap-2">
+                    <div class="bg-white rounded p-2 w-14 shadow-sm">
+                        <div class="text-2xl font-bold text-amber-700" id="days">00</div>
+                        <div class="text-xs text-gray-500">Hari</div>
+                    </div>
+                    <div class="bg-white rounded p-2 w-14 shadow-sm">
+                        <div class="text-2xl font-bold text-amber-700" id="hours">00</div>
+                        <div class="text-xs text-gray-500">Jam</div>
+                    </div>
+                    <div class="bg-white rounded p-2 w-14 shadow-sm">
+                        <div class="text-2xl font-bold text-amber-700" id="minutes">00</div>
+                        <div class="text-xs text-gray-500">Menit</div>
+                    </div>
+                    <div class="bg-white rounded p-2 w-14 shadow-sm">
+                        <div class="text-2xl font-bold text-amber-700" id="seconds">00</div>
+                        <div class="text-xs text-gray-500">Detik</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floral divider -->
+            <div class="floral-divider flex justify-center items-center mb-8">
+                <span class="block w-16 h-px bg-amber-200 mx-2"></span>
+                <i class="fas fa-star text-amber-300 text-xs"></i>
+                <i class="fas fa-star text-amber-300 text-sm mx-1"></i>
+                <i class="fas fa-star text-amber-300 text-xs"></i>
+                <span class="block w-16 h-px bg-amber-200 mx-2"></span>
+            </div>
+
+            <!-- RSVP section -->
+            <div class="text-center mb-8">
+                <p class="text-sm text-gray-500 mb-4">Kehadiran Anda sangat kami nantikan</p>
+                <button onclick="openModal()" class="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-opacity-50">
+                    <i class="fas fa-reply mr-2"></i> Konfirmasi Kehadiran
+                </button>
+            </div>
+
+            <!-- Closing -->
+            <div class="text-center text-sm text-gray-600">
+                <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+                <p class="mt-4">Hormat kami yang berbahagia,</p>
+                <p class="font-serif text-xl text-amber-700 mt-2">Keluarga Besar</p>
+                <p class="font-medium">Rizky & Ani</p>
+            </div>
+
+            <!-- Music toggle -->
+            <div class="absolute top-4 right-4">
+                <button id="musicToggle" class="bg-amber-100 text-amber-700 p-2 rounded-full hover:bg-amber-200 transition-all">
+                    <i class="fas fa-music"></i>
+                </button>
+                <audio id="bgMusic" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full relative">
+            <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="text-xl font-serif text-amber-700 mb-4">Konfirmasi Kehadiran</h3>
+            <form id="rsvpForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Nama Lengkap</label>
+                    <input type="text" class="w-full px-4 py-2 border border-amber-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-300" required>
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Jumlah Hadirin</label>
+                    <select class="w-full px-4 py-2 border border-amber-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-300">
+                        <option>1 orang</option>
+                        <option>2 orang</option>
+                        <option>3 orang</option>
+                        <option>4 orang</option>
+                        <option>5+ orang</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Konfirmasi Kehadiran</label>
+                    <div class="flex space-x-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="attendance" value="hadir" class="text-amber-500 focus:ring-amber-300" checked>
+                            <span class="ml-2">Hadir</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="attendance" value="tidak hadir" class="text-amber-500 focus:ring-amber-300">
+                            <span class="ml-2">Tidak Hadir</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Ucapan (Opsional)</label>
+                    <textarea class="w-full px-4 py-2 border border-amber-200 rounded focus:outline-none focus:ring-2 focus:ring-amber-300" rows="3"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-amber-500 text-white py-2 rounded hover:bg-amber-600 transition-all">Kirim Konfirmasi</button>
+            </form>
+            <p class="text-xs text-gray-400 mt-4">*Konfirmasi kehadiran dapat dilakukan hingga 3 hari sebelum acara.</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const eventDate = new Date('August 12, 2025 10:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').innerHTML = '<div class="text-amber-600 text-lg font-medium">Acara telah dimulai!</div>';
+            }
+        }
+        
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // RSVP Modal
+        function openModal() {
+            document.getElementById('rsvpModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('rsvpModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Form submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih atas konfirmasi kehadiran Anda!');
+            closeModal();
+            this.reset();
+        });
+        
+        // Music toggle
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+        
+        musicToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+            } else {
+                bgMusic.play();
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Ask permission for audio
+        document.addEventListener('click', function() {
+            if (!isPlaying) {
+                bgMusic.play().then(function() {
+                    bgMusic.pause();
+                    isPlaying = false;
+                }).catch(function(error) {
+                    console.log('Auto-play prevented:', error);
+                });
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>

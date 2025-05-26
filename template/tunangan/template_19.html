@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - LDR Bersatu oleh Cinta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f7f7;
+            color: #112d4e;
+        }
+        .handwritten {
+            font-family: 'Playfair Display', serif;
+        }
+        .heart-beat {
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .map-line {
+            position: relative;
+            height: 2px;
+            background: linear-gradient(90deg, #112d4e 0%, #112d4e 50%, transparent 50%, transparent 100%);
+            background-size: 20px 2px;
+            animation: map-move 2s linear infinite;
+        }
+        @keyframes map-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header with couple names -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16 px-4 text-center">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHBhdGggZD0iTTEwMCAwTDEzNi4zNjMgNjMuNjM3TDIwMCA5My4zMDFWMTkzLjMwMUwxMzYuMzYzIDEzNi4zNjNMMTAwIDIwTDYzLjYzNyAxMzYuMzYzTDAgMTkzLjMwMVY5My4zMDFMNjMuNjM3IDYzLjYzN0wxMDAgMHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')]"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="handwritten text-4xl md:text-6xl font-bold mb-2">Undangan Pernikahan</h1>
+            <div class="flex justify-center items-center my-8">
+                <div class="text-right mr-4">
+                    <h2 class="handwritten text-2xl md:text-4xl font-bold">Dira</h2>
+                    <p class="text-sm md:text-base">Putri dari Bapak Hari & Ibu Sari</p>
+                </div>
+                
+                <div class="heart-beat text-red-400 text-4xl mx-2 md:mx-4">♥</div>
+                
+                <div class="text-left ml-4">
+                    <h2 class="handwritten text-2xl md:text-4xl font-bold">Adi</h2>
+                    <p class="text-sm md:text-base">Putra dari Bapak Joko & Ibu Maya</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-blue-900 to-transparent"></div>
+    </header>
+
+    <!-- Couple Photo Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto relative">
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <div class="md:w-1/2 px-4 mb-8 md:mb-0 text-center">
+                    <div class="inline-block relative group">
+                        <img src="https://source.unsplash.com/600x600/?bride" alt="Bride" class="w-64 h-64 rounded-full object-cover border-4 border-white shadow-xl transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md">
+                            <p class="handwritten text-blue-900 font-bold">Dira</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 px-4 text-center">
+                    <div class="inline-block relative group">
+                        <img src="https://source.unsplash.com/600x600/?groom" alt="Groom" class="w-64 h-64 rounded-full object-cover border-4 border-white shadow-xl transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md">
+                            <p class="handwritten text-blue-900 font-bold">Adi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Distance Map -->
+    <section class="py-8 px-4 text-center">
+        <div class="max-w-3xl mx-auto py-8">
+            <div class="flex justify-center items-center mb-6">
+                <div class="px-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <p class="font-medium mt-2">Jakarta</p>
+                </div>
+                
+                <div class="flex-1 px-4 relative">
+                    <div class="map-line"></div>
+                    <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="px-4">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <p class="font-medium mt-2">London</p>
+                </div>
+            </div>
+            
+            <h3 class="handwritten text-2xl md:text-3xl font-bold mb-4">Dua Kota, Satu Hati</h3>
+            <p class="text-lg mb-8">Menempuh jarak 11.621 km demi cinta dan kepercayaan.</p>
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto relative">
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-blue-100 text-blue-700 rounded-full p-3 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                </div>
+                <p class="italic mb-4">"Aku rindu caramu tertawa, rindu suaramu saat bercerita, rindu saat kita berjalan berdua tanpa peduli waktu berlalu."</p>
+                <p class="font-medium">— Setiap Malam Dalam Setiap Telepon</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Details -->
+    <section class="py-16 px-4 bg-blue-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="handwritten text-3xl md:text-4xl font-bold mb-4">Save The Date</h3>
+                <div class="w-24 h-1 bg-blue-300 mx-auto mb-6"></div>
+                <p class="text-lg">Dengan rasa syukur dan bahagia, kami mengundang Anda untuk merayakan hari istimewa kami.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Akad Nikah -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto shadow-md mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="handwritten text-2xl font-bold mb-2">Akad Nikah</h4>
+                        <p class="text-blue-700 font-semibold">Sabtu, 12 Desember 2023</p>
+                        <p class="text-gray-600">08.00 - 10.00 WIB</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="w-24 h-24 bg-blue-500 bg-opacity-10 rounded-lg flex items-center justify-center mx-auto mb-3 overflow-hidden">
+                            <img src="https://source.unsplash.com/200x200/?mosque" alt="Venue" class="w-full h-full object-cover">
+                        </div>
+                        <p class="font-medium">Masjid At-Taqwa</p>
+                        <p class="text-sm text-gray-600">Jl. Kenanga No. 15, Jakarta Selatan</p>
+                    </div>
+                    <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition duration-300">Dapatkah Anda Hadir?</a>
+                </div>
+                
+                <!-- Resepsi -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto shadow-md mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="handwritten text-2xl font-bold mb-2">Resepsi</h4>
+                        <p class="text-blue-700 font-semibold">Sabtu, 12 Desember 2023</p>
+                        <p class="text-gray-600">11.00 - 15.00 WIB</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="w-24 h-24 bg-blue-500 bg-opacity-10 rounded-lg flex items-center justify-center mx-auto mb-3 overflow-hidden">
+                            <img src="https://source.unsplash.com/200x200/?wedding+venue" alt="Venue" class="w-full h-full object-cover">
+                        </div>
+                        <p class="font-medium">Grand Ballroom Hotel Marina</p>
+                        <p class="text-sm text-gray-600">Jl. Panglima Polim No. 44, Jakarta Selatan</p>
+                    </div>
+                    <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition duration-300">Konfirmasi Kehadiran</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Story -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="handwritten text-3xl md:text-4xl font-bold mb-8">Our LDR Journey</h3>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform -translate-x-1/2"></div>
+                
+                <div class="space-y-16">
+                    <!-- Item 1: First Meet -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 text-right mb-6 md:mb-0">
+                            <h4 class="handwritten text-2xl font-bold mb-2">Pertemuan Pertama</h4>
+                            <p class="text-sm text-gray-600 mb-2">Januari 2018 - Di Kampus</p>
+                            <p>Meski sama-sama sibuk dengan aktivitas kuliah, entah mengapa semua kenangan selalu berakhir tentang dirimu...</p>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-blue-500 shadow-xl absolute left-1/2 transform -translate-x-1/2 border-4 border-white flex items-center justify-center">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16">
+                            <div class="w-full h-48 bg-gray-200 rounded-xl overflow-hidden">
+                                <img src="https://source.unsplash.com/600x400/?first+meet" alt="First Meet" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2: LDR Decision -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 order-2 text-left mb-6 md:mb-0">
+                            <h4 class="handwritten text-2xl font-bold mb-2">Membulatkan Tekad</h4>
+                            <p class="text-sm text-gray-600 mb-2">Juni 2019 - Jarak Memisahkan</p>
+                            <p>Saat kamu harus ke London untuk studi, kami memutuskan untuk tetap bersama meski terpisah jarak dan waktu</p>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-blue-500 shadow-xl absolute left-1/2 transform -translate-x-1/2 border-4 border-white flex items-center justify-center">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 order-1 md:order-3">
+                            <div class="w-full h-48 bg-gray-200 rounded-xl overflow-hidden">
+                                <img src="https://source.unsplash.com/600x400/?airport" alt="Airport" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3: Proposal -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 text-right mb-6 md:mb-0">
+                            <h4 class="handwritten text-2xl font-bold mb-2">Layangan Putus</h4>
+                            <p class="text-sm text-gray-600 mb-2">Desember 2022 - Melayang di Zoom</p>
+                            <p>Dari balik layar, dengan gelang tiket pesawat di tangan, aku memintamu untuk membiarkanku menghapus jarak ini selamanya</p>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-blue-500 shadow-xl absolute left-1/2 transform -translate-x-1/2 border-4 border-white flex items-center justify-center">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16">
+                            <div class="w-full h-48 bg-gray-200 rounded-xl overflow-hidden">
+                                <img src="https://source.unsplash.com/600x400/?proposal" alt="Proposal" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4: Wedding -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 order-2 text-left mb-6 md:mb-0">
+                            <h4 class="handwritten text-2xl font-bold mb-2">Akhirnya Bersatu</h4>
+                            <p class="text-sm text-gray-600 mb-2">Desember 2023 - Jakarta</p>
+                            <p>"Aku ingin segera bertemu, mendengar suaramu di sampingku, tak hanya lewat telepon ini, aku ingin melihat matamu.."</p>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-blue-500 shadow-xl absolute left-1/2 transform -translate-x-1/2 border-4 border-white flex items-center justify-center">
+                            <span class="text-white font-bold">4</span>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 order-1 md:order-3">
+                            <div class="w-full h-48 bg-gray-200 rounded-xl overflow-hidden">
+                                <img src="https://source.unsplash.com/600x400/?wedding" alt="Wedding" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="py-16 px-4 bg-blue-900 text-white">
+        <div class="max-w-2xl mx-auto text-center">
+            <h3 class="handwritten text-3xl md:text-4xl font-bold mb-6">Konfirmasi Kehadiran</h3>
+            <p class="mb-8">"Nanti saat kita bertemu, kita bisa pergi ke mana saja..."<br>Kini saatnya kita bertemu dalam hari bahagia kami</p>
+            
+            <form class="text-left bg-white bg-opacity-10 p-6 rounded-xl">
+                <div class="mb-4">
+                    <label class="block mb-2">Nama</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="Nama Anda">
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2">Email/Nomor HP</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-md bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="Kontak Anda">
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2">Jumlah Hadir</label>
+                    <select class="w-full px-4 py-2 rounded-md bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                        <option>1 Orang</option>
+                        <option>2 Orang</option>
+                        <option>3 Orang</option>
+                        <option>4 Orang</option>
+                        <option>5 Orang</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block mb-2">Acara yang Dihadiri</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded bg-white bg-opacity-20 border-white text-white focus:ring-white">
+                            <span class="ml-2">Akad Nikah</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded bg-white bg-opacity-20 border-white text-white focus:ring-white">
+                            <span class="ml-2">Resepsi</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-white text-blue-900 hover:bg-gray-100 font-medium py-2 px-4 rounded-full transition duration-300">Konfirmasi Kehadiran</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="handwritten text-3xl md:text-4xl font-bold mb-12 text-center">Our Memories Across The Distance</h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://source.unsplash.com/500x500/?video+call" alt="Video Call" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://source.unsplash.com/500x500/?letter" alt="Letters" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://source.unsplash.com/500x500/?airport+reunion" alt="Reunion" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://source.unsplash.com/500x500/?couple+laptop" alt="Working Together" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://source.unsplash.com/500x500/?surprise+gift" alt="Gifts" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 8h6m-6 4h6m-6 4h6M7 8h1m-1 4h1m-1 4h1m4-12a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5h8z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://source.unsplash.com/500x500/?plane+ticket" alt="Plane Tickets" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="py-16 px-4 bg-blue-50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h3 class="handwritten text-3xl md:text-4xl font-bold mb-6">Terimakasih</h3>
+            <div class="w-24 h-1 bg-blue-300 mx-auto mb-8"></div>
+            <p class="text-lg mb-8">"Dan saat nanti kita bertemu, apa yang ingin kita lakukan? Aku tidak terlalu memikirkan itu, asalkan bisa bersamamu..."</p>
+            <p class="mb-12">Atas segala doa dan restu yang diberikan, kami mengucapkan terima kasih dari lubuk hati yang paling dalam. Kehadiran Anda akan menjadi hadiah terindah bagi kami.</p>
+            
+            <div class="handwritten text-3xl font-bold text-blue-700">Dira & Adi</div>
+            <div class="handwritten italic text-lg text-gray-600">Indonesia x Inggris • 2018-2023</div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="#" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-white hover:text-blue-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-white hover:text-blue-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-white hover:text-blue-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm">© 2023 Undangan Pernikahan Dira & Adi. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for the gallery items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('.gallery-overlay').style.opacity = '1';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('.gallery-overlay').style.opacity = '0';
+            });
+        });
+
+        // Countdown timer
+        const weddingDate = new Date("December 12, 2023 08:00:00").getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("countdown").innerHTML = `
+                <div class="bg-blue-100 bg-opacity-20 border border-blue-300 rounded-lg p-4 mx-1">
+                    <div class="text-2xl md:text-3xl font-bold">${days}</div>
+                    <div class="text-xs">Hari</div>
+                </div>
+                <div class="bg-blue-100 bg-opacity-20 border border-blue-300 rounded-lg p-4 mx-1">
+                    <div class="text-2xl md:text-3xl font-bold">${hours}</div>
+                    <div class="text-xs">Jam</div>
+                </div>
+                <div class="bg-blue-100 bg-opacity-20 border border-blue-300 rounded-lg p-4 mx-1">
+                    <div class="text-2xl md:text-3xl font-bold">${minutes}</div>
+                    <div class="text-xs">Menit</div>
+                </div>
+                <div class="bg-blue-100 bg-opacity-20 border border-blue-300 rounded-lg p-4 mx-1">
+                    <div class="text-2xl md:text-3xl font-bold">${seconds}</div>
+                    <div class="text-xs">Detik</div>
+                </div>
+            `;
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

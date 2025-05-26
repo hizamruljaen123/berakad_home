@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Garden - Wedding Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Mulish', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            background-image: url('https://www.transparenttextures.com/patterns/white-paper.png');
+        }
+        .garden-container {
+            max-width: 900px;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .floral-heading {
+            font-family: 'Playfair Display', serif;
+            color: #2e7d32;
+        }
+        .couple-names {
+            font-size: 3.5rem;
+            margin: 15px 0;
+            color: #2e7d32;
+        }
+        .floral-border {
+            position: relative;
+            border: 15px solid transparent;
+            border-image: url('https://i.imgur.com/JgxTxJ3.png') 30 stretch;
+            padding: 30px;
+        }
+        .floral-corner {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-image: url('https://i.imgur.com/JgxTxJ3.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        .top-left {
+            top: 0;
+            left: 0;
+            transform: rotate(0deg);
+        }
+        .top-right {
+            top: 0;
+            right: 0;
+            transform: rotate(90deg);
+        }
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            transform: rotate(270deg);
+        }
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            transform: rotate(180deg);
+        }
+        .floral-divider {
+            height: 30px;
+            background-image: url('https://i.imgur.com/8FHqzTH.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 20px auto;
+            opacity: 0.7;
+        }
+        .event-card {
+            border: 1px solid #e8f5e9;
+            border-radius: 10px;
+            background-color: #f1f8e9;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/JgxTxJ3.png');
+            background-size: 200px;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.1);
+        }
+        .btn-garden {
+            background-color: #2e7d32;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .btn-garden:hover {
+            background-color: #1b5e20;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.2);
+        }
+        .color-accent {
+            color: #2e7d32;
+        }
+        .color-light {
+            color: #81c784;
+        }
+        .color-dark {
+            color: #1b5e20;
+        }
+        .flower-badge {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #f1f8e9;
+            border: 2px solid #c8e6c9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .flower-icon {
+            font-size: 2rem;
+            color: #2e7d32;
+            margin-bottom: 5px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #c8e6c9;
+            border: 2px solid #2e7d32;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 25px;
+            bottom: -15px;
+            width: 1px;
+            background-color: #c8e6c9;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+            background-color: #f1f8e9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="garden-container mx-auto shadow rounded-3 overflow-hidden">
+            <!-- Floral corners -->
+            <div class="floral-corner top-left"></div>
+            <div class="floral-corner top-right"></div>
+            <div class="floral-corner bottom-left"></div>
+            <div class="floral-corner bottom-right"></div>
+            
+            <!-- Header Banner -->
+            <div class="bg-pattern text-center py-4">
+                <h3 class="floral-heading mb-0" style="font-size: 1.5rem;">You are cordially invited to the wedding of</h3>
+            </div>
+            
+            <div class="floral-border p-md-5 p-4">
+                <div class="text-center position-relative">
+                    <h1 class="couple-names floral-heading">Violet & Theodore</h1>
+                    <p class="lead mb-4">as they join hands and hearts in marriage</p>
+                    
+                    <div class="floral-divider"></div>
+                    
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-md-4">
+                            <div class="flower-badge">
+                                <i class="fas fa-calendar-alt flower-icon"></i>
+                                <div class="text-center">
+                                    <p class="mb-0 fw-bold">JULY 15, 2024</p>
+                                    <p class="mb-0 small">Monday</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="event-card p-4 h-100">
+                                <h3 class="floral-heading mb-3 color-accent">Ceremony</h3>
+                                <p><i class="fas fa-clock color-light me-2"></i> 2:00 PM</p>
+                                <p><i class="fas fa-map-marker-alt color-light me-2"></i> Rose Garden Pavilion</p>
+                                <p class="mb-0 small">Botanical Gardens, 123 Bloom Street</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="event-card p-4 h-100">
+                                <h3 class="floral-heading mb-3 color-accent">Reception</h3>
+                                <p><i class="fas fa-clock color-light me-2"></i> 4:30 PM</p>
+                                <p><i class="fas fa-map-marker-alt color-light me-2"></i> The Greenhouse</p>
+                                <p class="mb-0 small">Botanical Gardens, 123 Bloom Street</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <h3 class="floral-heading mb-4 color-accent">Schedule of Events</h3>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="timeline-item mb-4">
+                                    <h5 class="mb-1">Guest Arrival</h5>
+                                    <p class="small mb-0">1:30 PM - Please arrive early to be seated</p>
+                                </div>
+                                <div class="timeline-item mb-4">
+                                    <h5 class="mb-1">Ceremony</h5>
+                                    <p class="small mb-0">2:00 PM - Exchange of vows among the roses</p>
+                                </div>
+                                <div class="timeline-item mb-4">
+                                    <h5 class="mb-1">Cocktail Hour</h5>
+                                    <p class="small mb-0">3:00 PM - Garden-inspired drinks & hors d'oeuvres</p>
+                                </div>
+                                <div class="timeline-item mb-4">
+                                    <h5 class="mb-1">Reception</h5>
+                                    <p class="small mb-0">4:30 PM - Dinner, toasts, and celebration</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="mb-1">Dancing</h5>
+                                    <p class="small mb-0">7:00 PM - Under the stars and string lights</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="floral-divider"></div>
+                    
+                    <div class="row mb-5">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="p-3 rounded bg-pattern h-100">
+                                <h4 class="floral-heading color-accent">Attire</h4>
+                                <p class="mb-0">Garden Party Formal</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="p-3 rounded bg-pattern h-100">
+                                <h4 class="floral-heading color-accent">Colors</h4>
+                                <p class="mb-0">Sage, Blush, and Ivory</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 rounded bg-pattern h-100">
+                                <h4 class="floral-heading color-accent">Gifts</h4>
+                                <p class="mb-0">Registry details on our website</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="fst-italic mb-4">"Love planted a rose, and the world turned sweet." — Katharine Lee Bates</p>
+                    
+                    <button class="btn btn-garden mb-3">
+                        <i class="fas fa-envelope me-2"></i> RSVP BY JUNE 15, 2024
+                    </button>
+                    
+                    <p class="small text-muted mt-4">
+                        Please visit our wedding website for more details, accommodations, and to RSVP
+                    </p>
+                    <p class="floral-heading" style="font-size: 1.2rem;">
+                        www.violetandtheodore.com
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Footer Banner -->
+            <div class="bg-pattern text-center py-3">
+                <p class="mb-0 color-dark">We look forward to celebrating with you!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

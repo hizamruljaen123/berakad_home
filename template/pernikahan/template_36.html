@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our December Story | Anniversary Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fef6f7;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 15px 15px 60px 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: rotate(3deg);
+            transition: all 0.3s ease;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        .polaroid:nth-child(even) {
+            transform: rotate(-2deg);
+        }
+        
+        .polaroid:nth-child(even):hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        .memories-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: #f8a5c2 transparent;
+        }
+        
+        .memories-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .memories-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .memories-scroll::-webkit-scrollbar-thumb {
+            background-color: #f8a5c2;
+            border-radius: 20px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+        
+        @keyframes snowfall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .heart-beat {
+            animation: heartBeat 1.3s ease-in-out infinite;
+        }
+        
+        .dotted-line {
+            border-top: 2px dashed #f8a5c2;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Snowflakes -->
+    <div id="snowflakes" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <!-- Header Section -->
+    <header class="relative bg-gradient-to-b from-pink-500 to-rose-500 py-20 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://i.pinimg.com/originals/13/bc/53/13bc531595c612b5e91b7fd7b2d4b7a6.png')] opacity-20"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="flex justify-center mb-6">
+                <div class="w-20 h-20 rounded-full bg-white/30 flex items-center justify-center border-2 border-white/50">
+                    <div class="w-16 h-16 rounded-full bg-white/40 flex items-center justify-center border-2 border-white/50">
+                        <i class="fas fa-heart text-white text-2xl heart-beat"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="text-sm tracking-widest mb-4 opacity-80">MEMPERINGATI HARI BAHAGIA KAMI</h2>
+            <h1 class="pacifico text-5xl md:text-6xl mb-2">16 Desember</h1>
+            <p class="text-xl opacity-90 mb-8">Tahun Ke-<span id="anniversaryYears"></span> Bersama</p>
+            
+            <div class="flex items-center justify-center my-8">
+                <div class="h-px bg-white/40 flex-1"></div>
+                <div class="mx-4 flex items-center">
+                    <div class="w-2 h-2 rounded-full bg-white"></div>
+                    <div class="w-2 h-2 rounded-full bg-white mx-1"></div>
+                    <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <div class="h-px bg-white/40 flex-1"></div>
+            </div>
+            
+            <h3 class="playfair text-2xl md:text-3xl italic mb-8">"Biar dunia coba pisahkan, kita tetap satu tujuan"</h3>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-12">
+                <div>
+                    <h2 class="playfair text-2xl">Sisi</h2>
+                    <p class="text-xs mt-1 opacity-80">Putri dari Bpk. Tono & Ibu Sari</p>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 rounded-full bg-white/30 blur-md"></div>
+                    <div class="relative w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                        <i class="fas fa-heart text-pink-500"></i>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="playfair text-2xl">Adam</h2>
+                    <p class="text-xs mt-1 opacity-80">Putra dari Bpk. Budi & Ibu Rita</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto bg-white py-16 px-6 md:px-12 shadow-lg relative -mt-10 rounded-t-3xl z-10">
+        <!-- Our Story -->
+        <section class="mb-20 text-center">
+            <h2 class="playfair text-3xl font-bold mb-2 text-rose-700">Our December Story</h2>
+            <div class="dotted-line w-32 mx-auto my-6"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="First Meet" class="w-full h-48 object-cover">
+                    <p class="text-center mt-3 text-sm italic">First meet, 2015</p>
+                </div>
+                
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="First Date" class="w-full h-48 object-cover">
+                    <p class="text-center mt-3 text-sm italic">December 16, 2016</p>
+                </div>
+                
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Today" class="w-full h-48 object-cover">
+                    <p class="text-center mt-3 text-sm italic">Together today</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-left">
+                <p class="mb-6 italic">"Bertahun-tahun kita bersama, dengan segala duka dan suka. Ku genggam tanganmu, kau peluk diriku di saat badai, hujan dan pelangi."</p>
+                
+                <p>"Perlahan namun pasti kita bangun semua. Pelan-pelan namun yakin kita jalani semua. Kamu tetap di sini, aku tetap bersamamu. Aku cinta kamu, berjanji untuk terus bersama."</p>
+                
+                <div class="flex justify-center my-10">
+                    <div class="w-12 h-12 rounded-full bg-rose-100 flex items-center justify-center text-rose-500 text-xl">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                </div>
+                
+                <p>"Lewati jarak, lewati waktu. Rindu datang tapi cinta tak layu. Kita sempat jatuh, kita sempat diam. Tapi hati ini tetap pulang padamu."</p>
+            </div>
+        </section>
+        
+        <!-- Memories Timeline -->
+        <section class="mb-20">
+            <h2 class="playfair text-3xl font-bold mb-8 text-center text-rose-700">Timeline Memories</h2>
+            
+            <div class="relative">
+                <!-- Vertical line -->
+                <div class="absolute left-1/2 h-full w-0.5 bg-rose-200 -translate-x-1/2 z-0 hidden md:block"></div>
+                
+                <!-- Timeline items -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Item 1 -->
+                    <div class="timeline-item md:text-right relative">
+                        <div class="md:mr-8">
+                            <div class="inline-block bg-rose-100 text-rose-800 rounded-full px-4 py-1 text-sm font-medium mb-2">2015</div>
+                            <h4 class="playfair text-xl text-rose-700 mb-2">First Meet</h4>
+                            <p class="text-gray-600">Di kantin kampus saat hujan deras, Adam meminjamkan payungnya kepada Sisi.</p>
+                        </div>
+                        <div class="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-4 border-rose-400 z-10"></div>
+                    </div>
+                    
+                    <!-- Empty space for desktop layout -->
+                    <div class="hidden md:block"></div>
+                    
+                    <!-- Item 2 -->
+                    <div class="hidden md:block"></div>
+                    <div class="timeline-item md:text-left relative">
+                        <div class="md:ml-8">
+                            <div class="inline-block bg-rose-100 text-rose-800 rounded-full px-4 py-1 text-sm font-medium mb-2">2016</div>
+                            <h4 class="playfair text-xl text-rose-700 mb-2">16 Desember</h4>
+                            <p class="text-gray-600">Pertama kali mengungkapkan perasaan di bawah pohon natal saat salju pertama turun.</p>
+                        </div>
+                        <div class="hidden md:block absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-4 border-rose-400 z-10"></div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="timeline-item md:text-right relative">
+                        <div class="md:mr-8">
+                            <div class="inline-block bg-rose-100 text-rose-800 rounded-full px-4 py-1 text-sm font-medium mb-2">2018</div>
+                            <h4 class="playfair text-xl text-rose-700 mb-2">LDR Journey</h4>
+                            <p class="text-gray-600">Adam harus pindah ke Surabaya untuk pekerjaan selama 2 tahun.</p>
+                        </div>
+                        <div class="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-4 border-rose-400 z-10"></div>
+                    </div>
+                    
+                    <!-- Empty space for desktop layout -->
+                    <div class="hidden md:block"></div>
+                    
+                    <!-- Item 4 -->
+                    <div class="hidden md:block"></div>
+                    <div class="timeline-item md:text-left relative">
+                        <div class="md:ml-8">
+                            <div class="inline-block bg-rose-100 text-rose-800 rounded-full px-4 py-1 text-sm font-medium mb-2">2020</div>
+                            <h4 class="playfair text-xl text-rose-700 mb-2">Back Together</h4>
+                            <p class="text-gray-600">Adam kembali ke Jakarta dan memutuskan untuk tinggal bersama.</p>
+                        </div>
+                        <div class="hidden md:block absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-4 border-rose-400 z-10"></div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="timeline-item md:text-right relative">
+                        <div class="md:mr-8">
+                            <div class="inline-block bg-rose-100 text-rose-800 rounded-full px-4 py-1 text-sm font-medium mb-2">2022</div>
+                            <h4 class="playfair text-xl text-rose-700 mb-2">First Home</h4>
+                            <p class="text-gray-600">Membeli apartemen pertama bersama di daerah Jakarta Selatan.</p>
+                        </div>
+                        <div class="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-4 border-rose-400 z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Anniversary Celebration -->
+        <section class="bg-rose-50 rounded-2xl p-8 md:p-12 mb-20 relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-rose-100 opacity-30"></div>
+            <div class="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-rose-100 opacity-20"></div>
+            
+            <div class="relative z-10">
+                <h2 class="playfair text-3xl font-bold mb-6 text-center text-rose-700">Celebration Invitation</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10">
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition">
+                        <div class="w-16 h-16 rounded-full bg-rose-100 flex items-center justify-center text-rose-500 text-2xl mx-auto mb-4">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="playfair text-xl font-bold mb-2">Date</h3>
+                        <p class="text-gray-700">16 December 2023</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition">
+                        <div class="w-16 h-16 rounded-full bg-rose-100 flex items-center justify-center text-rose-500 text-2xl mx-auto mb-4">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <h3 class="playfair text-xl font-bold mb-2">Time</h3>
+                        <p class="text-gray-700">15.00 - Selesai</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition">
+                        <div class="w-16 h-16 rounded-full bg-rose-100 flex items-center justify-center text-rose-500 text-2xl mx-auto mb-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="playfair text-xl font-bold mb-2">Location</h3>
+                        <p class="text-gray-700">Garden Terrace Restaurant</p>
+                        <p class="text-xs text-gray-500">Jl. Kemang Raya No.12, Jakarta</p>
+                    </div>
+                </div>
+                
+                <div class="mt-10">
+                    <h3 class="playfair text-xl font-bold mb-4 text-center text-rose-700">Dress Code</h3>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <div class="bg-white px-4 py-2 rounded-full border border-rose-200 shadow-sm">
+                            <i class="fas fa-user mr-2 text-rose-400"></i>Soft Pink for Ladies
+                        </div>
+                        <div class="bg-white px-4 py-2 rounded-full border border-rose-200 shadow-sm">
+                            <i class="fas fa-user mr-2 text-rose-400"></i>Light Gray for Men
+                        </div>
+                        <div class="bg-white px-4 py-2 rounded-full border border-rose-200 shadow-sm">
+                            <i class="fas fa-snowflake mr-2 text-rose-400"></i>Winter Accessories
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Photo Gallery -->
+        <section class="mb-20">
+            <h2 class="playfair text-3xl font-bold mb-2 text-center text-rose-700">Our Journey Photos</h2>
+            <div class="dotted-line w-32 mx-auto my-6"></div>
+            
+            <div class="memories-scroll flex overflow-x-auto pb-6 gap-4 snap-mandatory snap-x">
+                <div class="flex-shrink-0 w-64 hSeeley-80 snap-center">
+                    <img src="https://images.unsplash.com/photo-1492567291473-fe3dfc175b45?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Memory 1" class="w-full h-full object-cover rounded-lg shadow">
+                </div>
+                <div class="flex-shrink-0 w-64 h-80 snap-center">
+                    <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Memory 2" class="w-full h-full object-cover rounded-lg shadow">
+                </div>
+                <div class="flex-shrink-0 w-64 h-80 snap-center">
+                    <img src="https://images.unsplash.com/photo-1501824937308-111a485bab3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Memory 3" class="w-full h-full object-cover rounded-lg shadow">
+                </div>
+                <div class="flex-shrink-0 w-64 h-80 snap-center">
+                    <img src="https://images.unsplash.com/photo-1529333164850-6f0d068e34c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Memory 4" class="w-full h-full object-cover rounded-lg shadow">
+                </div>
+                <div class="flex-shrink-0 w-64 h-80 snap-center">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Memory 5" class="w-full h-full object-cover rounded-lg shadow">
+                </div>
+            </div>
+        </section>
+        
+        <!-- RSVP -->
+        <section class="text-center">
+            <h2 class="playfair text-3xl font-bold mb-4 text-rose-700">Will You Join Us?</h2>
+            <p class="max-w-lg mx-auto mb-10">"Tak mudah bertahan, tapi kita mampu. Dengan air mata dan tawa yang satu. Kau selalu jadi rumahku, dan aku tempatmu kembali selalu."</p>
+            
+            <button onclick="showRSVP()" class="bg-gradient-to-r from-rose-500 to-pink-500 text-white font-medium py-3 px-12 rounded-full hover:shadow-lg transition-all hover:scale-105 transform focus:outline-none">
+                Confirm Your Presence
+            </button>
+            
+            <div class="mt-16">
+                <p class="playfair text-xl mb-4">Sisi & Adam</p>
+                <div class="flex justify-center gap-4 text-pink-400">
+                    <a href="#" class="hover:text-rose-600 transition"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-rose-600 transition"><i class="fas fa-phone-alt"></i></a>
+                    <a href="#" class="hover:text-rose-600 transition"><i class="far fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-pink-50 py-12 text-center text-pink-600 relative">
+        <div class="max-w-2xl mx-auto">
+            <div class="pacifico text-3xl mb-4">16 Desember</div>
+            <p class="mb-6">"Enam belas Desember... selamanya milik kita"</p>
+            <p class="text-xs opacity-60">© 2023 Our December Story. All memories preserved.</p>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0 overflow-hidden h-10">
+            <div class="absolute -bottom-5 left-1/4 w-32 h-32 rounded-full bg-pink-100 opacity-30"></div>
+            <div class="absolute -bottom-8 right-1/3 w-40 h-40 rounded-full bg-pink-100 opacity-20"></div>
+        </div>
+    </footer>
+    
+    <!-- Floating Music Player -->
+    <div class="fixed bottom-4 left-4 bg-white shadow-lg rounded-full p-3 z-50 hover:shadow-xl transition">
+        <button id="musicToggle" class="w-12 h-12 rounded-full bg-pink-100 text-pink-500 flex items-center justify-center">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+    
+    <!-- Countdown Floating Badge -->
+    <div class="fixed top-4 right-4 bg-white shadow-md rounded-full px-4 py-2 z-50 flex items-center border border-pink-200">
+        <i class="fas fa-heart text-pink-400 mr-2"></i>
+        <span id="countdownDisplays" class="text-sm font-medium">Loading...</span>
+    </div>
+
+    <script>
+        // Calculate anniversary years
+        function calculateAnniversaryYears() {
+            const startDate = new Date('2016-12-16');
+            const currentDate = new Date();
+            let years = currentDate.getFullYear() - startDate.getFullYear();
+            
+            // Adjust if anniversary hasn't occurred yet this year
+            if (currentDate.getMonth() < startDate.getMonth() || 
+               (currentDate.getMonth() === startDate.getMonth() && 
+                currentDate.getDate() < startDate.getDate())) {
+                years--;
+            }
+            
+            document.getElementById('anniversaryYears').textContent = years + 1;
+        }
+        
+        // Create snowflakes
+        function createSnowflakes() {
+            const container = document.getElementById('snowflakes');
+            const snowflakeCount = 30;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'absolute text-pink-200 pointer-events-none';
+                snowflake.innerHTML = '❄';
+                snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.top = '-20px';
+                snowflake.style.animation = 'snowfall ' + (Math.random() * 10 + 5) + 's linear infinite';
+                snowflake.style.animationDelay = Math.random() * 5 + 's';
+                snowflake.style.opacity = Math.random() * 0.6 + 0.3;
+                container.appendChild(snowflake);
+            }
+        }
+        
+        // Update countdown
+        function updateCountdown() {
+            const anniversaryDate = new Date();
+            anniversaryDate.setMonth(11); // December
+            anniversaryDate.setDate(16);
+            
+            // If anniversary has passed this year, set to next year
+            if (new Date() > anniversaryDate) {
+                anniversaryDate.setFullYear(anniversaryDate.getFullYear() + 1);
+            }
+            
+            const now = new Date();
+            const diff = anniversaryDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdownDisplays').textContent = `${days}d ${hours}h ${minutes}m`;
+        }
+        
+        // Music player
+        function setupMusicPlayer() {
+            const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3');
+            audio.loop = true;
+            
+            const toggleBtn = document.getElementById('musicToggle');
+            let isPlaying = false;
+            
+            toggleBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    audio.pause();
+                    toggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+                    toggleBtn.classList.remove('text-pink-600');
+                    toggleBtn.classList.add('text-pink-500');
+                } else {
+                    audio.play();
+                    toggleBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    toggleBtn.classList.add('text-pink-600');
+                    toggleBtn.classList.remove('text-pink-500');
+                }
+                isPlaying = !isPlaying;
+            });
+        }
+        
+        // RSVP Form
+        function showRSVP() {
+            const rsvpModal = document.createElement('div');
+            rsvpModal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4';
+            rsvpModal.innerHTML = `
+                <div class="bg-white rounded-xl max-w-md w-full p-6 relative animate-fade-in">
+                    <button onclick="this.parentNode.remove()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <h3 class="playfair text-2xl text-center mb-6 text-rose-700">We'd Love to See You!</h3>
+                    
+                    <form class="space-y-4" onsubmit="submitRSVP(event)">
+                        <div>
+                            <label class="block text-gray-700 mb-1">Your Name</label>
+                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-1">Attending?</label>
+                            <div class="flex gap-4">
+                                <label class="flex items-center">
+                                    <input type="radio" name="attending" value="yes" checked class="text-pink-500 focus:ring-pink-500">
+                                    <span class="ml-2">Wouldn't Miss It!</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="attending" value="no" class="text-pink-500 focus:ring-pink-500">
+                                    <span class="ml-2">Send Love Only</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-1">Number of Guests</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5+</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-1">Message (Optional)</label>
+                            <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-medium py-3 px-12 rounded-full hover:shadow-lg transition-all">
+                            Send to the Couple
+                        </button>
+                    </form>
+                </div>
+            `;
+            
+            document.body.appendChild(rsvpModal);
+        }
+        
+        function submitRSVP(event) {
+            event.preventDefault();
+            const form = event.target;
+            
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i> Sending...';
+            
+            // Simulate submission
+            setTimeout(() => {
+                form.parentNode.remove();
+                
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.className = 'fixed top-4 right-4 bg-white shadow-lg rounded-lg px-6 py-4 flex items-start z-50 animate-slide-in';
+                successMsg.innerHTML = `
+                    <div class="mr-4 mt-1 text-green-500">
+                        <i class="fas fa-check-circle text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800">Thank You!</h4>
+                        <p class="text-sm text-gray-600">Your response has been recorded. See you on December 16!</p>
+                    </div>
+                    <button onclick="this.parentNode.remove()" class="ml-4 text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                
+                document.body.appendChild(successMsg);
+                
+                // Remove after 5 seconds
+                setTimeout(() => {
+                    successMsg.classList.remove('animate-slide-in');
+                    successMsg.classList.add('animate-fade-out');
+                    setTimeout(() => successMsg.remove(), 500);
+                }, 5000);
+            }, 1500);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateAnniversaryYears();
+            createSnowflakes();
+            setupMusicPlayer();
+            updateCountdown();
+            setInterval(updateCountdown, 60000); // Update every minute
+        });
+    </script>
+</body>
+</html>

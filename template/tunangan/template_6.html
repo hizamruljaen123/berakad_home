@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tunangan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f9f7f3;
+            color: #5a5656;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+        }
+        
+        .invitation {
+            background: #fffcf8;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 2.5rem 3.5rem;
+            width: 90%;
+            max-width: 650px;
+            text-align: center;
+            border: 1px solid #e8dbc5;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .invitation:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #9d7c5e, #c19a6b, #9d7c5e);
+        }
+        
+        .floral-decoration {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .floral-top-right {
+            top: 20px;
+            right: 20px;
+            transform: rotate(15deg);
+        }
+        
+        .floral-bottom-left {
+            bottom: 20px;
+            left: 20px;
+            transform: rotate(-15deg);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            color: #9d7c5e;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c19a6b, transparent);
+            margin: 1.5rem 0;
+        }
+        
+        .names {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #7a5c50;
+            margin: 1.5rem 0;
+            line-height: 1.3;
+        }
+        
+        .names span {
+            display: inline-block;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            color: #9d7c5e;
+            vertical-align: middle;
+        }
+        
+        .details {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .detail-item {
+            margin-bottom: 1rem;
+        }
+        
+        .detail-title {
+            font-weight: bold;
+            color: #9d7c5e;
+            display: block;
+        }
+        
+        .footer {
+            color: #7a5c50;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .rsvp-button {
+            background: #9d7c5e;
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(157, 124, 94, 0.3);
+        }
+        
+        .rsvp-button:hover {
+            background: #7a5c50;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(157, 124, 94, 0.4);
+        }
+        
+        .rsvp-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: #fffcf8;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #9d7c5e;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #7a5c50;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #e8dbc5;
+            border-radius: 5px;
+            background: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .invitation {
+                padding: 1.5rem;
+            }
+            
+            .names {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation">
+        <i class="floral-decoration floral-top-right fa-solid fa-heart" style="font-size: 3rem;"></i>
+        <i class="floral-decoration floral-bottom-left fa-solid fa-heart" style="font-size: 3rem;"></i>
+        
+        <div class="content">
+            <div class="header">
+                <h1>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h1>
+                <p>Undangan Pertunangan</p>
+            </div>
+            
+            <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+            
+            <div class="divider"></div>
+            
+            <p>Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i untuk berkenan hadir dalam acara pertunangan:</p>
+            
+            <div class="names">
+                <div>Rania Azzahra<span>&</span></div>
+                <div>Farid Fauzan</div>
+            </div>
+            
+            <div class="details">
+                <div class="detail-item">
+                    <span class="detail-title">Hari & Tanggal</span>
+                    Sabtu, 15 Juni 2024
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-title">Waktu</span>
+                    10.00 - 12.00 WIB
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-title">Tempat</span>
+                    Ballroom Hotel Grand Wijaya<br>
+                    Jl. Wijaya Timur No. 123, Jakarta Selatan
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <p>Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/i, kami mengucapkan terima kasih.</p>
+            <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+            
+            <div class="footer">
+                <p>Hormat kami,</p>
+                <p>Keluarga Besar Fauzan & Keluarga Besar Azzahra</p>
+            </div>
+            
+            <button class="rsvp-button" id="rsvpBtn">
+                <i class="fas fa-reply me-2"></i> Konfirmasi Kehadiran
+            </button>
+            
+            <div class="mt-4 text-xs text-gray-500">
+                * Dresscode: Pastel Colors
+            </div>
+        </div>
+    </div>
+    
+    <div class="rsvp-modal" id="rsvpModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2 class="text-xl font-semibold mb-4" style="color: #9d7c5e;">Konfirmasi Kehadiran</h2>
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attendees">Jumlah Hadir</label>
+                    <select id="attendees" class="form-control" required>
+                        <option value="" disabled selected>Pilih jumlah</option>
+                        <option value="1">1 Orang</option>
+                        <option value="2">2 Orang</option>
+                        <option value="3">3 Orang</option>
+                        <option value="4">4 Orang</option>
+                        <option value="5">5 Orang</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Pesan (Opsional)</label>
+                    <textarea id="message" class="form-control" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="rsvp-button w-full mt-4">
+                    <i class="fas fa-paper-plane me-2"></i> Kirim Konfirmasi
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('rsvpModal');
+            const btn = document.getElementById('rsvpBtn');
+            const closeBtn = document.getElementById('closeModal');
+            const form = document.getElementById('rsvpForm');
+            
+            btn.addEventListener('click', function() {
+                modal.style.display = 'flex';
+            });
+            
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const attendees = document.getElementById('attendees').value;
+                const message = document.getElementById('message').value;
+                
+                // Here you would typically send this data to a server
+                console.log('RSVP Submitted:', { name, attendees, message });
+                
+                // Show success message
+                alert('Terima kasih atas konfirmasi kehadiran Anda!');
+                
+                // Reset form and close modal
+                form.reset();
+                modal.style.display = 'none';
+            });
+            
+            // Animate invitation card on load
+            const invitation = document.querySelector('.invitation');
+            setTimeout(() => {
+                invitation.style.transform = 'translateY(0)';
+                invitation.style.opacity = '1';
+            }, 100);
+            
+            invitation.style.transform = 'translateY(20px)';
+            invitation.style.opacity = '0';
+            invitation.style.transition = 'all 0.6s ease';
+        });
+    </script>
+</body>
+</html>

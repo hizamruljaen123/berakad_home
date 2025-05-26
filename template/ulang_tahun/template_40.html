@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Fantasy Magic Theme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Uncial+Antiqua:wght@400&family=MedievalSharp:wght@400&display=swap" rel="stylesheet">
+    <style>
+        .fantasy-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: magical-gradient 8s ease infinite;
+        }
+        
+        @keyframes magical-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .magical-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .particle {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: float-magic 6s ease-in-out infinite;
+        }
+        
+        @keyframes float-magic {
+            0%, 100% { 
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+        
+        .crystal-glow {
+            animation: crystal-shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes crystal-shine {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(147, 51, 234, 0.8);
+                transform: scale(1.05);
+            }
+        }
+        
+        .magic-wand {
+            animation: wand-cast 4s ease-in-out infinite;
+        }
+        
+        @keyframes wand-cast {
+            0%, 100% { transform: rotate(0deg) translateY(0px); }
+            25% { transform: rotate(15deg) translateY(-5px); }
+            50% { transform: rotate(-10deg) translateY(-10px); }
+            75% { transform: rotate(5deg) translateY(-5px); }
+        }
+        
+        .spell-circle {
+            animation: spell-rotation 10s linear infinite;
+        }
+        
+        @keyframes spell-rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .dragon-breath {
+            background: radial-gradient(circle, rgba(255, 99, 71, 0.3), transparent);
+            animation: breath-effect 3s ease-in-out infinite;
+        }
+        
+        @keyframes breath-effect {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+        
+        .enchanted-scroll {
+            background: linear-gradient(45deg, #f4f1de, #e07a5f, #f2cc8f);
+            border: 3px solid #8b4513;
+            position: relative;
+            transform: rotate(-1deg);
+            transition: all 0.3s ease;
+        }
+        
+        .enchanted-scroll:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        
+        .enchanted-scroll::before {
+            content: "🖋️";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 2rem;
+            animation: quill-write 2s ease-in-out infinite;
+        }
+        
+        @keyframes quill-write {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+        }
+        
+        .phoenix-feather {
+            animation: feather-float 5s ease-in-out infinite;
+        }
+        
+        @keyframes feather-float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                filter: hue-rotate(0deg);
+            }
+            33% { 
+                transform: translateY(-15px) rotate(120deg);
+                filter: hue-rotate(120deg);
+            }
+            66% { 
+                transform: translateY(-8px) rotate(240deg);
+                filter: hue-rotate(240deg);
+            }
+        }
+        
+        .magic-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: 2px solid #f093fb;
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .magic-button:hover {
+            background: linear-gradient(45deg, #764ba2, #667eea);
+            box-shadow: 0 0 30px rgba(147, 51, 234, 0.7);
+            transform: translateY(-3px);
+        }
+        
+        .magical-text {
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: text-shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes text-shimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+        
+        .unicorn-horn {
+            animation: horn-spiral 6s linear infinite;
+        }
+        
+        @keyframes horn-spiral {
+            0% { transform: rotate(0deg); filter: hue-rotate(0deg); }
+            100% { transform: rotate(360deg); filter: hue-rotate(360deg); }
+        }
+        
+        .mystical-orb {
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(147, 51, 234, 0.6), rgba(99, 102, 241, 0.4));
+            animation: orb-pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes orb-pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(147, 51, 234, 0.6);
+            }
+            50% { 
+                transform: scale(1.1);
+                box-shadow: 0 0 50px rgba(147, 51, 234, 0.9);
+            }
+        }
+    </style>
+</head>
+<body class="fantasy-bg min-h-screen text-white">
+    <!-- Magical Particles -->
+    <div class="magical-particles" id="magicalParticles"></div>
+    
+    <div class="relative z-10 container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="unicorn-horn text-8xl mb-4">🦄</div>
+            <h1 class="magical-text text-7xl font-bold mb-4" style="font-family: 'Uncial Antiqua', cursive;">
+                ENCHANTED CELEBRATION
+            </h1>
+            <div class="text-4xl text-pink-200" style="font-family: 'MedievalSharp', cursive;">
+                ✨ A Magical Birthday Quest ✨
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-6xl mx-auto">
+            <!-- Enchanted Scroll -->
+            <div class="enchanted-scroll rounded-lg p-8 mb-8">
+                <!-- Birthday Person Info -->
+                <div class="text-center mb-8">
+                    <div class="relative inline-block mb-6">
+                        <div class="mystical-orb w-32 h-32 rounded-full mx-auto mb-4"></div>
+                        <div class="phoenix-feather text-6xl absolute -top-4 -right-4">🪶</div>
+                    </div>
+                    <h2 class="text-6xl font-bold text-purple-800 mb-4" style="font-family: 'Cinzel', serif;">
+                        PRINCESS LUNA STARWEAVER
+                    </h2>
+                    <p class="text-3xl text-amber-700">is turning</p>
+                    <div class="text-8xl font-bold text-red-600 crystal-glow inline-block px-6 py-2 rounded-lg bg-gradient-to-r from-yellow-400 to-pink-400">
+                        16
+                    </div>
+                    <p class="text-2xl text-amber-700 mt-2">in a realm of magic and wonder!</p>
+                </div>
+
+                <!-- Event Details -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-purple-900 bg-opacity-70 rounded-lg p-6 border-4 border-gold-400 crystal-glow">
+                        <h3 class="text-3xl font-bold text-yellow-300 mb-4" style="font-family: 'Cinzel', serif;">
+                            📜 ROYAL DECREE
+                        </h3>
+                        <div class="space-y-3 text-pink-100 text-lg" style="font-family: 'MedievalSharp', cursive;">
+                            <p><span class="text-yellow-400 font-bold">Date:</span> Sunday, October 31, 2025</p>
+                            <p><span class="text-yellow-400 font-bold">Time:</span> 6:00 PM - 11:00 PM</p>
+                            <p><span class="text-yellow-400 font-bold">Realm:</span> Enchanted Castle Grounds</p>
+                            <p><span class="text-yellow-400 font-bold">Portal:</span> 999 Mystic Avenue, City</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-indigo-900 bg-opacity-70 rounded-lg p-6 border-4 border-purple-400 crystal-glow">
+                        <h3 class="text-3xl font-bold text-cyan-300 mb-4" style="font-family: 'Cinzel', serif;">
+                            🎭 MAGICAL QUESTS
+                        </h3>
+                        <div class="space-y-3 text-pink-100 text-lg" style="font-family: 'MedievalSharp', cursive;">
+                            <p>🧙‍♀️ Spell Casting Lessons</p>
+                            <p>🐉 Dragon Treasure Hunt</p>
+                            <p>🧚‍♀️ Fairy Ring Dancing</p>
+                            <p>🔮 Crystal Ball Readings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Magic Wand and Spell Circle -->
+                <div class="text-center mb-8">
+                    <div class="relative inline-block">
+                        <div class="spell-circle w-48 h-48 border-4 border-dashed border-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="magic-wand text-6xl">🪄</div>
+                        </div>
+                        <p class="text-2xl text-amber-700 font-bold">Cast your RSVP spell below!</p>
+                    </div>
+                </div>
+
+                <!-- Dragon Breath Effect -->
+                <div class="dragon-breath rounded-lg p-6 mb-8">
+                    <h3 class="text-3xl font-bold text-center text-yellow-300 mb-6">🐉 COUNTDOWN TO MAGICAL ADVENTURE</h3>
+                    <div id="countdown" class="flex justify-center space-x-4 text-center">
+                        <div class="mystical-orb rounded-lg p-4 border-2 border-pink-400">
+                            <div id="days" class="text-4xl font-bold text-white">00</div>
+                            <div class="text-pink-200">DAYS</div>
+                        </div>
+                        <div class="mystical-orb rounded-lg p-4 border-2 border-pink-400">
+                            <div id="hours" class="text-4xl font-bold text-white">00</div>
+                            <div class="text-pink-200">HOURS</div>
+                        </div>
+                        <div class="mystical-orb rounded-lg p-4 border-2 border-pink-400">
+                            <div id="minutes" class="text-4xl font-bold text-white">00</div>
+                            <div class="text-pink-200">MINS</div>
+                        </div>
+                        <div class="mystical-orb rounded-lg p-4 border-2 border-pink-400">
+                            <div id="seconds" class="text-4xl font-bold text-white">00</div>
+                            <div class="text-pink-200">SECS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RSVP Spell Form -->
+                <div class="bg-gradient-to-r from-purple-800 to-indigo-800 rounded-lg p-6 mb-8 border-4 border-pink-400 crystal-glow">
+                    <h3 class="text-3xl font-bold text-center text-yellow-300 mb-6">🔮 ENCHANTMENT REGISTRY</h3>
+                    <form id="rsvpForm" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Your Magical Name" 
+                                   class="w-full px-4 py-3 bg-purple-900 border-2 border-pink-400 rounded text-white placeholder-pink-200 focus:border-yellow-400 focus:outline-none"
+                                   style="font-family: 'MedievalSharp', cursive;">
+                            <input type="email" placeholder="Crystal Ball Contact" 
+                                   class="w-full px-4 py-3 bg-purple-900 border-2 border-pink-400 rounded text-white placeholder-pink-200 focus:border-yellow-400 focus:outline-none"
+                                   style="font-family: 'MedievalSharp', cursive;">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <select class="w-full px-4 py-3 bg-purple-900 border-2 border-pink-400 rounded text-white focus:border-yellow-400 focus:outline-none"
+                                    style="font-family: 'MedievalSharp', cursive;">
+                                <option>Will you join the quest?</option>
+                                <option>Yes! I accept the magical invitation!</option>
+                                <option>Maybe, consulting my crystal ball</option>
+                                <option>Alas, I must decline this quest</option>
+                            </select>
+                            <input type="number" placeholder="Fellow adventurers" min="1" max="4"
+                                   class="w-full px-4 py-3 bg-purple-900 border-2 border-pink-400 rounded text-white placeholder-pink-200 focus:border-yellow-400 focus:outline-none"
+                                   style="font-family: 'MedievalSharp', cursive;">
+                        </div>
+                        <textarea placeholder="Special magical abilities or costume preferences" rows="3"
+                                  class="w-full px-4 py-3 bg-purple-900 border-2 border-pink-400 rounded text-white placeholder-pink-200 focus:border-yellow-400 focus:outline-none"
+                                  style="font-family: 'MedievalSharp', cursive;"></textarea>
+                        <button type="submit" class="magic-button w-full py-4 text-white font-bold rounded-lg text-xl">
+                            ✨ CAST RSVP SPELL ✨
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Share Magical Invitation -->
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-yellow-300 mb-4">SPREAD THE MAGICAL WORD</h3>
+                    <div class="flex justify-center space-x-4">
+                        <button onclick="shareInvitation('whatsapp')" class="magic-button px-6 py-3 text-white font-bold rounded">
+                            📱 WhatsApp
+                        </button>
+                        <button onclick="shareInvitation('facebook')" class="magic-button px-6 py-3 text-white font-bold rounded">
+                            📘 Facebook
+                        </button>
+                        <button onclick="copyInvitation()" class="magic-button px-6 py-3 text-white font-bold rounded">
+                            📋 Copy Spell
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Magical Particles Effect
+        function createMagicalParticle() {
+            const particles = ['✨', '🌟', '⭐', '💫', '🔮', '🧚‍♀️', '🦋', '🌙'];
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.getElementById('magicalParticles').appendChild(particle);
+            
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                }
+            }, 8000);
+        }
+
+        // Create magical particles every 600ms
+        setInterval(createMagicalParticle, 600);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2025-10-31T18:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (timeLeft < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="text-5xl font-bold text-yellow-300">✨ THE MAGIC BEGINS! ✨</div>';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Form
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('✨ Your magical RSVP has been cast! Welcome to the enchanted celebration! ✨');
+        });
+
+        // Share Functions
+        function shareInvitation(platform) {
+            const text = "Join Princess Luna's magical birthday quest! ✨🦄";
+            const url = window.location.href;
+
+            switch(platform) {
+                case 'whatsapp':
+                    window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`);
+                    break;
+                case 'facebook':
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+                    break;
+            }
+        }
+
+        function copyInvitation() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('✨ Magical invitation spell copied! Share the enchantment! ✨');
+            });
+        }
+    </script>
+</body>
+</html>

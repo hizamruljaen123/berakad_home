@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tunangan Persia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Scheherazade New', serif;
+            background: #f7f2e7;
+            color: #4a3e36;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+        }
+        
+        .invitation {
+            background: #fdf9f3;
+            border-radius: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            padding: 3rem;
+            width: 90%;
+            max-width: 650px;
+            text-align: center;
+            border: 8px solid #bb9a7a;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-image: url("https://www.transparenttextures.com/patterns/persian.png");
+        }
+        
+        .border-pattern {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid #a78b72;
+            border-radius: 3px;
+            pointer-events: none;
+        }
+        
+        .arabic-bismillah {
+            font-family: 'Lateef', serif;
+            font-size: 2.8rem;
+            color: #966a44;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .header h1 {
+            font-family: 'Lateef', serif;
+            font-size: 3.2rem;
+            color: #7d5b4e;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.6rem;
+            color: #966a44;
+            margin-top: 0;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #bb9a7a, transparent);
+            margin: 1.5rem auto;
+            width: 60%;
+        }
+        
+        .names {
+            font-family: 'Lateef', serif;
+            font-size: 2.5rem;
+            color: #7d5b4e;
+            margin: 2rem 0;
+            line-height: 1.4;
+        }
+        
+        .names span {
+            display: block;
+            color: #bb9a7a;
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        
+        .details {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .detail-item {
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding: 0 1rem;
+        }
+        
+        .detail-title {
+            font-weight: bold;
+            color: #966a44;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .footer {
+            color: #7d5b4e;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+        
+        .rsvp-button {
+            background: linear-gradient(to right, #966a44, #bb9a7a);
+            color: #fdf9f3;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 15px rgba(157, 124, 94, 0.3);
+            font-family: 'Scheherazade New', serif;
+        }
+        
+        .rsvp-button:hover {
+            background: linear-gradient(to right, #7d5b4e, #966a44);
+            transform: translateY(-2px);
+        }
+        
+        .persian-motif {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23bb9a7a" d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z"/></svg>');
+            background-size: contain;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .motif-tl {
+            top: 20px;
+            left: 20px;
+        }
+        
+        .motif-tr {
+            top: 20px;
+            right: 20px;
+            transform: rotate(90deg);
+        }
+        
+        .motif-bl {
+            bottom: 20px;
+            left: 20px;
+            transform: rotate(270deg);
+        }
+        
+        .motif-br {
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(180deg);
+        }
+        
+        .invitation-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .invitation {
+                padding: 1.5rem;
+            }
+            
+            .names {
+                font-size: 2rem;
+            }
+            
+            .arabic-bismillah {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation">
+        <div class="border-pattern"></div>
+        <div class="persian-motif motif-tl"></div>
+        <div class="persian-motif motif-tr"></div>
+        <div class="persian-motif motif-bl"></div>
+        <div class="persian-motif motif-br"></div>
+        
+        <div class="invitation-content">
+            <div class="arabic-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+            
+            <div class="header">
+                <h1>دعوة الخطوبة</h1>
+                <p>Undangan Pertunangan</p>
+            </div>
+            
+            <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+            <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+            
+            <div class="divider"></div>
+            
+            <p>Dengan penuh hormat, kami mengundang kehadiran Bapak/Ibu/Saudara/i pada acara pertunangan:</p>
+            
+            <div class="names">
+                <div>فرحان بن عبد الله</div>
+                <span>و</span>
+                <div>نور العين بنت محمد</div>
+            </div>
+            
+            <div class="details">
+                <div class="detail-item">
+                    <span class="detail-title">Tanggal</span>
+                    جمعة، ٢٥ ذو القعدة ١٤٤٥<br>
+                    Jumat, 31 Mei 2024
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-title">Waktu</span>
+                    بعد صلاة العصر<br>
+                    16.30 - 18.30 WIB
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-title">Tempat</span>
+                    قاعة الملك سليمان<br>
+                    Ballroom Sultan Hotel, Jl. Teuku Umar No. 1, Jakarta
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <p>Atas kehadiran dan doa restu, kami ucapkan terima kasih.</p>
+            <p>وَالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+            
+            <div class="footer">
+                <p>Familia Farhan & Familia Nur</p>
+            </div>
+            
+            <button class="rsvp-button">
+                <i class="fas fa-hands-praying mr-2"></i> Konfirmasi Kehadiran
+            </button>
+        </div>
+    </div>
+</body>
+</html>

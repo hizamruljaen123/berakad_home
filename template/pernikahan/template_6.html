@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Tema Arabian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Scheherazade New', serif;
+            background-color: #f8f3e6;
+            color: #5a3921;
+        }
+        
+        .arabic-title {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            color: #aa6f45;
+        }
+        
+        .gold-border {
+            border: 12px solid transparent;
+            border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23aa845a" stroke-width="5" stroke-dasharray="10,5"/></svg>') 10;
+        }
+        
+        .floral-pattern {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2C8 5 5 6 2 8c3 2 4 5 6 8-2 3-5 4-8 6 2-3 3-6 6-8C5 13 4 16 2 18c3-2 6-3 8-6 2 3 5 4 8 6-2-2-3-5-6-8 3-2 4-5 6-8-3 2-6 3-8 6z" fill="%23aa845a" opacity="0.1"/></svg>');
+        }
+        
+        .date-circle {
+            background: linear-gradient(135deg, #aa6f45 0%, #d4a373 100%);
+            box-shadow: 0 4px 15px rgba(170, 111, 69, 0.3);
+        }
+        
+        .names {
+            text-shadow: 1px 1px 2px rgba(90, 57, 33, 0.2);
+        }
+        
+        @keyframes flicker {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
+        }
+        
+        .candle {
+            animation: flicker 2s infinite alternate;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-8 px-4">
+    <div class="max-w-2xl w-full gold-border floral-pattern bg-cover bg-center relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-10 left-10 text-gold-500 text-4xl"><i class="fas fa-mosque"></i></div>
+            <div class="absolute bottom-10 right-10 text-gold-500 text-4xl"><i class="fas fa-mosque"></i></div>
+            <div class="absolute top-1/2 left-1/4 text-gold-500 text-3xl"><i class="fas fa-star-and-crescent"></i></div>
+            <div class="absolute top-1/3 right-1/4 text-gold-500 text-3xl"><i class="fas fa-star-and-crescent"></i></div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="relative z-10 py-12 px-8 text-center">
+            <!-- Header with arabic calligraphy -->
+            <div class="mb-6">
+                <div class="arabic-title mb-2">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+                <p class="italic text-gold-600">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+            </div>
+            
+            <!-- Lamp decoration -->
+            <div class="flex justify-center mb-6">
+                <div class="relative">
+                    <div class="w-16 h-16 bg-gradient-to-b from-yellow-200 to-yellow-500 rounded-full mx-auto candle"></div>
+                    <div class="w-8 h-20 bg-amber-900 mx-auto mt-2 rounded-b-lg shadow-md"></div>
+                </div>
+            </div>
+            
+            <!-- Couple names -->
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold names text-amber-900 mb-2">Aisyah binti Abdullah</h1>
+                <div class="text-2xl my-2"><i class="fas fa-heart text-rose-500 mx-4"></i></div>
+                <h1 class="text-4xl font-bold names text-amber-900">Muhammad bin Ibrahim</h1>
+            </div>
+            
+            <!-- Wedding details -->
+            <div class="mb-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <!-- Date -->
+                <div class="date-circle p-4 rounded-full w-32 h-32 mx-auto flex flex-col items-center justify-center text-white">
+                    <div class="text-3xl font-bold">16</div>
+                    <div class="text-xl">Juni</div>
+                    <div class="text-lg">2024</div>
+                </div>
+                
+                <!-- Main text -->
+                <div class="md:col-span-1">
+                    <p class="text-lg mb-2">Dengan memohon rahmat dan ridho Allah SWT,</p>
+                    <p class="text-lg mb-2">kami bermaksud mengundang Bapak/Ibu/Saudara/i</p>
+                    <p class="text-lg mb-2">untuk menghadiri acara sakral pernikahan kami.</p>
+                </div>
+                
+                <!-- Time -->
+                <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                    <div class="text-2xl font-semibold text-amber-800">Pukul 09.00 WIB</div>
+                    <div class="text-lg mt-2 text-amber-700">s/d Selesai</div>
+                </div>
+            </div>
+            
+            <!-- Location -->
+            <div class="mb-8 bg-amber-50 p-4 rounded-lg border border-amber-200">
+                <h2 class="text-2xl font-bold text-amber-800 mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Tempat Acara</h2>
+                <p class="text-lg">Gedung Al-Andalus Ballroom</p>
+                <p class="text-lg">Jl. Seribu Satu Malam No. 1001, Kota Baghdad</p>
+                <div class="mt-4">
+                    <a href="#" class="inline-block bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-lg transition duration-300">
+                        <i class="fas fa-map-marked-alt mr-2"></i> Lihat Peta
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Closing -->
+            <div class="mb-4">
+                <p class="italic">Merupakan suatu kehormatan dan kebahagiaan bagi kami</p>
+                <p class="italic">apabila Bapak/Ibu/Saudara/i berkenan hadir</p>
+                <p class="italic">untuk memberikan doa restu kepada kami.</p>
+            </div>
+            
+            <div class="mt-6">
+                <p class="text-lg font-semibold">Hormat kami,</p>
+                <p class="text-xl font-bold mt-2 text-amber-900">Keluarga Besar Abdullah & Ibrahim</p>
+            </div>
+            
+            <!-- Decorative footer -->
+            <div class="mt-8 flex justify-between items-center">
+                <div><i class="fas fa-star text-amber-500 text-xl"></i></div>
+                <div class="flex-1 border-t-2 border-dotted border-amber-300 mx-4"></div>
+                <div><i class="fas fa-star text-amber-500 text-xl"></i></div>
+                <div class="flex-1 border-t-2 border-dotted border-amber-300 mx-4"></div>
+                <div><i class="fas fa-star text-amber-500 text-xl"></i></div>
+            </div>
+            <p class="mt-2 text-sm text-amber-700">*Acara akan menerapkan protokol kesehatan</p>
+        </div>
+    </div>
+    
+    <!-- Confetti effect (optional) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple confetti effect when clicking anywhere
+            document.body.addEventListener('click', function(e) {
+                const colors = ['#aa6f45', '#d4a373', '#aa845a', '#5a3921', '#ffedd5'];
+                
+                for (let i = 0; i < 20; i++) {
+                    createConfetti(
+                        e.clientX, 
+                        e.clientY, 
+                        colors[Math.floor(Math.random() * colors.length)]
+                    );
+                }
+            });
+            
+            function createConfetti(x, y, color) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.left = x + 'px';
+                confetti.style.top = y + 'px';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = color;
+                confetti.style.borderRadius = '50%';
+                confetti.style.pointerEvents = 'none';
+                confetti.style.transform = 'translate(-50%, -50%)';
+                confetti.style.zIndex = '1000';
+                
+                document.body.appendChild(confetti);
+                
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 3 + Math.random() * 5;
+                const xVelocity = Math.cos(angle) * velocity;
+                const yVelocity = Math.sin(angle) * velocity;
+                
+                let posX = x;
+                let posY = y;
+                let opacity = 1;
+                let rotation = 0;
+                
+                const animate = () => {
+                    posX += xVelocity;
+                    posY += yVelocity + 0.5; // gravity
+                    opacity -= 0.02;
+                    rotation += 5;
+                    
+                    confetti.style.left = posX + 'px';
+                    confetti.style.top = posY + 'px';
+                    confetti.style.opacity = opacity;
+                    confetti.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+                    
+                    if (opacity > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        confetti.remove();
+                    }
+                };
+                
+                animate();
+            }
+        });
+    </script>
+</body>
+</html>

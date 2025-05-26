@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tunangan | Dua Hati Satu Janji</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sacramento&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .floating-slow {
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        .floral-divider {
+            position: relative;
+            height: 30px;
+            overflow: hidden;
+        }
+        .floral-divider:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4a373, transparent);
+        }
+        .floral-divider:after {
+            content: "✽ ✽ ✽";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 0 20px;
+            color: #d4a373;
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+        }
+        .invitation-container {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .invitation-inner {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .invitation-container:hover .invitation-inner {
+            transform: rotateY(5deg) rotateX(3deg);
+        }
+        .envelope-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #f8edeb 0%, #fae1dd 100%);
+            transform: translateZ(-1px);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+        .couple-photo {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 12px solid white;
+            transition: all 0.3s ease;
+        }
+        .couple-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .theme-text {
+            background: linear-gradient(to right, #d4a373, #cd5c5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .modal {
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 font-montserrat flex items-center justify-center min-h-screen p-5 relative overflow-x-hidden">
+    <!-- Background elements -->
+    <div class="absolute -left-20 -top-20 w-40 h-40 bg-pink-100 rounded-full opacity-40 transform rotate-45"></div>
+    <div class="absolute -right-20 bottom-0 w-60 h-60 bg-yellow-100 rounded-full opacity-20 transform -rotate-12"></div>
+    
+    <!-- Floating flowers -->
+    <i class="fas fa-heart text-pink-200 text-4xl absolute top-1/4 right-10 floating-slow"></i>
+    <i class="fas fa-leaf text-green-200 text-3xl absolute bottom-1/3 left-12 floating"></i>
+    <i class="fas fa-spa text-rose-100 text-5xl absolute top-1/3 left-20 floating"></i>
+    <i class="fas fa-heart text-amber-200 text-3xl absolute bottom-1/4 right-20 floating-slow"></i>
+    
+    <!-- Main invitation container -->
+    <div class="invitation-container w-full max-w-2xl z-10">
+        <div class="invitation-inner relative">
+            <div class="envelope-back rounded-lg"></div>
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden relative z-10 p-10 sm:p-14 border-8 border-white transform -rotate-1 hover:rotate-0 transition-all duration-300">
+                <!-- Couple photo placeholder -->
+                <div class="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full couple-photo bg-gradient-to-br from-amber-100 to-rose-100 mb-8 flex items-center justify-center text-4xl text-amber-600">
+                    <i class="fas fa-heart"></i>
+                </div>
+                
+                <!-- Header -->
+                <div class="text-center mb-10">
+                    <p class="text-sm text-amber-600 tracking-widest mb-2">UNDANGAN KHUSUS</p>
+                    <h1 class="text-4xl sm:text-5xl font-playfair font-bold mb-3 theme-text">Tunangan Kami</h1>
+                    <p class="text-gray-600 italic font-montserrat">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya..." <br>(QS. Ar-Rum: 21)</p>
+                </div>
+                
+                <!-- Floral divider -->
+                <div class="floral-divider my-8"></div>
+                
+                <!-- Couple names -->
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl sm:text-3xl font-playfair mb-1">Tia & Adrian</h2>
+                    <p class="text-gray-600">beserta keluarga</p>
+                </div>
+                
+                <!-- Event details -->
+                <div class="space-y-5 mb-12">
+                    <div class="flex items-start space-x-3">
+                        <div class="text-amber-600 mt-1"><i class="far fa-calendar-check"></i></div>
+                        <div>
+                            <h3 class="text-sm text-gray-500">HARI & TANGGAL</h3>
+                            <p class="text-lg">Sabtu, 18 November 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-amber-600 mt-1"><i class="far fa-clock"></i></div>
+                        <div>
+                            <h3 class="text-sm text-gray-500">WAKTU</h3>
+                            <p class="text-lg">09.00 - 12.00 WIB</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-amber-600 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h3 class="text-sm text-gray-500">TEMPAT</h3>
+                            <p class="text-lg">Ballroom Grand Hyatt Hotel</p>
+                            <p class="text-gray-600">Jalan Kebon Sirih Kav. 22-24, Jakarta Pusat</p>
+                            <a href="#" class="text-amber-600 text-sm inline-block mt-1">Lihat Map <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floral divider -->
+                <div class="floral-divider my-8"></div>
+                
+                <!-- RSVP button -->
+                <div class="text-center">
+                    <button onclick="openModal()" class="px-8 py-3 bg-gradient-to-r from-amber-500 to-rose-400 text-white rounded-full font-medium tracking-wide hover:shadow-lg transition-all duration-300 hover:from-amber-600 hover:to-rose-500 transform hover:-translate-y-1">
+                        <i class="fas fa-reply mr-2"></i> Konfirmasi Kehadiran
+                    </button>
+                    <p class="text-gray-500 text-sm mt-2">Mohon konfirmasi kehadiran sebelum 10 November 2023</p>
+                </div>
+            </div>
+            
+            <!-- Ribbon corner decorations -->
+            <div class="absolute -top-2 -left-2 w-16 h-16 rounded-md bg-amber-500 transform -rotate-45 -z-10"></div>
+            <div class="absolute -top-2 -right-2 w-16 h-16 rounded-md bg-rose-400 transform rotate-45 -z-10"></div>
+            <div class="absolute -bottom-2 -left-2 w-16 h-16 rounded-md bg-rose-400 transform rotate-45 -z-10"></div>
+            <div class="absolute -bottom-2 -right-2 w-16 h-16 rounded-md bg-amber-500 transform -rotate-45 -z-10"></div>
+        </div>
+    </div>
+    
+    <!-- Confirmation Modal -->
+    <div id="rsvpModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 transition-all duration-300">
+        <div class="bg-white rounded-lg max-w-md w-full p-8 relative shadow-2xl transform transition-all duration-300 scale-95 modal-show:scale-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="text-xl font-playfair font-bold mb-6 text-center text-amber-700">Konfirmasi Kehadiran</h3>
+            
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-1">Nama Anda</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-300">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">Jumlah Hadir</label>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-300">
+                        <option>1 Orang</option>
+                        <option>2 Orang</option>
+                        <option>3 Orang</option>
+                        <option>4 Orang</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-1">Kabar / Doa</label>
+                    <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-300"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-rose-400 text-white py-2 px-4 rounded-md hover:from-amber-600 hover:to-rose-500 transition-colors duration-300">
+                    Kirim Konfirmasi
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Audio player (hidden) -->
+    <audio id="weddingAudio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    <button id="musicToggle" class="fixed bottom-5 right-5 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-amber-500 z-50" onclick="toggleMusic()">
+        <i class="fas fa-music"></i>
+    </button>
+    
+    <script>
+        // For demo purposes, we'll use this simple JS for modal and music toggle
+        function openModal() {
+            document.getElementById('rsvpModal').classList.add('show');
+        }
+        
+        function closeModal() {
+            document.getElementById('rsvpModal').classList.remove('show');
+        }
+        
+        let isPlaying = false;
+        const audio = document.getElementById('weddingAudio');
+        
+        function toggleMusic() {
+            const toggleBtn = document.getElementById('musicToggle');
+            if (isPlaying) {
+                audio.pause();
+                toggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+                toggleBtn.classList.remove('text-rose-500');
+                toggleBtn.classList.add('text-amber-500');
+            } else {
+                audio.play();
+                toggleBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                toggleBtn.classList.remove('text-amber-500');
+                toggleBtn.classList.add('text-rose-500');
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('rsvpModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

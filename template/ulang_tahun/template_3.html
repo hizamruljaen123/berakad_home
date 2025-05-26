@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Fun Party - Birthday Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS without frameworks */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-color: #f0f9ff;
+            color: #333;
+            line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .invitation-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fun-title {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 3px 3px 0 #0096c7;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .age-badge {
+            background-color: #ffd166;
+            color: #333;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 2.5rem;
+            margin: 0 auto;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-body {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #0077b6;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-box {
+            background-color: #f0f9ff;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 2px dashed #00b4d8;
+        }
+        
+        .info-box h3 {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #0077b6;
+        }
+        
+        .details-box {
+            background-color: #f0f9ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 2px dashed #00b4d8;
+        }
+        
+        .rsvp-button {
+            display: inline-block;
+            background-color: #ffd166;
+            color: #333;
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #e9c46a;
+            transition: all 0.2s;
+        }
+        
+        .rsvp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 0 #e9c46a;
+        }
+        
+        .rsvp-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 3px 0 #e9c46a;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+            bottom: 0;
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        .balloon::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.7);
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .balloon:nth-child(1) {
+            left: 10%;
+            background-color: #ff6b6b;
+            animation-delay: 0s;
+        }
+        
+        .balloon:nth-child(2) {
+            left: 30%;
+            background-color: #ffd166;
+            animation-delay: 1s;
+        }
+        
+        .balloon:nth-child(3) {
+            left: 50%;
+            background-color: #06d6a0;
+            animation-delay: 2s;
+        }
+        
+        .balloon:nth-child(4) {
+            left: 70%;
+            background-color: #118ab2;
+            animation-delay: 3s;
+        }
+        
+        .balloon:nth-child(5) {
+            left: 90%;
+            background-color: #9d4edd;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        .card-footer {
+            background-color: #f0f9ff;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 2px dashed #00b4d8;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                margin: 20px auto;
+            }
+            
+            .fun-title {
+                font-size: 2.5rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="invitation-card">
+            <!-- Header Section -->
+            <div class="card-header">
+                <h1 class="fun-title">Max's Birthday Party!</h1>
+                <p class="subtitle">You're invited to a day full of fun and games!</p>
+                <div class="age-badge">7</div>
+                
+                <!-- Decorative Balloons -->
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="card-body">
+                <h2 class="section-title">Join Us For The Celebration!</h2>
+                
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h3>When</h3>
+                        <p><strong>Saturday, June 12th</strong></p>
+                        <p>2:00 PM - 5:00 PM</p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3>Where</h3>
+                        <p><strong>Adventure Zone</strong></p>
+                        <p>123 Fun Street</p>
+                        <p>Playtime City</p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3>Theme</h3>
+                        <p><strong>Superheroes</strong></p>
+                        <p>Costumes encouraged!</p>
+                    </div>
+                </div>
+                
+                <div class="details-box">
+                    <h3 class="section-title">Party Activities</h3>
+                    <p>
+                        Get ready for an action-packed afternoon with games, face painting, 
+                        a bouncy castle, and a special superhero training session!
+                    </p>
+                    <p style="margin-top: 15px;">
+                        Pizza, cake, and refreshments will be served.
+                    </p>
+                </div>
+                
+                <p>
+                    Please let us know if your little superhero can join the adventure!
+                </p>
+                
+                <button class="rsvp-button">
+                    RSVP by June 1st
+                </button>
+                
+                <p style="margin-top: 20px; font-size: 0.9rem;">
+                    For questions, please contact Sarah (Max's Mom)<br>
+                    Phone: (555) 123-4567 | Email: sarah@email.com
+                </p>
+            </div>
+            
+            <!-- Footer -->
+            <div class="card-footer">
+                <p>No gifts necessary, but if you wish to bring something, Max loves books and art supplies!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Invitation - Tunangan Bali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            overflow-x: hidden;
+            color: white;
+        }
+        
+        .game-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        .invitation-card {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23102a44"/><path d="M0,0 L100,100 M0,100 L100,0" stroke="%233b82f6" stroke-width="1" opacity="0.2"/></svg>');
+            border: 6px solid #3b82f6;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), inset 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .health-bar {
+            height: 8px;
+            background: #dc2626;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 5px #dc2626; }
+            50% { box-shadow: 0 0 15px #dc2626; }
+            100% { box-shadow: 0 0 5px #dc2626; }
+        }
+        
+        .pixel-bali {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 10"><rect width="2" height="2" x="0" y="4" fill="%23f59e0b"/><rect width="2" height="2" x="2" y="2" fill="%23f59e0b"/><rect width="2" height="2" x="4" y="0" fill="%23f59e0b"/><rect width="2" height="2" x="6" y="2" fill="%23f59e0b"/><rect width="2" height="2" x="8" y="4" fill="%23f59e0b"/><rect width="2" height="2" x="10" y="6" fill="%23f59e0b"/><rect width="2" height="2" x="12" y="8" fill="%23f59e0b"/><rect width="2" height="2" x="14" y="6" fill="%23f59e0b"/><rect width="2" height="2" x="16" y="4" fill="%23f59e0b"/><rect width="2" height="2" x="18" y="2" fill="%23f59e0b"/></svg>');
+            background-size: 20px;
+        }
+        
+        .game-start-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        .game-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .game-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+        
+        .game-button:active {
+            transform: translateY(0);
+        }
+        
+        .game-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.13);
+            opacity: 0;
+            transform: rotate(30deg);
+            transition: all 0.5s;
+        }
+        
+        .game-button:hover::after {
+            opacity: 1;
+            left: 100%;
+        }
+        
+        .character {
+            transition: all 0.3s;
+        }
+        
+        .character:hover {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 5px 15px rgba(245, 158, 11, 0.7));
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .typing {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .typing::after {
+            content: '|';
+            position: absolute;
+            right: -5px;
+            animation: blink 1s infinite;
+        }
+        
+        .pixel-coin {
+            animation: spin 3s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotateY(0); }
+            100% { transform: rotateY(360deg); }
+        }
+        
+        .dialog-box {
+            border: 4px solid #3b82f6;
+            box-shadow: inset 0 0 0 2px #ffffff,
+                      0 0 0 4px #3b82f6;
+            position: relative;
+        }
+        
+        .dialog-box::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 30px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #3b82f6 transparent transparent transparent;
+        }
+        
+        .dialog-pointer::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 40px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+        
+        .flying-coin {
+            position: absolute;
+            animation: fly 2s forwards;
+        }
+        
+        @keyframes fly {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(200px, -100px) scale(0); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <!-- Start Screen -->
+    <div id="startScreen" class="game-start-screen">
+        <h1 class="game-font text-3xl md:text-5xl text-yellow-400 mb-8 text-center">
+            <span class="typing">TUNANGAN QUEST</span>
+        </h1>
+        
+        <div class="text-center mb-12">
+            <div class="inline-block">
+                <div class="text-xl text-white mb-2">Your love journey begins</div>
+                <div class="health-bar w-full rounded-sm"></div>
+            </div>
+        </div>
+        
+        <div class="flex gap-4 mb-8">
+            <div class="character">
+                <div class="w-24 h-24 bg-orange-300 rounded-sm pixel-bali"></div>
+                <div class="text-center mt-2 game-font text-xs bg-blue-900 py-1 px-2 rounded-sm">Sukaarta</div>
+            </div>
+            
+            <div class="character">
+                <div class="w-24 h-24 bg-pink-300 rounded-sm pixel-bali"></div>
+                <div class="text-center mt-2 game-font text-xs bg-blue-900 py-1 px-2 rounded-sm">Purnami</div>
+            </div>
+        </div>
+        
+        <button onclick="startGame()" class="game-button bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-sm game-font text-sm md:text-lg">
+            START GAME <i class="fas fa-play ml-2"></i>
+        </button>
+        
+        <div class="mt-8 text-blue-300 text-xs">
+            <p>Press START to begin your adventure</p>
+            <p class="mt-1 animate-pulse"><i class="fas fa-arrow-up mr-1"></i> Level 1: The Proposal</p>
+        </div>
+    </div>
+    
+    <!-- Main Game Screen -->
+    <div id="gameScreen" class="hidden w-full max-w-2xl mx-auto relative">
+        <!-- Game UI -->
+        <div class="game-ui flex justify-between items-center mb-4">
+            <div class="flex items-center gap-2">
+                <div class="game-font text-xs bg-blue-900 py-1 px-2 rounded-sm">
+                    <i class="fas fa-heart text-red-500 mr-1"></i> Love Points: 999
+                </div>
+            </div>
+            
+            <div class="game-font text-xs bg-blue-900 py-1 px-2 rounded-sm">
+                <i class="fas fa-calendar-day text-yellow-500 mr-1"></i> Level: 30 Jul 2023
+            </div>
+            
+            <div class="flex items-center gap-1 game-font text-xs bg-blue-900 py-1 px-2 rounded-sm">
+                <div class="pixel-coin w-4 h-4 inline-block bg-yellow-400 border-2 border-yellow-600 rounded-full"></div>
+                <span class="ml-1">x99</span>
+            </div>
+        </div>
+        
+        <!-- Main Game Card -->
+        <div class="invitation-card rounded-sm p-8 relative overflow-hidden">
+            <!-- Hidden Easter Egg -->
+            <div id="hiddenCoin" class="absolute top-4 right-4 cursor-pointer w-6 h-6 bg-yellow-400 border-2 border-yellow-600 rounded-full pixel-coin" 
+                 onclick="collectCoin(this)"></div>
+            
+            <!-- Game Content -->
+            <div class="text-center relative z-10">
+                <h1 class="game-font text-yellow-400 text-xl md:text-2xl mb-6">
+                    <span class="animate-pulse">QUEST LOG: TUNANGAN BAHAGIA</span>
+                </h1>
+                
+                <div class="flex justify-center gap-8 my-8">
+                    <div onclick="animateCharacter(this)" class="character cursor-pointer" title="Click me!">
+                        <div class="w-20 h-20 bg-orange-300 rounded-sm pixel-bali mx-auto"></div>
+                        <div class="text-center mt-2 game-font text-xs bg-blue-900 py-1 px-2 rounded-sm">Sukaarta</div>
+                    </div>
+                    
+                    <div onclick="animateCharacter(this)" class="character cursor-pointer" title="Click me!">
+                        <div class="w-20 h-20 bg-pink-300 rounded-sm pixel-bali mx-auto"></div>
+                        <div class="text-center mt-2 game-font text-xs bg-blue-900 py-1 px-2 rounded-sm">Purnami</div>
+                    </div>
+                </div>
+                
+                <div class="dialog-box bg-white rounded-sm p-4 mb-6 text-blue-900 dialog-pointer">
+                    <p class="game-font text-xs md:text-sm mb-2">
+                        <span class="text-yellow-600">NEW QUEST!</span> "Madewa Sangkakala"
+                    </p>
+                    <p class="text-left">
+                        Ayo bergabung dalam petualangan kami menuju kehidupan baru sebagai pasangan bertunangan!
+                    </p>
+                </div>
+                
+                <div class="quest-details bg-blue-900 bg-opacity-30 p-4 rounded-sm border border-blue-700 text-left my-6 text-sm">
+                    <div class="flex gap-2 mb-3 items-center">
+                        <i class="fas fa-map-marker-alt text-yellow-400"></i>
+                        <span><strong>Peta Quest:</strong> Merajan Agung, Br. Abiansemal</span>
+                    </div>
+                    <div class="flex gap-2 mb-3 items-center">
+                        <i class="fas fa-clock text-yellow-400"></i>
+                        <span><strong>Waktu Quest:</strong> Redite, 30 Jul 2023 (10:00 WITA)</span>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <i class="fas fa-info-circle text-yellow-400"></i>
+                        <span><strong>Syarat Quest:</strong> Doa dan restu dari para player (tamu)</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 justify-center mt-8 mb-4">
+                    <button onclick="showInventory()" class="game-button bg-blue-700 hover:bg-blue-600 text-white py-2 px-4 rounded-sm text-xs game-font">
+                        <i class="fas fa-bag-shopping mr-1"></i> Buka Inventory
+                    </button>
+                    
+                    <button onclick="acceptQuest()" class="game-button bg-yellow-500 hover:bg-yellow-600 text-blue-900 py-2 px-4 rounded-sm text-xs game-font">
+                        <i class="fas fa-check-circle mr-1"></i> Accept Quest
+                    </button>
+                    
+                    <button onclick="toggleMap()" class="game-button bg-green-700 hover:bg-green-600 text-white py-2 px-4 rounded-sm text-xs game-font">
+                        <i class="fas fa-map mr-1"></i> Show Map
+                    </button>
+                </div>
+                
+                <div class="game-font text-xs text-blue-300 mt-6">
+                    <p>Om Swastyastu | <span id="stats">Compatibility: 100%</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Inventory Modal -->
+    <div id="inventoryModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+        <div class="bg-blue-900 rounded-sm border-4 border-yellow-500 p-6 w-full max-w-md mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="game-font text-yellow-400 text-lg">Inventory</h3>
+                <button onclick="closeInventory()" class="text-yellow-400 hover:text-yellow-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4">
+                <div class="item bg-blue-800 p-3 rounded-sm text-center cursor-pointer hover:bg-blue-700"
+                     onclick="useItem('Diamond Ring')">
+                    <div class="w-12 h-12 bg-white rounded-sm mx-auto mb-2 flex items-center justify-center">
+                        <i class="fas fa-gem text-purple-500 text-xl"></i>
+                    </div>
+                    <p class="game-font text-xs">Diamond Ring</p>
+                </div>
+                
+                <div class="item bg-blue-800 p-3 rounded-sm text-center cursor-pointer hover:bg-blue-700"
+                     onclick="useItem('Bali Agung')">
+                    <div class="w-12 h-12 bg-orange-100 rounded-sm mx-auto mb-2 flex items-center justify-center">
+                        <div class="w-8 h-8 bg-orange-300 pixel-bali"></div>
+                    </div>
+                    <p class="game-font text-xs">Bali Agung</p>
+                </div>
+                
+                <div class="item bg-blue-800 p-3 rounded-sm text-center cursor-pointer hover:bg-blue-700"
+                     onclick="useItem('Love Potion')">
+                    <div class="w-12 h-12 bg-pink-100 rounded-sm mx-auto mb-2 flex items-center justify-center">
+                        <i class="fas fa-heart text-pink-500 text-xl"></i>
+                    </div>
+                    <p class="game-font text-xs">Love Potion</p>
+                </div>
+                
+                <div class="item bg-blue-800 p-3 rounded-sm text-center cursor-pointer hover:bg-blue-700"
+                     onclick="useItem('Sacred Coin')">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-sm mx-auto mb-2 flex items-center justify-center">
+                        <div class="w-6 h-6 bg-yellow-400 border-2 border-yellow-600 rounded-full"></div>
+                    </div>
+                    <p class="game-font text-xs">Sacred Coin</p>
+                </div>
+                
+                <div class="item bg-blue-800 p-3 rounded-sm text-center cursor-pointer hover:bg-blue-700"
+                     onclick="useItem('Blessing Scroll')">
+                    <div class="w-12 h-12 bg-white rounded-sm mx-auto mb-2 flex items-center justify-center">
+                        <i class="fas fa-scroll text-blue-800 text-xl"></i>
+                    </div>
+                    <p class="game-font text-xs">Blessing Scroll</p>
+                </div>
+                
+                <div class="item bg-blue-800 p-3 rounded-sm text-center cursor-pointer hover:bg-blue-700"
+                     onclick="useItem('Tirta')">
+                    <div class="w-12 h-12 bg-blue-100 rounded-sm mx-auto mb-2 flex items-center justify-center">
+                        <i class="fas fa-tint text-blue-400 text-xl"></i>
+                    </div>
+                    <p class="game-font text-xs">Tirta</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div id="notification" class="fixed bottom-4 left-4 bg-green-700 text-white px-4 py-2 rounded-sm game-font text-xs hidden z-50">
+        <i class="fas fa-check-circle mr-2"></i>
+        <span>Item used: Diamond Ring!</span>
+    </div>
+    
+    <script>
+        // Game functions
+        function startGame() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('gameScreen').classList.remove('hidden');
+            
+            // Start floating animation for characters
+            const characters = document.querySelectorAll('.character');
+            characters.forEach((char, index) => {
+                char.style.animation = `float ${3 + index}s ease-in-out infinite`;
+            });
+        }
+        
+        function animateCharacter(element) {
+            element.classList.add('animate-pulse');
+            setTimeout(() => {
+                element.classList.remove('animate-pulse');
+            }, 500);
+            
+            // Play sound effect
+            const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3');
+            audio.play();
+        }
+        
+        function collectCoin(element) {
+            const coin = element.cloneNode(true);
+            coin.classList.add('flying-coin');
+            document.body.appendChild(coin);
+            
+            setTimeout(() => {
+                coin.remove();
+                showNotification('+5 coins collected!');
+            }, 2000);
+            
+            // Play sound effect
+            const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-retro-arcade-coin-2187.mp3');
+            audio.play();
+        }
+        
+        function acceptQuest() {
+            showNotification('Quest accepted! See you at the ceremony!');
+            
+            // Update stats
+            document.getElementById('stats').textContent = "Quest Accepted ✓";
+        }
+        
+        function showInventory() {
+            document.getElementById('inventoryModal').classList.remove('hidden');
+        }
+        
+        function closeInventory() {
+            document.getElementById('inventoryModal').classList.add('hidden');
+        }
+        
+        function useItem(item) {
+            closeInventory();
+            showNotification(`${item} used successfully!`);
+        }
+        
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.querySelector('span').textContent = message;
+            notification.classList.remove('hidden');
+            
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 3000);
+        }
+        
+        function toggleMap() {
+            alert("Map location: Merajan Agung, Banjar Abiansemal, Badung");
+            // In real implementation: window.open('https://maps.google.com?q=...', '_blank');
+        }
+        
+        // Easter egg for konami code
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                
+                if (konamiIndex === konamiCode.length) {
+                    // Konami code completed
+                    document.body.style.background = "linear-gradient(135deg, #991b1b, #1e40af)";
+                    showNotification("Cheat activated! Unlimited love points!");
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+    </script>
+</body>
+</html>

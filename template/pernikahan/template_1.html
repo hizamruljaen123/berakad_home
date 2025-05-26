@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Hizamrul & Cindy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff9f7;
+            color: #5a4a42;
+            overflow-x: hidden;
+            background-image: linear-gradient(to bottom, rgba(255,247,240,0.8), rgba(253,242,248,0.5)), 
+                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><path fill="%23fecdd3" d="M150 80c-20 0-40 12-48 32-8-20-28-32-48-32-36 0-60 24-60 60s24 60 60 60c20 0 40-12 48-32 8 20 28 32 48 32s40-12 48-32c8 20 28 32 48 32 36 0 60-24 60-60s-24-60-60-60c-20 0-40 12-48 32-8-20-28-32-48-32z" opacity="0.08"/></svg>');
+            background-size: 230px;
+            background-attachment: fixed;
+        }
+        
+        .floral-frame {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500"><path d="M250 100c-30 0-60 20-76 50-16-30-46-50-76-50-80 0-150 70-150 150s70 150 150 150c30 0 60-20 76-50 16 30 46 50 76 50s60-20 76-50c16 30 46 50 76 50 80 0 150-70 150-150s-70-150-150-150c-30 0-60 20-76 50-16-30-46-50-76-50z" fill="none" stroke="%23f43f5e" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vmin;
+            height: 80vmin;
+            z-index: -1;
+            opacity: 0.1;
+            animation: rotate 240s linear infinite;
+        }
+        
+        @keyframes rotate {
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        h1, h2, h3, .title-font {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .script-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .heartbeat {
+            animation: heartbeat 3s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.05); }
+            35% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            55% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 2s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .wedding-date {
+            position: relative;
+        }
+        
+        .wedding-date:after, .wedding-date:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #f43f5e, transparent);
+        }
+        
+        .wedding-date:before {
+            left: 5%;
+        }
+        
+        .wedding-date:after {
+            right: 5%;
+        }
+        
+        @media (max-width: 640px) {
+            .wedding-date:before, .wedding-date:after {
+                width: 15%;
+            }
+        }
+        
+        .section-divider {
+            height: 120px;
+            clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+            background: linear-gradient(135deg, rgba(253,164,175,0.8), rgba(244,63,94,0.9));
+        }
+        
+        .ring-shadow {
+            box-shadow: 0 10px 30px rgba(244, 63, 94, 0.3);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .rose-petal {
+            position: absolute;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2c-2 0-4 1-5 2-1-1-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 4-1 5-2 1 1 3 2 5 2s4-1 5-2c1 1 3 2 5 2 4 0 7-3 7-7s-3-7-7-7c-2 0-4 1-5 2-1-1-3-2-5-2z" fill="%23f43f5e"/></svg>');
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0.6;
+            animation: falling linear infinite;
+        }
+        
+        @keyframes falling {
+            0% {
+                transform: translate(0, -10vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translate(var(--random-x), 110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+    <div class="floral-frame"></div>
+    
+    <!-- Create floating rose petals -->
+    <div id="petals-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+    
+    <!-- Opening Animation -->
+    <div id="opening" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
+        <div class="text-center px-6">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-rose-600 mb-6 script-font fade-in">Undangan Pernikahan</h1>
+            <div class="heartbeat mb-8">
+                <img src="https://cdn-icons-png.flaticon.com/512/2582/2582389.png" alt="Heart" class="w-20 h-20 mx-auto">
+            </div>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-amber-800 script-font fade-in" style="animation-delay: 0.5s">Hizamrul & Cindy</h2>
+        </div>
+        <button id="startButton" class="mt-12 px-8 py-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-full shadow-lg hover:from-rose-600 hover:to-rose-700 transition-all duration-300 transform hover:scale-105 font-medium fade-in" style="animation-delay: 1s">
+            Buka Undangan
+        </button>
+    </div>
+    
+    <!-- Music Player -->
+    <div class="fixed bottom-4 right-4 z-50 bg-white p-3 rounded-full shadow-lg ring-2 ring-rose-200" id="musicControl">
+        <i class="fas fa-pause text-xl text-rose-500 cursor-pointer" id="musicIcon"></i>
+        <audio loop id="bgMusic">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <!-- Main Content (hidden initially) -->
+    <div id="mainContent" class="hidden">
+        <!-- Opening Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center py-16 px-4 relative overflow-hidden">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl text-rose-600 mb-4 script-font">The Wedding Of</h2>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-amber-800 mb-6 title-font">Hizamrul & Cindy</h1>
+                <div class="w-32 h-1 bg-gradient-to-r from-transparent via-rose-400 to-transparent mx-auto my-6"></div>
+                <p class="text-gray-600 mb-2">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, 
+                    agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."</p>
+                <p class="text-gray-600">(Q.S Ar-Rum: 21)</p>
+            </div>
+            
+            <div class="floating mb-16">
+                <div class="w-48 h-48 md:w-56 md:h-56 border-4 border-rose-200 rounded-full flex items-center justify-center ring-shadow bg-white overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Couple" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-lg text-gray-600 mb-8">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i 
+                    untuk hadir dalam acara pernikahan kami.</p>
+                <p class="text-rose-600 font-medium">
+                    <i class="fas fa-heart mx-1"></i> Sabtu, 26 Juli 2025 <i class="fas fa-heart mx-1"></i>
+                </p>
+               
+                <div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center animate-bounce">
+                    <i class="fas fa-angle-double-down text-3xl text-rose-500 opacity-70"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Couple Section -->
+        <div class="section-divider"></div>
+        <section class="py-20 px-4 bg-gradient-to-b from-rose-50 to-white relative">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl text-center font-medium mb-16 title-font wedding-date">Pasangan Pengantin</h2>
+                
+                <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                    <!-- Groom -->
+                    <div class="text-center transform transition-all duration-500 hover:scale-105">
+                        <div class="relative inline-block">
+                            <div class="w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-rose-200 shadow-xl mx-auto mb-6 relative">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Groom" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute -top-4 -right-2 bg-rose-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-male text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-medium mb-2 title-font">Hizamrul Hafidz</h3>
+                        <p class="text-gray-600 mb-2">Putra pertama dari pasangan</p>
+                        <p class="mb-4 font-medium">Bapak Ahmad Sukarno & Ibu Siti Aminah</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-rose-600 hover:text-rose-800 transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                            <a href="#" class="text-rose-600 hover:text-rose-800 transition-colors duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Heart Divider -->
+                    <div class="relative">
+                        <div class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded-full shadow-xl z-10 heartbeat">
+                            <i class="fas fa-heart text-4xl text-rose-500"></i>
+                        </div>
+                        <div class="relative z-0 flex md:hidden items-center justify-center my-8">
+                            <div class="bg-white p-3 rounded-full shadow-lg z-10 heartbeat">
+                                <i class="fas fa-heart text-2xl text-rose-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bride -->
+                    <div class="text-center transform transition-all duration-500 hover:scale-105 mt-12 md:mt-0">
+                        <div class="relative inline-block">
+                            <div class="w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-rose-200 shadow-xl mx-auto mb-6 relative">
+                                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bride" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute -top-4 -right-2 bg-rose-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-female text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-medium mb-2 title-font">Cindy Pertiwi</h3>
+                        <p class="text-gray-600 mb-2">Putri pertama dari pasangan</p>
+                        <p class="mb-4 font-medium">Bapak Budi Santoso & Ibu Ani Setiawati</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-rose-600 hover:text-rose-800 transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                            <a href="#" class="text-rose-600 hover:text-rose-800 transition-colors duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Love Story -->
+                <div class="mt-24 text-center">
+                    <h3 class="text-2xl md:text-3xl font-medium mb-8 title-font">Our Love Story</h3>
+                    <div class="max-w-4xl mx-auto">
+                        <div class="relative">
+                            <!-- Timeline -->
+                            <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-rose-300 via-rose-400 to-rose-300 transform -translate-x-1/2"></div>
+                            
+                            <!-- Timeline Items -->
+                            <div class="relative space-y-16 md:space-y-24">
+                                <!-- Item 1 -->
+                                <div class="md:flex justify-between items-center">
+                                    <div class="md:w-5/12 mb-8 md:mb-0 text-right">
+                                        <div class="inline-block bg-white p-6 rounded-lg shadow-md relative">
+                                            <img src="https://images.unsplash.com/photo-1529333164857-42f00e56ff0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="First Meet" class="w-full h-40 object-cover rounded mb-3">
+                                            <h4 class="font-bold text-lg mb-1">Pertemuan Pertama</h4>
+                                            <p class="text-sm text-gray-600">2018 - Universitas Bandung</p>
+                                            <p class="text-sm mt-2">Kami bertemu pertama kali sebagai teman sekelas di kuliah Sistem Informasi.</p>
+                                            <div class="absolute -right-2 top-1/2 transform translate-x-full -translate-y-1/2 w-4 h-4 bg-rose-500 rounded-full hidden md:block"></div>
+                                        </div>
+                                    </div>
+                                    <div class="md:w-5/12 invisible">
+                                        <!-- Empty space for alignment -->
+                                    </div>
+                                </div>
+                                
+                                <!-- Item 2 -->
+                                <div class="md:flex justify-between items-center">
+                                    <div class="md:w-5/12 invisible">
+                                        <!-- Empty space for alignment -->
+                                    </div>
+                                    <div class="md:w-5/12 text-left">
+                                        <div class="inline-block bg-white p-6 rounded-lg shadow-md relative">
+                                            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Dating" class="w-full h-40 object-cover rounded mb-3">
+                                            <h4 class="font-bold text-lg mb-1">Jadian</h4>
+                                            <p class="text-sm text-gray-600">14 Februari 2020</p>
+                                            <p class="text-sm mt-2">Hizamrul mengungkapkan perasaannya di hari Valentine dan Cindy pun menyambutnya dengan senang hati.</p>
+                                            <div class="absolute -left-2 top-1/2 transform -translate-x-full -translate-y-1/2 w-4 h-4 bg-rose-500 rounded-full hidden md:block"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Item 3 -->
+                                <div class="md:flex justify-between items-center">
+                                    <div class="md:w-5/12 mb-8 md:mb-0 text-right">
+                                        <div class="inline-block bg-white p-6 rounded-lg shadow-md relative">
+                                            <img src="https://images.unsplash.com/photo-1606820854416-439b3305ff39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Proposal" class="w-full h-40 object-cover rounded mb-3">
+                                            <h4 class="font-bold text-lg mb-1">Lamar</h4>
+                                            <p class="text-sm text-gray-600">10 Juni 2024</p>
+                                            <p class="text-sm mt-2">Dengan restu keluarga, Hizamrul melamar Cindy di rumah orang tua Cindy.</p>
+                                            <div class="absolute -right-2 top-1/2 transform translate-x-full -translate-y-1/2 w-4 h-4 bg-rose-500 rounded-full hidden md:block"></div>
+                                        </div>
+                                    </div>
+                                    <div class="md:w-5/12 invisible">
+                                        <!-- Empty space for alignment -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Date Section -->
+        <div class="section-divider"></div>
+        <section class="py-20 px-4 bg-white text-center relative">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-medium mb-16 title-font">Save The Date</h2>
+                
+                <!-- Wedding Dates -->
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 mb-16">
+                    <!-- Akad Nikah -->
+                    <div class="w-full md:w-1/3">
+                        <div class="bg-white border-2 border-rose-100 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-rose-100 rounded-full opacity-30"></div>
+                            <div class="relative">
+                                <h3 class="text-xl md:text-2xl font-medium mb-4 title-font">Akad Nikah</h3>
+                                <div class="text-rose-600 text-4xl font-bold mb-3 script-font">25</div>
+                                <div class="text-amber-800 text-xl font-medium mb-1">Juli 2025</div>
+                                <div class="text-lg mb-4"><i class="far fa-clock mr-2"></i>08.00 - 09.30 WIB</div>
+                                <p class="text-sm text-gray-600 mb-4">Hotel Grand Mercure</p>
+                                <button class="px-6 py-2 bg-gradient-to-r from-rose-400 to-rose-500 text-white rounded-full hover:from-rose-500 hover:to-rose-600 transition duration-300">Simpan Tanggal</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Letak bunga -->
+                    <div class="my-8 md:my-0 hidden md:block text-rose-400 text-6xl script-font">♥</div>
+                    <div class="my-8 md:my-0 md:hidden text-rose-400 text-4xl script-font">♥</div>
+                    
+                    <!-- Resepsi -->
+                    <div class="w-full md:w-1/3">
+                        <div class="bg-white border-2 border-rose-100 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-rose-100 rounded-full opacity-30"></div>
+                            <div class="relative">
+                                <h3 class="text-xl md:text-2xl font-medium mb-4 title-font">Resepsi</h3>
+                                <div class="text-rose-600 text-4xl font-bold mb-3 script-font">26</div>
+                                <div class="text-amber-800 text-xl font-medium mb-1">Juli 2025</div>
+                                <div class="text-lg mb-4"><i class="far fa-clock mr-2"></i>10.00 - 16.00 WIB</div>
+                                <p class="text-sm text-gray-600 mb-4">Hotel Grand Mercure</p>
+                                <button class="px-6 py-2 bg-gradient-to-r from-rose-400 to-rose-500 text-white rounded-full hover:from-rose-500 hover:to-rose-600 transition duration-300">Simpan Tanggal</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Location -->
+                <div class="bg-white border-2 border-rose-100 rounded-xl p-8 max-w-3xl mx-auto shadow-lg relative overflow-hidden">
+                    <div class="absolute -bottom-8 -left-8 w-40 h-40 bg-rose-100 rounded-full opacity-20"></div>
+                    <div class="absolute -top-8 -right-8 w-32 h-32 bg-rose-100 rounded-full opacity-20"></div>
+                    <div class="relative">
+                        <h3 class="text-xl md:text-2xl font-medium mb-6 title-font">Lokasi Acara</h3>
+                        <p class="text-lg font-medium mb-2">Hotel Grand Mercure</p>
+                        <p class="mb-6">Jl. Raya Pajajaran No. 123, Bandung, Jawa Barat</p>
+                        
+                        <div class="h-56 md:h-64 w-full bg-rose-50 rounded-xl overflow-hidden mb-6 border border-rose-200">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7985117576875!2d107.6088025!3d-6.9175803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6326c8f13a7%3A0x2ce27f139a2d7e3!2sGrand%20Mercure%20Bandung!5e0!3m2!1sen!2sid!4v1626980825148!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="https://maps.app.goo.gl/xyz" class="px-6 py-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-full hover:from-rose-600 hover:to-rose-700 transition duration-300 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Lihat di Peta
+                            </a>
+                            <a href="#" class="px-6 py-3 border border-rose-500 text-rose-500 rounded-full hover:bg-rose-50 transition duration-300 flex items-center">
+                                <i class="fas fa-calendar-check mr-2"></i> Simpan ke Kalender
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <div class="section-divider"></div>
+        <section class="py-20 px-4 bg-gradient-to-b from-rose-50 to-rose-100 text-center relative">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-medium mb-12 title-font">Galeri Cinta Kami</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                        <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Couple 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-sm">Liburan ke Bali, 2022</p>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                        <img src="https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Couple 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-sm">Hari jadi ke-2, 2022</p>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                        <img src="https://images.unsplash.com/photo-1602030028438-4cf153153ae0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Couple 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-sm">Liburan ke Jogja, 2023</p>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                        <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Couple 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-sm">Hari pertama melamar, 2024</p>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                        <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Couple 5" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-sm">Foto prewedding, 2024</p>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                        <img src="https://images.unsplash.com/photo-1560393463-569774952628?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Couple 6" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-sm">Teduh bersama di pantai, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="px-8 py-3 border-2 border-rose-500 text-rose-500 rounded-full hover:bg-white transition duration-300 font-medium inline-flex items-center">
+                    <i class="fas fa-images mr-2"></i> Lihat Lebih Banyak Foto
+                </button>
+            </div>
+        </section>
+        
+        <!-- Wishes Section -->
+        <div class="section-divider"></div>
+        <section class="py-20 px-4 bg-white relative">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-medium mb-12 title-font">Kirimkan Ucapan</h2>
+                
+                <div class="bg-rose-50 rounded-2xl p-8 shadow-inner mb-12 relative overflow-hidden">
+                    <div class="absolute -top-8 -right-8 w-36 h-36 bg-rose-200 rounded-full opacity-20"></div>
+                    <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-rose-200 rounded-full opacity-20"></div>
+                    <div class="relative">
+                        <form id="wishesForm" class="text-left">
+                            <div class="mb-6">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nama Anda</label>
+                                <input type="text" id="name" class="w-full px-5 py-3 rounded-xl border border-rose-200 focus:ring-2 focus:ring-rose-300 focus:border-rose-300 bg-white">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Ucapan untuk Kami</label>
+                                <textarea id="message" rows="4" class="w-full px-5 py-3 rounded-xl border border-rose-200 focus:ring-2 focus:ring-rose-300 focus:border-rose-300 bg-white"></textarea>
+                            </div>
+                            <div class="flex justify-center">
+                                <button type="submit" class="px-8 py-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-full hover:from-rose-600 hover:to-rose-700 transition duration-300 shadow-lg hover:shadow-xl font-medium inline-flex items-center">
+                                    <i class="far fa-paper-plane mr-2"></i> Kirim Ucapan
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="wishesContainer" class="grid gap-6 max-w-2xl mx-auto"></div>
+            </div>
+        </section>
+        
+        <!-- Gift Section -->
+        <div class="section-divider"></div>
+        <section class="py-20 px-4 bg-gradient-to-b from-white to-rose-50 text-center relative">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-medium mb-8 title-font">Amplop Digital</h2>
+                <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Jika Anda ingin memberikan kado atau bantuan untuk kebahagiaan kami, Anda bisa mengirimkannya melalui rekening berikut:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <!-- Bank 1 -->
+                    <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-university text-rose-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-2 title-font">Bank BNI</h3>
+                        <p class="text-gray-600 mb-1">1234 5678 9012 3456</p>
+                        <p class="font-medium">Hizamrul Hafidz</p>
+                        <button class="mt-4 px-6 py-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition duration-300" onclick="copyToClipboard('1234567890123456')">
+                            Salin Nomor Rekening
+                        </button>
+                    </div>
+                    
+                    <!-- Bank 2 -->
+                    <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-university text-rose-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-2 title-font">Bank Mandiri</h3>
+                        <p class="text-gray-600 mb-1">9876 5432 1098 7654</p>
+                        <p class="font-medium">Cindy Pertiwi</p>
+                        <button class="mt-4 px-6 py-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition duration-300" onclick="copyToClipboard('9876543210987654')">
+                            Salin Nomor Rekening
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-sm text-gray-500 mt-12 italic">"Dan tolong-menolonglah kamu dalam (mengerjakan) kebajikan dan takwa, dan jangan tolong-menolong dalam berbuat dosa dan pelanggaran." (Q.S Al-Maidah: 2)</p>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="py-16 px-4 bg-gradient-to-b from-rose-100 to-rose-200 text-center relative overflow-hidden">
+            <div class="absolute -top-20 -left-20 w-64 h-64 bg-white rounded-full opacity-10"></div>
+            <div class="absolute -bottom-16 -right-16 w-56 h-56 bg-white rounded-full opacity-10"></div>
+            <div class="relative">
+                <h2 class="text-3xl md:text-4xl font-medium mb-8 title-font">Terima Kasih</h2>
+                <p class="max-w-2xl mx-auto mb-8">Atas doa restu dan kasih sayangnya, semoga Allah SWT membalas segala kebaikan dengan berlipat ganda.</p>
+                
+                <div class="mb-8 text-rose-600 text-3xl">
+                    <i class="fas fa-heart mx-1 heartbeat" style="animation-delay: 0s"></i>
+                    <i class="fas fa-heart mx-1 heartbeat" style="animation-delay: 0.2s"></i>
+                    <i class="fas fa-heart mx-1 heartbeat" style="animation-delay: 0.4s"></i>
+                </div>
+                
+                <p class="text-sm text-rose-800 mb-1">Keluarga Besar</p>
+                <p class="text-xl md:text-2xl font-medium title-font mb-8">Bapak Ahmad & Ibu Siti ▪ Bapak Budi & Ibu Ani</p>
+                
+                <div class="flex justify-center space-x-6 mb-12">
+                    <a href="#" class="text-rose-600 hover:text-rose-800 text-2xl transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-rose-600 hover:text-rose-800 text-2xl transition-colors duration-300"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="text-rose-600 hover:text-rose-800 text-2xl transition-colors duration-300"><i class="far fa-envelope"></i></a>
+                </div>
+                
+                <p class="text-xs text-rose-700/80">© 2025 | Dibuat dengan ❤️ untuk Hizamrul & Cindy</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Confetti Effect -->
+    <canvas id="confetti" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000; display: none;"></canvas>
+    
+    <script>
+        // Create rose petals
+        function createPetals() {
+            const petalsContainer = document.getElementById('petals-container');
+            const petalCount = 15;
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'rose-petal';
+                
+                // Random size
+                const size = Math.random() * 20 + 10;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size}px`;
+                
+                // Random position
+                petal.style.left = `${Math.random() * 100}vw`;
+                
+                // Random animation duration (8-15s)
+                const duration = Math.random() * 7 + 8;
+                petal.style.animationDuration = `${duration}s`;
+                
+                // Random delay (0-5s)
+                const delay = Math.random() * 5;
+                petal.style.animationDelay = `${delay}s`;
+                
+                // Random x movement during fall
+                petal.style.setProperty('--random-x', `${Math.random() * 100 - 50}px`);
+                
+                petalsContainer.appendChild(petal);
+            }
+        }
+        
+        // Opening animation
+        document.getElementById('startButton').addEventListener('click', function() {
+            // Play background music
+            document.getElementById('bgMusic').play();
+            document.getElementById('musicIcon').classList.remove('fa-pause');
+            document.getElementById('musicIcon').classList.add('fa-pause');
+            
+            // Hide opening and show main content
+            document.getElementById('opening').style.opacity = '0';
+            document.getElementById('mainContent').classList.remove('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('opening').style.display = 'none';
+            }, 1000);
+            
+            // Show some confetti
+            showConfetti();
+        });
+        
+        // Music control
+        const musicIcon = document.getElementById('musicIcon');
+        const bgMusic = document.getElementById('bgMusic');
+        
+        musicIcon.addEventListener('click', function() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicIcon.classList.remove('fa-play');
+                musicIcon.classList.add('fa-pause');
+            } else {
+                bgMusic.pause();
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-play');
+            }
+        });
+        
+        // Wishes form
+        const wishesForm = document.getElementById('wishesForm');
+        const wishesContainer = document.getElementById('wishesContainer');
+        
+        wishesForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !message) {
+                alert('Harap isi nama dan ucapan Anda');
+                return;
+            }
+            
+            const wishDiv = document.createElement('div');
+            wishDiv.className = 'bg-white rounded-xl p-6 shadow-md text-left';
+            wishDiv.innerHTML = `
+                <h3 class="font-medium text-lg mb-2 flex items-center">
+                    <i class="fas fa-user-circle text-rose-400 text-xl mr-2"></i> ${name}
+                </h3>
+                <p class="text-gray-600 pl-8 mb-2">${message}</p>
+                <div class="text-right text-xs text-gray-400">${new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</div>
+            `;
+            
+            wishesContainer.prepend(wishDiv);
+            
+            // Clear form
+            document.getElementById('name').value = '';
+            document.getElementById('message').value = '';
+            
+            // Show confetti
+            showConfetti();
+        });
+        
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Nomor rekening berhasil disalin!');
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+        
+        // Confetti effect
+        function showConfetti() {
+            const canvas = document.getElementById('confetti');
+            canvas.style.display = 'block';
+            
+            // Initialize confetti
+            const myConfetti = confetti.create(canvas, {
+                resize: true,
+                useWorker: true
+            });
+            
+            myConfetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#fecdd3', '#fda4af', '#f87171', '#f43f5e', '#e11d48']
+            });
+            
+            setTimeout(() => {
+                canvas.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Initialize petals after page load
+        window.addEventListener('load', function() {
+            createPetals();
+            
+            // Simple confetti library (mini version)
+            window.confetti = {
+                create: function(canvas, config) {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    
+                    return function(options) {
+                        options = options || {};
+                        const end = Date.now() + (options.duration || 3000);
+                        const defaults = {
+                            particleCount: 50,
+                            angle: 90,
+                            spread: 45,
+                            startVelocity: 45,
+                            decay: 0.9,
+                            gravity: 1,
+                            ticks: 200,
+                            origin: { x: 0.5, y: 0.5 },
+                            colors: ['#ffffff'],
+                            shapes: ['circle', 'square'],
+                            scalar: 1
+                        };
+                        
+                        const settings = Object.assign({}, defaults, options);
+                        
+                        const particles = [];
+                        for (let i = 0; i < settings.particleCount; i++) {
+                            particles.push(createParticle(settings));
+                        }
+                        
+                        const ctx = canvas.getContext('2d');
+                        
+                        function animate() {
+                            if (Date.now() > end) return;
+                            
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            
+                            for (let i = 0; i < particles.length; i++) {
+                                const p = particles[i];
+                                if (p.life <= 0) continue;
+                                
+                                p.velocity.x += settings.gravity * p.velocity.y;
+                                p.position.x += p.velocity.x;
+                                p.position.y += p.velocity.y;
+                                
+                                p.life -= p.decay;
+                                p.alpha = p.life / settings.ticks;
+                                
+                                ctx.globalAlpha = p.alpha;
+                                ctx.fillStyle = p.color;
+                                
+                                if (p.shape === 'circle') {
+                                    ctx.beginPath();
+                                    ctx.arc(p.position.x, p.position.y, p.size, 0, Math.PI * 2);
+                                    ctx.fill();
+                                } else if (p.shape === 'square') {
+                                    ctx.fillRect(p.position.x - p.size/2, p.position.y - p.size/2, p.size, p.size);
+                                }
+                            }
+                            
+                            requestAnimationFrame(animate);
+                        }
+                        
+                        animate();
+                        
+                        function createParticle(settings) {
+                            const angle = (settings.angle + (Math.random() - 0.5) * settings.spread) * (Math.PI / 180);
+                            const velocity = settings.startVelocity * 0.5 + Math.random() * settings.startVelocity * 0.5;
+                            
+                            return {
+                                position: {
+                                    x: settings.origin.x * canvas.width,
+                                    y: settings.origin.y * canvas.height
+                                },
+                                velocity: {
+                                    x: Math.cos(angle) * velocity,
+                                    y: Math.sin(angle) * velocity
+                                },
+                                size: (Math.random() + 0.2) * 6 * settings.scalar,
+                                shape: settings.shapes[Math.floor(Math.random() * settings.shapes.length)],
+                                color: settings.colors[Math.floor(Math.random() * settings.colors.length)],
+                                life: settings.ticks,
+                                decay: settings.decay,
+                                alpha: 1
+                            };
+                        }
+                    };
+                }
+            };
+        });
+    </script>
+</body>
+</html>

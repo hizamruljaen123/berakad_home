@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Cartoon Anime Theme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka+One&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-size: 400% 400%;
+            animation: kawaiiBg 5s ease infinite;
+        }
+        
+        @keyframes kawaiiBg {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .kawaii-title {
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500, #ff6b9d);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: kawaiiText 3s ease infinite;
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
+        }
+        
+        @keyframes kawaiiText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .anime-character {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            border-radius: 50%;
+            border: 5px solid #ff6b9d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            animation: characterBounce 2s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+            position: relative;
+        }
+        
+        .anime-character::before {
+            content: '✨';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 2rem;
+            animation: sparkle1 2s ease-in-out infinite;
+        }
+        
+        .anime-character::after {
+            content: '💖';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 2rem;
+            animation: sparkle2 2s ease-in-out infinite reverse;
+        }
+        
+        @keyframes characterBounce {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+        
+        @keyframes sparkle1 {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+        }
+        
+        @keyframes sparkle2 {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(-180deg) scale(1.2); }
+        }
+        
+        .speech-bubble {
+            background: white;
+            border: 4px solid #ff6b9d;
+            border-radius: 25px;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2);
+        }
+        
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #ff6b9d;
+        }
+        
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 52px;
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 18px solid white;
+        }
+        
+        .kawaii-button {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            border: 3px solid #ff6b9d;
+            border-radius: 25px;
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 1.2rem;
+            color: #ff6b9d;
+            font-weight: bold;
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .kawaii-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            color: #ff6b9d;
+        }
+        
+        .floating-emoji {
+            position: absolute;
+            font-size: 2rem;
+            animation: emojiFloat 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes emojiFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-25px) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(-5deg); }
+            75% { transform: translateY(-30px) rotate(3deg); }
+        }
+        
+        .countdown-cute {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border: 4px solid #e17055;
+            border-radius: 20px;
+            color: #d63031;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(225, 112, 85, 0.2);
+        }
+        
+        .kawaii-input {
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid #ff6b9d;
+            border-radius: 15px;
+            color: #ff6b9d;
+            font-weight: bold;
+        }
+        
+        .kawaii-input:focus {
+            outline: none;
+            border-color: #c44569;
+            box-shadow: 0 0 15px rgba(255, 107, 157, 0.3);
+        }
+        
+        .kawaii-input::placeholder {
+            color: rgba(255, 107, 157, 0.6);
+        }
+        
+        .heart-rain {
+            position: fixed;
+            top: -10px;
+            font-size: 1.5rem;
+            color: #ff6b9d;
+            animation: heartFall 4s linear infinite;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        @keyframes heartFall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        
+        .magic-circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 3px solid #ff6b9d;
+            border-radius: 50%;
+            border-style: dashed;
+            animation: magicSpin 3s linear infinite;
+            opacity: 0.6;
+        }
+        
+        @keyframes magicSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .chibi-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chibi-effect::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: chibiShine 3s ease-in-out infinite;
+        }
+        
+        @keyframes chibiShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden">
+    <!-- Heart Rain Effect -->
+    <div id="heartRain"></div>
+    
+    <!-- Floating Emojis -->
+    <div class="fixed inset-0 pointer-events-none z-10">
+        <div class="floating-emoji absolute top-20 left-10" style="animation-delay: 0s;">🌸</div>
+        <div class="floating-emoji absolute top-40 right-20" style="animation-delay: 1s;">🎀</div>
+        <div class="floating-emoji absolute bottom-40 left-1/4" style="animation-delay: 2s;">🦄</div>
+        <div class="floating-emoji absolute bottom-20 right-1/3" style="animation-delay: 0.5s;">🌈</div>
+        <div class="floating-emoji absolute top-60 left-1/5" style="animation-delay: 1.5s;">⭐</div>
+        <div class="floating-emoji absolute top-1/3 right-10" style="animation-delay: 2.5s;">🎂</div>
+    </div>
+    
+    <!-- Magic Circles -->
+    <div class="magic-circle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+    <div class="magic-circle" style="bottom: 20%; right: 20%; animation-delay: 1s;"></div>
+    <div class="magic-circle" style="top: 50%; left: 5%; animation-delay: 2s;"></div>
+
+    <div class="container mx-auto px-4 py-8 relative z-20">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <div class="anime-character mx-auto mb-8">🎂</div>
+            <h1 class="text-6xl font-bold kawaii-title mb-4">
+                KAWAII BIRTHDAY
+            </h1>
+            <div class="speech-bubble p-6 mx-auto max-w-lg">
+                <h2 class="text-pink-600 font-bold mb-2 text-2xl" style="font-family: 'Fredoka One', cursive;">
+                    Super Cute Birthday Party! ✨
+                </h2>
+                <p class="text-pink-500 font-bold">
+                    🌸 Join the most adorable celebration ever! 🌸
+                </p>
+            </div>
+        </div>
+
+        <!-- Birthday Person Info -->
+        <div class="speech-bubble p-8 mb-8 max-w-2xl mx-auto chibi-effect">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold text-pink-600 mb-4" style="font-family: 'Fredoka One', cursive;">
+                    BIRTHDAY STAR ⭐
+                </h2>
+                <div class="text-6xl font-bold kawaii-title mb-4">
+                    [NAMA BIRTHDAY]
+                </div>
+                <div class="text-2xl text-pink-500 font-bold mb-4">
+                    Turning <span class="text-4xl font-bold text-pink-600">[USIA]</span> Years Young!
+                </div>
+                <div class="text-lg text-pink-400 font-bold">
+                    🦄 The Cutest Birthday Princess/Prince 🦄
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <!-- Date & Time -->
+            <div class="speech-bubble p-6">
+                <h3 class="text-2xl font-bold text-pink-600 mb-4 flex items-center">
+                    <i class="fas fa-calendar-alt mr-3"></i>
+                    PARTY DATE 🌸
+                </h3>
+                <div class="text-xl text-pink-700 font-bold mb-2">
+                    📅 [TANGGAL ACARA]
+                </div>
+                <div class="text-xl text-pink-700 font-bold">
+                    🕐 [JAM ACARA]
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="speech-bubble p-6">
+                <h3 class="text-2xl font-bold text-pink-600 mb-4 flex items-center">
+                    <i class="fas fa-map-marker-alt mr-3"></i>
+                    KAWAII VENUE 🎀
+                </h3>
+                <div class="text-xl text-pink-700 font-bold mb-2">
+                    🏠 [LOKASI ACARA]
+                </div>
+                <div class="text-lg text-pink-600">
+                    [ALAMAT LENGKAP]
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-cute p-6 mb-8 max-w-2xl mx-auto">
+            <h3 class="text-2xl font-bold text-red-600 mb-4 text-center">
+                🎉 COUNTDOWN TO CUTENESS 🎉
+            </h3>
+            <div id="countdown" class="grid grid-cols-4 gap-4 text-center">
+                <div class="bg-white bg-opacity-70 rounded-lg p-4 border-2 border-pink-400">
+                    <div id="days" class="text-3xl font-bold text-pink-600">00</div>
+                    <div class="text-pink-500 font-bold">Days</div>
+                </div>
+                <div class="bg-white bg-opacity-70 rounded-lg p-4 border-2 border-pink-400">
+                    <div id="hours" class="text-3xl font-bold text-pink-600">00</div>
+                    <div class="text-pink-500 font-bold">Hours</div>
+                </div>
+                <div class="bg-white bg-opacity-70 rounded-lg p-4 border-2 border-pink-400">
+                    <div id="minutes" class="text-3xl font-bold text-pink-600">00</div>
+                    <div class="text-pink-500 font-bold">Minutes</div>
+                </div>
+                <div class="bg-white bg-opacity-70 rounded-lg p-4 border-2 border-pink-400">
+                    <div id="seconds" class="text-3xl font-bold text-pink-600">00</div>
+                    <div class="text-pink-500 font-bold">Seconds</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RSVP Section -->
+        <div class="speech-bubble p-8 mb-8 max-w-2xl mx-auto">
+            <h3 class="text-3xl font-bold text-pink-600 mb-6 text-center" style="font-family: 'Fredoka One', cursive;">
+                🌈 JOIN THE KAWAII PARTY 🌈
+            </h3>
+            <form id="kawaiiForm" class="space-y-4">
+                <div>
+                    <label class="block text-pink-600 text-lg font-bold mb-2">Your Cute Name</label>
+                    <input type="text" class="w-full p-3 kawaii-input" placeholder="Enter your adorable name..." required>
+                </div>
+                <div>
+                    <label class="block text-pink-600 text-lg font-bold mb-2">Party Squad Size</label>
+                    <select class="w-full p-3 kawaii-input">
+                        <option value="1">1 Cutie</option>
+                        <option value="2">2 Cuties</option>
+                        <option value="3">3 Cuties</option>
+                        <option value="4">4+ Cuties</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-pink-600 text-lg font-bold mb-2">Sweet Message</label>
+                    <textarea class="w-full p-3 kawaii-input h-24" placeholder="Send your cutest birthday wishes..."></textarea>
+                </div>
+                <button type="submit" class="w-full kawaii-button py-4 px-6 text-xl">
+                    🦄 JOIN THE PARTY 🦄
+                </button>
+            </form>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <button onclick="shareWhatsApp()" class="kawaii-button py-3 px-6 flex items-center">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Share the Cuteness
+            </button>
+            <button onclick="copyLink()" class="kawaii-button py-3 px-6 flex items-center">
+                <i class="fas fa-copy mr-2"></i>
+                Copy Magical Link
+            </button>
+            <button onclick="saveCalendar()" class="kawaii-button py-3 px-6 flex items-center">
+                <i class="fas fa-calendar-plus mr-2"></i>
+                Save the Date
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center">
+            <div class="speech-bubble p-4 mx-auto max-w-md">
+                <div class="text-lg text-pink-600 font-bold mb-2">
+                    🌸 Let's Make Magical Memories Together! 🌸
+                </div>
+                <div class="text-sm text-pink-500">
+                    "Stay cute and kawaii!" ✨
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create heart rain
+        function createHeartRain() {
+            const heartRain = document.getElementById('heartRain');
+            const hearts = ['💖', '💕', '💗', '💝', '🌸', '✨'];
+            
+            for (let i = 0; i < 5; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-rain';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 4 + 's';
+                heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                heartRain.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 7000);
+            }
+        }
+
+        setInterval(createHeartRain, 2000);
+        createHeartRain();
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2024-12-31T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Kawaii Form
+        document.getElementById('kawaiiForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            createKawaiiExplosion();
+            setTimeout(() => {
+                alert('🦄 Yay! You\'re joining the kawaii party! So excited to see you! 🦄');
+            }, 500);
+        });
+
+        // Create kawaii explosion effect
+        function createKawaiiExplosion() {
+            const emojis = ['🌸', '🦄', '🌈', '✨', '💖', '🎀', '⭐', '🎂'];
+            for (let i = 0; i < 20; i++) {
+                const emoji = document.createElement('div');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.position = 'fixed';
+                emoji.style.left = '50%';
+                emoji.style.top = '50%';
+                emoji.style.fontSize = '2rem';
+                emoji.style.pointerEvents = 'none';
+                emoji.style.zIndex = '9999';
+                
+                const angle = (i / 20) * 360;
+                const distance = 100 + Math.random() * 200;
+                const duration = 1500 + Math.random() * 1000;
+                
+                emoji.animate([
+                    { 
+                        transform: 'translate(-50%, -50%) scale(0) rotate(0deg)',
+                        opacity: 1
+                    },
+                    {
+                        transform: `translate(-50%, -50%) translate(${Math.cos(angle * Math.PI / 180) * distance}px, ${Math.sin(angle * Math.PI / 180) * distance}px) scale(1) rotate(360deg)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: duration,
+                    easing: 'ease-out'
+                });
+                
+                document.body.appendChild(emoji);
+                
+                setTimeout(() => {
+                    emoji.remove();
+                }, duration);
+            }
+        }
+
+        // Social Share Functions
+        function shareWhatsApp() {
+            const text = encodeURIComponent('🌸 You\'re invited to the cutest birthday party ever! Join us for a kawaii celebration full of magic and adorable moments! 🦄');
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('✨ Kawaii invitation link copied to clipboard! ✨');
+            });
+        }
+
+        function saveCalendar() {
+            const title = encodeURIComponent('Kawaii Birthday Celebration');
+            const details = encodeURIComponent('Join us for the most adorable birthday party ever! Bring your cute outfits and get ready for magical kawaii fun!');
+            const location = encodeURIComponent('[LOKASI ACARA]');
+            const startDate = '20241231T000000Z';
+            const endDate = '20241231T030000Z';
+            
+            const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+            window.open(calendarUrl, '_blank');
+        }
+
+        // Add magical sparkle effect on click
+        document.addEventListener('click', function(e) {
+            createSparkle(e.clientX, e.clientY);
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.textContent = '✨';
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.fontSize = '1.5rem';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '9999';
+            sparkle.style.animation = 'sparkleEffect 1s ease-out forwards';
+            
+            document.body.appendChild(sparkle);
+            
+            // Add CSS animation if not exists
+            if (!document.querySelector('#sparkleCSS')) {
+                const style = document.createElement('style');
+                style.id = 'sparkleCSS';
+                style.textContent = `
+                    @keyframes sparkleEffect {
+                        0% { transform: scale(0) rotate(0deg); opacity: 1; }
+                        50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+                        100% { transform: scale(0.5) rotate(360deg); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+
+        // Add random floating emojis
+        function createRandomEmoji() {
+            const emojis = ['🌸', '🦄', '🌈', '✨', '💖', '🎀', '⭐', '🎂'];
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji absolute';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.top = Math.random() * 100 + '%';
+            emoji.style.animationDelay = Math.random() * 4 + 's';
+            emoji.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            
+            document.querySelector('.fixed.inset-0.pointer-events-none.z-10').appendChild(emoji);
+            
+            setTimeout(() => {
+                emoji.remove();
+            }, 8000);
+        }
+
+        setInterval(createRandomEmoji, 3000);
+    </script>
+</body>
+</html>

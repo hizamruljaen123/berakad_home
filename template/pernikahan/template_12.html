@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Garden Party</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .garden-font {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .script-font {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .garden-bg {
+            background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 50%, #81c784 100%);
+        }
+        
+        .leaf-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%234CAF50' fill-opacity='0.05'%3E%3Cpath d='M40,0 Q20,20 40,40 Q60,20 40,0 Z'/%3E%3Cpath d='M0,40 Q20,20 40,40 Q20,60 0,40 Z'/%3E%3Cpath d='M40,40 Q60,20 80,40 Q60,60 40,40 Z'/%3E%3Cpath d='M40,40 Q20,60 40,80 Q60,60 40,40 Z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .nature-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(76, 175, 80, 0.2);
+        }
+        
+        .flower-decoration {
+            animation: sway 3s ease-in-out infinite;
+        }
+        
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        
+        .grow-in {
+            animation: growIn 1s ease-out forwards;
+            transform: scale(0);
+        }
+        
+        @keyframes growIn {
+            to { transform: scale(1); }
+        }
+        
+        .leaf-fall {
+            animation: leafFall 8s linear infinite;
+        }
+        
+        @keyframes leafFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .green-gradient {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A, #CDDC39);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nature-button {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .nature-button:hover {
+            background: linear-gradient(135deg, #45a049, #7cb342);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+        
+        .floating-leaf {
+            position: absolute;
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="min-h-screen garden-bg leaf-pattern garden-font relative overflow-x-hidden">
+    
+    <!-- Floating leaves animation -->
+    <div class="floating-leaf leaf-fall" style="left: 10%; animation-delay: 0s;">🍃</div>
+    <div class="floating-leaf leaf-fall" style="left: 20%; animation-delay: 2s;">🌿</div>
+    <div class="floating-leaf leaf-fall" style="left: 80%; animation-delay: 4s;">🍀</div>
+    <div class="floating-leaf leaf-fall" style="left: 90%; animation-delay: 6s;">🌱</div>
+    
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-lg">
+            
+            <!-- Header Card -->
+            <div class="nature-card rounded-3xl p-8 mb-6 text-center shadow-xl grow-in">
+                <!-- Flower decorations -->
+                <div class="absolute top-4 left-4 text-2xl flower-decoration">🌸</div>
+                <div class="absolute top-4 right-4 text-2xl flower-decoration" style="animation-delay: 1s;">🌺</div>
+                <div class="absolute bottom-4 left-4 text-2xl flower-decoration" style="animation-delay: 2s;">🌼</div>
+                <div class="absolute bottom-4 right-4 text-2xl flower-decoration" style="animation-delay: 1.5s;">🌻</div>
+                
+                <div class="relative z-10">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-seedling text-white text-2xl"></i>
+                    </div>
+                    <h1 class="script-font text-4xl green-gradient mb-2">Garden Wedding</h1>
+                    <div class="flex justify-center items-center mb-4">
+                        <div class="w-8 h-1 bg-green-400 rounded-full"></div>
+                        <div class="mx-2 text-2xl">🌿</div>
+                        <div class="w-8 h-1 bg-green-400 rounded-full"></div>
+                    </div>
+                    <p class="text-green-700 font-medium italic">"Love grows here"</p>
+                </div>
+            </div>
+            
+            <!-- Couple Section -->
+            <div class="nature-card rounded-3xl p-8 mb-6 shadow-xl grow-in" style="animation-delay: 0.3s;">
+                <div class="text-center">
+                    <p class="text-green-700 mb-6 leading-relaxed">Join us in our garden of love as we celebrate the beginning of our forever</p>
+                    
+                    <!-- Couple Display -->
+                    <div class="flex items-center justify-center space-x-6 mb-6">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-3 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+                                <span class="text-white font-bold text-2xl">L</span>
+                            </div>
+                            <h2 class="script-font text-2xl text-green-800">Lily</h2>
+                            <p class="text-sm text-green-600">Putri dari</p>
+                            <p class="text-sm text-green-700 font-medium">Bpk. Andi & Ibu Sari</p>
+                            <div class="text-xl mt-1">🌷</div>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mb-2 shadow-lg">
+                                <span class="text-white font-bold text-xl">&</span>
+                            </div>
+                            <div class="text-2xl">💕</div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-3 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+                                <span class="text-white font-bold text-2xl">R</span>
+                            </div>
+                            <h2 class="script-font text-2xl text-green-800">Ryan</h2>
+                            <p class="text-sm text-green-600">Putra dari</p>
+                            <p class="text-sm text-green-700 font-medium">Bpk. Budi & Ibu Rina</p>
+                            <div class="text-xl mt-1">🌿</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Details -->
+            <div class="nature-card rounded-3xl p-8 mb-6 shadow-xl grow-in" style="animation-delay: 0.6s;">
+                <div class="text-center mb-6">
+                    <h3 class="script-font text-2xl green-gradient mb-2">Our Special Day</h3>
+                    <div class="text-3xl mb-2">🌺 🌿 🌺</div>
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- Garden Ceremony -->
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-200">
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🌳</div>
+                            <h4 class="font-bold text-green-800 text-lg mb-2">Garden Ceremony</h4>
+                            <p class="script-font text-2xl text-green-700">Minggu, 30 Juni 2024</p>
+                            <p class="text-green-600 mb-2">Pukul 16.00 - 17.30 WIB</p>
+                            <p class="font-semibold text-green-800">Taman Botani Bogor</p>
+                            <p class="text-sm text-green-600">Jl. Ir. H. Juanda No.13, Bogor</p>
+                            <div class="text-2xl mt-2">🌻 🦋 🌻</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Outdoor Reception -->
+                    <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-2xl border border-emerald-200">
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🏡</div>
+                            <h4 class="font-bold text-emerald-800 text-lg mb-2">Garden Reception</h4>
+                            <p class="script-font text-2xl text-emerald-700">Minggu, 30 Juni 2024</p>
+                            <p class="text-emerald-600 mb-2">Pukul 18.00 - 21.00 WIB</p>
+                            <p class="font-semibold text-emerald-800">Villa Puncak Garden</p>
+                            <p class="text-sm text-emerald-600">Jl. Raya Puncak KM.87, Bogor</p>
+                            <div class="text-2xl mt-2">🌸 🌿 🌸</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-6">
+                    <button onclick="showGardenLocation()" class="nature-button text-white font-semibold py-3 px-6 rounded-full transition duration-300">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Lihat Lokasi Taman
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Nature Timeline -->
+            <div class="nature-card rounded-3xl p-8 mb-6 shadow-xl grow-in" style="animation-delay: 0.9s;">
+                <h3 class="script-font text-2xl green-gradient text-center mb-6">Timeline Acara</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-green-400 rounded-full flex items-center justify-center text-white font-bold">16:00</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-green-800">🌱 Tamu Mulai Berdatangan</p>
+                            <p class="text-sm text-green-600">Welcome drink & garden tour</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">16:30</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-green-800">🌺 Prosesi Akad Nikah</p>
+                            <p class="text-sm text-green-600">Under the blooming cherry tree</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">18:00</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-green-800">🍃 Garden Reception</p>
+                            <p class="text-sm text-green-600">Dinner & celebration</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center text-white font-bold">21:00</div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-green-800">🌙 Penutupan</p>
+                            <p class="text-sm text-green-600">Moonlight farewell</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RSVP Garden Style -->
+            <div class="nature-card rounded-3xl p-8 mb-6 shadow-xl grow-in" style="animation-delay: 1.2s;">
+                <div class="text-center mb-6">
+                    <div class="text-4xl mb-2">🌻</div>
+                    <h3 class="script-font text-2xl green-gradient">RSVP Garden Party</h3>
+                    <p class="text-green-700 mt-2">Konfirmasi kehadiran Anda di pesta taman kami</p>
+                </div>
+                
+                <form class="space-y-4">
+                    <div class="relative">
+                        <i class="fas fa-user absolute left-3 top-4 text-green-500"></i>
+                        <input type="text" placeholder="Nama Lengkap" class="w-full pl-10 pr-4 py-3 border-2 border-green-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 bg-green-50">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-users absolute left-3 top-4 text-green-500"></i>
+                        <select class="w-full pl-10 pr-4 py-3 border-2 border-green-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 bg-green-50">
+                            <option>Jumlah Tamu</option>
+                            <option>1 Orang</option>
+                            <option>2 Orang</option>
+                            <option>3 Orang</option>
+                            <option>4+ Orang</option>
+                        </select>
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-heart absolute left-3 top-4 text-green-500"></i>
+                        <textarea placeholder="Ucapan & doa untuk pengantin" class="w-full pl-10 pr-4 py-3 border-2 border-green-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 bg-green-50 h-24 resize-none"></textarea>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button type="button" onclick="rsvpGarden('hadir')" class="nature-button text-white font-semibold py-3 rounded-xl transition duration-300">
+                            <i class="fas fa-check mr-2"></i>Hadir 🌸
+                        </button>
+                        <button type="button" onclick="rsvpGarden('tidak')" class="bg-gray-400 hover:bg-gray-500 text-white font-semibold py-3 rounded-xl transition duration-300">
+                            <i class="fas fa-times mr-2"></i>Tidak Hadir
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Garden Gift -->
+            <div class="nature-card rounded-3xl p-8 mb-6 shadow-xl grow-in" style="animation-delay: 1.5s;">
+                <div class="text-center mb-6">
+                    <div class="text-4xl mb-2">🎁</div>
+                    <h3 class="script-font text-2xl green-gradient">Wedding Gift</h3>
+                    <p class="text-green-700 mt-2">Doa restu adalah hadiah terindah, tapi jika ingin memberi:</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-green-50 p-4 rounded-xl border-2 border-green-200">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold text-green-800">🏦 Bank Mandiri</p>
+                                <p class="font-mono text-lg font-bold text-green-900">1350007890123</p>
+                                <p class="text-sm text-green-600">a.n. Lily Sari</p>
+                            </div>
+                            <button onclick="copyGardenAccount('1350007890123')" class="nature-button text-white p-2 rounded-lg transition duration-300">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl border-2 border-emerald-200">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold text-emerald-800">🟢 GoPay</p>
+                                <p class="font-mono text-lg font-bold text-emerald-900">081234567890</p>
+                                <p class="text-sm text-emerald-600">a.n. Ryan Budi</p>
+                            </div>
+                            <button onclick="copyGardenAccount('081234567890')" class="bg-emerald-500 hover:bg-emerald-600 text-white p-2 rounded-lg transition duration-300">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Garden Gallery Preview -->
+            <div class="nature-card rounded-3xl p-8 mb-6 shadow-xl grow-in" style="animation-delay: 1.8s;">
+                <h3 class="script-font text-2xl green-gradient text-center mb-6">Garden Moments</h3>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="aspect-square rounded-xl overflow-hidden bg-green-200 flex items-center justify-center text-4xl">🌺</div>
+                    <div class="aspect-square rounded-xl overflow-hidden bg-emerald-200 flex items-center justify-center text-4xl">🌿</div>
+                    <div class="aspect-square rounded-xl overflow-hidden bg-teal-200 flex items-center justify-center text-4xl">🌸</div>
+                    <div class="aspect-square rounded-xl overflow-hidden bg-lime-200 flex items-center justify-center text-4xl">🍃</div>
+                    <div class="aspect-square rounded-xl overflow-hidden bg-green-300 flex items-center justify-center text-4xl">🌻</div>
+                    <div class="aspect-square rounded-xl overflow-hidden bg-emerald-300 flex items-center justify-center text-4xl">🌼</div>
+                </div>
+                <div class="text-center mt-4">
+                    <button onclick="showGardenGallery()" class="text-green-600 hover:text-green-700 font-medium">
+                        <i class="fas fa-images mr-1"></i> Lihat Semua Foto Taman
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="nature-card rounded-3xl p-8 text-center shadow-xl grow-in" style="animation-delay: 2.1s;">
+                <div class="text-4xl mb-4">🌺 🌿 🌺</div>
+                <p class="text-green-700 mb-4">Kehadiran Anda akan menyempurnakan kebahagiaan kami</p>
+                <div class="script-font text-3xl green-gradient mb-4">Lily & Ryan</div>
+                <p class="text-green-600 text-sm mb-4">Garden Wedding 2024</p>
+                
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white hover:bg-emerald-600 transition">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white hover:bg-teal-600 transition">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+                
+                <div class="text-3xl mt-4">🌱 💚 🌱</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showGardenLocation() {
+            alert('🌺 Membuka lokasi taman...\n\nCeremony: Taman Botani Bogor\nReception: Villa Puncak Garden\n\nMohon bawa alas kaki yang nyaman untuk berjalan di taman! 🌿');
+        }
+        
+        function rsvpGarden(status) {
+            if (status === 'hadir') {
+                alert('🌸 Terima kasih! Kami sangat senang Anda akan hadir di pesta taman kami.\n\nJangan lupa bawa jaket tipis karena acara di alam terbuka ya! 🌿');
+            } else {
+                alert('😊 Terima kasih sudah mengonfirmasi. Kami akan merindukan kehadiran Anda. 🌺');
+            }
+        }
+        
+        function copyGardenAccount(account) {
+            navigator.clipboard.writeText(account).then(() => {
+                alert('🌻 Nomor rekening berhasil disalin! Terima kasih atas kebaikan hati Anda. 💚');
+            });
+        }
+        
+        function showGardenGallery() {
+            alert('🌺 Membuka galeri foto taman...\n\nFoto-foto indah dari lokasi pernikahan dan persiapan garden party! 🌿');
+        }
+        
+        // Animation entrance
+        window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.grow-in');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.animationPlayState = 'running';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

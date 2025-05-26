@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tunangan Jepang Minimalis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Yomogi&family=Kaisei+Tokumin&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kaisei Tokumin', serif;
+            background-color: #f9f5f0;
+            color: #333;
+        }
+        .japanese-border {
+            border: 1px solid #c0a080;
+            border-image: repeating-linear-gradient(45deg, #c0a080, #c0a080 10px, transparent 10px, transparent 20px) 10;
+        }
+        .sakura {
+            position: absolute;
+            opacity: 0.7;
+            animation: falling 10s linear infinite;
+        }
+        @keyframes falling {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+        }
+        .washi-paper {
+            background-color: #fffaf5;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4b483' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .chop-mark {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #a67c52;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(15deg);
+            opacity: 0.8;
+            font-family: 'Noto Serif JP', serif;
+            color: #a67c52;
+        }
+        .separator-line {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c0a080, transparent);
+        }
+        .text-japanese {
+            font-family: 'Noto Serif JP', serif;
+        }
+        .text-handwritten {
+            font-family: 'Yomogi', cursive;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 relative overflow-hidden">
+    <!-- Sakura falling animation -->
+    <div id="sakura-container"></div>
+    
+    <!-- Main invitation card -->
+    <div class="washi-paper japanese-border max-w-md w-full p-10 shadow-lg relative">
+        <!-- Vertical Japanese text on the left -->
+        <div class="absolute left-6 top-1/2 transform -translate-y-1/2 -rotate-90 origin-left hidden md:block">
+            <p class="text-japanese text-gray-400 text-sm">婚約式</p>
+        </div>
+        
+        <!-- Title -->
+        <div class="text-center mb-8">
+            <h1 class="text-japanese text-3xl tracking-wider">婚約 の お知らせ</h1>
+            <div class="separator-line w-32 mx-auto my-4"></div>
+            <h2 class="text-handwritten text-2xl">UNDANGAN TUNANGAN</h2>
+        </div>
+        
+        <!-- Couple names -->
+        <div class="text-center mb-12">
+            <div class="flex justify-center items-center">
+                <div class="text-right pr-4">
+                    <p class="text-gray-500 text-sm text-japanese">新郎</p>
+                    <h3 class="text-japanese text-3xl">リカルド</h3>
+                    <p class="text-sm text-gray-600 mt-1">Ricardo</p>
+                </div>
+                <div class="text-japanese text-4xl text-gray-400 px-6">&</div>
+                <div class="text-left pl-4">
+                    <p class="text-gray-500 text-sm text-japanese">新婦</p>
+                    <h3 class="text-japanese text-3xl">アンジェラ</h3>
+                    <p class="text-sm text-gray-600 mt-1">Angela</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Details section -->
+        <div class="mb-10">
+            <div class="text-center text-gray-700 mb-8 leading-relaxed">
+                <p class="text-japanese">この度、私達は婚約いたしました</p>
+                <p>Dengan penuh kebahagiaan dan rasa syukur,</p>
+                <p>kami bermaksud mengundang Anda</p>
+                <p>untuk menghadiri acara tunangan kami</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="text-gray-500 w-24 flex-shrink-0 text-japanese">日時</div>
+                    <div>
+                        <p class="font-medium text-japanese">２０２３年１２月３日</p>
+                        <p class="text-gray-700">Minggu, 3 Desember 2023</p>
+                        <p class="text-gray-600">13.00 - 15.00 WIB</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="text-gray-500 w-24 flex-shrink-0 text-japanese">場所</div>
+                    <div>
+                        <p class="font-medium">Hotel Sakura Garden</p>
+                        <p class="text-gray-700">Jl. Hanami No. 88, Jakarta</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="text-gray-500 w-24 flex-shrink-0 text-japanese">服装</div>
+                    <div class="text-gray-700">Semi Formal / Kebaya</div>
+                </div>
+            </div>
+            
+            <div class="text-center text-gray-700 mt-12 mb-6 leading-relaxed">
+                <p>Atas kehadiran dan doa restunya</p>
+                <p>kami mengucapkan terima kasih</p>
+                <p class="text-japanese">ありがとうございます</p>
+            </div>
+            
+            <div class="separator-line w-48 mx-auto my-6"></div>
+            
+            <div class="text-center text-xs text-gray-500 mb-4">
+                <p>RSVP sebelum 25 November 2023</p>
+                <p>0812-3456-7890 (Nanda)</p>
+            </div>
+        </div>
+        
+        <!-- RSVP button -->
+        <div class="text-center">
+            <button class="px-6 py-2 border border-gray-500 text-gray-700 hover:bg-gray-100 transition-colors duration-300 text-japanese">
+                出席のご連絡
+            </button>
+        </div>
+        
+        <!-- Chop mark (seal) -->
+        <div class="chop-mark text-japanese">愛</div>
+    </div>
+
+    <!-- Audio toggle -->
+    <button id="musicToggle" class="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-white border border-gray-300 flex items-center justify-center text-gray-500 hover:text-gray-700 z-50">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <script>
+        // Create falling sakura petals
+        function createSakura() {
+            const container = document.getElementById('sakura-container');
+            const sakura = document.createElement('div');
+            sakura.className = 'sakura';
+            sakura.innerHTML = '🌸';
+            sakura.style.left = Math.random() * 100 + 'vw';
+            sakura.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            sakura.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            sakura.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(sakura);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                sakura.remove();
+            }, 15000);
+        }
+        
+        // Create initial sakura petals
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createSakura, i * 300);
+        }
+        
+        // Continue creating sakura petals
+        setInterval(createSakura, 1000);
+        
+        // Music toggle
+        const musicToggle = document.getElementById('musicToggle');
+        musicToggle.addEventListener('click', () => {
+            if (musicToggle.classList.contains('text-gray-500')) {
+                musicToggle.classList.remove('text-gray-500');
+                musicToggle.classList.add('text-red-400');
+                // In a real implementation, you would play music here
+            } else {
+                musicToggle.classList.add('text-gray-500');
+                musicToggle.classList.remove('text-red-400');
+                // In a real implementation, you would pause music here
+            }
+        });
+    </script>
+</body>
+</html>

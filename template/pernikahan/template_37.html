@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Hizam & Cindy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf7f5;
+            color: #5a4a42;
+            overflow-x: hidden;
+        }
+        
+        .sacramento {
+            font-family: 'Sacramento', cursive;
+        }
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f9d423 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .ornament {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path fill="none" stroke="%23d4af37" stroke-width="1" stroke-linecap="round" d="M0,5 L30,5 Q50,5 50,2 T70,5 L100,5"/></svg>');
+            background-repeat: repeat-x;
+            background-size: 200px auto;
+        }
+        
+        .couple-photo {
+            border: 10px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .couple-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .floating-petal {
+            position: absolute;
+            background-color: rgba(255,255,255,0.7);
+            opacity: 0.7;
+            border-radius: 50% 50% 0 50%;
+            transform: rotate(45deg);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .heartbeat {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes petal-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .date-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Petal Animation -->
+    <div id="petals" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+    
+    <!-- Header Section -->
+    <header class="relative min-h-screen flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')] bg-cover bg-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl w-full">
+            <!-- Ornament Top -->
+            <div class="ornament h-3 w-48 mx-auto mb-8"></div>
+            
+            <!-- Intro Text -->
+            <h2 class="text-white/80 uppercase tracking-widest text-sm mb-4">Kami Memohon Kehadiran Anda</h2>
+            <h1 class="sacramento text-6xl md:text-8xl text-white mb-2">Hizam & Cindy</h1>
+            <p class="playfair text-white text-xl mb-8 italic">"Bersyukur aku dipertemukan di hangat cintamu yang setia terjaga"</p>
+            
+            <!-- Wedding Date -->
+            <div class="date-card rounded-lg p-4 mb-8 inline-block">
+                <div class="text-amber-700">
+                    <div class="text-sm uppercase tracking-widest">Waktu Pernikahan</div>
+                    <div class="text-3xl playfair font-bold">Sabtu</div>
+                    <div class="text-5xl md:text-6xl playfair font-bold">15.05</div>
+                    <div class="text-xl">Juli 2024</div>
+                </div>
+            </div>
+            
+            <!-- Countdown -->
+            <div class="mt-8 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 inline-block border border-white/20">
+                <div id="countdown" class="text-white font-medium flex items-center">
+                    <i class="fas fa-heart mr-2 text-amber-200"></i>
+                    <span class="text-sm">Loading...</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-8 h-14 rounded-2xl border-2 border-amber-200 flex justify-center p-1">
+                <div class="w-2 h-2 rounded-full bg-amber-200 animate-pulse mt-2"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="bg-white relative z-10 -mt-20 rounded-t-3xl shadow-xl">
+        <!-- Couple Story -->
+        <section class="max-w-4xl mx-auto py-20 px-6">
+            <h2 class="playfair text-3xl text-center font-bold mb13 text-amber-800">Kisah Kami</h2>
+            <div class="ornament h-3 w-48 mx-auto my-3"></div>
+            
+            <!-- Couple Photo -->
+            <div class="flex justify-center my-12">
+                <div class="couple-photo rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hizam & Cindy" class="w-full max-w-md">
+                </div>
+            </div>
+            
+            <!-- Story Text -->
+            <div class="text-center text-gray-700">
+                <blockquote class="text-lg italic mb-8">
+                    "Engkau bagai pengganti ibu, pelindung jiwaku, menjadi cahaya di setiap langkahku"
+                </blockquote>
+                
+                <p class="mb-4">
+                    Pertemuan kami adalah anugerah yang tak terduga. Sejak pandangan pertama, kami tahu ini adalah takdir yang dituliskan Tuhan.
+                </p>
+                
+                <p class="mb-4">
+                    Dengan segala kerendahan hati dan kebahagiaan yang tak terkira, kami mengundang Bapak/Ibu/Saudara/i untuk turut membersamai kami dalam memulai perjalanan suci ini.
+                </p>
+                
+                <div class="flex justify-center my-10">
+                    <div class="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 text-2xl">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                
+                <h3 class="playfair text-2xl my-8 text-amber-700">"Dan kini, kita akan memulai kisah suci dalam satu ikatan"</h3>
+            </div>
+        </section>
+        
+        <!-- Wedding Details -->
+        <section class="bg-amber-50 py-20">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="playfair text-3xl text-center font-bold mb-13 text-amber-800">Detail Akad & Resepsi</h2>
+                <div class="ornament h-3 w-48 mx-auto my-3"></div>
+                
+                <div class="grid md:grid-cols-2 gap-12 mt-16">
+                    <!-- Akad Nikah -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="h-3 bg-gradient-to-r from-amber-500 to-amber-300"></div>
+                        <div class="p-8 text-center">
+                            <div class="flex justify-center mb-6">
+                                <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 text-2xl">
+                                    <i class="fas fa-mosque"></i>
+                                </div>
+                            </div>
+                            <h3 class="playfair text-2xl mb-2 text-amber-700">Akad Nikah</h3>
+                            <p class="text-gray-600 mb-4">Pukul 08.00 - 10.00 WIB</p>
+                            
+                            <div class="space-y-4 text-gray-600 text-left">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt mr-3 text-amber-600"></i>
+                                    <p>Sabtu, 15 Juli 2024</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-3 text-amber-600"></i>
+                                    <p>Masjid Al-Mabrur<br>Jl. Kebajikan No.123, Surabaya</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-user-friends mr-3 text-amber-600"></i>
+                                    <p>Wali Nikah: Bapak Sutrisno</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Resepsi -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="h-3 bg-gradient-to-r from-amber-500 to-amber-300"></div>
+                        <div class="p-8 text-center">
+                            <div class="flex justify-center mb-6">
+                                <div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 text-2xl">
+                                    <i class="fas fa-glass-cheers"></i>
+                                </div>
+                            </div>
+                            <h3 class="playfair text-2xl mb-2 text-amber-700">Resepsi Pernikahan</h3>
+                            <p class="text-gray-600 mb-4">Pukul 12.00 - 16.00 WIB</p>
+                            
+                            <div class="space-y-4 text-gray-600 text-left">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt mr-3 text-amber-600"></i>
+                                    <p>Sabtu, 15 Juli 2024</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-3 text-amber-600"></i>
+                                    <p>Grand Ballroom Aston<br>Jl. Kemuliaan No.456, Surabaya</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-user-tie mr-3 text-amber-600"></i>
+                                    <p>MC: Kak Anton & Teh Nina</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dress Code -->
+                <div class="mt-16 text-center">
+                    <h3 class="playfair text-xl font-bold mb-4 text-amber-700">Dress Code</h3>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm mt-6">
+                        <div class="bg-white px-4 py-2 rounded-full border border-amber-200 shadow-sm">
+                            <i class="fas fa-tshirt mr-2 text-amber-500"></i>Softea Beige (Untuk Wanita)
+                        </div>
+                        <div class="bg-white px-4 py-2 rounded-full border border-amber-200 shadow-sm">
+                            <i class="fas fa-tshirt mr-2 text-amber-500"></i>Dark Brown (Untuk Pria)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery -->
+        <section class="py-20 max-w-4xl mx-auto px-6">
+            <h2 class="playfair text-3xl text-center font-bold mb-13 text-amber-800">Gallery Cinta Kami</h2>
+            <div class="ornament h-3 w-48 mx-auto my-3"></div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1529333164850-6f0d068e34c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gallery 1" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1484863137850-59abc5b1c2a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gallery 2" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522529599102-193dc0b5d0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gallery 3" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gallery 4" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gallery 5" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="gallery-item relative">
+                    <div class="absolute inset-0 bg-amber-800/70 rounded-lg flex items-center justify-center">
+                        <a href="#gallery" class="text-white playfair text-lg px-4 py-2 border border-white rounded-full">View More</a>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1501824937308-111a485bab3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Gallery 6" class="w-full h-full object-cover rounded-lg">
+                </div>
+            </div>
+            
+            <!-- Lyric Quote -->
+            <div class="text-center mt-20 bg-gradient-to-r from-amber-50 to-amber-100 rounded-xl p-8">
+                <div class="playfair text-2xl text-amber-800 italic mb-4">
+                    "Saya terima nikahnya dirimu dengan mas kawin seluruh dunia dan waktu"
+                </div>
+                <div class="text-gray-600">
+                    Dibayar oleh rasa sayang dan janjiku<br>
+                    <span class="font-bold text-amber-700">Tunai, tunai, atas nama cinta dan restu</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Parents Blessing -->
+        <section class="bg-amber-800 text-white py-20">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="playfair text-3xl font-bold mb-13">Doa Orang Tua</h2>
+                <div class="ornament h-3 w-48 mx-auto my-3"></div>
+                
+                <p class="my-8 italic">
+                    "Terima kasih, wahai Ayahanda tercinta, kau raja yang membimbing putrimu. Kini ia jadi permaisuri di hatiku, kan kujaga amanah suci ini."
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-12 mt-16">
+                    <div>
+                        <h3 class="playfair text-xl mb-4">Keluarga Bapak Surya & Ibu Rani</h3>
+                        <p>
+                            Jl. Kasih Sayang No. 45<br>
+                            Surabaya, Jawa Timur
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="playfair text-xl mb-4">Keluarga Bapah Wahyu & Ibu Dian</h3>
+                        <p>
+                            Jl. Kebahagiaan No. 78<br>
+                            Surabaya, Jawa Timur
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-16">
+                    <blockquote class="playfair text-2xl italic">
+                        "Wahai Anak-anakku, raihlah ridho-Nya dalam setiap langkah pernikahan kalian"
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+        
+        <!-- RSVP -->
+        <section class="py-20 max-w-4xl mx-auto px-6 text-center" id="rsvp">
+            <h2 class="playfair text-3xl font-bold mb-13 text-amber-800">Konfirmasi Kehadiran</h2>
+            <div class="ornament h-3 w-48 mx-auto my-3"></div>
+            
+            <p class="mb-12 max-w-lg mx-auto">
+                Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami mengucapkan terima kasih.
+            </p>
+            
+            <button onclick="showRSVPForm()" class="bg-gradient-to-r from-amber-600 to-amber-500 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all font-medium">
+                <i class="fas fa-reply mr-2"></i> Konfirmasi Kehadiran
+            </button>
+            
+            <!-- Wedding Gift -->
+            <div class="mt-12 bg-amber-50 rounded-xl p-6 max-w-lg mx-auto">
+                <h3 class="playfair text-xl mb-2 text-amber-700">Weding Gift</h3>
+                <p class="mb-4 text-gray-600">
+                    Untuk yang ingin memberikan tanda kasih, dapat melalui:
+                </p>
+                
+                <div class="text-left space-y-4">
+                    <div class="flex items-center p-3 bg-white rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mr-4">
+                            <i class="fas fa-bank"></i>
+                        </div>
+                        <div>
+                            <div class="font-medium">BCA - 123 456 7890</div>
+                            <div class="text-sm">a.n. Hizam Wahyudi</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-3 bg-white rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mr-4">
+                            <i class="fas fa-bank"></i>
+                        </div>
+                        <div>
+                            <div class="font-medium">Mandiri - 098 765 4321</div>
+                            <div class="text-sm">a.n. Cindy Permata</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="mt-6 italic text-sm text-gray-500">
+                    Angka-angka kebahagiaan: 3122023 (Tanggal lamaran kami)
+                </p>
+            </div>
+        </section>
+        
+        <!-- Final Words -->
+        <section class="text-center py-20 bg-[url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center relative">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="relative z-10 max-w-2xl mx-auto px-6 text-white">
+                <h2 class="playfair text-3xl font-bold mb-13">Kata Penutup</h2>
+                <div class="ornament h-3 w-48 mx-auto my-3"></div>
+                
+                <p class="my-8 text-lg">
+                    "Bersamamu, bersamamu, hingga akhir waktu. Kita saling menjaga, saling mencinta hingga ajal menjemput kita."
+                </p>
+                
+                <div class="my-10 heartbeat inline-block">
+                    <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center border border-white/30">
+                        <div class="w-12 h-12 rounded-full bg-white/30 flex items-center justify-center">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sacramento text-4xl">Hizam & Cindy</div>
+                
+                </div>
+            </div>
+        </section>
+        <!-- End RSVP Section -->
+
+    </main>
+    <!-- End Main Content -->
+
+    <footer class="bg-amber-900 text-white text-center py-4">
+        © 2024 Hizam & Cindy. All rights reserved.
+    </footer>
+    <!-- End Footer -->
+</body>
+</html>

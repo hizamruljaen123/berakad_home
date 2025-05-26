@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Retro 80s Theme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Audiowide:wght@400&display=swap" rel="stylesheet">
+    <style>
+        .retro-bg {
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0080);
+            background-size: 400% 400%;
+            animation: retro-gradient 3s ease infinite;
+        }
+        
+        @keyframes retro-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            animation: neon-flicker 2s linear infinite;
+        }
+        
+        @keyframes neon-flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .retro-grid {
+            background-image: 
+                linear-gradient(rgba(255, 0, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 255, 0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: grid-move 10s linear infinite;
+        }
+        
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
+        }
+        
+        .cassette {
+            animation: cassette-rotate 8s linear infinite;
+        }
+        
+        @keyframes cassette-rotate {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(90deg) scale(1.1); }
+            50% { transform: rotate(180deg) scale(1); }
+            75% { transform: rotate(270deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        
+        .vhs-glitch {
+            animation: vhs-glitch 0.3s linear infinite;
+        }
+        
+        @keyframes vhs-glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        .synthwave-sun {
+            background: radial-gradient(circle, #ff6b6b, #ff8e53, #ff6b9d);
+            animation: pulse-sun 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-sun {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .retro-button {
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .retro-button:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="retro-bg min-h-screen">
+    <div class="retro-grid absolute inset-0 opacity-20"></div>
+    
+    <div class="relative z-10 container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="neon-text text-6xl font-black text-white mb-4" style="font-family: 'Orbitron', monospace;">
+                BIRTHDAY PARTY
+            </h1>
+            <div class="vhs-glitch">
+                <h2 class="text-4xl font-bold text-cyan-300" style="font-family: 'Audiowide', cursive;">
+                    🎮 TOTALLY RAD 80s BASH! 🎮
+                </h2>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-4xl mx-auto bg-black bg-opacity-80 rounded-lg border-4 border-pink-500 p-8 mb-8">
+            <!-- Birthday Person Info -->
+            <div class="text-center mb-8">
+                <div class="synthwave-sun w-32 h-32 rounded-full mx-auto mb-6"></div>
+                <h3 class="text-5xl font-bold text-yellow-300 mb-4" style="font-family: 'Orbitron', monospace;">
+                    SARAH JONES
+                </h3>
+                <p class="text-2xl text-cyan-300">is turning</p>
+                <div class="text-6xl font-black text-pink-500 neon-text">25</div>
+            </div>
+
+            <!-- Event Details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-purple-900 bg-opacity-50 rounded-lg p-6 border-2 border-cyan-400">
+                    <h4 class="text-2xl font-bold text-cyan-300 mb-4">📅 EVENT DETAILS</h4>
+                    <div class="space-y-3 text-white">
+                        <p><span class="text-pink-400">Date:</span> Saturday, June 15, 2025</p>
+                        <p><span class="text-pink-400">Time:</span> 7:00 PM - 12:00 AM</p>
+                        <p><span class="text-pink-400">Location:</span> Retro Arcade Center</p>
+                        <p><span class="text-pink-400">Address:</span> 123 Neon Street, City</p>
+                    </div>
+                </div>
+                
+                <div class="bg-pink-900 bg-opacity-50 rounded-lg p-6 border-2 border-yellow-400">
+                    <h4 class="text-2xl font-bold text-yellow-300 mb-4">🎵 PARTY VIBES</h4>
+                    <div class="space-y-3 text-white">
+                        <p>🕺 80s Dance Party</p>
+                        <p>🎮 Retro Arcade Games</p>
+                        <p>🍕 Totally Tubular Food</p>
+                        <p>👾 Costume Contest</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cassette Animation -->
+            <div class="flex justify-center mb-8">
+                <div class="cassette bg-gray-800 rounded-lg p-4 border-2 border-silver">
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 bg-gray-600 rounded-full"></div>
+                        <div class="w-8 h-8 bg-gray-600 rounded-full"></div>
+                    </div>
+                    <div class="text-center text-white mt-2 text-sm">NOW PLAYING: PARTY MIX</div>
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="bg-gradient-to-r from-purple-800 to-pink-800 rounded-lg p-6 mb-8 border-2 border-cyan-400">
+                <h4 class="text-2xl font-bold text-center text-cyan-300 mb-4">⏰ COUNTDOWN TO RADICAL PARTY</h4>
+                <div id="countdown" class="flex justify-center space-x-4 text-center">
+                    <div class="bg-black rounded-lg p-4 border border-pink-500">
+                        <div id="days" class="text-3xl font-bold text-yellow-300">00</div>
+                        <div class="text-cyan-300">DAYS</div>
+                    </div>
+                    <div class="bg-black rounded-lg p-4 border border-pink-500">
+                        <div id="hours" class="text-3xl font-bold text-yellow-300">00</div>
+                        <div class="text-cyan-300">HOURS</div>
+                    </div>
+                    <div class="bg-black rounded-lg p-4 border border-pink-500">
+                        <div id="minutes" class="text-3xl font-bold text-yellow-300">00</div>
+                        <div class="text-cyan-300">MINS</div>
+                    </div>
+                    <div class="bg-black rounded-lg p-4 border border-pink-500">
+                        <div id="seconds" class="text-3xl font-bold text-yellow-300">00</div>
+                        <div class="text-cyan-300">SECS</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP Form -->
+            <div class="bg-gradient-to-r from-cyan-800 to-blue-800 rounded-lg p-6 mb-8 border-2 border-yellow-400">
+                <h4 class="text-2xl font-bold text-center text-yellow-300 mb-4">🤖 RSVP SYSTEM ACTIVATED</h4>
+                <form id="rsvpForm" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Rad Name" 
+                               class="w-full px-4 py-3 bg-black border-2 border-pink-500 rounded text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none">
+                        <input type="email" placeholder="Email Address" 
+                               class="w-full px-4 py-3 bg-black border-2 border-pink-500 rounded text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <select class="w-full px-4 py-3 bg-black border-2 border-pink-500 rounded text-white focus:border-cyan-400 focus:outline-none">
+                            <option>Will you attend?</option>
+                            <option>Totally! I'll be there!</option>
+                            <option>Maybe, depends on the music</option>
+                            <option>Can't make it, dude</option>
+                        </select>
+                        <input type="number" placeholder="Number of guests" min="1" max="5"
+                               class="w-full px-4 py-3 bg-black border-2 border-pink-500 rounded text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none">
+                    </div>
+                    <textarea placeholder="Special message (optional)" rows="3"
+                              class="w-full px-4 py-3 bg-black border-2 border-pink-500 rounded text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none"></textarea>
+                    <button type="submit" class="retro-button w-full py-3 text-white font-bold rounded-lg text-xl">
+                        SEND RSVP TO MOTHERSHIP 🚀
+                    </button>
+                </form>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="text-center">
+                <h4 class="text-xl font-bold text-cyan-300 mb-4">SHARE THE RADICAL VIBES</h4>
+                <div class="flex justify-center space-x-4">
+                    <button onclick="shareInvitation('whatsapp')" class="retro-button px-6 py-3 text-white font-bold rounded">
+                        📱 WhatsApp
+                    </button>
+                    <button onclick="shareInvitation('facebook')" class="retro-button px-6 py-3 text-white font-bold rounded">
+                        📘 Facebook
+                    </button>
+                    <button onclick="copyInvitation()" class="retro-button px-6 py-3 text-white font-bold rounded">
+                        📋 Copy Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2025-06-15T19:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (timeLeft < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="text-4xl font-bold text-yellow-300">PARTY TIME! 🎉</div>';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Form
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('🎉 RSVP submitted successfully! Get ready to party like it\'s 1985! 🎉');
+        });
+
+        // Share Functions
+        function shareInvitation(platform) {
+            const text = "You're invited to Sarah's totally rad 80s birthday party! 🎉🕺";
+            const url = window.location.href;
+
+            switch(platform) {
+                case 'whatsapp':
+                    window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`);
+                    break;
+                case 'facebook':
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+                    break;
+            }
+        }
+
+        function copyInvitation() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('📋 Invitation link copied to clipboard! Share the radical vibes!');
+            });
+        }
+    </script>
+</body>
+</html>

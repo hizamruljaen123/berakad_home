@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Hollywood Premiere</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #141414;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .invitation-card {
+            background: linear-gradient(135deg, #333 0%, #000 100%);
+            border: 2px solid #ffd700; /* Gold border */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 30px;
+        }
+        .header-icon {
+            font-size: 3rem;
+            color: #ffd700;
+        }
+        .event-title {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .event-details p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .event-details .icon {
+            color: #ffd700;
+            margin-right: 10px;
+        }
+        .rsvp-button {
+            background-color: #ffd700;
+            color: #141414;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .rsvp-button:hover {
+            transform: scale(1.05);
+        }
+        .footer-text {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .film-reel-border {
+            border: 10px solid transparent;
+            border-image: url('data:image/svg+xml;charset=UTF-8,<svg width="100" height="30" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="20" height="20" fill="%23555"/><rect x="35" y="5" width="20" height="20" fill="%23555"/><rect x="65" y="5" width="20" height="20" fill="%23555"/><line x1="0" y1="15" x2="100" y2="15" stroke="%23333" stroke-width="30"/></svg>') 30 stretch;
+            padding: 20px;
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .star {
+            position: absolute;
+            background-color: #ffd700;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.5; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars-container"></div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="invitation-card film-reel-border">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-film header-icon"></i>
+                        <i class="fas fa-star header-icon mx-3"></i>
+                        <i class="fas fa-ticket-alt header-icon"></i>
+                    </div>
+                    <h1 class="event-title text-center mb-3">Premier Ulang Tahun Spektakuler!</h1>
+                    <p class="text-center lead">Anda Diundang ke Perayaan Ulang Tahun</p>
+                    <h2 class="text-center display-4" style="color: #fff; font-weight: bold;">[Nama Anak]</h2>
+                    <p class="text-center mb-4">Yang ke-[Usia] Tahun!</p>
+
+                    <div class="event-details my-5">
+                        <p><span class="icon"><i class="fas fa-calendar-alt"></i></span> <strong>Tanggal:</strong> [Tanggal Acara], [Tahun Acara]</p>
+                        <p><span class="icon"><i class="fas fa-clock"></i></span> <strong>Waktu:</strong> [Waktu Acara]</p>
+                        <p><span class="icon"><i class="fas fa-map-marker-alt"></i></span> <strong>Lokasi:</strong> [Lokasi Acara], [Kota]</p>
+                        <p><span class="icon"><i class="fas fa-user-tie"></i></span> <strong>Dress Code:</strong> Red Carpet Glamour!</p>
+                    </div>
+
+                    <p class="text-center">
+                        Bersiaplah untuk malam penuh bintang, keseruan, dan kejutan!
+                        Akan ada popcorn, photobooth ala paparazzi, dan banyak lagi!
+                    </p>
+
+                    <div class="text-center mt-5">
+                        <button class="btn rsvp-button" data-toggle="modal" data-target="#rsvpModal">
+                            <i class="fas fa-check-circle"></i> RSVP Sekarang!
+                        </button>
+                    </div>
+
+                    <p class="text-center mt-4 footer-text">
+                        Mohon konfirmasi kehadiran sebelum [Tanggal RSVP] ke [Nomor Telepon RSVP] atau [Email RSVP].
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div class="modal fade" id="rsvpModal" tabindex="-1" aria-labelledby="rsvpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #222; color: #fff;">
+                <div class="modal-header" style="border-bottom: 1px solid #ffd700;">
+                    <h5 class="modal-title" id="rsvpModalLabel" style="color: #ffd700;">Konfirmasi Kehadiran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #fff;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="rsvpForm">
+                        <div class="form-group">
+                            <label for="guestName">Nama Anda:</label>
+                            <input type="text" class="form-control" id="guestName" required style="background-color: #333; color: #fff; border-color: #ffd700;">
+                        </div>
+                        <div class="form-group">
+                            <label for="guestCount">Jumlah Tamu:</label>
+                            <input type="number" class="form-control" id="guestCount" min="1" value="1" required style="background-color: #333; color: #fff; border-color: #ffd700;">
+                        </div>
+                        <button type="submit" class="btn rsvp-button btn-block">Kirim Konfirmasi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Star background
+        const starsContainer = document.getElementById('stars-container');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // RSVP Form Submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const guestName = document.getElementById('guestName').value;
+            alert(`Terima kasih, ${guestName}! Konfirmasi Anda telah diterima. Sampai jumpa di premier!`);
+            $('#rsvpModal').modal('hide');
+            this.reset();
+        });
+
+        // Countdown Timer (Example - set your event date)
+        const eventDate = new Date("Dec 31, 2025 15:00:00").getTime(); // Ganti dengan tanggal dan waktu acara Anda
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in an element with id="countdown"
+            // You can add an element in your HTML to show this:
+            // <p id="countdown" class="text-center mt-3" style="color: #ffd700; font-size: 1.2rem;"></p>
+            const countdownElement = document.getElementById('countdown');
+            if (countdownElement) {
+                 countdownElement.innerHTML = days + "h " + hours + "j " + minutes + "m " + seconds + "d ";
+            }
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                if (countdownElement) countdownElement.innerHTML = "ACARA TELAH BERLANGSUNG!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

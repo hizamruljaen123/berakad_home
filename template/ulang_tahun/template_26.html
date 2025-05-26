@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Superhero Theme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+            background-size: 400% 400%;
+            animation: heroBackground 6s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        @keyframes heroBackground {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero-title {
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: #FFD700;
+            text-shadow: 4px 4px 0px #FF6B35, 8px 8px 0px #DC143C;
+            animation: heroGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes heroGlow {
+            from { text-shadow: 4px 4px 0px #FF6B35, 8px 8px 0px #DC143C, 0 0 20px #FFD700; }
+            to { text-shadow: 4px 4px 0px #FF6B35, 8px 8px 0px #DC143C, 0 0 40px #FFD700, 0 0 60px #FFD700; }
+        }
+        
+        .comic-bubble {
+            background: #FFFFFF;
+            border: 4px solid #000;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .comic-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #000;
+        }
+        
+        .comic-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 52px;
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 18px solid #FFFFFF;
+        }
+        
+        .superhero-badge {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #FFD700, #FFA500);
+            border: 6px solid #DC143C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #DC143C;
+            animation: badgePulse 3s ease-in-out infinite;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+        }
+        
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .power-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 40%, rgba(255, 107, 53, 0.1) 70%);
+            animation: powerWave 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes powerWave {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        .action-btn {
+            background: linear-gradient(45deg, #FF6B35, #DC143C);
+            border: 3px solid #000;
+            border-radius: 15px;
+            font-family: 'Bangers', cursive;
+            font-size: 1.2rem;
+            color: white;
+            text-shadow: 2px 2px 0px #000;
+            box-shadow: 0 6px 0px #8B0000;
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 9px 0px #8B0000, 0 0 20px rgba(255, 107, 53, 0.5);
+            color: white;
+        }
+        
+        .action-btn:active {
+            transform: translateY(0px);
+            box-shadow: 0 3px 0px #8B0000;
+        }
+        
+        .countdown-card {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: 4px solid #000;
+            border-radius: 20px;
+            color: #000;
+            font-weight: bold;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 4s ease-in-out infinite;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(-5deg); }
+            75% { transform: translateY(-25px) rotate(3deg); }
+        }
+        
+        .hero-form {
+            background: rgba(255, 255, 255, 0.95);
+            border: 4px solid #000;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .form-control {
+            border: 3px solid #000;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
+        .form-control:focus {
+            border-color: #FF6B35;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        }
+        
+        .pow-effect {
+            position: fixed;
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            color: #FFD700;
+            text-shadow: 3px 3px 0px #DC143C;
+            pointer-events: none;
+            z-index: 9999;
+            animation: powAnimation 2s ease-out forwards;
+        }
+        
+        @keyframes powAnimation {
+            0% { transform: scale(0) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+            100% { transform: scale(0.8) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Power Effect Background -->
+    <div class="power-effect"></div>
+    
+    <!-- Floating Hero Icons -->
+    <div class="floating-icon" style="top: 10%; left: 5%; animation-delay: 0s;">⚡</div>
+    <div class="floating-icon" style="top: 20%; right: 10%; animation-delay: 1s;">🦸‍♂️</div>
+    <div class="floating-icon" style="bottom: 30%; left: 8%; animation-delay: 2s;">💥</div>
+    <div class="floating-icon" style="bottom: 20%; right: 15%; animation-delay: 0.5s;">🌟</div>
+    <div class="floating-icon" style="top: 60%; left: 15%; animation-delay: 1.5s;">🔥</div>
+    <div class="floating-icon" style="top: 40%; right: 5%; animation-delay: 2.5s;">⭐</div>
+
+    <div class="container py-5">
+        <!-- Header Section -->
+        <div class="text-center mb-5">
+            <div class="superhero-badge mx-auto mb-4">
+                <i class="fas fa-mask"></i>
+            </div>
+            <h1 class="hero-title mb-3">BIRTHDAY HERO</h1>
+            <div class="comic-bubble p-4 mx-auto" style="max-width: 500px;">
+                <h2 class="text-dark fw-bold mb-2" style="font-family: 'Bangers', cursive; font-size: 2rem;">
+                    SUPERHERO BIRTHDAY BASH!
+                </h2>
+                <p class="text-dark fw-bold mb-0">
+                    🦸‍♂️ Join the Ultimate Birthday Adventure! 🦸‍♀️
+                </p>
+            </div>
+        </div>
+
+        <!-- Birthday Hero Info -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="comic-bubble p-4 text-center">
+                    <h3 class="text-dark fw-bold mb-3" style="font-family: 'Bangers', cursive; font-size: 2.5rem;">
+                        HERO OF THE DAY
+                    </h3>
+                    <div class="text-dark fw-bold fs-1 mb-3" style="font-family: 'Bangers', cursive; color: #DC143C !important;">
+                        [NAMA BIRTHDAY]
+                    </div>
+                    <div class="text-dark fw-bold fs-4 mb-3">
+                        Celebrating <span class="text-warning fw-bold fs-2">[USIA]</span> Years of Heroic Adventures!
+                    </div>
+                    <div class="text-dark fw-bold">
+                        🏆 The Birthday Champion 🏆
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="comic-bubble p-4 h-100">
+                    <h4 class="text-dark fw-bold mb-3" style="font-family: 'Bangers', cursive; font-size: 1.8rem;">
+                        <i class="fas fa-calendar-alt me-2 text-warning"></i>
+                        MISSION DATE
+                    </h4>
+                    <div class="text-dark fw-bold fs-5 mb-2">
+                        📅 [TANGGAL ACARA]
+                    </div>
+                    <div class="text-dark fw-bold fs-5">
+                        🕐 [JAM ACARA]
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="comic-bubble p-4 h-100">
+                    <h4 class="text-dark fw-bold mb-3" style="font-family: 'Bangers', cursive; font-size: 1.8rem;">
+                        <i class="fas fa-map-marker-alt me-2 text-danger"></i>
+                        HERO HEADQUARTERS
+                    </h4>
+                    <div class="text-dark fw-bold fs-5 mb-2">
+                        🏢 [LOKASI ACARA]
+                    </div>
+                    <div class="text-dark fs-6">
+                        [ALAMAT LENGKAP]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+                <div class="countdown-card p-4">
+                    <h4 class="text-center fw-bold mb-4" style="font-family: 'Bangers', cursive; font-size: 2rem;">
+                        ⏰ TIME UNTIL HERO MISSION ⏰
+                    </h4>
+                    <div class="row text-center" id="countdown">
+                        <div class="col-3">
+                            <div class="bg-dark text-white rounded-3 p-3 mb-2">
+                                <div id="days" class="fs-2 fw-bold">00</div>
+                            </div>
+                            <div class="fw-bold">DAYS</div>
+                        </div>
+                        <div class="col-3">
+                            <div class="bg-dark text-white rounded-3 p-3 mb-2">
+                                <div id="hours" class="fs-2 fw-bold">00</div>
+                            </div>
+                            <div class="fw-bold">HOURS</div>
+                        </div>
+                        <div class="col-3">
+                            <div class="bg-dark text-white rounded-3 p-3 mb-2">
+                                <div id="minutes" class="fs-2 fw-bold">00</div>
+                            </div>
+                            <div class="fw-bold">MINUTES</div>
+                        </div>
+                        <div class="col-3">
+                            <div class="bg-dark text-white rounded-3 p-3 mb-2">
+                                <div id="seconds" class="fs-2 fw-bold">00</div>
+                            </div>
+                            <div class="fw-bold">SECONDS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RSVP Form -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="hero-form p-4">
+                    <h4 class="text-center text-dark fw-bold mb-4" style="font-family: 'Bangers', cursive; font-size: 2rem;">
+                        🦸‍♂️ JOIN THE HERO SQUAD 🦸‍♀️
+                    </h4>
+                    <form id="heroForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-dark">Hero Name (Nama Lengkap)</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-dark">Squad Size (Jumlah Tamu)</label>
+                            <select class="form-control">
+                                <option value="1">1 Hero</option>
+                                <option value="2">2 Heroes</option>
+                                <option value="3">3 Heroes</option>
+                                <option value="4">4+ Heroes</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-dark">Hero Powers (Pesan Khusus)</label>
+                            <textarea class="form-control" rows="3" placeholder="Share your superpower message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn action-btn w-100 py-3">
+                            ⚡ ACTIVATE HERO MODE ⚡
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <button onclick="shareWhatsApp()" class="btn action-btn">
+                        <i class="fab fa-whatsapp me-2"></i>Share via WhatsApp
+                    </button>
+                    <button onclick="copyLink()" class="btn action-btn">
+                        <i class="fas fa-copy me-2"></i>Copy Hero Link
+                    </button>
+                    <button onclick="saveCalendar()" class="btn action-btn">
+                        <i class="fas fa-calendar-plus me-2"></i>Save Mission
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center">
+            <div class="comic-bubble p-3 mx-auto" style="max-width: 400px;">
+                <div class="text-dark fw-bold fs-5 mb-2">
+                    🌟 Every Hero Needs a Squad! 🌟
+                </div>
+                <div class="text-dark">
+                    "With great birthday comes great celebration!"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2024-12-31T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Hero Form
+        document.getElementById('heroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            createPowEffect();
+            setTimeout(() => {
+                alert('⚡ Hero registration successful! Welcome to the squad! ⚡');
+            }, 500);
+        });
+
+        // Create POW effect
+        function createPowEffect() {
+            const effects = ['POW!', 'BAM!', 'ZAP!', 'BOOM!', 'WHAM!'];
+            const effect = document.createElement('div');
+            effect.className = 'pow-effect';
+            effect.textContent = effects[Math.floor(Math.random() * effects.length)];
+            effect.style.left = Math.random() * (window.innerWidth - 200) + 'px';
+            effect.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+            document.body.appendChild(effect);
+            
+            setTimeout(() => {
+                effect.remove();
+            }, 2000);
+        }
+
+        // Social Share Functions
+        function shareWhatsApp() {
+            const text = encodeURIComponent('🦸‍♂️ You\'re invited to an epic superhero birthday bash! Join the hero squad for an amazing celebration! 🦸‍♀️');
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+            createPowEffect();
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('⚡ Hero link copied to clipboard! ⚡');
+                createPowEffect();
+            });
+        }
+
+        function saveCalendar() {
+            const title = encodeURIComponent('Superhero Birthday Bash');
+            const details = encodeURIComponent('Join us for an epic superhero birthday celebration! Bring your cape and get ready for heroic fun!');
+            const location = encodeURIComponent('[LOKASI ACARA]');
+            const startDate = '20241231T000000Z';
+            const endDate = '20241231T030000Z';
+            
+            const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+            window.open(calendarUrl, '_blank');
+            createPowEffect();
+        }
+
+        // Add random POW effects
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                createPowEffect();
+            }
+        }, 5000);
+
+        // Add click effects to buttons
+        document.querySelectorAll('.action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                createPowEffect();
+            });
+        });
+    </script>
+</body>
+</html>

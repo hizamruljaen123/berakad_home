@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropical Paradise - Wedding Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tropical: {
+                            blue: '#0ab9c1',
+                            green: '#2ecc71',
+                            sand: '#f9e7c9',
+                            coral: '#ff7e67',
+                            yellow: '#ffd662'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #e0f7fa;
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+        }
+        .script-font {
+            font-family: 'Pacifico', cursive;
+        }
+        .palm-leaf {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-image: url('https://i.imgur.com/JgxTxJ3.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .wave-divider {
+            height: 50px;
+            background-image: url('https://i.imgur.com/7OkU3bQ.png');
+            background-size: contain;
+            background-repeat: repeat-x;
+            margin: 20px 0;
+        }
+        .tropical-gradient {
+            background: linear-gradient(135deg, #0ab9c1 0%, #2ecc71 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden relative">
+        <!-- Decorative elements -->
+        <div class="palm-leaf top-0 left-0 transform -rotate-45"></div>
+        <div class="palm-leaf top-0 right-0 transform rotate-45"></div>
+        <div class="palm-leaf bottom-0 left-0 transform -rotate-135"></div>
+        <div class="palm-leaf bottom-0 right-0 transform rotate-135"></div>
+        
+        <!-- Header Banner -->
+        <div class="relative h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1545579133-99bb5ab189bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white px-4">
+                    <p class="text-tropical-yellow tracking-widest text-sm mb-2">JOIN US FOR OUR</p>
+                    <h1 class="script-font text-5xl mb-2">Beach Wedding</h1>
+                    <div class="h-px w-24 bg-tropical-yellow mx-auto mb-2"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="p-8 relative z-10">
+            <!-- Couple Names -->
+            <div class="text-center mb-8">
+                <h2 class="script-font text-4xl text-tropical-blue mb-1">Lily & Daniel</h2>
+                <p class="text-gray-600">are tying the knot in paradise</p>
+            </div>
+            
+            <div class="wave-divider"></div>
+            
+            <!-- Date and Location -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-tropical-sand p-6 rounded-lg text-center">
+                    <h3 class="text-tropical-coral font-bold text-xl mb-2">When</h3>
+                    <p class="text-2xl font-light">July 12, 2024</p>
+                    <p class="text-gray-600">Saturday at 4:00 PM</p>
+                </div>
+                
+                <div class="bg-tropical-sand p-6 rounded-lg text-center">
+                    <h3 class="text-tropical-coral font-bold text-xl mb-2">Where</h3>
+                    <p class="text-2xl font-light">Sunset Beach Resort</p>
+                    <p class="text-gray-600">Bali, Indonesia</p>
+                </div>
+                
+                <div class="bg-tropical-sand p-6 rounded-lg text-center">
+                    <h3 class="text-tropical-coral font-bold text-xl mb-2">Dress Code</h3>
+                    <p class="text-2xl font-light">Beach Formal</p>
+                    <p class="text-gray-600">Barefoot welcome</p>
+                </div>
+            </div>
+            
+            <!-- Schedule -->
+            <div class="mb-8">
+                <h3 class="text-center script-font text-3xl text-tropical-green mb-6">Our Special Day</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border-l-4 border-tropical-blue pl-4">
+                        <h4 class="font-bold text-xl mb-1">Beachside Ceremony</h4>
+                        <p class="text-gray-600 mb-1">4:00 PM - 5:00 PM</p>
+                        <p class="text-sm">Exchange of vows with ocean views</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-tropical-coral pl-4">
+                        <h4 class="font-bold text-xl mb-1">Sunset Cocktails</h4>
+                        <p class="text-gray-600 mb-1">5:00 PM - 6:30 PM</p>
+                        <p class="text-sm">Tropical drinks & appetizers</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-tropical-yellow pl-4">
+                        <h4 class="font-bold text-xl mb-1">Dinner Reception</h4>
+                        <p class="text-gray-600 mb-1">6:30 PM - 8:30 PM</p>
+                        <p class="text-sm">Beachfront dining under the stars</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-tropical-green pl-4">
+                        <h4 class="font-bold text-xl mb-1">Dancing & Celebration</h4>
+                        <p class="text-gray-600 mb-1">8:30 PM - Late</p>
+                        <p class="text-sm">Music, dancing & beach bonfire</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wave-divider"></div>
+            
+            <!-- RSVP -->
+            <div class="text-center mb-6">
+                <p class="italic text-gray-600 mb-4">"Love is like a tropical island, beautiful, exotic and waiting to be explored."</p>
+                
+                <a href="#" class="inline-block tropical-gradient text-white py-3 px-8 rounded-full font-bold tracking-wide transform transition hover:scale-105 hover:shadow-lg">
+                    RSVP BY JUNE 1, 2024
+                </a>
+                
+                <p class="mt-6 text-sm text-gray-500">
+                    Accommodation information and travel details<br>will be provided upon RSVP
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="bg-tropical-blue bg-opacity-10 p-4 text-center text-tropical-blue">
+            <p class="script-font text-xl">#LilyAndDaniel2024</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Fairy Garden - Birthday Invitation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #f0fff0, #e6e6fa);
+            color: #5d4037; /* Dark Brown */
+            min-height: 100vh;
+        }
+        .invitation-container {
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(100, 50, 0, 0.15);
+            border: 3px dashed #bcaaa4; /* Light Brown dashed border */
+            position: relative;
+            overflow: hidden;
+        }
+        .invitation-container::before, .invitation-container::after {
+            content: '';
+            position: absolute;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .invitation-container::before { /* Top-left flowers */
+            background: url('https://www.transparentpng.com/thumb/flower/Z5934l-flower-cut-out.png') no-repeat;
+            width: 150px; height: 150px;
+            top: -30px; left: -30px;
+            background-size: contain;
+            transform: rotate(-15deg);
+        }
+        .invitation-container::after { /* Bottom-right butterflies */
+            background: url('https://www.transparentpng.com/thumb/butterfly/pTFR77-butterfly-hd-image.png') no-repeat;
+            width: 120px; height: 120px;
+            bottom: -25px; right: -25px;
+            background-size: contain;
+            transform: rotate(10deg);
+        }
+        .header-title {
+            font-family: 'Dancing Script', cursive;
+            color: #8bc34a; /* Light Green */
+            font-size: 3.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            margin-bottom: 0;
+        }
+        .sub-title {
+            font-size: 1.4rem;
+            color: #795548; /* Brown */
+            margin-bottom: 25px;
+        }
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            color: #ff7043; /* Deep Orange */
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .details-icon {
+            font-size: 1.3rem;
+            margin-right: 8px;
+            color: #8bc34a;
+        }
+        .countdown-item {
+            background-color: rgba(139, 195, 74, 0.2); /* Light Green transparent */
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            border: 1px solid rgba(139, 195, 74, 0.5);
+        }
+        .countdown-number {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #5d4037;
+        }
+        .countdown-label {
+            font-size: 0.75rem;
+            color: #795548;
+        }
+        .btn-custom {
+            background-color: #ff9800; /* Orange */
+            border-color: #ff9800;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .btn-custom:hover {
+            background-color: #f57c00; /* Darker Orange */
+            border-color: #f57c00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .form-control {
+            border-radius: 10px;
+            border-color: #bcaaa4;
+            background-color: rgba(255,255,255,0.7);
+        }
+        .form-control:focus {
+            border-color: #8bc34a;
+            box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, 0.25);
+        }
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #795548;
+        }
+        .list-activities li {
+            padding-left: 1.5em;
+            position: relative;
+        }
+        .list-activities li::before {
+            content: '✨'; /* Sparkle emoji */
+            position: absolute;
+            left: 0;
+            color: #ffb74d; /* Light Orange */
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-container text-center">
+        <div class="content-wrapper">
+            <header class="mb-4">
+                <h1 class="header-title">You're Invited!</h1>
+                <p class="sub-title">to a Magical Fairy Garden Party for [Birthday Person's Name]'s [Age]th Birthday!</p>
+            </header>
+
+            <section class="event-details mb-4">
+                <h2 class="section-title">Flutter On Over!</h2>
+                <p><span class="details-icon">🧚</span>Join us for an enchanting celebration!</p>
+                <div class="row mt-3">
+                    <div class="col-md-4 mb-3">
+                        <p><span class="details-icon">📅</span><strong>Date:</strong> [Date of Party]</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p><span class="details-icon">⏰</span><strong>Time:</strong> [Time of Party]</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <p><span class="details-icon">📍</span><strong>Location:</strong> The Enchanted Garden at [Location of Party]</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="countdown-section mb-5">
+                <h3 class="section-title">Countdown to Magic</h3>
+                <div id="countdown" class="d-flex justify-content-center flex-wrap">
+                    <div class="countdown-item text-center">
+                        <span id="days" class="countdown-number">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item text-center">
+                        <span id="hours" class="countdown-number">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item text-center">
+                        <span id="minutes" class="countdown-number">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item text-center">
+                        <span id="seconds" class="countdown-number">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="activities mb-4">
+                <h3 class="section-title">Magical Activities Await:</h3>
+                <ul class="list-unstyled list-activities mx-auto" style="max-width: 400px;">
+                    <li>Fairy Wand Making</li>
+                    <li>Flower Crown Crafting</li>
+                    <li>Pixie Dust Treasure Hunt</li>
+                    <li>Garden Games & Story Time</li>
+                    <li>Delicious Fairy Treats</li>
+                </ul>
+            </section>
+
+            <section class="rsvp-section mb-4">
+                <h3 class="section-title">Send Your Fairy Mail!</h3>
+                <p>Please RSVP by [RSVP Date] to Fairy Godmother [Parent's Name] at [Phone Number] or [Email Address].</p>
+                <form id="rsvpForm" class="mt-3">
+                    <div class="form-row justify-content-center">
+                        <div class="col-sm-5 mb-2">
+                            <input type="text" class="form-control" id="guestName" placeholder="Your Fairy Name" required>
+                        </div>
+                        <div class="col-sm-3 mb-2">
+                            <input type="number" class="form-control" id="guestCount" placeholder="Guests" min="1" required>
+                        </div>
+                        <div class="col-sm-auto mb-2">
+                            <button type="submit" class="btn btn-custom btn-block">Send RSVP</button>
+                        </div>
+                    </div>
+                    <div id="rsvpMessage" class="mt-2" style="font-size: 0.9em;"></div>
+                </form>
+            </section>
+
+            <footer class="footer-text">
+                <p>Dress in your favorite fairy or garden creature attire!</p>
+                <p>We can't wait to share this magical day with you!</p>
+                <p>&copy; <span id="year"></span> [Birthday Person's Name]'s Enchanted Birthday.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date("[Date of Party e.g., December 1, 2025 14:30:00]").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            document.getElementById("days").innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "<div class='col-12'><p class='h4' style='color:#ff7043;'>The Magic Has Begun!</p></div>";
+            }
+        }, 1000);
+
+        // Set current year in footer
+        document.getElementById("year").innerText = new Date().getFullYear();
+
+        // RSVP Form Submission
+        const rsvpForm = document.getElementById('rsvpForm');
+        const rsvpMessage = document.getElementById('rsvpMessage');
+        if (rsvpForm) {
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const guestName = document.getElementById('guestName').value;
+                if (guestName) {
+                    rsvpMessage.textContent = `Thank you, ${guestName}! Your fairy mail has been received! We're excited to see you!`;
+                    rsvpMessage.className = 'mt-2 text-success font-weight-bold';
+                } else {
+                    rsvpMessage.textContent = 'Please let us know your fairy name!';
+                    rsvpMessage.className = 'mt-2 text-danger';
+                }
+                // rsvpForm.reset(); // Optional: reset form after submission
+            });
+        }
+    </script>
+</body>
+</html>

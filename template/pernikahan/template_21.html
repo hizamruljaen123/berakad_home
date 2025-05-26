@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Minimalist - Wedding Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .invitation-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        .gold-text {
+            color: #f59e0b;
+        }
+        .gold-border {
+            border-color: #f59e0b;
+        }
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #f59e0b;
+            border-radius: 50%;
+        }
+        .timeline-line {
+            width: 2px;
+            background-color: #f59e0b;
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="invitation-card max-w-4xl w-full rounded-xl overflow-hidden shadow-2xl">
+        <!-- Header Section -->
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                 alt="Night sky with stars" 
+                 class="w-full h-80 object-cover opacity-70">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 text-center p-8">
+                <p class="text-sm tracking-widest mb-2 gold-text">THE WEDDING OF</p>
+                <h1 class="text-5xl font-light mb-4 tracking-wide">ALEX & MORGAN</h1>
+                <div class="flex justify-center items-center gap-3 mb-2">
+                    <div class="h-px w-16 gold-border border-t"></div>
+                    <p class="text-sm tracking-widest gold-text">12.15.2024</p>
+                    <div class="h-px w-16 gold-border border-t"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content Section -->
+        <div class="p-8 md:p-12 text-center">
+            <p class="mb-8 leading-relaxed max-w-2xl mx-auto">
+                Under the same stars that witnessed our love story unfold, we invite you to join us as we embark on our greatest adventure yet.
+            </p>
+            
+            <!-- Timeline -->
+            <div class="flex flex-col items-center my-12">
+                <div class="flex items-center mb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="ml-4">
+                        <h3 class="text-xl gold-text">Ceremony</h3>
+                        <p class="text-sm">5:00 PM | Starlight Pavilion</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-line h-12"></div>
+                
+                <div class="flex items-center mb-8">
+                    <div class="timeline-dot"></div>
+                    <div class="ml-4">
+                        <h3 class="text-xl gold-text">Cocktail Hour</h3>
+                        <p class="text-sm">6:30 PM | Moonlight Terrace</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-line h-12"></div>
+                
+                <div class="flex items-center">
+                    <div class="timeline-dot"></div>
+                    <div class="ml-4">
+                        <h3 class="text-xl gold-text">Reception</h3>
+                        <p class="text-sm">7:30 PM | Celestial Ballroom</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="my-12">
+                <h2 class="text-2xl mb-2 gold-text">Venue</h2>
+                <p class="font-medium">Astral Heights</p>
+                <p class="text-sm mb-4">789 Skyview Drive, Starlight City</p>
+                <p class="text-sm italic">Black tie optional</p>
+            </div>
+            
+            <!-- RSVP Button -->
+            <a href="#" class="inline-block px-8 py-3 border gold-border text-sm tracking-widest hover:bg-[#f59e0b] hover:text-[#0f172a] transition duration-300 ease-in-out animate-pulse">
+                RSVP BY NOVEMBER 15, 2024
+            </a>
+            
+            <p class="mt-12 text-xs tracking-wide">
+                "Two souls with but a single thought, two hearts that beat as one."
+            </p>
+        </div>
+    </div>
+</body>
+</html>

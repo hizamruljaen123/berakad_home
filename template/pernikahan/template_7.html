@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Adat Minang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf6f0;
+            color: #5a4a3a;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-text {
+            background: linear-gradient(to right, #d4af37, #f9d423);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .border-ornament {
+            border: 12px solid transparent;
+            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath fill='none' stroke='%23d4af37' stroke-width='2' d='M20,20 L80,20 L80,40 L60,40 L60,80 L40,80 L40,40 L20,40 Z'/%3E%3C/svg%3E") 20 / 12px;
+        }
+        .minang-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath fill='%23d4af37' fill-opacity='0.1' d='M30,0 L60,30 L30,60 L0,30 Z'/%3E%3C/svg%3E");
+        }
+        .rose-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath fill='none' stroke='%23d4af37' stroke-opacity='0.05' stroke-width='1' d='M50,10 Q60,30 50,50 Q40,30 50,10'/%3E%3C/svg%3E");
+        }
+        .flip-card {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            transition: transform 1s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        .paper-texture {
+            background-color: #faf6f0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 overflow-x-hidden">
+    <div class="w-full max-w-xl shadow-2xl rounded-lg overflow-hidden bg-white border-8 border-white">
+        <!-- Cover with Romantic Design -->
+        <div class="relative bg-gradient-to-b from-rose-50 to-amber-50 py-12 px-6 text-center border-b-8 border-amber-100 minang-pattern">
+            <div class="absolute inset-0 rose-bg opacity-30"></div>
+            
+            <!-- Flowing rose petals decoration -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div class="absolute top-10 left-10 w-8 h-8 bg-rose-200 rounded-full opacity-30"></div>
+                <div class="absolute top-20 right-16 w-6 h-6 bg-amber-200 rounded-full opacity-30"></div>
+                <div class="absolute bottom-20 left-1/4 w-10 h-10 bg-rose-100 rounded-full opacity-20"></div>
+                <div class="absolute bottom-1/3 right-20 w-8 h-8 bg-amber-100 rounded-full opacity-20"></div>
+            </div>
+            
+            <div class="relative z-10">
+                <div class="w-24 h-24 mx-auto mb-6 bg-amber-100 rounded-full flex items-center justify-center border-4 border-white shadow-md">
+                    <i class="fas fa-heart text-rose-400 text-4xl"></i>
+                </div>
+                
+                <h1 class="title-font text-4xl md:text-5xl font-bold mb-4 gold-text">Undangan Pernikahan</h1>
+                <p class="text-lg italic text-amber-800 font-light">"Cinto tak kan lupo sampai mati"</p>
+                
+                <div class="w-36 h-36 md:w-44 md:h-44 mx-auto mt-8 mb-6 rounded-full overflow-hidden border-8 border-white shadow-xl floating">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pasangan" class="w-full h-full object-cover">
+                </div>
+                
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-1 text-amber-900">Rizki & Sinta</h2>
+                <p class="text-amber-700 uppercase tracking-wider text-sm font-light">Putra-Putri Minang</p>
+                
+                <div class="flex justify-center mt-6 space-x-2">
+                    <div class="w-6 h-1 bg-amber-300 rounded-full"></div>
+                    <div class="w-1 h-1 bg-amber-300 rounded-full"></div>
+                    <div class="w-1 h-1 bg-amber-300 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content with Romantic Elements -->
+        <div class="paper-texture p-6 md:p-8 relative">
+            <div class="text-center mb-8">
+                <p class="text-sm md:text-base italic mb-6 text-amber-800 leading-relaxed">"Dengan penuh cinta dan kebahagiaan, kami bermaksud mengundang Anda untuk menyaksikan perjalanan cinta kami yang akan diresmikan dalam ikatan suci pernikahan."</p>
+                
+                <!-- Couple Section -->
+                <div class="flex flex-col md:flex-row justify-center items-center mb-8">
+                    <div class="w-full md:w-1/2 p-4 border-r-0 md:border-r border-amber-200">
+                        <h3 class="title-font text-2xl font-bold mb-2 text-amber-900">Rizki Maulana</h3>
+                        <p class="text-xs mb-1 text-amber-600 tracking-wider">PUTRA PERTAMA DARI</p>
+                        <p class="font-medium text-amber-700">Bapak H. Faisal Yunus & Ibu Hj. Rika Mayang Sari</p>
+                        <p class="text-xs italic text-amber-600">Kluet Utara, Aceh Selatan</p>
+                    </div>
+                    
+                    <div class="my-4 md:mx-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-gradient-to-r from-amber-300 to-rose-300 rounded-full flex items-center justify-center text-white font-bold text-xl md:text-2xl">
+                            &
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 p-4 border-l-0 md:border-l border-amber-200">
+                        <h3 class="title-font text-2xl font-bold mb-2 text-rose-700">Sinta Dewi</h3>
+                        <p class="text-xs mb-1 text-amber-600 tracking-wider">PUTRI PERTAMA DARI</p>
+                        <p class="font-medium text-amber-700">Bapak H. Indra Jaya & Ibu Hj. Melati Permata</p>
+                        <p class="text-xs italic text-amber-600">Koto Tangah, Padang</p>
+                    </div>
+                </div>
+                
+                <!-- Wedding Details -->
+                <div class="my-6 py-6 border-y border-amber-100">
+                    <p class="text-xs text-amber-600 tracking-widest mb-3">AKAD NIKAH</p>
+                    <h4 class="title-font text-xl font-bold mb-1 text-amber-800">Sabtu, 12 Rabiul Awal 1446 H</h4>
+                    <h4 class="text-xl font-bold mb-1 text-amber-800">12 November 2024</h4>
+                    <p class="text-amber-600">Pukul 09.00 - 11.00 WIB</p>
+                    <p class="mt-3 text-amber-700">Masjid Raya Sumatera Barat</p>
+                    <p class="text-xs text-amber-500">Jl. Khatib Sulaiman No.1, Padang</p>
+                    
+                    <div class="mt-4">
+                        <button onclick="navigateTo('M1xJTEd3SlRjZz09')" class="text-xs text-amber-600 hover:text-amber-800 font-medium flex items-center justify-center mx-auto">
+                            <i class="fas fa-map-marker-alt mr-1"></i> Lihat Lokasi di Peta
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="my-6 py-6 border-y border-amber-100">
+                    <p class="text-xs text-amber-600 tracking-widest mb-3">RESEPSI ADAT MINANG</p>
+                    <h4 class="title-font text-xl font-bold mb-1 text-amber-800">Sabtu, 12 November 2024</h4>
+                    <p class="text-amber-600">Pukul 18.00 - 21.00 WIB</p>
+                    <p class="mt-3 text-amber-700">Ballroom The Premiere Hotel</p>
+                    <p class="text-xs text-amber-500">Jl. Pemuda No. 18, Padang</p>
+                    
+                    <div class="mt-4">
+                        <button onclick="navigateTo('M1xJTEd3SlRjZz09')" class="text-xs text-amber-600 hover:text-amber-800 font-medium flex items-center justify-center mx-auto">
+                            <i class="fas fa-map-marker-alt mr-1"></i> Lihat Lokasi di Peta
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-8 mb-6">
+                    <button onclick="playMusic()" class="bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white font-medium py-3 px-8 rounded-full shadow-lg transition duration-300 flex items-center mx-auto">
+                        <i class="fas fa-music mr-2"></i> Putar Lagu Galombang Duo
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Love Quote -->
+            <div class="bg-amber-50 border border-amber-100 rounded-lg p-6 mb-8 text-center">
+                <i class="fas fa-quote-left text-amber-300 text-2xl mb-2"></i>
+                <p class="text-amber-700 italic leading-relaxed">"Cinto samo kito manyatu, bagaikan minyak jo aia. Indak dapek dipisah lagi, sampai kito bia hidup sajo."</p>
+                <p class="text-xs text-amber-500 mt-2">- Pepatah Minang -</p>
+            </div>
+            
+            <!-- RSVP Section -->
+            <div class="flip-card w-full mb-6">
+                <div class="flip-card-inner w-full h-64 rounded-lg">
+                    <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-amber-100 to-rose-100 rounded-lg p-6 flex flex-col items-center justify-center text-center shadow-inner border border-amber-200">
+                        <div class="w-12 h-12 mb-4 bg-white rounded-full flex items-center justify-center shadow-md">
+                            <i class="fas fa-envelope text-amber-600 text-xl"></i>
+                        </div>
+                        <h3 class="title-font text-xl font-bold text-amber-800 mb-2">Konfirmasi Kehadiran</h3>
+                        <p class="text-sm text-amber-600">Ketuk kartu ini untuk memberi tahu kami kedatangan Anda</p>
+                    </div>
+                    
+                    <div class="flip-card-back absolute inset-0 bg-white rounded-lg p-6 shadow-md border border-amber-100">
+                        <h3 class="title-font text-lg font-bold text-amber-800 mb-3 text-center">Konfirmasi Kedatangan</h3>
+                        <form class="space-y-3">
+                            <div>
+                                <input type="text" placeholder="Nama Anda" class="w-full px-3 py-2 border border-amber-200 rounded focus:outline-none focus:ring-1 focus:ring-amber-300 bg-white text-sm placeholder-amber-300">
+                            </div>
+                            <div>
+                                <select class="w-full px-3 py-2 border border-amber-200 rounded focus:outline-none focus:ring-1 focus:ring-amber-300 bg-white text-sm text-amber-700">
+                                    <option class="text-amber-300" selected disabled>Jumlah Hadir</option>
+                                    <option>1 orang</option>
+                                    <option>2 orang</option>
+                                    <option>3 orang</option>
+                                    <option>4 orang</option>
+                                    <option>Keluarga (5+ orang)</option>
+                                </select>
+                            </div>                            <div>
+                                <textarea placeholder="Pesan untuk kami (opsional)" class="w-full px-3 py-2 border border-amber-200 rounded focus:outline-none focus:ring-1 focus:ring-amber-300 bg-white text-sm placeholder-amber-300 h-16 resize-none"></textarea>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button type="button" onclick="submitRSVP('hadir')" class="flex-1 bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white py-2 px-4 rounded text-sm font-medium transition duration-300">
+                                    <i class="fas fa-check mr-1"></i> Hadir
+                                </button>
+                                <button type="button" onclick="submitRSVP('tidak-hadir')" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded text-sm font-medium transition duration-300">
+                                    <i class="fas fa-times mr-1"></i> Tidak Hadir
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gift Section -->
+            <div class="bg-gradient-to-br from-amber-50 to-rose-50 border border-amber-100 rounded-lg p-6 mb-8 text-center">
+                <div class="w-12 h-12 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md">
+                    <i class="fas fa-gift text-amber-600 text-xl"></i>
+                </div>
+                <h3 class="title-font text-xl font-bold text-amber-800 mb-3">Amplop Digital</h3>
+                <p class="text-sm text-amber-600 mb-4">Doa restu Anda adalah hadiah yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih, Anda dapat mengirimkan hadiah melalui:</p>
+                
+                <div class="space-y-3">
+                    <div class="bg-white rounded-lg p-3 border border-amber-200">
+                        <div class="flex items-center justify-between">
+                            <div class="text-left">
+                                <p class="text-xs text-amber-600">Bank Mandiri</p>
+                                <p class="font-mono text-sm font-bold text-amber-800">1370-0123-4567-890</p>
+                                <p class="text-xs text-amber-600">a.n. Rizki Maulana</p>
+                            </div>
+                            <button onclick="copyToClipboard('1370012345678')" class="text-amber-600 hover:text-amber-800 p-2">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-3 border border-amber-200">
+                        <div class="flex items-center justify-between">
+                            <div class="text-left">
+                                <p class="text-xs text-amber-600">Bank BCA</p>
+                                <p class="font-mono text-sm font-bold text-amber-800">5280-1234-5678</p>
+                                <p class="text-xs text-amber-600">a.n. Sinta Dewi</p>
+                            </div>
+                            <button onclick="copyToClipboard('528012345678')" class="text-amber-600 hover:text-amber-800 p-2">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Preview -->
+            <div class="mb-8">
+                <h3 class="title-font text-xl font-bold text-amber-800 mb-4 text-center">Galeri Foto</h3>
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="aspect-square rounded-lg overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Foto 1" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="aspect-square rounded-lg overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Foto 2" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                    </div>
+                    <div class="aspect-square rounded-lg overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Foto 3" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button onclick="openGallery()" class="text-amber-600 hover:text-amber-800 text-sm font-medium">
+                        <i class="fas fa-images mr-1"></i> Lihat Semua Foto
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Closing Message -->
+            <div class="text-center mb-8">
+                <div class="bg-amber-50 border border-amber-100 rounded-lg p-6">
+                    <i class="fas fa-heart text-rose-400 text-2xl mb-3"></i>
+                    <p class="text-amber-700 italic leading-relaxed mb-4">"Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu di hari bahagia kami."</p>
+                    <p class="text-amber-800 font-medium">Kami yang berbahagia,</p>
+                    <p class="title-font text-lg font-bold text-amber-900 mt-2">Rizki & Sinta</p>
+                    
+                    <div class="flex justify-center mt-4 space-x-4">
+                        <a href="#" class="text-amber-600 hover:text-amber-800 transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-amber-600 hover:text-amber-800 transition duration-300">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-amber-600 hover:text-amber-800 transition duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thank You Message -->
+            <div class="text-center py-6 border-t border-amber-100">
+                <p class="text-xs text-amber-500">Terima kasih atas perhatian dan doa restu Anda</p>
+                <p class="text-xs text-amber-400 mt-1">© 2024 Wedding Invitation</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <!-- Replace with actual Galombang Duo song URL -->
+    </audio>
+
+    <script>
+        // Play Music Function
+        function playMusic() {
+            const audio = document.getElementById('backgroundMusic');
+            const button = event.target;
+            
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = '<i class="fas fa-pause mr-2"></i> Jeda Lagu';
+                button.classList.add('animate-pulse');
+            } else {
+                audio.pause();
+                button.innerHTML = '<i class="fas fa-music mr-2"></i> Putar Lagu Galombang Duo';
+                button.classList.remove('animate-pulse');
+            }
+        }
+        
+        // Navigation Function
+        function navigateTo(encodedUrl) {
+            // Decode base64 URL and open in new tab
+            try {
+                const decodedUrl = atob(encodedUrl);
+                window.open(decodedUrl, '_blank');
+            } catch (e) {
+                // Fallback to Google Maps
+                window.open('https://maps.google.com', '_blank');
+            }
+        }
+        
+        // RSVP Submission
+        function submitRSVP(status) {
+            const form = event.target.closest('form');
+            const nama = form.querySelector('input[placeholder="Nama Anda"]').value;
+            const jumlah = form.querySelector('select').value;
+            const pesan = form.querySelector('textarea').value;
+            
+            if (!nama.trim()) {
+                alert('Mohon isi nama Anda');
+                return;
+            }
+            
+            if (jumlah === 'Jumlah Hadir') {
+                alert('Mohon pilih jumlah kehadiran');
+                return;
+            }
+            
+            // Here you would typically send data to a server
+            // For now, we'll just show a confirmation
+            const message = status === 'hadir' 
+                ? `Terima kasih ${nama}! Konfirmasi kehadiran Anda telah tercatat.`
+                : `Terima kasih ${nama}! Kami memahami ketidakhadiran Anda.`;
+            
+            alert(message);
+            
+            // Reset form
+            form.reset();
+            
+            // Flip card back
+            const flipCard = document.querySelector('.flip-card');
+            flipCard.style.transform = 'rotateY(0deg)';
+        }
+        
+        // Copy to Clipboard Function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show feedback
+                const button = event.target.closest('button');
+                const originalIcon = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check text-green-500"></i>';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalIcon;
+                }, 1500);
+                
+                // Optional: Show toast notification
+                showToast('Nomor rekening berhasil disalin!');
+            }).catch(() => {
+                alert('Gagal menyalin nomor rekening');
+            });
+        }
+        
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 text-sm';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+        
+        // Gallery Function
+        function openGallery() {
+            alert('Fitur galeri akan segera tersedia!');
+            // Here you would typically open a lightbox or navigate to gallery page
+        }
+        
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-in animation
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 1s ease-in-out';
+                document.body.style.opacity = '1';
+            }, 100);
+            
+            // Add click handler for flip card
+            const flipCard = document.querySelector('.flip-card');
+            flipCard.addEventListener('click', function(e) {
+                if (!e.target.closest('form')) {
+                    this.querySelector('.flip-card-inner').style.transform = 
+                        this.querySelector('.flip-card-inner').style.transform === 'rotateY(180deg)' 
+                        ? 'rotateY(0deg)' : 'rotateY(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

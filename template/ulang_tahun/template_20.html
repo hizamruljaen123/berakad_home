@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Petualangan Detektif Cilik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto+Slab:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: #e5e7eb; /* Cool gray 200 */
+        }
+        .invitation-body {
+            background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+            background-color: #f3f4f6; /* Gray 100 for paper effect */
+            border: 1px solid #9ca3af; /* Gray 400 */
+            box-shadow: 0 0 0 5px #d1d5db, 0 0 0 10px #9ca3af, 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .title-font {
+            font-family: 'Special Elite', cursive;
+            color: #1f2937; /* Gray 800 */
+        }
+        .stamp {
+            width: 80px;
+            height: 80px;
+            background-color: #ef4444; /* Red 500 */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transform: rotate(-15deg);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border: 3px dashed white;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            text-align: center;
+            line-height: 1.2;
+        }
+        .confidential-stamp {
+            border: 3px dashed #1f2937;
+            color: #1f2937;
+            padding: 5px 10px;
+            font-family: 'Special Elite', cursive;
+            transform: rotate(-5deg);
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .clue-icon {
+            color: #4b5563; /* Gray 600 */
+        }
+        .button-primary {
+            background-color: #374151; /* Gray 700 */
+            transition: background-color 0.3s ease;
+        }
+        .button-primary:hover {
+            background-color: #1f2937; /* Gray 800 */
+        }
+        .magnifying-glass-cursor {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="%23374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'), auto;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8 magnifying-glass-cursor">
+    <div class="invitation-body max-w-2xl w-full bg-white p-8 md:p-12 rounded-lg shadow-xl relative">
+        <div class="stamp">TOP SECRET<br>MISSION</div>
+
+        <div class="text-center mb-8">
+            <div class="confidential-stamp">KASUS ULANG TAHUN!</div>
+            <h1 class="title-font text-4xl md:text-5xl font-bold mt-2">MISI DIMULAI!</h1>
+            <p class="text-gray-600 text-lg mt-2">Agen Rahasia [Nama Anak] Membutuhkan Bantuanmu!</p>
+            <p class="text-gray-700 text-2xl font-semibold">Untuk Merayakan Ulang Tahun ke-[Usia]</p>
+        </div>
+
+        <div class="border-t-2 border-b-2 border-dashed border-gray-400 py-6 my-8">
+            <h2 class="title-font text-2xl text-center mb-4">DETAIL MISI:</h2>
+            <div class="text-gray-700 space-y-3 text-sm md:text-base">
+                <p class="flex items-start"><i class="fas fa-calendar-alt clue-icon mr-3 mt-1 text-xl"></i> <strong>Tanggal & Waktu Operasi:</strong> [Tanggal Acara], [Tahun Acara], pukul [Waktu Acara] tepat.</p>
+                <p class="flex items-start"><i class="fas fa-map-marked-alt clue-icon mr-3 mt-1 text-xl"></i> <strong>Lokasi Markas Rahasia:</strong> [Alamat Lengkap Lokasi]. Jangan sampai salah alamat!</p>
+                <p class="flex items-start"><i class="fas fa-user-secret clue-icon mr-3 mt-1 text-xl"></i> <strong>Kode Pakaian:</strong> Penyamaran Detektif Terbaik (jas hujan, topi fedora, kacamata hitam, atau bawa lup!).</p>
+                <p class="flex items-start"><i class="fas fa-puzzle-piece clue-icon mr-3 mt-1 text-xl"></i> <strong>Tugas Agen:</strong> Memecahkan misteri, mencari petunjuk, menikmati kue, dan bersenang-senang!</p>
+            </div>
+        </div>
+
+        <p class="text-gray-600 text-center mb-6 italic">
+            "Sebuah kasus besar menanti untuk dipecahkan. Kehadiranmu sangat krusial untuk keberhasilan misi ini!"
+        </p>
+
+        <div id="countdown-timer" class="text-center text-xl title-font mb-8">
+            Waktu Tersisa Untuk Misi: <span id="countdown" class="font-bold text-red-600"></span>
+        </div>
+
+        <div class="text-center">
+            <button id="rsvpButton" class="button-primary text-white font-bold py-3 px-8 rounded-md shadow-lg text-lg transform hover:scale-105 transition-transform">
+                <i class="fas fa-user-check mr-2"></i> Terima Misi Ini (RSVP)
+            </button>
+        </div>
+
+        <div class="mt-8 text-center">
+            <p class="text-gray-600 mb-3 title-font text-lg">Sebarkan Berita Misi Ini:</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" onclick="shareToSocial(event, 'facebook')" class="text-gray-700 hover:text-blue-600 transition-colors">
+                    <i class="fab fa-facebook-square text-3xl"></i>
+                </a>
+                <a href="#" onclick="shareToSocial(event, 'twitter')" class="text-gray-700 hover:text-sky-500 transition-colors">
+                    <i class="fab fa-twitter-square text-3xl"></i>
+                </a>
+                <a href="#" onclick="shareToSocial(event, 'whatsapp')" class="text-gray-700 hover:text-green-500 transition-colors">
+                    <i class="fab fa-whatsapp-square text-3xl"></i>
+                </a>
+                <a href="#" onclick="shareToSocial(event, 'copy')" class="text-gray-700 hover:text-gray-900 transition-colors" title="Salin Tautan Undangan">
+                    <i class="fas fa-copy text-3xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="text-center text-gray-500 text-xs mt-8">
+            Konfirmasi penerimaan misi (RSVP) paling lambat [Tanggal RSVP] kepada Agen Penghubung di [Nomor Telepon/WA RSVP]. Pesan ini akan hancur sendiri (tidak juga sih).
+        </p>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white p-8 rounded-lg shadow-2xl max-w-md w-full transform transition-all scale-95 opacity-0" id="modalContent">
+            <h3 class="text-2xl title-font mb-6 text-center">Lapor Diri, Agen!</h3>
+            <form id="rsvpForm">
+                <div class="mb-4">
+                    <label for="agentName" class="block text-gray-700 font-semibold mb-2">Nama Kode Agen (Nama Anda):</label>
+                    <input type="text" id="agentName" name="agentName" class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label for="accompliceCount" class="block text-gray-700 font-semibold mb-2">Jumlah Rekan Agen (Jika Ada):</label>
+                    <input type="number" id="accompliceCount" name="accompliceCount" min="0" value="0" class="w-full px-4 py-2 border border-gray-400 rounded-md focus:ring-2 focus:ring-gray-500 focus:border-transparent">
+                    <p class="text-xs text-gray-500 mt-1">Isi 0 jika datang sendiri.</p>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="closeModalButton" class="px-6 py-2 text-gray-700 border border-gray-400 rounded-md hover:bg-gray-200">Batalkan Misi</button>
+                    <button type="submit" class="px-6 py-2 button-primary text-white font-semibold rounded-md">Kirim Laporan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const rsvpButton = document.getElementById('rsvpButton');
+        const rsvpModal = document.getElementById('rsvpModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeModalButton = document.getElementById('closeModalButton');
+        const rsvpForm = document.getElementById('rsvpForm');
+
+        const openModal = () => {
+            rsvpModal.classList.remove('hidden');
+            setTimeout(() => { // For transition effect
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 50);
+        }
+
+        const closeModal = () => {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => { // For transition effect
+                rsvpModal.classList.add('hidden');
+            }, 300);
+        }
+
+        rsvpButton.addEventListener('click', openModal);
+        closeModalButton.addEventListener('click', closeModal);
+        rsvpModal.addEventListener('click', (event) => {
+            if (event.target === rsvpModal) closeModal();
+        });
+
+        rsvpForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const agentName = document.getElementById('agentName').value;
+            alert(`Laporan diterima, Agen ${agentName}! Kehadiranmu dan rekan agen telah dicatat. Sampai jumpa di TKP!`);
+            closeModal();
+            rsvpForm.reset();
+        });
+
+        // Social Media Sharing Placeholder
+        function shareToSocial(event, platform) {
+            event.preventDefault(); // Prevent default link behavior
+            const invitationTitle = "Misi Ulang Tahun Detektif [Nama Anak]!";
+            // Ensure placeholders are replaced if this script runs in a context where they are filled
+            const childNameElement = document.querySelector('.text-gray-600.text-lg.mt-2');
+            let childName = "[Nama Anak]"; // Default placeholder
+            if (childNameElement && childNameElement.textContent) {
+                const match = childNameElement.textContent.match(/Agen Rahasia (.*?) Membutuhkan/);
+                if (match && match[1]) {
+                    childName = match[1];
+                }
+            }
+            const filledTitle = invitationTitle.replace("[Nama Anak]", childName);
+            const invitationUrl = window.location.href; 
+            let shareUrl = '';
+
+            if (platform === 'facebook') {
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(invitationUrl)}`;
+            } else if (platform === 'twitter') {
+                shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(invitationUrl)}&text=${encodeURIComponent(filledTitle)}`;
+            } else if (platform === 'whatsapp') {
+                shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(filledTitle + " " + invitationUrl)}`;
+            } else if (platform === 'copy') {
+                navigator.clipboard.writeText(invitationUrl).then(() => {
+                    alert('Tautan undangan telah disalin ke clipboard!');
+                }).catch(err => {
+                    console.error('Gagal menyalin tautan: ', err);
+                    alert('Gagal menyalin tautan. Coba lagi secara manual.');
+                });
+                return; // Don't open a new window for copy
+            }
+
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'noopener,noreferrer');
+            }
+        }
+
+        // Countdown Timer
+        const eventDate = new Date("Mar 15, 2025 10:00:00").getTime(); // Ganti dengan tanggal dan waktu acara Anda
+        const countdownElement = document.getElementById('countdown');
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                countdownElement.innerHTML = "MISI TELAH BERLANGSUNG!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `\${days}H \${hours}J \${minutes}M \${seconds}D`;
+        };
+
+        const timerInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Wedding - Nina & Alex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --charcoal: #2d3748;
+            --soft-gray: #718096;
+            --light-gray: #e2e8f0;
+            --cream-white: #fefefe;
+            --accent-gold: #d69e2e;
+            --pure-black: #1a202c;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream-white);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+        
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .mono-font {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .minimal-line {
+            position: relative;
+        }
+        
+        .minimal-line::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--light-gray);
+            animation: drawLine 2s ease-out forwards;
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+        
+        @keyframes drawLine {
+            to { transform: scaleX(1); }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .letter-spacing-wide {
+            letter-spacing: 0.2em;
+        }
+        
+        .minimal-card {
+            background: var(--cream-white);
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+        
+        .minimal-card:hover {
+            box-shadow: 0 4px 20px rgba(45, 55, 72, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .geometric-pattern {
+            background-image: 
+                linear-gradient(45deg, transparent 35%, var(--light-gray) 35%, var(--light-gray) 65%, transparent 65%),
+                linear-gradient(-45deg, transparent 35%, var(--light-gray) 35%, var(--light-gray) 65%, transparent 65%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.1;
+        }
+        
+        .pulse-dot {
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseDot {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% { 
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+        
+        .minimal-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .minimal-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .minimal-button:hover::before {
+            left: 100%;
+        }
+        
+        .countdown-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            background: var(--cream-white);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Main container -->
+    <div class="max-w-lg mx-auto bg-white shadow-lg">
+        <!-- Header -->
+        <div class="relative py-20 px-8 text-center bg-white geometric-pattern">
+            <div class="relative z-10">
+                <div class="mono-font text-xs letter-spacing-wide text-gray-500 mb-8 fade-in-up">
+                    W E D D I N G &nbsp;&nbsp; I N V I T A T I O N
+                </div>
+                
+                <div class="serif-font text-7xl font-light text-gray-800 mb-2 fade-in-up" style="animation-delay: 0.2s;">
+                    Nina
+                </div>
+                
+                <div class="minimal-line my-8 fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-px bg-gray-300 mx-auto relative z-10"></div>
+                </div>
+                
+                <div class="serif-font text-7xl font-light text-gray-800 mb-8 fade-in-up" style="animation-delay: 0.6s;">
+                    Alex
+                </div>
+                
+                <div class="mono-font text-xs letter-spacing-wide text-gray-500 fade-in-up" style="animation-delay: 0.8s;">
+                    A R E &nbsp;&nbsp; G E T T I N G &nbsp;&nbsp; M A R R I E D
+                </div>
+            </div>
+        </div>
+
+        <!-- Wedding Details -->
+        <div class="px-8 py-12 bg-gray-50">
+            <!-- Date Section -->
+            <div class="minimal-card rounded-lg p-8 mb-8 text-center fade-in-up" style="animation-delay: 1s;">
+                <div class="mono-font text-xs letter-spacing-wide text-gray-500 mb-4">S A V E &nbsp;&nbsp; T H E &nbsp;&nbsp; D A T E</div>
+                <div class="serif-font text-4xl font-medium text-gray-800 mb-2">12</div>
+                <div class="text-lg text-gray-600 mb-1">Oktober 2024</div>
+                <div class="mono-font text-sm text-gray-500">Sabtu · 15:00 WIB</div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="minimal-card rounded-lg p-6 mb-8 fade-in-up" style="animation-delay: 1.2s;">
+                <div class="mono-font text-xs letter-spacing-wide text-gray-500 mb-4 text-center">C O U N T D O W N</div>
+                <div class="countdown-container" id="countdown">
+                    <div class="countdown-item">
+                        <div class="serif-font text-2xl font-medium text-gray-800" id="days">00</div>
+                        <div class="mono-font text-xs text-gray-500">DAYS</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="serif-font text-2xl font-medium text-gray-800" id="hours">00</div>
+                        <div class="mono-font text-xs text-gray-500">HOURS</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="serif-font text-2xl font-medium text-gray-800" id="minutes">00</div>
+                        <div class="mono-font text-xs text-gray-500">MIN</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="serif-font text-2xl font-medium text-gray-800" id="seconds">00</div>
+                        <div class="mono-font text-xs text-gray-500">SEC</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="minimal-card rounded-lg p-8 mb-8 text-center fade-in-up" style="animation-delay: 1.4s;">
+                <div class="mono-font text-xs letter-spacing-wide text-gray-500 mb-4">V E N U E</div>
+                <div class="serif-font text-3xl font-medium text-gray-800 mb-3">The Modern Hall</div>
+                <div class="text-gray-600 mb-6 leading-relaxed">
+                    Jl. Sudirman Kav. 52-53<br>
+                    SCBD, Jakarta Selatan<br>
+                    12190
+                </div>
+                <button onclick="openLocation()" class="minimal-button bg-gray-800 text-white px-8 py-3 rounded-lg mono-font text-xs letter-spacing-wide hover:bg-gray-700 transition-all">
+                    V I E W &nbsp;&nbsp; L O C A T I O N
+                </button>
+            </div>
+
+            <!-- Schedule -->
+            <div class="minimal-card rounded-lg p-8 mb-8 fade-in-up" style="animation-delay: 1.6s;">
+                <div class="mono-font text-xs letter-spacing-wide text-gray-500 mb-6 text-center">S C H E D U L E</div>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full pulse-dot mr-4"></div>
+                        <div class="flex-1">
+                            <div class="mono-font text-sm text-gray-700">15:00 - 15:30</div>
+                            <div class="text-gray-600">Guest Arrival</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-gray-600 rounded-full pulse-dot mr-4"></div>
+                        <div class="flex-1">
+                            <div class="mono-font text-sm text-gray-700">15:30 - 16:00</div>
+                            <div class="text-gray-600">Wedding Ceremony</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-gray-800 rounded-full pulse-dot mr-4"></div>
+                        <div class="flex-1">
+                            <div class="mono-font text-sm text-gray-700">16:00 - 18:00</div>
+                            <div class="text-gray-600">Reception & Dinner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP -->
+            <div class="text-center fade-in-up" style="animation-delay: 1.8s;">
+                <div class="mono-font text-xs letter-spacing-wide text-gray-500 mb-6">R S V P</div>
+                <button onclick="showRSVP()" class="minimal-button w-full bg-gray-800 text-white py-4 rounded-lg mono-font text-xs letter-spacing-wide hover:bg-gray-700 transition-all">
+                    C O N F I R M &nbsp;&nbsp; A T T E N D A N C E
+                </button>
+            </div>
+
+            <!-- Gift -->
+            <div class="minimal-card rounded-lg p-8 mt-8 text-center fade-in-up" style="animation-delay: 2s;">
+                <div class="mono-font text-xs letter-spacing-wide text-gray-500 mb-4">W E D D I N G &nbsp;&nbsp; G I F T</div>
+                <div class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Your presence is our greatest gift.<br>
+                    If you wish to honor us with a gift:
+                </div>
+                <button onclick="copyAccount()" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg mono-font text-xs letter-spacing-wide hover:bg-gray-200 transition-all">
+                    B A N K : 5 5 5 1 2 3 4 5 6 7
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gray-800 text-white text-center py-12 px-8">
+            <div class="mono-font text-xs letter-spacing-wide mb-4 opacity-80">
+                T H A N K &nbsp;&nbsp; Y O U
+            </div>
+            <div class="serif-font text-3xl font-light mb-2">Nina & Alex</div>
+            <div class="mono-font text-xs letter-spacing-wide opacity-60">
+                F A M I L I E S
+            </div>
+            
+            <!-- Minimal social links -->
+            <div class="mt-8 flex justify-center space-x-6">
+                <button onclick="shareInvitation('instagram')" class="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all">
+                    <i class="fab fa-instagram text-sm"></i>
+                </button>
+                <button onclick="shareInvitation('whatsapp')" class="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all">
+                    <i class="fab fa-whatsapp text-sm"></i>
+                </button>
+                <button onclick="copyLink()" class="w-10 h-10 border border-gray-600 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all">
+                    <i class="fas fa-link text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('2024-10-12T15:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="text-center mono-font text-xs letter-spacing-wide text-gray-500">W E D D I N G &nbsp;&nbsp; D A Y !</div>';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function openLocation() {
+            alert('📍 Opening location in maps...\n\nThe Modern Hall\nSCBD, Jakarta Selatan\n\nSee you there! ✨');
+        }
+
+        function showRSVP() {
+            const name = prompt('Welcome!\n\nPlease enter your full name:');
+            if (name) {
+                const attending = confirm(`Hello ${name},\n\nWill you be attending our wedding ceremony?`);
+                if (attending) {
+                    const guests = prompt('How many guests will be attending?\n(Including yourself)');
+                    alert(`✓ Thank you ${name}!\n\nConfirmed for ${guests || 1} guest(s)\n\nWe look forward to celebrating with you! ✨`);
+                } else {
+                    alert(`Thank you for letting us know, ${name}.\n\nWe'll miss you on our special day! 💙`);
+                }
+            }
+        }
+
+        function copyAccount() {
+            navigator.clipboard.writeText('5551234567').then(() => {
+                alert('✓ Bank account number copied!\n\nThank you for your kindness! 🙏');
+            }).catch(() => {
+                alert('Bank Account: 5551234567\n\nPlease copy manually.\n\nThank you! 🙏');
+            });
+        }
+
+        function shareInvitation(platform) {
+            const messages = {
+                instagram: 'You\'re invited to Nina & Alex\'s minimalist wedding! ✨ #MinimalistWedding',
+                whatsapp: 'You\'re invited to Nina & Alex\'s wedding ceremony! Save the date: October 12, 2024 ✨'
+            };
+            alert(`Sharing on ${platform}:\n\n${messages[platform]}`);
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('✓ Invitation link copied to clipboard!');
+            }).catch(() => {
+                alert('Please copy this link manually:\n\n' + url);
+            });
+        }
+
+        // Animation observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

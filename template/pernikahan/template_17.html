@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Wedding - Fatimah & Ahmad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --islamic-gold: #c9b037;
+            --deep-green: #006A4E;
+            --emerald: #50C878;
+            --ivory: #FFFFF0;
+            --burgundy: #722F37;
+            --copper: #B87333;
+            --pearl: #E2E5DE;
+            --midnight: #2F4F4F;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--deep-green) 0%, var(--emerald) 50%, var(--ivory) 100%);
+            min-height: 100vh;
+        }
+        
+        .arabic-font {
+            font-family: 'Amiri', serif;
+        }
+        
+        .decorative-font {
+            font-family: 'Scheherazade New', serif;
+        }
+        
+        .islamic-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--islamic-gold) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, var(--islamic-gold) 1px, transparent 1px),
+                radial-gradient(circle at 25% 75%, var(--emerald) 1px, transparent 1px),
+                radial-gradient(circle at 75% 25%, var(--emerald) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.1;
+        }
+        
+        .geometric-islamic {
+            background-image: 
+                linear-gradient(45deg, transparent 40%, var(--islamic-gold) 40%, var(--islamic-gold) 45%, transparent 45%),
+                linear-gradient(-45deg, transparent 40%, var(--islamic-gold) 40%, var(--islamic-gold) 45%, transparent 45%);
+            background-size: 30px 30px;
+            opacity: 0.15;
+        }
+        
+        .bismillah-frame {
+            background: linear-gradient(135deg, var(--ivory) 0%, var(--pearl) 100%);
+            border: 3px solid var(--islamic-gold);
+            border-radius: 20px;
+            box-shadow: 
+                0 0 20px rgba(201, 176, 55, 0.3),
+                inset 0 2px 4px rgba(201, 176, 55, 0.1);
+            position: relative;
+        }
+        
+        .bismillah-frame::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid var(--islamic-gold);
+            border-radius: 15px;
+            opacity: 0.5;
+        }
+        
+        .islamic-card {
+            background: linear-gradient(135deg, rgba(255, 255, 240, 0.95) 0%, rgba(226, 229, 222, 0.95) 100%);
+            border: 2px solid var(--islamic-gold);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 106, 78, 0.2);
+            position: relative;
+            color: var(--midnight);
+        }
+        
+        .islamic-card::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 1px dashed var(--islamic-gold);
+            border-radius: 12px;
+            opacity: 0.4;
+        }
+        
+        .fade-in-blessing {
+            animation: fadeInBlessing 1.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes fadeInBlessing {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .grow-blessing {
+            animation: growBlessing 1s ease-out forwards;
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        
+        @keyframes growBlessing {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .crescent-glow {
+            animation: crescentGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes crescentGlow {
+            0%, 100% { 
+                text-shadow: 0 0 10px var(--islamic-gold);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 20px var(--islamic-gold), 0 0 30px var(--emerald);
+                transform: scale(1.05);
+            }
+        }
+        
+        .islamic-gradient {
+            background: linear-gradient(135deg, var(--deep-green) 0%, var(--emerald) 100%);
+        }
+        
+        .star-pattern {
+            background-image: 
+                radial-gradient(star at 50% 50%, var(--islamic-gold) 30%, transparent 30%);
+            background-size: 25px 25px;
+            opacity: 0.1;
+        }
+        
+        .islamic-button {
+            background: linear-gradient(45deg, var(--islamic-gold), var(--copper));
+            border: 2px solid var(--islamic-gold);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .islamic-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .islamic-button:hover::before {
+            left: 100%;
+        }
+        
+        .islamic-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(201, 176, 55, 0.4);
+        }
+        
+        .mosque-silhouette {
+            background: var(--midnight);
+            -webkit-clip-path: polygon(0% 85%, 15% 75%, 25% 85%, 35% 75%, 50% 80%, 65% 75%, 75% 85%, 85% 75%, 100% 85%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 85%, 15% 75%, 25% 85%, 35% 75%, 50% 80%, 65% 75%, 75% 85%, 85% 75%, 100% 85%, 100% 100%, 0% 100%);
+            opacity: 0.1;
+        }
+        
+        .arabic-calligraphy {
+            font-size: 2rem;
+            color: var(--islamic-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .prayer-time {
+            background: rgba(0, 106, 78, 0.1);
+            border-left: 4px solid var(--islamic-gold);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4 relative overflow-x-hidden">
+    <!-- Main container -->
+    <div class="max-w-md mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden relative">
+        <!-- Islamic Header -->
+        <div class="relative islamic-gradient islamic-pattern text-white py-16 px-8">
+            <div class="text-center">
+                <!-- Bismillah -->
+                <div class="bismillah-frame p-6 mb-8 fade-in-blessing">
+                    <div class="arabic-font text-2xl text-gray-800 mb-2">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+                    <div class="text-sm text-gray-600">Bismillahirrahmanirrahim</div>
+                </div>
+                
+                <!-- Invitation Title -->
+                <div class="grow-blessing" style="animation-delay: 0.5s;">
+                    <i class="fas fa-moon crescent-glow text-4xl mb-4"></i>
+                    <div class="decorative-font text-3xl mb-2">Wedding Invitation</div>
+                    <div class="arabic-font text-lg">دعوة زفاف</div>
+                </div>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="absolute top-4 left-4">
+                <i class="fas fa-star-and-crescent text-2xl opacity-60 crescent-glow"></i>
+            </div>
+            <div class="absolute top-4 right-4">
+                <i class="fas fa-mosque text-2xl opacity-60"></i>
+            </div>
+            
+            <!-- Mosque silhouette at bottom -->
+            <div class="absolute bottom-0 left-0 right-0 h-20 mosque-silhouette"></div>
+        </div>
+
+        <!-- Couple Names -->
+        <div class="py-12 px-8 text-center bg-gradient-to-b from-green-50 to-emerald-50 star-pattern">
+            <div class="islamic-card p-8 grow-blessing" style="animation-delay: 0.8s;">
+                <div class="decorative-font text-5xl text-green-800 mb-4">Fatimah</div>
+                <div class="arabic-font text-lg text-green-600 mb-4">فاطمة</div>
+                
+                <div class="flex items-center justify-center my-6">
+                    <div class="w-12 h-px bg-yellow-600"></div>
+                    <i class="fas fa-heart text-red-500 mx-4 text-xl"></i>
+                    <div class="w-12 h-px bg-yellow-600"></div>
+                </div>
+                
+                <div class="decorative-font text-5xl text-green-800 mb-4">Ahmad</div>
+                <div class="arabic-font text-lg text-green-600">أحمد</div>
+            </div>
+            
+            <div class="mt-8 text-center fade-in-blessing" style="animation-delay: 1s;">
+                <div class="arabic-font text-xl text-green-700 mb-2">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجاً</div>
+                <div class="text-sm text-green-600 italic">"And among His signs is this, that He created for you mates from among yourselves"</div>
+                <div class="text-xs text-green-500 mt-1">- Ar-Rum: 21</div>
+            </div>
+        </div>
+
+        <!-- Wedding Details -->
+        <div class="px-8 py-8 bg-green-50">
+            <!-- Akad Nikah -->
+            <div class="islamic-card p-6 mb-6 text-center fade-in-blessing" style="animation-delay: 1.2s;">
+                <i class="fas fa-book-quran text-3xl text-green-600 mb-3"></i>
+                <div class="decorative-font text-2xl text-green-800 mb-2">Akad Nikah</div>
+                <div class="arabic-font text-lg text-green-600 mb-4">عقد النكاح</div>
+                <div class="text-3xl font-bold text-green-700 mb-1">18 Ramadan 1446 H</div>
+                <div class="text-lg text-green-600 mb-1">20 Maret 2025</div>
+                <div class="text-base text-green-500">Kamis, 08:00 WIB</div>
+            </div>
+
+            <!-- Walimah -->
+            <div class="islamic-card p-6 mb-6 text-center fade-in-blessing" style="animation-delay: 1.4s;">
+                <i class="fas fa-utensils text-3xl text-green-600 mb-3"></i>
+                <div class="decorative-font text-2xl text-green-800 mb-2">Walimah</div>
+                <div class="arabic-font text-lg text-green-600 mb-4">وليمة</div>
+                <div class="text-3xl font-bold text-green-700 mb-1">18 Ramadan 1446 H</div>
+                <div class="text-lg text-green-600 mb-1">20 Maret 2025</div>
+                <div class="text-base text-green-500">Kamis, 11:00 WIB</div>
+            </div>
+
+            <!-- Location -->
+            <div class="islamic-card p-6 mb-6 text-center fade-in-blessing" style="animation-delay: 1.6s;">
+                <i class="fas fa-kaaba text-3xl text-green-600 mb-3"></i>
+                <div class="decorative-font text-2xl text-green-800 mb-2">Tempat Acara</div>
+                <div class="arabic-font text-lg text-green-600 mb-4">مكان الحفل</div>
+                <div class="text-xl font-semibold text-green-700 mb-1">Masjid Al-Hidayah</div>
+                <div class="text-green-600 mb-4">
+                    Jl. Raya Bogor KM 25<br>
+                    Cibinong, Bogor<br>
+                    Jawa Barat
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="openLocation()" class="islamic-button text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Lokasi
+                    </button>
+                    <button onclick="prayerTimes()" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-all">
+                        <i class="fas fa-pray mr-2"></i>Jadwal Sholat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Islamic Guidelines -->
+            <div class="islamic-card p-6 mb-6 fade-in-blessing" style="animation-delay: 1.8s;">
+                <div class="text-center mb-4">
+                    <i class="fas fa-hands-praying text-3xl text-green-600 mb-2"></i>
+                    <div class="decorative-font text-xl text-green-800">Panduan Acara</div>
+                </div>
+                <div class="space-y-3">
+                    <div class="prayer-time">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-tie text-green-600 mr-3"></i>
+                            <div class="text-sm text-green-700">Berpakaian sopan dan menutup aurat</div>
+                        </div>
+                    </div>
+                    <div class="prayer-time">
+                        <div class="flex items-center">
+                            <i class="fas fa-mobile-alt text-green-600 mr-3"></i>
+                            <div class="text-sm text-green-700">Harap mengheningkan HP saat khutbah</div>
+                        </div>
+                    </div>
+                    <div class="prayer-time">
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-green-600 mr-3"></i>
+                            <div class="text-sm text-green-700">Hadir tepat waktu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP -->
+            <div class="text-center fade-in-blessing" style="animation-delay: 2s;">
+                <div class="decorative-font text-2xl text-green-700 mb-2">Konfirmasi Kehadiran</div>
+                <div class="arabic-font text-lg text-green-600 mb-4">تأكيد الحضور</div>
+                <button onclick="showRSVP()" class="islamic-button text-white px-8 py-3 rounded-full text-lg font-medium w-full">
+                    <i class="fas fa-reply mr-2"></i>Konfirmasi Kehadiran
+                </button>
+            </div>
+
+            <!-- Islamic Gift -->
+            <div class="mt-8 islamic-card p-6 text-center fade-in-blessing" style="animation-delay: 2.2s;">
+                <i class="fas fa-gift text-3xl text-green-600 mb-3"></i>
+                <div class="decorative-font text-xl text-green-800 mb-2">Hadiah Pernikahan</div>
+                <div class="arabic-font text-base text-green-600 mb-4">هدية الزفاف</div>
+                <div class="text-sm text-green-700 mb-4 leading-relaxed">
+                    "Barang siapa yang mendoakan kebaikan untuk saudaranya,<br>
+                    maka malaikat akan mendoakan kebaikan untuknya"
+                </div>
+                <button onclick="copyAccount()" class="bg-green-200 text-green-800 px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-300 transition-all">
+                    <i class="fas fa-university mr-2"></i>Rekening: 7788990011
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer with Dua -->
+        <div class="islamic-gradient geometric-islamic text-white text-center py-12 px-8 relative">
+            <div class="absolute top-4 left-4">
+                <i class="fas fa-quran text-2xl opacity-60"></i>
+            </div>
+            <div class="absolute top-4 right-4">
+                <i class="fas fa-peace text-2xl opacity-60"></i>
+            </div>
+            
+            <!-- Dua -->
+            <div class="mb-6">
+                <div class="arabic-font text-lg mb-2">بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا</div>
+                <div class="text-sm opacity-90">"Barakallahu lakuma wa baraka alaikuma"</div>
+                <div class="text-xs opacity-80 mt-1">Semoga Allah memberkahi kalian berdua</div>
+            </div>
+            
+            <div class="decorative-font text-xl mb-2">Wassalamu'alaikum Wr. Wb.</div>
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <i class="fas fa-star-and-crescent text-xl"></i>
+                <div class="decorative-font text-2xl">Fatimah & Ahmad</div>
+                <i class="fas fa-star-and-crescent text-xl"></i>
+            </div>
+            <div class="text-sm opacity-80">Keluarga Besar</div>
+            
+            <!-- Islamic social sharing -->
+            <div class="mt-6 flex justify-center space-x-4">
+                <button onclick="shareIslamic('whatsapp')" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </button>
+                <button onclick="shareIslamic('telegram')" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-telegram text-xl"></i>
+                </button>
+                <button onclick="shareIslamic('instagram')" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-instagram text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLocation() {
+            alert('📍 Membuka lokasi Masjid Al-Hidayah...\n\n🕌 Masjid Al-Hidayah\nJl. Raya Bogor KM 25, Cibinong\n\n🅿️ Tempat parkir tersedia\n🕐 Buka 24 jam\n\nBarakallahu fiikum! 🤲');
+        }
+
+        function prayerTimes() {
+            alert('🕐 Jadwal Sholat Hari Akad:\n\n🌅 Subuh: 04:30 WIB\n🌞 Dhuhur: 12:15 WIB\n🌇 Ashar: 15:30 WIB\n🌆 Maghrib: 18:45 WIB\n🌙 Isya: 20:00 WIB\n\nSemoga acara berlangsung dengan lancar! 🤲');
+        }
+
+        function showRSVP() {
+            const name = prompt('Assalamu\'alaikum Warahmatullahi Wabarakatuh! 🕌\n\nSilakan masukkan nama Anda:');
+            if (name) {
+                const attending = confirm(`Wa\'alaikumussalam ${name}! 🤲\n\nApakah Anda akan hadir di acara pernikahan kami?\n\n(Mohon konfirmasi untuk persiapan acara)`);
+                if (attending) {
+                    const guests = prompt('Alhamdulillah! 🎉\n\nBerapa orang yang akan hadir?\n(Termasuk Anda)');
+                    const gender = confirm('Untuk pengaturan tempat:\n\nApakah ada tamu laki-laki?\n(OK = Ada, Cancel = Semua perempuan)');
+                    alert(`Barakallahu fiikum ${name}! 🤲\n\n✅ Dikonfirmasi untuk ${guests || 1} orang\n👥 Pengaturan tempat tercatat\n🕌 Jazakumullahu khairan!\n\nSemoga menjadi berkah untuk semua! 💚`);
+                } else {
+                    alert(`Barakallahu fiikum ${name} 🤲\n\n💚 Terima kasih atas konfirmasinya.\nMohon doanya untuk kelancaran acara! 🕌`);
+                }
+            }
+        }
+
+        function copyAccount() {
+            navigator.clipboard.writeText('7788990011').then(() => {
+                alert('💚 Nomor rekening berhasil disalin!\n\n🤲 Barakallahu fiikum atas kebaikan hati Anda!\nSemoga menjadi berkah dan pahala! 🕌');
+            }).catch(() => {
+                alert('💚 Rekening: 7788990011\n\nSilakan salin secara manual.\n🤲 Barakallahu fiikum! 🕌');
+            });
+        }
+
+        function shareIslamic(platform) {
+            const messages = {
+                whatsapp: 'Assalamu\'alaikum! 🕌 Anda diundang ke pernikahan Fatimah & Ahmad. Semoga menjadi berkah untuk semua! 💚🤲',
+                telegram: '🕌 Undangan Pernikahan Islami Fatimah & Ahmad! Barakallahu lakuma wa baraka alaikuma! 💚🤲',
+                instagram: '💚 Alhamdulillah! Fatimah & Ahmad mengundang Anda di pernikahan yang penuh berkah! 🕌🤲 #PernikahanIslami #Barakallahu'
+            };
+            alert(`📱 Berbagi di ${platform}:\n\n${messages[platform]}`);
+        }
+
+        // Animation observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-blessing, .grow-blessing').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

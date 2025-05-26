@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love & Coffee Engagement | Ryan & Maya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f5f0;
+            color: #5c4b3e;
+        }
+        .coffee-card {
+            background: linear-gradient(135deg, #faf6f0 0%, #f5efe6 100%);
+            box-shadow: 0 15px 30px rgba(156, 115, 82, 0.15);
+            border: 1px solid rgba(220, 195, 165, 0.5);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23d7bfa5" opacity="0.1" d="M30,50 Q50,70 70,50 Q50,30 30,50 Z"/></svg>');
+        }
+        .coffee-stain {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.08"><path fill="%235c4b3e" d="M100,50 C120,30 160,40 180,70 C200,100 170,130 140,150 C110,170 80,180 50,160 C20,140 10,110 30,80 C50,50 80,70 100,50 Z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 60%;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .coffee-bean {
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%235c4b3e" opacity="0.3" d="M50,20 C70,10 90,20 80,40 C70,60 30,60 20,40 C10,20 30,10 50,20 Z"/></svg>');
+            background-repeat: no-repeat;
+        }
+        .coffee-divider {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path fill="none" stroke="%23a38b73" stroke-width="1" d="M5,10 C10,5 20,15 30,5 C40,15 50,5 60,15 C70,5 80,15 85,10"/></svg>');
+            background-repeat: repeat-x;
+        }
+        .btn-rsvp {
+            background: linear-gradient(135deg, #a38b73 0%, #8b7258 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-rsvp:hover {
+            background: linear-gradient(135deg, #8b7258 0%, #6a553f 100%);
+            transform: translateY(-2px);
+        }
+        .steam {
+            position: absolute;
+            width: 12px;
+            height: 30px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+            border-radius: 6px;
+            animation: steam-float 3s ease-in-out infinite;
+        }
+        @keyframes steam-float {
+            0% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-15px) scale(1.05); opacity: 0.6; }
+            100% { transform: translateY(-30px) scale(1.1); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+    <!-- Coffee beans decoration -->
+    <div class="coffee-bean absolute top-10 left-10 hidden md:block floating" style="animation-delay: 0.5s;"></div>
+    <div class="coffee-bean absolute top Druga50 right-10 hidden md:block floating" style="animation-delay: 1s;"></div>
+    <div class="coffee-bean absolute bottom-10 left-1sta20 hidden md:block floating" style="animation-delay: 1.5s;"></div>
+    <div class="coffee-bean absolute bottom-10 right-20 hidden md:block floating" style="animation-delay: 2s;"></div>
+
+    <!-- Main invitation card -->
+    <div class="coffee-card rounded-2xl p-8 md:p-12 max-w-2xl w-full relative overflow-hidden">
+        <!-- Coffee stains decoration -->
+        <div class="absolute top-10 right-10 w-32 h-32 coffee-stain hidden md:block" style="opacity: 0.1;"></div>
+        <div class="absolute bottom-10 left-10 w-48 h-48 coffee-stain hidden md:block" style="opacity: 0.15;"></div>
+        
+        <!-- Coffee cup with steam -->
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-24 h-24 bg-white rounded-full border-4 border-pink-200 z-10 hidden md:block" style="box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full">
+                <!-- Steam elements -->
+                <div class="steam" style="left: -25px; animation-delay: 0.5s;"></div>
+                <div class="steam" style="left: 0px; animation-delay: 1s;"></div>
+                <div class="steam" style="left: 25px; animation-delay: 1.5s;"></div>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-20 text-center">
+            <!-- Header -->
+            <div class="mb-8">
+                <div class="flex justify-center mb-4">
+                    <i class="fas fa-mug-hot text-2xl text-amber-700 mr-2"></i>
+                    <i class="fas fa-heart text-xl text-pink-400 mx-2"></i>
+                    <i class="fas fa-mug-hot text-2xl text-amber-700 ml-2"></i>
+                </div>
+                <p class="text-xs md:text-sm tracking-widest uppercase text-amber-700 mb-2">Engagement Invitation</p>
+                <h1 class="text-3xl md:text-5xl font-serif font-bold mt-2 text-amber-900">Ryan & Maya</h1>
+                
+                <div class="flex justify-center items-center my-6">
+                    <div class="h-px w-16 bg-amber-200"></div>
+                    <div class="mx-4 text-amber-700">
+                        <i class="fas fa-coffee text-xl"></i>
+                    </div>
+                    <div class="h-px w-16 bg-amber-200"></div>
+                </div>
+                
+                <p class="text-sm text-amber-800 italic">"Life is like a cup of coffee - the sweetness comes when we share it together."</p>
+            </div>
+            
+            <!-- Details -->
+            <div class="mb-10">
+                <p class="text-sm text-amber-700 mb-6">With warm hearts and a freshly brewed cup of joy, we invite you to celebrate our engagement</p>
+                
+                <div class="bg-amber-50 rounded-lg p-6 mb-8 border border-amber-100">
+                    <div class="mb-4">
+                        <p class="text-xs text-amber-600">Date</p>
+                        <p class="text-lg font-medium text-amber-900 mt-1">Saturday, March 15, 2025</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p class="text-xs text-amber-600">Time</p>
+                        <p class="text-lg font-medium text-amber-900 mt-1">10:00 AM - 2:00 PM</p>
+                    </div>
+                    
+                    <div>
+                        <p class="text-xs text-amber-600">Location</p>
+                        <p class="text-lg font-medium text-amber-900 mt-1">The Cozy Bean Café</p>
+                        <p class="text-sm text-amber-800">123 Brew Street, Coffeeville</p>
+                        <a href="#" class="inline-block mt-2 text-amber-600 hover:text-amber-800 text-xs">
+                            <i class="fas fa-map-marker-alt mr-1"></i> View Location
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="h-8 coffee-divider my-6"></div>
+                
+                <p class="text-sm text-amber-700 mb-6">Your presence would make this celebration as perfect as our morning coffee ritual</p>
+                
+                <button onclick="openModal()" class="btn-rsvp text-white px-8 py-3 rounded-full shadow-md hover:shadow-lg">
+                    <i class="fas fa-mug-hot mr-2"></i> RSVP
+                </button>
+            </div>
+            
+            <!-- Closing -->
+            <div class="mb-6">
+                <p class="text-xs text-amber-700 italic">"We loved with a love that was more than love, as strong as our morning espresso."</p>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-sm text-amber-700">We look forward to sharing this special brew with you</p>
+                
+                <div class="mt-6">
+                    <p class="text-lg font-serif text-amber-900">Warmly,</p>
+                    <p class="text-amber-800 font-medium">Ryan & Maya</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Coffee toggle -->
+        <div class="absolute top-4 right-4">
+            <button id="coffeeToggle" class="bg-amber-100 text-amber-700 p-2 rounded-full hover:bg-amber-200 transition-all shadow-sm">
+                <i class="fas fa-coffee text-sm"></i>
+            </button>
+            <audio id="coffeeSound" src="https://assets.mixkit.co/sfx/preview/mixkit-coffee-maker-brewing-1695.mp3"></audio>
+        </div>
+    </div>
+    
+    <!-- Coffee beans animation -->
+    <div id="beans" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center p-4 z-50 hidden backdrop-blur-sm">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full relative border border-amber-100 shadow-lg">
+            <button onclick="closeModal()" class="absolute top-3 right-3 text-amber-400 hover:text-amber-600">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="text-center mb-4">
+                <h3 class="text-xl font-serif text-amber-900 mb-1">Coffee RSVP</h3>
+                <p class="text-xs text-amber-600">Ryan & Maya</p>
+                <div class="flex justify-center mt-2">
+                    <i class="fas fa-mug-hot text-amber-700"></i>
+                </div>
+            </div>
+            
+            <form id="rsvpForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs text-amber-600 mb-1">Your Name</label>
+                    <input type="text" class="w-full px-4 py-3 border border-amber-100 rounded-lg focus:outline-none focus:ring-1 focus:ring-amber-300 text-sm bg-amber-50" required>
+                </div>
+                
+                <div>
+                    <label class="block text-xs text-amber-600 mb-1">Coffee Preference</label>
+                    <select class="w-full px-4 py-3 border border-amber-100 rounded-lg focus:outline-none focus:ring-1 focus:ring-amber-300 text-sm bg-amber-50">
+                        <option>Americano</option>
+                        <option>Cappuccino</option>
+                        <option>Latte</option>
+                        <option>Espresso</option>
+                        <option>Other (please specify in comments)</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-xs text-amber-600 mb-2">Will you join us?</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center justify-center p-2 bg-amber-50 rounded-lg cursor-pointer">
+                            <input type="radio" name="attendance" value="yes" class="sr-only peer" checked>
+                            <div class="peer-checked:bg-amber-100 peer-checked:text-amber-900 w-full text-center py-1 rounded text-xs">
+                                <i class="fas fa-check mr-1"></i> Count Me In
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-center p-2 bg-amber-50 rounded-lg cursor-pointer">
+                            <input type="radio" name="attendance" value="no" class="sr-only peer">
+                            <div class="peer-checked:bg-amber-100 peer-checked:text-amber-900 w-full text-center py-1 rounded text-xs">
+                                <i class="fas fa-times mr-1"></i> Can't Make It
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-xs text-amber-600 mb-1">Coffee Wishes (Optional)</label>
+                    <textarea class="w-full px-4 py-3 border border-amber-100 rounded-lg focus:outline-none focus:ring-1 focus:ring-amber-300 text-sm bg-amber-50" rows="3" placeholder="Wishing you a love as rich and fulfilling as the perfect espresso..."></textarea>
+                </div>
+                
+                <button type="submit" class="w-full btn-rsvp text-white py-3 rounded-lg hover:shadow-md">
+                    <i class="fas fa-mug-hot mr-2"></i> Brew My RSVP
+                </button>
+            </form>
+            
+            <p class="text-xs text-center text-amber-500 mt-4">Please RSVP by March 1st so we can prepare enough coffee!</p>
+        </div>
+    </div>
+
+    <script>
+        // Floating coffee beans animation
+        function createCoffeeBean() {
+            const bean = document.createElement('div');
+            bean.className = 'absolute opacity-40';
+            bean.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20"><path fill="#5c4b3e" d="M50,20 C70,10 90,20 80,40 C70,60 30,60 20,40 C10,20 30,10 50,20 Z"/></svg>';
+            bean.style.left = Math.random() * 100 + 'vw';
+            bean.style.top = Math.random() * 100 + 'vh';
+            bean.style.opacity = Math.random() * 0.6 + 0.2;
+            bean.style.transform = `rotate(${Math.random() * 360}deg)`;
+            bean.style.animation = `floatUp ${Math.random() * 3 + 3}s linear forwards`;
+            
+            document.getElementById('beans').appendChild(bean);
+            
+            setTimeout(() => {
+                bean.remove();
+            }, 5000);
+        }
+        
+        // Add animation style dynamically
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes floatUp {
+                0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+                100% { transform: translateY(-100vh) rotate(180deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Start beans animation
+        setInterval(createCoffeeBean, 400);
+        
+        // RSVP Modal
+        function openModal() {
+            document.getElementById('rsvpModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('rsvpModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Form submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thanks for your RSVP! We\'ll have your favorite coffee waiting. ❤️');
+            closeModal();
+            this.reset();
+        });
+        
+        // Coffee sound toggle
+        const coffeeToggle = document.getElementById('coffeeToggle');
+        const coffeeSound = document.getElementById('coffeeSound');
+        let isPlayingSound = false;
+        
+        coffeeToggle.addEventListener('click', function() {
+            if (isPlayingSound) {
+                coffeeSound.pause();
+                coffeeToggle.innerHTML = '<i class="fas fa-coffee text-sm"></i>';
+                coffeeToggle.classList.remove('text-amber-900');
+                coffeeToggle.classList.add('text-amber-700');
+            } else {
+                coffeeSound.play();
+                coffeeToggle.innerHTML = '<i class="fas fa-pause text-sm"></i>';
+                coffeeToggle.classList.remove('text-amber-700');
+                coffeeToggle.classList.add('text-amber-900');
+            }
+            isPlayingSound = !isPlayingSound;
+        });
+        
+        // Steam for form
+        function addSteamToForm() {
+            const formDiv = document.getElementById('rsvpForm');
+            setInterval(() => {
+                const steam = document.createElement('div');
+                steam.className = 'steam';
+                steam.style.left = Math.random() * 80 + 10 + '%';
+                steam.style.bottom = '100%';
+                steam.style.animation = 'steam-float ' + (Math.random() * 2 + 2) + 's ease-in-out forwards';
+                
+                formDiv.appendChild(steam);
+                
+                setTimeout(() => {
+                    steam.remove();
+                }, 3000);
+            }, 800);
+        }
+
+        // Initialize when modal opens
+        document.getElementById('rsvpModal').addEventListener('click', function() {
+            if (!document.querySelector('#rsvpForm .steam')) {
+                addSteamToForm();
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>

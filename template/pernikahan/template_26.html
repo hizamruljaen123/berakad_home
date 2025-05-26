@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchanted Forest - Wedding Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Alice', serif;
+            background-color: #0a1f1c;
+            color: #e0e0e0;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+        }
+        .enchanted-container {
+            max-width: 850px;
+            background-color: rgba(10, 31, 28, 0.8);
+            border: 1px solid #4a6670;
+            box-shadow: 0 0 20px rgba(144, 238, 144, 0.2);
+        }
+        .fairy-heading {
+            font-family: 'Tangerine', cursive;
+            color: #90ee90;
+            text-shadow: 0 0 5px rgba(144, 238, 144, 0.5);
+        }
+        .couple-names {
+            font-size: 5rem;
+            margin: 20px 0;
+        }
+        .magical-border {
+            border: 10px solid transparent;
+            border-image: url('https://i.imgur.com/JgxTxJ3.png') 30 stretch;
+            padding: 20px;
+        }
+        .fairy-light {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(255, 255, 255, 0.5),
+                        0 0 30px rgba(144, 238, 144, 0.5),
+                        0 0 40px rgba(144, 238, 144, 0.3);
+            animation: twinkle 4s infinite ease-in-out;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        .forest-divider {
+            height: 30px;
+            background-image: url('https://i.imgur.com/8FHqzTH.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 20px auto;
+            opacity: 0.6;
+        }
+        .event-card {
+            background-color: rgba(20, 41, 38, 0.7);
+            border: 1px solid #4a6670;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(144, 238, 144, 0.2);
+        }
+        .btn-enchanted {
+            background-color: transparent;
+            color: #90ee90;
+            border: 1px solid #90ee90;
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        .btn-enchanted:hover {
+            background-color: rgba(144, 238, 144, 0.1);
+            box-shadow: 0 0 15px rgba(144, 238, 144, 0.5);
+            color: #fff;
+        }
+        .magical-quote {
+            font-style: italic;
+            color: #b0c4de;
+        }
+        .leaf-decoration {
+            position: absolute;
+            width: 150px;
+            opacity: 0.1;
+        }
+        .top-right {
+            top: 20px;
+            right: 20px;
+            transform: rotate(45deg);
+        }
+        .bottom-left {
+            bottom: 20px;
+            left: 20px;
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Generate random fairy lights -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            for (let i = 0; i < 50; i++) {
+                const light = document.createElement('div');
+                light.className = 'fairy-light';
+                light.style.left = `${Math.random() * 100}%`;
+                light.style.top = `${Math.random() * 100}%`;
+                light.style.animationDelay = `${Math.random() * 4}s`;
+                body.appendChild(light);
+            }
+        });
+    </script>
+
+    <div class="container py-5">
+        <div class="enchanted-container mx-auto p-4 p-md-5 position-relative">
+            <img src="https://i.imgur.com/JgxTxJ3.png" class="leaf-decoration top-right">
+            <img src="https://i.imgur.com/JgxTxJ3.png" class="leaf-decoration bottom-left">
+            
+            <div class="text-center mb-4">
+                <h3 class="fairy-heading mb-0" style="font-size: 2.5rem;">Once Upon a Time...</h3>
+            </div>
+            
+            <div class="magical-border mb-4">
+                <div class="text-center">
+                    <p class="mb-2">In a world of enchantment and wonder</p>
+                    <h1 class="fairy-heading couple-names">Isabella & Tristan</h1>
+                    <p class="mb-3">invite you to witness the beginning of their magical journey</p>
+                    
+                    <div class="forest-divider"></div>
+                    
+                    <p class="h4 mb-2">Saturday, the Fourteenth of October</p>
+                    <p class="h5 mb-4">Two Thousand Twenty-Four</p>
+                    
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-md-4">
+                            <div class="d-flex justify-content-center">
+                                <div style="width: 120px; height: 120px; border: 2px solid #90ee90; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                    <span class="fairy-heading" style="font-size: 3rem;">5</span>
+                                    <span>o'clock</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mb-5">
+                <p class="magical-quote">
+                    "Every great love story is a never-ending fairy tale..."
+                </p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="event-card p-4 h-100">
+                        <h3 class="fairy-heading mb-3" style="font-size: 2.5rem;">Enchanted Ceremony</h3>
+                        <p><i class="fas fa-tree me-2"></i> Whispering Woods</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Mystic Glen, Enchanted Forest</p>
+                        <p class="small">As the sun begins to set, we will exchange our vows beneath the ancient oak trees.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="event-card p-4 h-100">
+                        <h3 class="fairy-heading mb-3" style="font-size: 2.5rem;">Magical Reception</h3>
+                        <p><i class="fas fa-moon me-2"></i> Under the Stars</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Crystal Pavilion, Enchanted Forest</p>
+                        <p class="small">Join us for an evening of feasting, dancing, and celebration illuminated by a thousand twinkling lights.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mb-5">
+                <div class="forest-divider"></div>
+                <p class="mb-4">
+                    <span class="fairy-heading" style="font-size: 1.8rem;">Attire</span><br>
+                    Woodland Elegant | Fairy Tale Inspired
+                </p>
+                
+                <button class="btn btn-enchanted">
+                    <i class="fas fa-scroll me-2"></i> RSVP BY SEPTEMBER 14, 2024
+                </button>
+                
+                <p class="mt-4 small">
+                    <i class="fas fa-heart" style="color: #90ee90;"></i> Accommodations and directions will be provided upon RSVP <i class="fas fa-heart" style="color: #90ee90;"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

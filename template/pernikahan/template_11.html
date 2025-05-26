@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Vintage Classic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Crimson+Text:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .vintage-script {
+            font-family: 'Great Vibes', cursive;
+        }
+        .vintage-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .vintage-text {
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .vintage-bg {
+            background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+        }
+        
+        .vintage-border {
+            border: 3px solid #8b6914;
+            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath d='M10,10 L90,10 L90,30 L70,30 L70,70 L90,70 L90,90 L10,90 L10,70 L30,70 L30,30 L10,30 Z' fill='none' stroke='%238b6914' stroke-width='2'/%3E%3C/svg%3E") 30;
+        }
+        
+        .ornament {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='50' viewBox='0 0 200 50'%3E%3Cpath d='M100,25 Q80,5 60,25 Q80,45 100,25 Q120,5 140,25 Q120,45 100,25' fill='none' stroke='%238b6914' stroke-width='2'/%3E%3Ccircle cx='100' cy='25' r='3' fill='%238b6914'/%3E%3Ccircle cx='60' cy='25' r='2' fill='%238b6914'/%3E%3Ccircle cx='140' cy='25' r='2' fill='%238b6914'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 50px;
+        }
+        
+        .vintage-shadow {
+            box-shadow: 0 10px 30px rgba(139, 105, 20, 0.2);
+        }
+        
+        .vintage-gold {
+            background: linear-gradient(135deg, #d4af37, #ffd700, #b8860b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .sepia-effect {
+            filter: sepia(20%);
+        }
+        
+        .fade-in-vintage {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInVintage 1s ease-out forwards;
+        }
+        
+        @keyframes fadeInVintage {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .vintage-card {
+            background: radial-gradient(circle at center, #faf7f0, #f0ead6);
+            border: 2px solid #d4af37;
+            position: relative;
+        }
+        
+        .vintage-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #d4af37;
+            pointer-events: none;
+        }
+        
+        .lace-border {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0,10 Q25,0 50,10 T100,10' fill='none' stroke='%23d4af37' stroke-width='1'/%3E%3Ccircle cx='10' cy='10' r='2' fill='%23d4af37'/%3E%3Ccircle cx='30' cy='5' r='1' fill='%23d4af37'/%3E%3Ccircle cx='50' cy='10' r='2' fill='%23d4af37'/%3E%3Ccircle cx='70' cy='5' r='1' fill='%23d4af37'/%3E%3Ccircle cx='90' cy='10' r='2' fill='%23d4af37'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            height: 20px;
+        }
+        
+        .vintage-button {
+            background: linear-gradient(135deg, #8b6914, #d4af37);
+            border: 2px solid #8b6914;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vintage-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .vintage-button:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen vintage-bg p-4">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="w-full max-w-lg">
+            
+            <!-- Main Invitation Card -->
+            <div class="vintage-card rounded-lg p-8 vintage-shadow">
+                
+                <!-- Header Ornament -->
+                <div class="text-center mb-8 fade-in-vintage">
+                    <div class="ornament mb-4"></div>
+                    <h1 class="vintage-script text-5xl vintage-gold mb-2">Wedding Invitation</h1>
+                    <div class="lace-border mx-auto w-32 mb-4"></div>
+                    <p class="vintage-text text-gray-600 italic text-lg">"Two hearts becoming one"</p>
+                </div>
+                
+                <!-- Couple Section -->
+                <div class="text-center mb-8 fade-in-vintage" style="animation-delay: 0.3s;">
+                    <div class="mb-6">
+                        <p class="vintage-text text-gray-700 leading-relaxed mb-6">
+                            With hearts full of joy and love, we cordially invite you to witness the sacred union of
+                        </p>
+                        
+                        <!-- Bride -->
+                        <div class="mb-6">
+                            <div class="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-yellow-600 bg-gradient-to-br from-yellow-50 to-yellow-100 flex items-center justify-center sepia-effect">
+                                <i class="fas fa-female text-yellow-700 text-3xl"></i>
+                            </div>
+                            <h2 class="vintage-script text-4xl vintage-gold mb-2">Isabella Rose</h2>
+                            <p class="vintage-text text-sm text-gray-600 mb-1">Beloved daughter of</p>
+                            <p class="vintage-text text-gray-700 font-semibold">Mr. & Mrs. William Thompson</p>
+                            <p class="vintage-text text-xs text-gray-500 italic">London, England</p>
+                        </div>
+                        
+                        <!-- Ornamental Divider -->
+                        <div class="flex items-center justify-center my-8">
+                            <div class="w-16 h-px bg-yellow-600"></div>
+                            <div class="mx-4 w-8 h-8 rounded-full border-2 border-yellow-600 bg-yellow-50 flex items-center justify-center">
+                                <span class="vintage-serif font-bold text-yellow-700">&</span>
+                            </div>
+                            <div class="w-16 h-px bg-yellow-600"></div>
+                        </div>
+                        
+                        <!-- Groom -->
+                        <div>
+                            <div class="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-yellow-600 bg-gradient-to-br from-yellow-50 to-yellow-100 flex items-center justify-center sepia-effect">
+                                <i class="fas fa-male text-yellow-700 text-3xl"></i>
+                            </div>
+                            <h2 class="vintage-script text-4xl vintage-gold mb-2">James Alexander</h2>
+                            <p class="vintage-text text-sm text-gray-600 mb-1">Beloved son of</p>
+                            <p class="vintage-text text-gray-700 font-semibold">Mr. & Mrs. Robert Mitchell</p>
+                            <p class="vintage-text text-xs text-gray-500 italic">Edinburgh, Scotland</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event Details -->
+                <div class="space-y-6 mb-8 fade-in-vintage" style="animation-delay: 0.6s;">
+                    <!-- Ceremony -->
+                    <div class="text-center p-6 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg border-2 border-yellow-200">
+                        <div class="mb-4">
+                            <i class="fas fa-church text-yellow-700 text-2xl mb-2"></i>
+                            <h3 class="vintage-serif text-xl font-bold text-yellow-800">Holy Ceremony</h3>
+                        </div>
+                        <div class="vintage-text">
+                            <p class="text-2xl font-bold text-yellow-900 mb-1">Saturday</p>
+                            <p class="text-lg font-semibold text-gray-700">28th of September, 2024</p>
+                            <p class="text-gray-600 mb-3">at half past three in the afternoon</p>
+                            <p class="font-semibold text-gray-800">St. Margaret's Cathedral</p>
+                            <p class="text-sm text-gray-600">Westminster Abbey Road, London</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Reception -->
+                    <div class="text-center p-6 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-lg border-2 border-amber-200">
+                        <div class="mb-4">
+                            <i class="fas fa-wine-glass-alt text-amber-700 text-2xl mb-2"></i>
+                            <h3 class="vintage-serif text-xl font-bold text-amber-800">Evening Reception</h3>
+                        </div>
+                        <div class="vintage-text">
+                            <p class="text-lg font-semibold text-gray-700 mb-1">Following the ceremony</p>
+                            <p class="text-gray-600 mb-3">at seven o'clock in the evening</p>
+                            <p class="font-semibold text-gray-800">The Grand Victorian Ballroom</p>
+                            <p class="text-sm text-gray-600">Mayfair Hotel, Park Lane, London</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RSVP Section -->
+                <div class="mb-8 fade-in-vintage" style="animation-delay: 0.9s;">
+                    <div class="text-center mb-6">
+                        <div class="ornament mb-4"></div>
+                        <h3 class="vintage-serif text-2xl font-bold vintage-gold">Kindly Respond</h3>
+                        <p class="vintage-text text-gray-600 mt-2">Please confirm your attendance by the 15th of August</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Your distinguished name" class="w-full p-4 border-2 border-yellow-600 rounded-lg bg-yellow-50 vintage-text focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                        <select class="w-full p-4 border-2 border-yellow-600 rounded-lg bg-yellow-50 vintage-text focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            <option>Number of guests in your party</option>
+                            <option>One guest</option>
+                            <option>Two guests</option>
+                            <option>Three guests</option>
+                            <option>Four or more guests</option>
+                        </select>
+                        <textarea placeholder="Your gracious message" class="w-full p-4 border-2 border-yellow-600 rounded-lg bg-yellow-50 vintage-text h-24 resize-none focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                        <button onclick="submitVintageRSVP()" class="w-full vintage-button text-white font-bold py-4 rounded-lg vintage-text hover:shadow-lg transition duration-300">
+                            <i class="fas fa-scroll mr-2"></i>Send Your Response
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Gift Registry -->
+                <div class="mb-8 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border-2 border-gray-300 fade-in-vintage" style="animation-delay: 1.2s;">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-gift text-gray-700 text-2xl mb-2"></i>
+                        <h3 class="vintage-serif text-xl font-bold text-gray-800">Wedding Registry</h3>
+                        <p class="vintage-text text-gray-600 mt-2">Your presence is our greatest gift, however if you wish to honor us:</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg border-2 border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="vintage-text font-semibold text-gray-700">Barclays Bank</p>
+                                    <p class="font-mono text-lg font-bold text-gray-800">GB29 NWBK 6016 1331 9268 19</p>
+                                    <p class="vintage-text text-sm text-gray-600">Mr. James Alexander Mitchell</p>
+                                </div>
+                                <button onclick="copyVintageAccount('GB29NWBK60161331926819')" class="vintage-button text-white p-2 rounded">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border-2 border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="vintage-text font-semibold text-gray-700">HSBC Private Bank</p>
+                                    <p class="font-mono text-lg font-bold text-gray-800">GB82 WEST 1234 5698 7654 32</p>
+                                    <p class="vintage-text text-sm text-gray-600">Miss Isabella Rose Thompson</p>
+                                </div>
+                                <button onclick="copyVintageAccount('GB82WEST12345698765432')" class="vintage-button text-white p-2 rounded">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Location -->
+                <div class="text-center mb-8 fade-in-vintage" style="animation-delay: 1.5s;">
+                    <button onclick="showVintageLocation()" class="vintage-button text-white font-bold py-3 px-8 rounded-lg vintage-text hover:shadow-lg transition duration-300">
+                        <i class="fas fa-map-marked-alt mr-2"></i>View Locations on Map
+                    </button>
+                </div>
+                
+                <!-- Closing -->
+                <div class="text-center pt-6 border-t-2 border-yellow-600 fade-in-vintage" style="animation-delay: 1.8s;">
+                    <div class="lace-border mx-auto w-48 mb-4"></div>
+                    <p class="vintage-text text-gray-700 mb-4">We eagerly await your gracious presence on our most joyous day</p>
+                    <p class="vintage-text text-gray-600 mb-4">With warmest regards and deepest affection</p>
+                    <div class="vintage-script text-3xl vintage-gold mb-4">Isabella & James</div>
+                    <p class="vintage-text text-xs text-gray-500">Thompson & Mitchell Families</p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex justify-center space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 border-2 border-yellow-600 rounded-full flex items-center justify-center text-yellow-700 hover:bg-yellow-600 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 border-2 border-yellow-600 rounded-full flex items-center justify-center text-yellow-700 hover:bg-yellow-600 hover:text-white transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 border-2 border-yellow-600 rounded-full flex items-center justify-center text-yellow-700 hover:bg-yellow-600 hover:text-white transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="ornament mt-6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function submitVintageRSVP() {
+            alert('Your gracious response has been received with heartfelt gratitude. We eagerly anticipate your presence at our celebration of love.');
+        }
+        
+        function copyVintageAccount(account) {
+            navigator.clipboard.writeText(account).then(() => {
+                alert('Account details have been copied to your clipboard. Your generosity is deeply appreciated.');
+            });
+        }
+        
+        function showVintageLocation() {
+            alert('Opening location details...\n\nCeremony: St. Margaret\'s Cathedral, Westminster Abbey Road, London\nReception: The Grand Victorian Ballroom, Mayfair Hotel, Park Lane, London');
+        }
+        
+        // Add vintage entrance animations
+        window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.fade-in-vintage');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.animationPlayState = 'running';
+                }, index * 300);
+            });
+        });
+    </script>
+</body>
+</html>

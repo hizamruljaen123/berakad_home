@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        
+        .chat-bubble {
+            border-radius: 18px;
+            max-width: 70%;
+            position: relative;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        
+        .received {
+            background: #ffffff;
+            border-bottom-left-radius: 5px;
+            align-self: flex-start;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sent {
+            background: #d9fdd3;
+            border-bottom-right-radius: 5px;
+            align-self: flex-end;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        
+        .time-stamp {
+            font-size: 11px;
+            color: #667781;
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .check-mark {
+            color: #4fc3f7;
+            font-size: 14px;
+            margin-left: 4px;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid #f0f2f5;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        
+        .online {
+            background-color: #53bdeb;
+        }
+        
+        .offline {
+            background-color: #a8b4be;
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
+    <!-- Chat header -->
+    <div class="bg-[#008069] text-white p-3 flex items-center">
+        <div class="flex items-center">
+            <a href="#" class="mr-4">
+                <i class="fas fa-arrow-left text-white"></i>
+            </a>
+            <div class="relative">
+                <img src="https://i.pravatar.cc/150?img=5" alt="Couple" class="avatar">
+                <div class="status-indicator online"></div>
+            </div>
+            <div class="ml-3">
+                <div class="font-semibold">Ricardo & Angela</div>
+                <div class="text-xs">Online</div>
+            </div>
+        </div>
+        <div class="ml-auto flex space-x-4">
+            <a href="#"><i class="fas fa-video text-white"></i></a>
+            <a href="#"><i class="fas fa-phone-alt text-white"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v text-white"></i></a>
+        </div>
+    </div>
+    
+    <!-- Chat area -->
+    <div class="flex-1 overflow-y-auto p-4 bg-[#e5ddd5] bg-opacity-30" style="background-image: url('https://web.whatsapp.com/img/bg-chat-tile-light_a4be512e7195b6b733d9110b408f075d.png');">
+        <div class="flex flex-col">
+            <!-- Date indicator -->
+            <div class="text-center my-4">
+                <span class="bg-white text-[#667781] text-xs px-2 py-1 rounded-md">Hari ini, 12:30</span>
+            </div>
+            
+            <!-- Received message (from couple) -->
+            <div class="flex">
+                <img src="https://i.pravatar.cc/150?img=5" alt="Couple" class="avatar mr-2 self-end">
+                <div class="flex flex-col">
+                    <div class="chat-bubble received">
+                        <div class="font-semibold text-[#008069]">Ricardo & Angela</div>
+                        Hai semuanya! Kami ingin berbagi kabar bahagia 💕
+                        <div class="time-stamp">
+                            12:30
+                        </div>
+                    </div>
+                    
+                    <div class="chat-bubble received">
+                        Kami dengan penuh syukur ingin mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara tunangan kami:
+                        <div class="time-stamp">
+                            12:30
+                        </div>
+                    </div>
+                    
+                    <div class="chat-bubble received mb-4">
+                        <div class="bg-[#f5f5f5] p-3 rounded-lg">
+                            <div class="font-semibold text-lg text-center mb-2">Undangan Tunangan</div>
+                            <div class="text-center text-2xl font-light mb-4">Ricardo & Angela</div>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="text-xs text-[#667781]">Hari & Tanggal</div>
+                                    <div>Minggu, 3 Desember 2023</div>
+                                    <div>13.00 - 15.00 WIB</div>
+                                </div>
+                                
+                                <div>
+                                    <div class="text-xs text-[#667781]">Tempat</div>
+                                    <div>Hotel Sakura Garden</div>
+                                    <div>Jl. Hanami No. 88, Jakarta</div>
+                                </div>
+                                
+                                <div class="pt-3 text-center text-sm">
+                                    "Atas kehadiran dan doanya, kami mengucapkan terima kasih"
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-stamp">
+                            12:31
+                        </div>
+                    </div>
+                    
+                    <div class="chat-bubble received">
+                        Kami mohon konfirmasi kehadiran Bapak/Ibu sebelum tanggal 25 November 2023 🙏
+                        <div class="time-stamp">
+                            12:32
+                        </div>
+                    </div>
+                    
+                    <div class="chat-bubble received">
+                        Untuk info lebih lanjut bisa hubungi:
+                        <br>Nanda (0812-3456-7890)
+                        <div class="time-stamp">
+                            12:33
+                        </div>
+                    </div>
+                    
+                    <div class="chat-bubble received">
+                        🙏 Terima kasih 🙏
+                        <div class="time-stamp">
+                            12:33
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sent message (from you) -->
+            <div class="flex justify-end mt-6">
+                <div class="flex flex-col items-end">
+                    <div class="chat-bubble sent">
+                        Alhamdulillah! Selamat ya 🎉
+                        <div class="time-stamp">
+                            12:35 <span class="check-mark"><i class="fas fa-check-double"></i></span>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-bubble sent">
+                        Pasti hadir! 🥳
+                        <div class="time-stamp">
+                            12:35 <span class="check-mark"><i class="fas fa-check-double"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Input area -->
+    <div class="bg-white p-3 flex items-center">
+        <div class="flex items-center space-x-2 mr-3">
+            <button><i class="fas fa-plus-circle text-[#8696a0] text-xl"></i></button>
+            <button><i class="fas fa-smile text-[#8696a0] text-xl"></i></button>
+        </div>
+        <div class="flex-1 bg-[#f0f2f5] rounded-lg px-4 py-2">
+            <input type="text" placeholder="Ketuk untuk membalas undangan" class="w-full bg-transparent outline-none text-sm">
+        </div>
+        <button class="ml-3 text-[#8696a0] text-xl">
+            <i class="fas fa-microphone"></i>
+        </button>
+    </div>
+    
+    <!-- Bottom navigation -->
+    <div class="bg-white flex justify-around border-t border-gray-100 py-2">
+        <a href="#" class="text-[#008069] text-center p-2">
+            <i class="fas fa-home text-xl"></i>
+        </a>
+        <a href="#" class="text-[#667781] text-center p-2">
+            <i class="fas fa-calendar-alt text-xl"></i>
+        </a>
+        <a href="#" class="text-[#667781] text-center p-2">
+            <i class="fas fa-image text-xl"></i>
+        </a>
+        <a href="#" class="text-[#667781] text-center p-2">
+            <i class="fas fa-ellipsis-h text-xl"></i>
+        </a>
+    </div>
+    
+    <script>
+        // Auto scroll to bottom
+        window.onload = function() {
+            const chatArea = document.querySelector('.flex-1');
+            chatArea.scrollTop = chatArea.scrollHeight;
+        };
+    </script>
+</body>
+</html>

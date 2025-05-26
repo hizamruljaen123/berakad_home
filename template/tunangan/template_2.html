@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tunangan | Arabian Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f0e3; /* Light beige */
+            font-family: 'Scheherazade New', serif;
+            color: #777; /* Darker gray */
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png"), url('https://pngimg.com/uploads/heart/heart_PNG51337.png');
+            background-repeat: repeat, no-repeat;
+            background-position: left top, right 40px;
+            background-size: auto, 180px;
+        }
+
+        .romantic-heart {
+            position: absolute;
+            top: 30px; right: 40px; width: 180px; opacity: 0.13;
+            z-index: 0;
+        }
+
+        .arabic-font {
+            font-family: 'Amiri', serif;
+        }
+
+        .romantic-title {
+            font-family: 'Amiri', serif;
+            font-size: 2.7rem;
+            color: #a77b53;
+            text-shadow: 0 2px 8px #fff6, 0 0 10px #d4af3744;
+        }
+
+        .ornamental-divider {
+            height: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,5 Q25,10 50,5 T100,5" fill="none" stroke="%23a77b53" stroke-width="1"/></svg>');
+            background-repeat: repeat-x;
+            background-size: 100px 10px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .gold-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(166, 124, 82, 0.1), rgba(212, 175, 55, 0.3), rgba(166, 124, 82, 0.1));
+        }
+
+        .arabesque-border {
+            border: 2px solid #a77b53;
+            border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,50 Q25,25 50,50 T100,50" fill="none" stroke="%23a77b53" stroke-width="2"/></svg>') 30 round;
+        }
+
+        .lamp-effect {
+            position: relative;
+        }
+
+        .lamp-effect:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .arabian-pattern {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 L0,100 Z M20,20 L80,20 L80,80 L20,80 Z" fill="%23a77b53" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+        }
+
+        .soft-glow {
+            box-shadow: 0 0 40px 10px #ffe4e1cc;
+            border-radius: 18px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <img src="https://pngimg.com/uploads/heart/heart_PNG51337.png" class="romantic-heart" />
+    <!-- Cover with Arabian Arch -->
+    <div class="relative h-96 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1511898634545-c01af8a54dd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+
+        <!-- Arabian Arch -->
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-2xl">
+            <svg viewBox="0 0 500 100" preserveAspectRatio="none" class="w-full h-32">
+                <path d="M0,0 L250,100 L500,0 L500,100 L0,100 Z" fill="white"/>
+            </svg>
+        </div>
+
+        <div class="relative z-10 text-center text-white pt-32 px-4">
+            <h3 class="arabic-font text-lg tracking-widest">﷽</h3>
+            <p class="text-sm mt-2">Dengan Menyebut Nama Allah yang Maha Pengasih Lagi Maha Penyayang</p>
+            <h1 class="arabic-font text-5xl font-bold mt-6 mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Undangan Tunangan</h1>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-3xl mx-auto bg-white py-12 px-6 md:px-12 shadow-sm relative -mt-12 z-20 arabesque-border soft-glow" style="animation-delay: 0.3s; border-radius: 15px;">
+        <!-- Floral Ornament -->
+        <div class="text-center mb-2">
+            <i class="fas fa-mosque text-3xl" style="color: #a77b53;"></i>
+        </div>
+
+        <!-- Introduction -->
+        <div class="text-center mb-10">
+            <p class="leading-relaxed mb-6" style="color: #5a4a42;">Bismillahirrahmanirrahim<br>Dengan penuh rasa syukur kepada Allah Subhanahu Wa Ta'ala, keluarga besar:</p>
+
+            <!-- Couple Names -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-6">
+                <div>
+                    <h3 class="arabic-font text-2xl font-bold" style="color: #856442;">عائشة رحمة</h3>
+                    <p class="mt-2" style="color: #777;">Aisyah Rahma</p>
+                    <p class="text-xs mt-2" style="color: #999;">Putri dari Bpk. Ahmad Al-Faruq & Ibu Khadijah</p>
+                </div>
+
+                <div class="px-4">
+                    <i class="fas fa-heart text-2xl" style="color: #d4af37;"></i>
+                </div>
+
+                <div>
+                    <h3 class="arabic-font text-2xl font-bold" style="color: #856442;">عمر فاروق</h3>
+                    <p class="mt-2" style="color: #777;">Umar Faruq</p>
+                    <p class="text-xs mt-2" style="color: #999;">Putra dari Bpk. Abdul Rahman & Ibu Fatimah Zahra</p>
+                </div>
+            </div>
+
+            <p class="italic mt-6" style="color: #5a4a42;">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu mendapatkan ketenangan hati."<br>(QS. Ar-Rum: 21)</p>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="ornamental-divider">
+            <div class="gold-overlay"></div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <!-- Date -->
+            <div class="lamp-effect bg-white p-6 text-center rounded arabesque-border">
+                <i class="fas fa-calendar-alt text-2xl mb-3" style="color: #d4af37;"></i>
+                <h3 class="arabic-font text-xl font-bold mb-2">Tanggal</h3>
+                <p>12 Rabiul Awal 1446 H</p>
+                <p>20 Oktober 2024</p>
+            </div>
+
+            <!-- Time -->
+            <div class="lamp-effect bg-white p-6 text-center rounded arabesque-border">
+                <i class="fas fa-clock text-2xl mb-3" style="color: #d4af37;"></i>
+                <h3 class="arabic-font text-xl font-bold mb-2">Waktu</h3>
+                <p>Ba'da Dzuhur</p>
+                <p>12.30 - 16.00 WIB</p>
+            </div>
+
+            <!-- Location -->
+            <div class="lamp-effect bg-white p-6 text-center rounded arabesque-border">
+                <i class="fas fa-map-marker-alt text-2xl mb-3" style="color: #d4af37;"></i>
+                <h3 class="arabic-font text-xl font-bold mb-2">Tempat</h3>
+                <p>Ballroom Al-Madinah</p>
+                <p class="text-sm">Jl. Andalusia No. 45, Jakarta</p>
+            </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="ornamental-divider">
+            <div class="gold-overlay"></div>
+        </div>
+
+        <!-- Dress Code -->
+        <div class="text-center mb-10">
+            <h3 class="arabic-font text-2xl font-bold mb-4">Kode Busana</h3>
+            <div class="inline-block px-6 py-3 arabesque-border bg-white">
+                <p class="mb-1"><i class="fas fa-tshirt mr-2" style="color: #a77b53;"></i> Pria: Koko Hitam/Coklat Tua</p>
+                <p><i class="fas fa-tshirt mr-2" style="color: #a77b53;"></i> Wanita: Abaya/Gamis Warna Earthy</p>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="mb-10">
+            <div class="relative h-64 overflow-hidden arabesque-border" style="background-image: url('https://i.pinimg.com/736x/89/25/a1/8925a1190b93c17c749395f6ca9ca894.jpg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <p class="text-gray-600">Peta lokasi akan ditampilkan di sini</p>
+                </div>
+                <div class="gold-overlay"></div>
+            </div>
+        </div>
+
+        <!-- RSVP -->
+        <div class="text-center mb-10">
+            <button onclick="sendConfirmation()" class="bg-transparent hover:bg-amber-50 text-gray-800 font-bold py-3 px-8 border-2 rounded-full arabesque-border transition duration-300" style="border-color: #a77b53; color: #5a4a42; animation: glow 2s infinite;">
+                <i class="fas fa-hands-praying mr-2" style="color: #a77b53;"></i> Konfirmasi Kehadiran
+            </button>
+        </div>
+
+        <!-- Closing -->
+        <div class="text-center">
+            <p class="mb-4 italic">"Kehadiran dan doa restu Bapak/Ibu/Saudara/i sangat kami harapkan."</p>
+            <p class="arabic-font text-sm">والسلام عليكم ورحمة الله وبركاته</p>
+            <p class="mt-2 text-sm">Wassalamu'alaikum warahmatullahi wabarakatuh</p>
+
+            <!-- Family Sign -->
+            <div class="mt-8 pt-6 border-t border-amber-100">
+                <p class="arabic-font text-xl font-bold" style="color: #a77b53;">Keluarga Besar Al-Faruq & Abdul Rahman</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Arabian Footer -->
+    <div class="bg-white mt-12 pt-8 pb-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="flex justify-center space-x-6 mb-4">
+                <i class="fab fa-whatsapp text-2xl" style="color: #a77b53;"></i>
+                <i class="fas fa-envelope text-2xl" style="color: #a77b53;"></i>
+                <i class="fas fa-phone-alt text-2xl" style="color: #a77b53;"></i>
+            </div>
+            <p class="text-xs">
+                Untuk informasi lebih lanjut:<br>
+                Ahmad (0811-2233-4455) | Abdul (0821-9988-7766)
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function sendConfirmation() {
+            // Create floating lanterns animation
+            const colors = ['#d4af37', '#a77b53', '#b8860b', '#cd853f'];
+            const container = document.body;
+
+            for (let i = 0; i < 8; i++) {
+                const lantern = document.createElement('div');
+                lantern.innerHTML = '🪔';
+                lantern.style.position = 'fixed';
+                lantern.style.fontSize = '32px';
+                lantern.style.color = colors[i % colors.length];
+                lantern.style.left = Math.random() * 100 + 'vw';
+                lantern.style.top = '-50px';
+                lantern.style.zIndex = '9999';
+                lantern.style.opacity = '0.8';
+                lantern.style.filter = 'drop-shadow(0 0 4px rgba(212, 175, 55, 0.7))';
+                lantern.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
+
+                container.appendChild(lantern);
+
+                const animationDuration = Math.random() * 4 + 3;
+
+                lantern.animate([
+                    { top: '-50px', opacity: 0.8 },
+                    { top: '100vh', opacity: 0 }
+                ], {
+                    duration: animationDuration * 1000,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    fill: 'forwards'
+                });
+
+                setTimeout(() => lantern.remove(), animationDuration * 1000);
+            }
+
+            // Show confirmation
+            setTimeout(() => {
+                alert('📜 Terima kasih atas konfirmasi kehadiran Anda.\n\nSilakan hubungi kami untuk informasi lebih lanjut:\n\nKeluarga Aisyah: 0811-2233-4455\nKeluarga Umar: 0821-9988-7766\n\nجزاكم الله خيرا (Jazakumullahu khairan)');
+            }, 1000);
+        }
+
+        // Add hover effects on elements with arabesque borders
+        const arabesqueElements = document.querySelectorAll('.arabesque-border');
+        arabesqueElements.forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 5px 15px rgba(167, 123, 83, 0.1)';
+            });
+
+            el.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+
+        // Play call to prayer sound on load (after interaction)
+        document.addEventListener('click', function initAudio() {
+            const adhan = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+            adhan.volume = 0.3;
+            adhan.play().then(() => {
+                adhan.pause();
+                adhan.currentTime = 0;
+            }).catch(e => console.log('Autoplay prevented'));
+            document.removeEventListener('click', initAudio);
+        }, { once: true });
+    </script>
+</body>
+</html>

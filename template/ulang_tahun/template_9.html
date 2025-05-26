@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Petualangan Bajak Laut</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Seaweed+Script&family=Metamorphous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Metamorphous', serif;
+            background-color: #0a192f; /* Dark Blue */
+            color: #ccd6f6; /* Light Slate */
+            background-image: url('https://www.transparenttextures.com/patterns/worn-dots.png');
+        }
+        .pirate-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: linear-gradient(rgba(13, 37, 63, 0.95), rgba(10, 25, 47, 0.95)), url('https://images.unsplash.com/photo-1569860945975-c39504157f64?auto=format&fit=crop&w=1200&q=60');
+            background-size: cover;
+            background-position: center;
+            border: 5px solid #ffb74d; /* Light Orange */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 183, 77, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .pirate-header {
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+        }
+        .pirate-header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏴‍☠️</text></svg>');
+            background-repeat: repeat;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .pirate-title {
+            font-family: 'Pirata One', cursive;
+            font-size: 4.5rem;
+            color: #ffb74d;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            margin-bottom: 0;
+        }
+        .pirate-subtitle {
+            font-family: 'Seaweed Script', cursive;
+            font-size: 2rem;
+            color: #8892b0; /* Slate */
+            margin-top: 0;
+        }
+        .treasure-map-bg {
+            background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+            background-color: rgba(255, 224, 178, 0.1); /* Light Orange Transparent */
+        }
+        .compass-icon {
+            font-size: 5rem;
+            color: #ffb74d;
+            animation: spin-compass 10s linear infinite;
+        }
+        @keyframes spin-compass {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .btn-pirate {
+            background-color: #d32f2f; /* Red */
+            border: 2px solid #ffb74d;
+            color: #fff;
+            font-family: 'Pirata One', cursive;
+            font-size: 1.5rem;
+            padding: 10px 30px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 0 #8e24aa; /* Darker Red for 3D effect */
+        }
+        .btn-pirate:hover {
+            background-color: #c62828; /* Darker Red */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #8e24aa;
+        }
+        .section-title-pirate {
+            font-family: 'Pirata One', cursive;
+            color: #ffb74d;
+            font-size: 2.5rem;
+            border-bottom: 3px dashed #8892b0;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .skull-divider {
+            font-size: 2rem;
+            color: #ffb74d;
+            margin: 20px 0;
+        }
+        .countdown-box {
+            background-color: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ffb74d;
+        }
+        .countdown-box .value {
+            font-family: 'Pirata One', cursive;
+            font-size: 2.5rem;
+            color: #ffcc80; /* Lighter Orange */
+        }
+        .countdown-box .label {
+            font-size: 0.9rem;
+            color: #8892b0;
+        }
+        .form-control-pirate {
+            background-color: rgba(204, 214, 246, 0.1);
+            border: 1px solid #8892b0;
+            color: #ccd6f6;
+        }
+        .form-control-pirate::placeholder {
+            color: #8892b0;
+        }
+        .form-control-pirate:focus {
+            background-color: rgba(204, 214, 246, 0.2);
+            border-color: #ffb74d;
+            box-shadow: 0 0 0 0.25rem rgba(255, 183, 77, 0.25);
+            color: #ccd6f6;
+        }
+        .anchor-icon {
+            animation: swing-anchor 3s infinite ease-in-out;
+        }
+        @keyframes swing-anchor {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(15deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="pirate-container">
+        <!-- Header -->
+        <header class="pirate-header">
+            <div class="anchor-icon position-absolute top-0 start-0 m-4 fs-1" style="color: #ffb74d; opacity: 0.5;"><i class="fas fa-anchor"></i></div>
+            <div class="anchor-icon position-absolute top-0 end-0 m-4 fs-1" style="color: #ffb74d; opacity: 0.5; animation-delay: -1.5s;"><i class="fas fa-anchor"></i></div>
+            <h1 class="pirate-title">Ahoy, Mateys!</h1>
+            <p class="pirate-subtitle">Ye Be Invited to Captain Leo's Birthday Plunder!</p>
+            <div class="mt-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/1076/1076330.png" alt="Pirate Skull" style="width: 100px; filter: drop-shadow(2px 2px 3px #000);">
+            </div>
+        </header>
+
+        <div class="p-4 p-md-5 treasure-map-bg">
+            <div class="text-center mb-5">
+                <i class="fas fa-compass compass-icon mb-3"></i>
+                <h2 class="section-title-pirate">Set Sail for Adventure!</h2>
+                <p class="mt-3 fs-5">
+                    Join us as we celebrate <strong class="text-warning">Captain Leo's 10th Birthday!</strong><br>
+                    Prepare for a swashbucklin' good time, ye scallywags!
+                </p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="card bg-transparent border-warning h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-calendar-day fa-3x text-warning mb-3"></i>
+                            <h3 class="card-title section-title-pirate fs-4">Date & Time</h3>
+                            <p class="card-text fs-5 mt-2">
+                                Saturday, October 11, 2025<br>
+                                3:00 PM 'til the cannons roar (6:00 PM)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-transparent border-warning h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt fa-3x text-warning mb-3"></i>
+                            <h3 class="card-title section-title-pirate fs-4">Secret Cove</h3>
+                            <p class="card-text fs-5 mt-2">
+                                The Old Boathouse, Pirate's Point<br>
+                                123 Treasure Island Rd, Seven Seas
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center my-4 skull-divider">
+                <i class="fas fa-skull-crossbones"></i> &nbsp; <i class="fas fa-skull-crossbones"></i> &nbsp; <i class="fas fa-skull-crossbones"></i>
+            </div>
+
+            <div class="mb-5">
+                <h2 class="section-title-pirate text-center d-block mb-4">Pirate Activities Await!</h2>
+                <ul class="list-unstyled row text-center fs-5">
+                    <li class="col-md-4 mb-2"><i class="fas fa-gem text-info me-2"></i>Treasure Hunt</li>
+                    <li class="col-md-4 mb-2"><i class="fas fa-water text-primary me-2"></i>Walk the Plank (mini version!)</li>
+                    <li class="col-md-4 mb-2"><i class="fas fa-flag-checkered text-danger me-2"></i>Cannonball Toss</li>
+                    <li class="col-md-4 mb-2"><i class="fas fa-hat-cowboy-side text-success me-2"></i>Pirate Hat Crafting</li>
+                    <li class="col-md-4 mb-2"><i class="fas fa-drumstick-bite text-warning me-2"></i>Captain's Feast</li>
+                    <li class="col-md-4 mb-2"><i class="fas fa-birthday-cake text-secondary me-2"></i>Birthday Grog & Cake</li>
+                </ul>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="mb-5 p-4" style="background-color: rgba(0,0,0,0.2); border-radius: 10px;">
+                <h3 class="section-title-pirate text-center d-block mb-4">Time 'til We Set Sail:</h3>
+                <div id="countdown" class="row text-center g-2">
+                    <div class="col-3">
+                        <div class="countdown-box"><div id="days" class="value">00</div><div class="label">Days</div></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="countdown-box"><div id="hours" class="value">00</div><div class="label">Hours</div></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="countdown-box"><div id="minutes" class="value">00</div><div class="label">Minutes</div></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="countdown-box"><div id="seconds" class="value">00</div><div class="label">Seconds</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP Form -->
+            <div class="mb-5 p-4" style="background-color: rgba(0,0,0,0.2); border-radius: 10px;">
+                <h3 class="section-title-pirate text-center d-block mb-4">Send Yer RSVP by Carrier Pigeon!</h3>
+                <form id="rsvpForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="pirateName" class="form-label text-warning">Yer Pirate Name:</label>
+                            <input type="text" class="form-control form-control-pirate" id="pirateName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="crewSize" class="form-label text-warning">Number o' Crew (incl. yerself):</label>
+                            <input type="number" class="form-control form-control-pirate" id="crewSize" min="1" value="1" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="messageScroll" class="form-label text-warning">Message in a Bottle (optional):</label>
+                            <textarea class="form-control form-control-pirate" id="messageScroll" rows="3"></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-pirate mt-3">
+                                <i class="fas fa-paper-plane me-2"></i> Send Yer Aye!
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="text-center">
+                <p class="fs-5">Dress in yer finest pirate garb! <br> (Eyepatches and bandanas encouraged!)</p>
+                <p class="text-muted small">
+                    Questions? Contact First Mate Sarah (Leo's Mom) at (555) 987-6543
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center p-3" style="background-color: rgba(0,0,0,0.4);">
+            <p class="mb-0 text-secondary"><i class="fas fa-anchor me-2"></i> Shiver me timbers, it's gonna be a grand celebration! <i class="fas fa-anchor ms-2"></i></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2025-10-11T15:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            if (timeLeft < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="col-12 text-center fs-4 text-danger py-3">The Plunder Has Begun!</div>';
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Form
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Aye, Captain! Yer RSVP has been received! Prepare for adventure!');
+            this.reset();
+        });
+
+        // Share Functions (Placeholder - implement as needed)
+        function shareInvitation(platform) {
+            const text = "Ahoy! Ye be invited to Captain Leo's 10th Birthday Plunder!";
+            const url = window.location.href;
+            alert(`Sharing on ${platform}: ${text} ${url}`);
+        }
+
+        function copyInvitation() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Treasure map link copied to yer clipboard, matey!');
+            });
+        }
+    </script>
+</body>
+</html>

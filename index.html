@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berakad.site - Undangan Online Cepat & Keren</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #b8c6db 100%);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .template-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .template-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .wave-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-shape svg {
+            position: relative;
+            display: block;
+            width: calc(200% + 1.3px);
+            height: 150px;
+        }
+        
+        .wave-shape .shape-fill {
+            fill: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fas fa-ring text-pink-500 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-gray-800">Berakad<span class="text-pink-500">.site</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#fitur" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Fitur</a>
+                        <a href="#template" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Template</a>
+                        <a href="#testimoni" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Testimoni</a>
+                        <a href="#faq" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                    </div>
+                </div>
+                <div class="md:ml-10 md:flex md:items-center space-x-2">
+                    <a href="#order" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
+                        Buat Undangan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section text-white py-20 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Solusi Undangan Online Cepat & Keren</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-8">Mulai dari Rp25.000 Saja!</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10">Berakad.site menyediakan berbagai template undangan online yang cantik dan modern untuk semua jenis acara: Pernikahan, Tunangan, Pelantikan, Ulang Tahun, dan banyak lagi.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#order" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                        Buat Undangan Sekarang
+                    </a>
+                    <a href="#template" class="bg-white hover:bg-gray-100 text-pink-500 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                        Lihat Template
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="wave-shape">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="fitur" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kenapa Memilih Berakad.site?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Cukup isi formulir sederhana – kami yang urus sisanya dalam hitungan menit!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Tanpa Perlu Daftar Akun</h3>
+                    <p class="text-gray-600">Tidak perlu repot membuat akun. Langsung buat undangan dengan mudah.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Proses Super Cepat</h3>
+                    <p class="text-gray-600">Undangan siap dalam beberapa jam atau bahkan menit setelah pembayaran.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-palette text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Banyak Template Keren</h3>
+                    <p class="text-gray-600">Pilih dari berbagai desain elegan untuk semua jenis acara.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-edit text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Formulir Sederhana</h3>
+                    <p class="text-gray-600">Cukup isi informasi yang dibutuhkan tanpa ribet.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Bisa Request Kustom</h3>
+                    <p class="text-gray-600">Ingin tambahan fitur atau desain khusus? Tim kami siap membantu.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tag text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Harga Terjangkau</h3>
+                    <p class="text-gray-600">Mulai dari Rp25.000 saja, undangan digital profesional sudah bisa Anda miliki.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Gallery -->
+    <section id="template" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Pilih Template Favorit Anda</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Koleksi template profesional kami siap mempercantik undangan Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="template-card group">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Wedding Invitation Template" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                            <div class="p-6 text-white">
+                                <h3 class="text-xl font-bold">Classic Wedding</h3>
+                                <p class="text-sm opacity-90">Template minimalis elegan</p>
+                                <div class="mt-2">
+                                    <span class="text-xs px-2 py-1 bg-pink-500 rounded-full">Romantic</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="template-card group">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Birthday Invitation Template" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                            <div class="p-6 text-white">
+                                <h3 class="text-xl font-bold">Happy Birthday</h3>
+                                <p class="text-sm opacity-90">Template cerah dan ceria</p>
+                                <div class="mt-2">
+                                    <span class="text-xs px-2 py-1 bg-pink-500 rounded-full">Fun</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="template-card group">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1621289115193-332b1ffe3ff5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" 
+                             alt="Engagement Invitation Template" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                            <div class="p-6 text-white">
+                                <h3 class="text-xl font-bold">Modern Engagement</h3>
+                                <p class="text-sm opacity-90">Template modern nan elegan</p>
+                                <div class="mt-2">
+                                    <span class="text-xs px-2 py-1 bg-pink-500 rounded-full">Elegant</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#order" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-pink-500 hover:bg-pink-600 md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105">
+                    Lihat Lebih Banyak Template
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gradient-to-br from-pink-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Hanya 3 Langkah Mudah</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Proses pembuatan undangan yang simpel dan cepat</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="w-16 h-16 mx-auto bg-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">1</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pilih Template</h3>
+                    <p class="text-gray-600">Pilih dari koleksi template kami atau request desain custom sesuai keinginan Anda.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="w-16 h-16 mx-auto bg-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">2</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Isi Informasi</h3>
+                    <p class="text-gray-600">Masukkan detail acara Anda melalui formulir sederhana kami.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="w-16 h-16 mx-auto bg-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">3</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Undangan Siap!</h3>
+                    <p class="text-gray-600">Tim kami akan segera memproses dan mengirimkan undangan digital Anda.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 p-6 bg-white rounded-xl shadow-sm max-w-4xl mx-auto">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Mulai Sekarang Juga!</h3>
+                    <a href="#order" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-pink-500 hover:bg-pink-600 md:py-4 md:text-lg md:px-10">
+                        Isi Data Undangan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimoni" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Apa Kata Pelanggan Kami</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Ribuan undangan sudah dibuat melalui Berakad.site</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-pink-200 flex items-center justify-center text-pink-500">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Rani & Adit</h4>
+                            <p class="text-sm text-gray-600">Jakarta</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Tinggal isi data, 30 menit undangan langsung jadi! Praktis banget."</p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-pink-200 flex items-center justify-center text-pink-500">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Dita</h4>
+                            <p class="text-sm text-gray-600">Bandung</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Templatenya sangat cantik, temen-temen pada kaget waktu lihat undanganku. Harganya juga terjangkau banget!"</p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-pink-200 flex items-center justify-center text-pink-500">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Budi</h4>
+                            <p class="text-sm text-gray-600">Surabaya</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Pelayanannya super cepat dan bisa custom sesuai permintaan. Sangat direkomendasikan!"</p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-8 sm:p-10 lg:p-12 bg-gradient-to-br from-pink-500 to-purple-500 text-white">
+                        <h2 class="text-3xl font-bold mb-4">Buat Undangan Anda Sekarang</h2>
+                        <p class="text-lg mb-6">Isi formulir sederhana ini dan kami akan segera memproses undangan digital Anda.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-check-circle text-white"></i>
+                                </div>
+                                <p class="ml-3 text-base">Mulai dari Rp25.000 saja</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-check-circle text-white"></i>
+                                </div>
+                                <p class="ml-3 text-base">Tanpa perlu daftar akun</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-check-circle text-white"></i>
+                                </div>
+                                <p class="ml-3 text-base">Proses cepat dalam hitungan menit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 p-4 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-info-circle text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm">Setelah mengisi form, kami akan mengirimkan link pembayaran melalui WhatsApp/Email, dan undangan akan diproses setelah pembayaran.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8 sm:p-10 lg:p-12">
+                        <form>
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="event-type" class="block text-sm font-medium text-gray-700">Jenis Acara</label>
+                                    <select id="event-type" name="event-type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+                                        <option>Pernikahan</option>
+                                        <option>Tunangan</option>
+                                        <option>Ulang Tahun</option>
+                                        <option>Pelantikan</option>
+                                        <option>Acara Keluarga</option>
+                                        <option>Lainnya</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                                    <input type="text" id="name" name="name" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm" placeholder="Masukkan nama Anda">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                    <input type="email" id="email" name="email" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm" placeholder="email@example.com">
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700">Nomor WhatsApp</label>
+                                    <input type="tel" id="phone" name="phone" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm" placeholder="081234567890">
+                                </div>
+                                
+                                <div>
+                                    <label for="package" class="block text-sm font-medium text-gray-700">Pilih Paket</label>
+                                    <select id="package" name="package" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+                                        <option value="basic">Basic - Rp25.000 (Template Standar)</option>
+                                        <option value="premium">Premium - Rp50.000 (Template Eksklusif)</option>
+                                        <option value="custom">Custom - Rp75.000+ (Desain Khusus)</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="notes" class="block text-sm font-medium text-gray-700">Catatan Tambahan</label>
+                                    <textarea id="notes" name="notes" rows="3" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm" placeholder="Tulis permintaan khusus atau detail acara Anda"></textarea>
+                                </div>
+                                
+                                <div>
+                                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 transition duration-300 transform hover:scale-105">
+                                        Buat Undangan Sekarang
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Temukan jawaban untuk pertanyaan umum tentang layanan kami</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
+                <div class="py-6">
+                    <h3 class="text-lg font-medium text-gray-900">Apakah bisa request tambahan fitur seperti RSVP atau Google Maps?</h3>
+                    <div class="mt-2">
+                        <p class="text-base text-gray-600">Bisa! Kami fleksibel sesuai permintaan kamu. Tinggal beri tahu detail yang kamu butuhkan di form pemesanan atau melalui WhatsApp.</p>
+                    </div>
+                </div>
+                
+                <div class="py-6">
+                    <h3 class="text-lg font-medium text-gray-900">Bagaimana cara bayar?</h3>
+                    <div class="mt-2">
+                        <p class="text-base text-gray-600">Setelah submit form, kami akan kirimkan detail pembayaran via WhatsApp atau email yang bisa Anda lakukan melalui transfer bank.</p>
+                    </div>
+                </div>
+                
+                <div class="py-6">
+                    <h3 class="text-lg font-medium text-gray-900">Berapa lama proses pembuatan undangan?</h3>
+                    <div class="mt-2">
+                        <p class="text-base text-gray-600">Untuk paket Basic dan Premium biasanya siap dalam 1-3 jam kerja setelah pembayaran. Custom design membutuhkan waktu lebih lama tergantung kompleksitasnya.</p>
+                    </div>
+                </div>
+                
+                <div class="py-6">
+                    <h3 class="text-lg font-medium text-gray-900">Apakah bisa revisi desain setelah selesai?</h3>
+                    <div class="mt-2">
+                        <p class="text-base text-gray-600">Ya, kami memberikan 1 kali revisi gratis untuk koreksi kecil. Revisi besar mungkin dikenakan biaya tambahan tergantung permintaannya.</p>
+                    </div>
+                </div>
+                
+                <div class="py-6">
+                    <h3 class="text-lg font-medium text-gray-900">Bagaimana cara mengirim undangan ke tamu?</h3>
+                    <div class="mt-2">
+                        <p class="text-base text-gray-600">Anda akan mendapatkan link khusus yang bisa dibagikan melalui WhatsApp, email, atau media sosial. Kami juga menyediakan fitur RSVP untuk memudahkan konfirmasi kehadiran.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-pink-500 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">🎉 Undangan online nggak perlu ribet lagi</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">💌 Praktis, cepat, dan murah hanya di Berakad.site</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#order" class="bg-white hover:bg-gray-100 text-pink-600 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                    Buat Undangan Sekarang
+                </a>
+                <a href="#" class="border-2 border-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                    Chat Kami di WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Berakad.site</h3>
+                    <p class="text-gray-400">Platform pembuatan undangan online praktis dan ekonomis untuk segala acara.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Pernikahan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Tunangan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Ulang Tahun</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Resmi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Custom</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cara Pemesanan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> hello@berakad.site
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2"></i> 0812-3456-7890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 Berakad.site. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation for template cards when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, {threshold: 0.1});
+        
+        document.querySelectorAll('.template-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fadeIn {
+                animation: fadeIn 0.6s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

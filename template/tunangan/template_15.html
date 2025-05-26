@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tunangan Persia Langit Cinta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Scheherazade New', serif;
+            background: linear-gradient(to bottom right, #f0dade, #d8e7ff);
+            color: #4a3e36;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            animation: skyShimmer 15s infinite alternate;
+        }
+        
+        @keyframes skyShimmer {
+            0% { background-color: #f0dade; }
+            50% { background-color: #e8e7ff; }
+            100% { background-color: #e1f1fd; }
+        }
+        
+        .invitation {
+            background: rgba(253, 249, 243, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            padding: 3rem;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            border: 12px double #bb9a7a;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            background-image: 
+                url("https://www.transparenttextures.com/patterns/cubes.png"), 
+                linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+        }
+        
+        .border-pattern {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 3px double rgba(157, 124, 94, 0.4);
+            border-radius: 5px;
+            pointer-events: none;
+        }
+        
+        .arabic-bismillah {
+            font-family: 'Lateef', serif;
+            font-size: 3.2rem;
+            color: #966a44;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            background: linear-gradient(to right, #7d5b4e, #b38b6d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header h1 {
+            font-family: 'Lateef', serif;
+            font-size: 3.8rem;
+            color: #7d5b4e;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #9e6b8b, #7d5b4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #9e6b8b, #bb9a7a, transparent);
+        }
+        
+        .header p {
+            font-size: 1.8rem;
+            color: #9e6b8b;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #bb9a7a, #9e6b8b, transparent);
+            margin: 2rem auto;
+            width: 70%;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .names {
+            font-family: 'Lateef', serif;
+            font-size: 3rem;
+            color: #7d5b4e;
+            margin: 3rem 0;
+            line-height: 1.4;
+            position: relative;
+        }
+        
+        .names div {
+            padding: 0.5rem 2rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .names div::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(190, 156, 124, 0.1);
+            border-radius: 50%;
+            transform: scale(1.2);
+            z-index: -1;
+        }
+        
+        .names span {
+            display: block;
+            color: #9e6b8b;
+            font-size: 1.8rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .names span::before,
+        .names span::after {
+            content: "✧";
+            color: #bb9a7a;
+            margin: 0 0.5rem;
+            opacity: 0.7;
+        }
+        
+        .details {
+            font-size: 1.4rem;
+            line-height: 2.2;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .detail-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding: 0 1.5rem;
+        }
+        
+        .detail-title {
+            font-weight: bold;
+            color: #9e6b8b;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .footer {
+            color: #7d5b4e;
+            font-size: 1.3rem;
+            margin-top: 3rem;
+        }
+        
+        .rsvp-button {
+            background: linear-gradient(to right, #9e6b8b, #7d5b4e);
+            color: #fdf9f3;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 2rem;
+            box-shadow: 0 4px 20px rgba(158, 107, 139, 0.4);
+            font-family: 'Scheherazade New', serif;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rsvp-button:hover {
+            background: linear-gradient(to right, #7d5b4e, #9e6b8b);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(158, 107, 139, 0.6);
+        }
+        
+        .rsvp-button::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 50px;
+            height: 100px;
+            background-color: rgba(255,255,255,0.3);
+            transform: rotate(30deg);
+            transition: all 0.4s;
+        }
+        
+        .rsvp-button:hover::after {
+            left: 120%;
+        }
+        
+        .persian-motif {
+            position: absolute;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .motif-tl {
+            top: 30px;
+            left: 30px;
+            font-size: 80px;
+            color: #9e6b8b;
+        }
+        
+        .motif-tr {
+            top: 30px;
+            right: 30px;
+            font-size: 80px;
+            color: #bb9a7a;
+            transform: rotate(90deg);
+        }
+        
+        .motif-bl {
+            bottom: 30px;
+            left: 30px;
+            font-size: 80px;
+            color: #bb9a7a;
+            transform: rotate(270deg);
+        }
+        
+        .motif-br {
+            bottom: 30px;
+            right: 30px;
+            font-size: 80px;
+            color: #9e6b8b;
+            transform: rotate(180deg);
+        }
+        
+        .invitation-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+            opacity: 0;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+        
+        .heart-floating {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 8s infinite ease-in-out;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .ghazal-line {
+            font-family: 'Lateef', serif;
+            font-size: 1.5rem;
+            color: #9e6b8b;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .invitation {
+                padding: 2rem;
+            }
+            
+            .names {
+                font-size: 2.2rem;
+            }
+            
+            .arabic-bismillah {
+                font-size: 2.5rem;
+            }
+            
+            .header h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation">
+        <div class="border-pattern"></div>
+        <div class="stars" id="stars-container"></div>
+        
+        <div class="heart-floating" style="top:10%; left:15%; font-size:40px; color:#9e6b8b;">♥</div>
+        <div class="heart-floating" style="top:20%; right:20%; font-size:30px; color:#bb9a7a;">♥</div>
+        <div class="heart-floating" style="bottom:15%; left:20%; font-size:50px; color:#9e6b8b; animation-delay:-3s;">♥</div>
+        <div class="heart-floating" style="bottom:25%; right:15%; font-size:35px; color:#bb9a7a; animation-delay:-5s;">♥</div>
+        
+        <div class="persian-motif motif-tl">✧</div>
+        <div class="persian-motif motif-tr">✧</div>
+        <div class="persian-motif motif-bl">✧</div>
+        <div class="persian-motif motif-br">✧</div>
+        
+        <div class="invitation-content">
+            <div class="arabic-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+            
+            <div class="header">
+                <h1>دعوة الخطوبة</h1>
+                <p>Under the Sky of Love</p>
+            </div>
+            
+            <div class="ghazal-line">
+                "Seperti bulan di langit Persia, cinta kami akan selalu bersinar"
+            </div>
+            
+            <p>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+            <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+            
+            <div class="divider"></div>
+            
+            <p>Dengan memohon rahmat Allah SWT, kami mengundang Anda untuk menyaksikan ikatan cinta:</p>
+            
+            <div class="names">
+                <div>فرحان بن عبد الله</div>
+                <span>dan</span>
+                <div>نور العين بنت محمد</div>
+            </div>
+            
+            <div class="ghazal-line">
+                "Dua jiwa bertemu di bawah langit takdir"
+            </div>
+            
+            <div class="details">
+                <div class="detail-item">
+                    <span class="detail-title">Tanggal</span>
+                    جمعة، ٢٥ ذو القعدة ١٤٤٥<br>
+                    Jumat, 31 Mei 2024
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-title">Waktu</span>
+                    بعد صلاة العصر<br>
+                    Jam 16.30 - 18.30 WIB
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-title">Tempat</span>
+                    قاعة الملك سليمان<br>
+                    Ballroom Sultan Hotel, Jakarta
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <p>Kehadiran dan doa restu Anda akan menjadi cahaya bagi perjalanan kami.</p>
+            <p>وَالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+            
+            <div class="footer">
+                <p>Keluarga Farhan & Keluarga Nur</p>
+            </div>
+            
+            <button class="rsvp-button">
+                <i class="fas fa-heart mr-2"></i> Konfirmasi Cinta Anda
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Create twinkling stars
+        const starsContainer = document.getElementById('stars-container');
+        const starCount = 50;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random position
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            
+            // Random size between 1-3px
+            const size = Math.random() * 2 + 1;
+            
+            // Random animation duration between 2-5s
+            const duration = Math.random() * 3 + 2;
+            
+            // Random delay
+            const delay = Math.random() * 5;
+            
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.setProperty('--duration', `${duration}s`);
+            star.style.animationDelay = `${delay}s`;
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Floating heart animation
+        const invitation = document.querySelector('.invitation');
+        invitation.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            invitation.style.transform = `perspective(1000px) rotateY(${(x - 0.5) * 5}deg) rotateX(${(0.5 - y) * 5}deg)`;
+        });
+        
+        invitation.addEventListener('mouseleave', () => {
+            invitation.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+        });
+    </script>
+</body>
+</html>

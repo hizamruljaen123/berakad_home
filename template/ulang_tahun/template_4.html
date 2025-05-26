@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Vintage - Birthday Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+        }
+        .vintage-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background-color: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .vintage-border {
+            border: 15px solid transparent;
+            border-image: url('data:image/svg+xml;charset=utf-8,%3Csvg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M0 0H100V100H0V0ZM10 10H90V90H10V10Z" fill="%23d4a373"/%3E%3C/svg%3E') 30 stretch;
+            padding: 20px;
+        }
+        .vintage-header {
+            font-family: 'Abril Fatface', cursive;
+            color: #d4a373;
+        }
+        .vintage-subheader {
+            font-family: 'DM Serif Display', serif;
+            color: #a98467;
+        }
+        .birthday-person {
+            font-size: 4rem;
+            margin: 15px 0;
+            color: #d4a373;
+            line-height: 1.1;
+        }
+        .vintage-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #d4a373;
+            color: white;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .vintage-badge::before, .vintage-badge::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .vintage-badge::before {
+            left: -10px;
+            top: 0;
+            border-width: 0 10px 10px 0;
+            border-color: transparent #b08968 transparent transparent;
+        }
+        .vintage-badge::after {
+            right: -10px;
+            top: 0;
+            border-width: 10px 10px 0 0;
+            border-color: #b08968 transparent transparent transparent;
+        }
+        .vintage-divider {
+            height: 30px;
+            background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg width="100" height="20" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 10H100M30 5L50 15L70 5" stroke="%23d4a373" stroke-width="2"/%3E%3C/svg%3E');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 20px auto;
+            opacity: 0.7;
+        }
+        .event-card {
+            border: 1px solid #e6ccb2;
+            border-radius: 0;
+            background-color: #fefae0;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 163, 115, 0.1);
+        }
+        .event-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .btn-vintage {
+            background-color: #d4a373;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            border-radius: 0;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-vintage::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s;
+        }
+        .btn-vintage:hover {
+            background-color: #b08968;
+            color: white;
+        }
+        .btn-vintage:hover::before {
+            left: 100%;
+        }
+        .vintage-icon {
+            color: #d4a373;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .vintage-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .vintage-stamp {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #d4a373;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(15deg);
+            opacity: 0.8;
+            background-color: #fefae0;
+        }
+        .stamp-inner {
+            width: 90px;
+            height: 90px;
+            border: 1px dashed #d4a373;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #d4a373;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 5px;
+        }
+        .vintage-photo {
+            border: 10px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: rotate(-3deg);
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="vintage-container">
+            <div class="vintage-pattern"></div>
+            
+            <!-- Vintage Stamp -->
+            <div class="vintage-stamp d-none d-md-flex">
+                <div class="stamp-inner">
+                    <div>SAVE THE</div>
+                    <div style="font-size: 1.2rem; font-weight: bold;">DATE</div>
+                    <div>09.15.2023</div>
+                </div>
+            </div>
+            
+            <div class="vintage-border p-md-5 p-4">
+                <div class="text-center mb-4">
+                    <h3 class="vintage-header mb-0" style="font-size: 1.5rem;">YOU ARE CORDIALLY INVITED TO</h3>
+                </div>
+                
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                             alt="Vintage photo" class="vintage-photo">
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <div class="vintage-badge">50th Birthday Celebration</div>
+                        <h1 class="birthday-person">Robert Johnson</h1>
+                        <p class="vintage-subheader" style="font-size: 1.5rem;">A HALF-CENTURY OF MEMORIES</p>
+                        
+                        <div class="vintage-divider"></div>
+                        
+                        <p class="mb-0">SATURDAY, THE FIFTEENTH OF SEPTEMBER</p>
+                        <p>TWO THOUSAND TWENTY-THREE</p>
+                        <p class="mb-0">AT SEVEN O'CLOCK IN THE EVENING</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6">
+                        <div class="event-card p-4 h-100">
+                            <div class="text-center">
+                                <i class="fas fa-map-marker-alt vintage-icon"></i>
+                                <h3 class="vintage-subheader mb-3">The Venue</h3>
+                                <p class="mb-1 fw-bold">The Grand Ballroom</p>
+                                <p>123 Vintage Avenue</p>
+                                <p>Timeless City, TC 12345</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="event-card p-4 h-100">
+                            <div class="text-center">
+                                <i class="fas fa-glass-cheers vintage-icon"></i>
+                                <h3 class="vintage-subheader mb-3">The Celebration</h3>
+                                <p class="mb-1 fw-bold">Cocktail Reception</p>
+                                <p>Dinner & Dancing</p>
+                                <p>Live Jazz Band</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="event-card p-4">
+                                <h3 class="vintage-subheader mb-3">A Note from the Host</h3>
+                                <p class="fst-italic mb-3">
+                                    "As I celebrate half a century of life's journey, I would be honored to have you join me 
+                                    for an evening of reminiscing, laughter, and creating new memories."
+                                </p>
+                                <p class="mb-0">
+                                    Vintage attire inspired by the 1970s is encouraged but not required.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="vintage-divider"></div>
+                    
+                    <p class="mb-4">
+                        Please join us for this milestone celebration.<br>
+                        Your presence is the only gift requested.
+                    </p>
+                    
+                    <button class="btn btn-vintage mb-3">
+                        KINDLY RESPOND BY AUGUST 15, 2023
+                    </button>
+                    
+                    <p class="small text-muted mt-3">
+                        For questions, please contact Mary at (555) 123-4567
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="bg-light p-3 text-center text-muted">
+                <p class="mb-0" style="font-family: 'DM Serif Display', serif;">
+                    "Age is merely the number of years the world has been enjoying you."
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

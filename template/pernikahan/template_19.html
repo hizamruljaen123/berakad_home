@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Wonderland Wedding Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400&family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Snowfall Animation */
+        .snowfall {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1em;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Winter Crystal Patterns */
+        .crystal-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px, 25px 25px, 20px 20px;
+        }
+
+        /* Frosted Glass Effect */
+        .frosted-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ice Crystal Border */
+        .ice-border {
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(173, 216, 230, 0.3)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: subtract;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: subtract;
+        }
+
+        /* Winter Typography */
+        .winter-script {
+            font-family: 'Great Vibes', cursive;
+            background: linear-gradient(45deg, #ffffff, #e6f3ff, #b3d9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .winter-elegant {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        .slide-in {
+            animation: slideIn 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        /* Interactive Elements */
+        .hover-grow {
+            transition: all 0.3s ease;
+        }
+
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+
+        .winter-button {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .winter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+        }
+
+        /* RSVP Form Styling */
+        .winter-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: white;
+            placeholder-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .winter-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .winter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .winter-script {
+                font-size: 2.5rem;
+            }
+            
+            .winter-elegant {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Christmas/Holiday Elements */
+        .holly-decoration {
+            color: #228B22;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .bell-animation {
+            animation: swing 2s ease-in-out infinite;
+            transform-origin: top center;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        /* Winter Aurora Effect */
+        .aurora {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                rgba(0, 255, 157, 0.1) 0%,
+                rgba(60, 255, 255, 0.1) 25%,
+                rgba(255, 0, 128, 0.1) 50%,
+                rgba(255, 255, 0, 0.1) 75%,
+                rgba(0, 255, 157, 0.1) 100%
+            );
+            animation: aurora 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes aurora {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="crystal-pattern">
+    <!-- Snowfall Effect -->
+    <div class="snowfall" id="snowfall"></div>
+    
+    <!-- Aurora Effect -->
+    <div class="aurora"></div>
+
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Header Section -->
+        <header class="text-center mb-12 slide-in">
+            <div class="frosted-glass rounded-3xl p-8 mb-8 pulse-glow">
+                <i class="fas fa-snowflake text-6xl text-blue-200 mb-4 bell-animation"></i>
+                <h1 class="winter-script text-6xl md:text-7xl mb-4">Winter Wonderland</h1>
+                <div class="flex justify-center items-center mb-4">
+                    <i class="fas fa-holly-berry holly-decoration text-2xl mr-2"></i>
+                    <h2 class="winter-elegant text-2xl md:text-3xl">Wedding Celebration</h2>
+                    <i class="fas fa-holly-berry holly-decoration text-2xl ml-2"></i>
+                </div>
+                <p class="winter-elegant text-lg opacity-90">Join us for a magical winter wedding</p>
+            </div>
+        </header>
+
+        <!-- Couple Names Section -->
+        <section class="text-center mb-12 slide-in" style="animation-delay: 0.3s;">
+            <div class="frosted-glass rounded-2xl p-10 hover-grow">
+                <i class="fas fa-heart text-4xl text-pink-300 mb-6"></i>
+                <h2 class="winter-script text-5xl md:text-6xl mb-6">Sarah & Michael</h2>
+                <div class="flex justify-center items-center mb-6">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-white"></div>
+                    <i class="fas fa-snowflake text-2xl text-blue-200 mx-4"></i>
+                    <div class="w-16 h-0.5 bg-gradient-to-l from-transparent to-white"></div>
+                </div>
+                <p class="winter-elegant text-xl mb-4">are getting married</p>
+                <p class="winter-elegant text-lg opacity-80">
+                    "In the midst of winter, I found there was, within me, an invincible summer."
+                </p>
+            </div>
+        </section>
+
+        <!-- Date & Time Section -->
+        <section class="text-center mb-12 slide-in" style="animation-delay: 0.6s;">
+            <div class="frosted-glass rounded-2xl p-8">
+                <i class="fas fa-calendar-alt text-4xl text-blue-200 mb-4"></i>
+                <h3 class="winter-elegant text-3xl mb-6">Save the Date</h3>
+                
+                <!-- Countdown Timer -->
+                <div class="grid grid-cols-4 gap-4 mb-6">
+                    <div class="frosted-glass rounded-xl p-4">
+                        <div class="winter-elegant text-2xl font-bold" id="days">00</div>
+                        <div class="text-blue-200 text-sm">Days</div>
+                    </div>
+                    <div class="frosted-glass rounded-xl p-4">
+                        <div class="winter-elegant text-2xl font-bold" id="hours">00</div>
+                        <div class="text-blue-200 text-sm">Hours</div>
+                    </div>
+                    <div class="frosted-glass rounded-xl p-4">
+                        <div class="winter-elegant text-2xl font-bold" id="minutes">00</div>
+                        <div class="text-blue-200 text-sm">Minutes</div>
+                    </div>
+                    <div class="frosted-glass rounded-xl p-4">
+                        <div class="winter-elegant text-2xl font-bold" id="seconds">00</div>
+                        <div class="text-blue-200 text-sm">Seconds</div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-calendar text-blue-200 mr-3"></i>
+                        <span class="winter-elegant text-xl">December 23, 2024</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-clock text-blue-200 mr-3"></i>
+                        <span class="winter-elegant text-xl">4:00 PM - 11:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section class="mb-12 slide-in" style="animation-delay: 0.9s;">
+            <div class="frosted-glass rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-map-marker-alt text-4xl text-blue-200 mb-4"></i>
+                    <h3 class="winter-elegant text-3xl mb-4">Winter Lodge Venue</h3>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-church text-3xl text-blue-200 mb-4"></i>
+                        <h4 class="winter-elegant text-xl mb-4">Ceremony</h4>
+                        <p class="winter-elegant opacity-90 mb-2">Snowy Pine Chapel</p>
+                        <p class="winter-elegant opacity-80 mb-4">123 Winter Lane, Snow Valley</p>
+                        <button class="winter-button hover-grow" onclick="openMap('ceremony')">
+                            <i class="fas fa-directions mr-2"></i>Get Directions
+                        </button>
+                    </div>
+                    
+                    <div class="text-center">
+                        <i class="fas fa-utensils text-3xl text-blue-200 mb-4"></i>
+                        <h4 class="winter-elegant text-xl mb-4">Reception</h4>
+                        <p class="winter-elegant opacity-90 mb-2">Crystal Ballroom</p>
+                        <p class="winter-elegant opacity-80 mb-4">456 Frost Avenue, Winter Park</p>
+                        <button class="winter-button hover-grow" onclick="openMap('reception')">
+                            <i class="fas fa-directions mr-2"></i>Get Directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Winter Activities Section -->
+        <section class="mb-12 slide-in" style="animation-delay: 1.2s;">
+            <div class="frosted-glass rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-skiing text-4xl text-blue-200 mb-4"></i>
+                    <h3 class="winter-elegant text-3xl mb-4">Winter Activities</h3>
+                    <p class="winter-elegant opacity-90">Enjoy these magical winter experiences</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center hover-grow">
+                        <i class="fas fa-skating text-2xl text-blue-200 mb-2"></i>
+                        <p class="winter-elegant text-sm">Ice Skating</p>
+                    </div>
+                    <div class="text-center hover-grow">
+                        <i class="fas fa-snowman text-2xl text-blue-200 mb-2"></i>
+                        <p class="winter-elegant text-sm">Snow Games</p>
+                    </div>
+                    <div class="text-center hover-grow">
+                        <i class="fas fa-mug-hot text-2xl text-blue-200 mb-2"></i>
+                        <p class="winter-elegant text-sm">Hot Cocoa Bar</p>
+                    </div>
+                    <div class="text-center hover-grow">
+                        <i class="fas fa-sleigh text-2xl text-blue-200 mb-2"></i>
+                        <p class="winter-elegant text-sm">Sleigh Rides</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="mb-12 slide-in" style="animation-delay: 1.5s;">
+            <div class="frosted-glass rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-reply text-4xl text-blue-200 mb-4"></i>
+                    <h3 class="winter-elegant text-3xl mb-4">RSVP</h3>
+                    <p class="winter-elegant opacity-90">Please let us know if you can join us</p>
+                </div>
+                
+                <form class="max-w-md mx-auto space-y-4" id="rsvpForm">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="winter-input w-full" required>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="winter-input w-full" required>
+                    </div>
+                    <div>
+                        <select class="winter-input w-full" required>
+                            <option value="">Will you attend?</option>
+                            <option value="yes">Yes, I'll be there!</option>
+                            <option value="no">Sorry, can't make it</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="number" placeholder="Number of guests" class="winter-input w-full" min="1" max="5">
+                    </div>
+                    <div>
+                        <textarea placeholder="Special requests or dietary restrictions" class="winter-input w-full h-24 resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="winter-button w-full hover-grow">
+                        <i class="fas fa-paper-plane mr-2"></i>Send RSVP
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Gift Registry Section -->
+        <section class="mb-12 slide-in" style="animation-delay: 1.8s;">
+            <div class="frosted-glass rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-gift text-4xl text-blue-200 mb-4"></i>
+                    <h3 class="winter-elegant text-3xl mb-4">Wedding Registry</h3>
+                    <p class="winter-elegant opacity-90">Your presence is the best present, but if you'd like to celebrate with a gift</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <button class="frosted-glass rounded-xl p-6 hover-grow transition-all duration-300" onclick="openRegistry('amazon')">
+                        <i class="fab fa-amazon text-3xl text-blue-200 mb-3"></i>
+                        <h4 class="winter-elegant text-lg">Amazon Registry</h4>
+                    </button>
+                    <button class="frosted-glass rounded-xl p-6 hover-grow transition-all duration-300" onclick="openRegistry('target')">
+                        <i class="fas fa-bullseye text-3xl text-blue-200 mb-3"></i>
+                        <h4 class="winter-elegant text-lg">Target Registry</h4>
+                    </button>
+                    <button class="frosted-glass rounded-xl p-6 hover-grow transition-all duration-300" onclick="openRegistry('cash')">
+                        <i class="fas fa-heart text-3xl text-blue-200 mb-3"></i>
+                        <h4 class="winter-elegant text-lg">Cash Fund</h4>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Social Media -->
+        <section class="mb-12 slide-in" style="animation-delay: 2.1s;">
+            <div class="frosted-glass rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-share-alt text-4xl text-blue-200 mb-4"></i>
+                    <h3 class="winter-elegant text-3xl mb-4">Share Our Joy</h3>
+                    <p class="winter-elegant opacity-90">Follow our wedding journey and share your photos</p>
+                    <p class="winter-elegant text-lg mt-2">#SarahMichaelWinterWedding</p>
+                </div>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <button class="frosted-glass rounded-full p-4 hover-grow" onclick="shareOnSocial('facebook')">
+                        <i class="fab fa-facebook-f text-2xl text-blue-200"></i>
+                    </button>
+                    <button class="frosted-glass rounded-full p-4 hover-grow" onclick="shareOnSocial('instagram')">
+                        <i class="fab fa-instagram text-2xl text-blue-200"></i>
+                    </button>
+                    <button class="frosted-glass rounded-full p-4 hover-grow" onclick="shareOnSocial('twitter')">
+                        <i class="fab fa-twitter text-2xl text-blue-200"></i>
+                    </button>
+                    <button class="frosted-glass rounded-full p-4 hover-grow" onclick="copyToClipboard()">
+                        <i class="fas fa-copy text-2xl text-blue-200"></i>
+                    </button>
+                </div>
+                
+                <div class="text-center">
+                    <p class="winter-elegant mb-2">Questions? Contact us:</p>
+                    <p class="winter-elegant opacity-90">sarah.michael.wedding@email.com</p>
+                    <p class="winter-elegant opacity-90">Phone: (555) 123-4567</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center slide-in" style="animation-delay: 2.4s;">
+            <div class="frosted-glass rounded-2xl p-6">
+                <div class="flex justify-center items-center mb-4">
+                    <i class="fas fa-snowflake text-2xl text-blue-200 mr-3"></i>
+                    <p class="winter-elegant text-lg">With love and gratitude</p>
+                    <i class="fas fa-snowflake text-2xl text-blue-200 ml-3"></i>
+                </div>
+                <p class="winter-script text-3xl mb-2">Sarah & Michael</p>
+                <p class="winter-elegant opacity-80">Winter 2024</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Snowfall Animation
+        function createSnowfall() {
+            const snowfall = document.getElementById('snowfall');
+            const snowflakeCount = 50;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '❄';
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                snowflake.style.animationDelay = Math.random() * 2 + 's';
+                snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                snowfall.appendChild(snowflake);
+            }
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('2024-12-23T16:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Map Functions
+        function openMap(location) {
+            const addresses = {
+                ceremony: '123 Winter Lane, Snow Valley',
+                reception: '456 Frost Avenue, Winter Park'
+            };
+            
+            const address = addresses[location];
+            const encodedAddress = encodeURIComponent(address);
+            window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+        }
+
+        // Registry Functions
+        function openRegistry(store) {
+            const registries = {
+                amazon: 'https://amazon.com/wedding/registry',
+                target: 'https://target.com/gift-registry',
+                cash: '#cash-fund'
+            };
+            
+            if (store === 'cash') {
+                alert('Thank you for considering a contribution to our cash fund! Please contact us for details.');
+            } else {
+                window.open(registries[store], '_blank');
+            }
+        }
+
+        // Social Media Sharing
+        function shareOnSocial(platform) {
+            const url = window.location.href;
+            const text = "Join Sarah & Michael's Winter Wonderland Wedding!";
+            
+            const shareUrls = {
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+                instagram: 'https://www.instagram.com/',
+                twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`
+            };
+            
+            window.open(shareUrls[platform], '_blank');
+        }
+
+        // Copy to Clipboard
+        function copyToClipboard() {
+            const text = "Join Sarah & Michael's Winter Wonderland Wedding! " + window.location.href;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Wedding details copied to clipboard!');
+            });
+        }
+
+        // RSVP Form Submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            alert('Thank you for your RSVP! We can\'t wait to celebrate with you!');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createSnowfall();
+            updateCountdown();
+            
+            // Update countdown every second
+            setInterval(updateCountdown, 1000);
+            
+            // Add animation delays to elements
+            const slideElements = document.querySelectorAll('.slide-in');
+            slideElements.forEach((element, index) => {
+                element.style.animationDelay = (index * 0.3) + 's';
+            });
+        });
+
+        // Smooth scrolling for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

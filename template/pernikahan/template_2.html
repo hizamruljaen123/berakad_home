@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Adat Jawa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f3e6;
+            color: #4a3a2a;
+        }
+        
+        .jawa-title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .batik-pattern {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/20000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23a67c52" fill-opacity="0.2" d="M50,0 L100,50 L50,100 L0,50 Z M20,50 L50,80 L80,50 L50,20 Z M30,50 L50,70 L70,50 L50,30 Z"/></svg>');
+            background-size: 120px;
+        }
+        
+        .shadow-jawa {
+            box-shadow: 0 4px 15px rgba(166, 124, 82, 0.3);
+        }
+        
+        .ornament {
+            position: relative;
+        }
+        
+        .ornament:before, .ornament:after {
+            content: "";
+            position: absolute;
+            height: 30px;
+            width: 80px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="30" viewBox="0 0 80 30"><path fill="%23a67c52" d="M7.4,0 C7.4,0 16.1,13.5 32.2,15 C48.3,16.5 72.6,0 72.6,0 L80,3 C80,3 55.9,20.3 35.7,18.3 C15.5,16.3 0,30 0,30 L7.4,0 Z"/></svg>');
+            background-repeat: no-repeat;
+        }
+        
+        .ornament:before {
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .ornament:after {
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(180deg);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .modal-content {
+            transition: transform 0.3s ease;
+            transform: translateY(20px);
+        }
+        
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="py-8 text-center text-brown—800 relative overflow-hidden">
+        <div class="absolute inset-0 batik-pattern opacity-10 z-0"></div>
+        <div class="relative z-10">
+            <div class="text-sm mb-2 tracking-widest animate-fade-in delay-100">
+                <i class="fas fa-praying-hands mr-2"></i> TULADHA INGKANG SATUHU <i class="fas fa-praying-hands ml-2"></i>
+            </div>
+            <h1 class="jawa-title text-4xl md:text-5xl font-bold mb-4 text-[#8B4513] animate-fade-in delay-200">WIWITANING LARANING JIWO</h1>
+            <div class="w-24 h-1 bg-[#a67c52] mx-auto mb-6 animate-fade-in delay-300"></div>
+            <div class="text-lg animate-fade-in delay-400">
+                Ngaturaken <span class="font-bold">Pangayubagya</span> Dhateng Sedaya Kaluwarga
+            </div>
+        </div>
+    </header>
+
+    <!-- Couple Section -->
+    <section class="py-12 px-4 max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-jawa p-8 md:p-12 relative ornament">
+            <div class="text-center mb-12">
+                <h2 class="jawa-title text-3xl font-bold mb-6 text-[#8B4513]">SANG PENGANTEN</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+                    <div class="animate-fade-in delay-200">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-cover bg-center border-4 border-[#a67c52] mx-auto mb-4" style="background-image: url('https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80');"></div>
+                        <h3 class="text-xl font-bold mb-1">Raden Ajeng</h3>
+                        <h3 class="text-2xl font-bold mb-2 text-[#8B4513]">SRI BAGUS WULAN</h3>
+                        <p class="text-sm">
+                            Putri panjenganipun<br>
+                            Bpk. H. Sutrisno Wibowo, S.H. & Ibu Hj. Siti Aminah, S.Pd.
+                        </p>
+                    </div>
+                    
+                    <div class="animate-fade-in delay-300">
+                        <div class="flex flex-col items-center justify-center">
+                            <div class="flex items-center justify-center w-20 h-20 rounded-full bg-[#8B4513] text-white text-3xl mb-4">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="text-sm text-center italic">
+                                Ngaturaken Bongso<br>
+                                Dino Sabtu Pon<br>
+                                28 Oktober 2023
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="animate-fade-in delay-200">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-cover bg-center border-4 border-[#a67c52] mx-auto mb-4" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');"></div>
+                        <h3 class="text-xl font-bold mb-1">Raden Bagus</h3>
+                        <h3 class="text-2xl font-bold mb-2 text-[#8B4513]">DWI PRAKOSO</h3>
+                        <p class="text-sm">
+                            Putra panjenganipun<br>
+                            Bpk. H. Budi Santoso & Ibu Hj. Sri Mulyani
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between gap-8 animate-fade-in delay-500">
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold mb-4 text-[#8B4513]">AKAD NIKAH</h3>
+                    <p><i class="fas fa-calendar-day mr-2"></i> Sabtu, 28 Oktober 2023</p>
+                    <p><i class="fas fa-clock mr-2"></i> 08.00 WIB - Selesai</p>
+                    <p><i class="fas fa-map-marker-alt mr-2"></i> Masjid Agung Surakarta</p>
+                    <p class="italic">Jl. Jend. Sudirman No. 12, Surakarta</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <h3 class="text-xl font-bold mb-4 text-[#8B4513]">RESEPSI</h3>
+                    <p><i class="fas fa-calendar-day mr-2"></i> Minggu, 29 Oktober 2023</p>
+                    <p><i class="fas fa-clock mr-2"></i> 09.00 - 14.00 WIB</p>
+                    <p><i class="fas fa-map-marker-alt mr-2"></i> Pendopo Agung</p>
+                    <p class="italic">Kraton Surakarta Hadiningrat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-12 px-4 max-w-2xl mx-auto text-center">
+        <h2 class="jawa-title text-3xl font-bold mb-8 text-[#8B4513]">MENIT MENUJU PALAKRAMAN</h2>
+        <div class="flex justify-center gap-4 mb-8">
+            <div class="w-20 h-20 bg-white rounded-lg shadow-jawa flex flex-col items-center justify-center">
+                <span id="days" class="text-2xl font-bold text-[#8B4513]">00</span>
+                <span class="text-xs">Dino</span>
+            </div>
+            <div class="w-20 h-20 bg-white rounded-lg shadow-jawa flex flex-col items-center justify-center">
+                <span id="hours" class="text-2xl font-bold text-[#8B4513]">00</span>
+                <span class="text-xs">Jam</span>
+            </div>
+            <div class="w-20 h-20 bg-white rounded-lg shadow-jawa flex flex-col items-center justify-center">
+                <span id="minutes" class="text-2xl font-bold text-[#8B4513]">00</span>
+                <span class="text-xs">Menit</span>
+            </div>
+            <div class="w-20 h-20 bg-white rounded-lg shadow-jawa flex flex-col items-center justify-center">
+                <span id="seconds" class="text-2xl font-bold text-[#8B4513]">00</span>
+                <span class="text-xs">Detik</span>
+            </div>
+        </div>
+        <p class="italic">
+            "Mugi kersaning Gusti, kelampahan kagungan dinten punika kanthi lancar, raharja lan dipun paringi berkah"
+        </p>
+    </section>
+
+    <!-- Map & RSVP Section -->
+    <section class="py-12 px-4 max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-jawa overflow-hidden">
+            <div class="p-6 md:p-8">
+                <h2 class="jawa-title text-3xl font-bold mb-6 text-center text-[#8B4513]">PETA LOKASI</h2>
+                <div class="aspect-w-16 aspect-h-9 mb-8">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31665.223977333946!2d110.81397865!3d-7.574722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16627ad11ab7%3A0x20f1e210c9504a92!2sKraton%20Surakarta%20Hadiningrat!5e0!3m2!1sid!2sid!4v1684131032347!5m2!1sid!2sid" 
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" 
+                        class="rounded-lg shadow"></iframe>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="showRSVPModal()" class="bg-[#8B4513] hover:bg-[#a67c52] text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                        KONFIRMASI KEHADIRAN
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="py-12 px-4 max-w-2xl mx-auto text-center">
+        <div class="mb-8">
+            <h3 class="jawa-title text-xl font-bold mb-4 text-[#8B4513]">TURUT MERASAKAN</h3>
+            <p class="italic mb-6">"Sedoyo ingkang sampun paring parengkuwatosan, mangke katampi kanthi suwung dumugi sumanggahe Gusti"</p>
+            <div class="w-24 h-1 bg-[#a67c52] mx-auto mb-6"></div>
+            <h2 class="jawa-title text-3xl font-bold mb-4">KELUARGA BESAR</h2>
+            <p class="text-2xl font-bold text-[#8B4513] mb-2">WIBOWO - SANTOSO</p>
+            <p class="mb-6">Ngaturaken matur nuwun sanget</p>
+        </div>
+    </section>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="modal fixed inset-0 flex items-center justify-center p-4 bg-black bg-opacity-50 opacity-0 invisible transition-all duration-300 z-50">
+        <div class="modal-content bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
+            <button onclick="hideRSVPModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="jawa-title text-2xl font-bold mb-6 text-center text-[#8B4513]">KONFIRMASI KEHADIRAN</h2>
+            
+            <form id="rsvpForm" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#8B4513] focus:border-[#8B4513]">
+                </div>
+                
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon <span class="text-red-500">*</span></label>
+                    <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#8B4513] focus:border-[#8B4513]">
+                </div>
+                
+                <div>
+                    <label for="attendance" class="block text-sm font-medium text-gray-700 mb-1">Konfirmasi Kehadiran <span class="text-red-500">*</span></label>
+                    <select id="attendance" name="attendance" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#8B4513] focus:border-[#8B4513]">
+                        <option value="" disabled selected>Pilih opsi</option>
+                        <option value="yes">Hadir</option>
+                        <option value="no">Tidak Hadir</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="event" class="block text-sm font-medium text-gray-700 mb-1">Acara yang Dihadiri</label>
+                    <select id="event" name="event" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#8B4513] focus:border-[#8B4513]">
+                        <option value="" disabled selected>Pilih satu</option>
+                        <option value="akad">Akad Nikah</option>
+                        <option value="resepsi">Resepsi</option>
+                        <option value="both">Keduanya</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Ucapan/Pesan</label>
+                    <textarea id="message" name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#8B4513] focus:border-[#8B4513]"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-[#8B4513] hover:bg-[#a67c52] text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    <i class="fas fa-paper-plane mr-2"></i> Kirim Konfirmasi
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="py-6 bg-[#8B4513] text-white text-center mt-auto">
+        <p>Ngaturaken Matur Nuwun Sanget 🙏</p>
+        <p class="text-xs mt-2 opacity-80">© 2023 Wibowo-Santoso. Kabar Makmur Slamet Rahayu</p>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('October 28, 2023 08:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = '<span class="text-2xl font-bold">ACARA TELAH DIMULAI</span>';
+            }
+        }
+
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+
+        // RSVP Modal
+        function showRSVPModal() {
+            const modal = document.getElementById('rsvpModal');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideRSVPModal() {
+            const modal = document.getElementById('rsvpModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('rsvpModal');
+            if (event.target === modal) {
+                hideRSVPModal();
+            }
+        }
+
+        // Form submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Matur nuwun sanget sampun konfirmasi kehadiran. Panjenengan sampun katampi kanthi suwung dumugi sumanggahe Gusti.');
+            hideRSVPModal();
+            this.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Adventure - Birthday Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0c0a24; /* Deep space blue */
+            color: #e0e0e0; /* Light gray/white */
+        }
+        .title-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .space-bg {
+            background-image: url('https://img.freepik.com/free-vector/outer-space-background_23-2148067009.jpg?w=1380'); /* Replace with a dynamic or better placeholder */
+            background-size: cover;
+            background-position: center;
+        }
+        .planet-icon::before {
+            content: "🪐"; /* Saturn emoji or use an SVG */
+            font-size: 1.8rem;
+            margin-right: 0.5rem;
+        }
+        .rocket-icon {
+            display: inline-block;
+            animation: rocket-launch 2s ease-in-out infinite alternate;
+            font-size: 2rem;
+        }
+        @keyframes rocket-launch {
+            0% { transform: translateY(0) rotate(-5deg); }
+            100% { transform: translateY(-15px) rotate(5deg); }
+        }
+        .input-field {
+            background-color: #1a1838; /* Darker space blue */
+            border-color: #4a4868; /* Medium purple-gray */
+            color: #e0e0e0;
+        }
+        .input-field:focus {
+            border-color: #7b61ff; /* Bright purple */
+            box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.5);
+        }
+        .btn-primary {
+            background-color: #ff6ac1; /* Cosmic pink */
+            color: #0c0a24;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #ff4aa8; /* Brighter pink */
+        }
+        .countdown-item {
+            background-color: #1a1838;
+            border: 2px solid #7b61ff; /* Bright purple */
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 1.5s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+        .galaxy-border {
+            border: 3px solid;
+            border-image-slice: 1;
+            border-width: 3px;
+            border-image-source: linear-gradient(to right, #7b61ff, #ff6ac1, #ffcb5b);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <!-- Starry background -->
+    <script>
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.animationDelay = Math.random() * 1.5 + 's';
+            document.body.appendChild(star);
+        }
+    </script>
+
+    <div class="container mx-auto max-w-3xl bg-slate-900/80 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden my-10 galaxy-border z-10">
+        <!-- Header Section -->
+        <header class="space-bg p-8 md:p-12 text-center relative">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="relative z-10">
+                <h1 class="title-font text-5xl md:text-6xl text-cyan-300 drop-shadow-[2px_2px_0_rgba(0,0,0,0.7)]">SPACE MISSION!</h1>
+                <p class="text-2xl text-white mt-2 font-semibold">An Interstellar Birthday Adventure!</p>
+                <p class="text-lg text-gray-300">For Astronaut <strong class="text-yellow-300">[Birthday Person's Name]</strong>'s <strong class="text-yellow-300">[Age]th</strong> Voyage Around the Sun!</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-6 md:p-10 space-y-8">
+            <section class="text-center">
+                <h2 class="text-3xl font-bold text-pink-400 mb-2"><span class="rocket-icon">🚀</span> Prepare for Blast Off! <span class="rocket-icon">🚀</span></h2>
+                <p class="text-lg">You're invited to explore the cosmos with <strong class="text-purple-400">Commander [Birthday Person's Name]</strong>!</p>
+                <p class="mt-4 text-md">Get your space suits ready for an out-of-this-world celebration!</p>
+            </section>
+
+            <!-- Event Details -->
+            <section class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg hover:shadow-purple-500/50 transition-shadow duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-3 text-cyan-300">📅</div>
+                    <h3 class="text-xl font-bold text-pink-300 mb-1">Launch Date</h3>
+                    <p class="text-lg">[Date of Party, e.g., September 14th, 2025]</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg hover:shadow-purple-500/50 transition-shadow duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-3 text-cyan-300">⏰</div>
+                    <h3 class="text-xl font-bold text-pink-300 mb-1">Mission Time</h3>
+                    <p class="text-lg">[Time of Party, e.g., 3:00 PM - 6:00 PM GMT]</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg hover:shadow-purple-500/50 transition-shadow duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-3 text-cyan-300">📍</div>
+                    <h3 class="text-xl font-bold text-pink-300 mb-1">Space Station</h3>
+                    <p class="text-lg">[Location of Party - The [Your Name] Galaxy]</p>
+                    <p class="text-sm text-gray-400">[Address Line 2, if any]</p>
+                </div>
+            </section>
+
+            <!-- Countdown Timer -->
+            <section class="text-center p-6 bg-slate-800 rounded-lg">
+                <h3 class="text-2xl font-semibold text-yellow-300 mb-4 title-font">Countdown to Liftoff!</h3>
+                <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 max-w-md mx-auto">
+                    <div class="countdown-item p-3 rounded-md">
+                        <span id="days" class="text-3xl font-bold text-pink-400">00</span>
+                        <span class="block text-xs text-gray-300">Days</span>
+                    </div>
+                    <div class="countdown-item p-3 rounded-md">
+                        <span id="hours" class="text-3xl font-bold text-pink-400">00</span>
+                        <span class="block text-xs text-gray-300">Hours</span>
+                    </div>
+                    <div class="countdown-item p-3 rounded-md">
+                        <span id="minutes" class="text-3xl font-bold text-pink-400">00</span>
+                        <span class="block text-xs text-gray-300">Minutes</span>
+                    </div>
+                    <div class="countdown-item p-3 rounded-md">
+                        <span id="seconds" class="text-3xl font-bold text-pink-400">00</span>
+                        <span class="block text-xs text-gray-300">Seconds</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activities Section -->
+            <section>
+                <h3 class="text-2xl font-semibold text-purple-400 mb-4 text-center"><span class="planet-icon"></span>Galactic Itinerary:</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 md:pl-0 text-lg text-gray-300 columns-1 md:columns-2 bg-slate-800/50 p-4 rounded-md">
+                    <li>Moon Rock Hunt (Scavenger Hunt)</li>
+                    <li>Build-a-Rocket Station</li>
+                    <li>Alien Slime Making</li>
+                    <li>Planet Ring Toss</li>
+                    <li>Constellation Projector Show</li>
+                    <li>Astronaut Fuel (Snacks & Drinks)</li>
+                </ul>
+            </section>
+
+            <!-- RSVP Section -->
+            <section class="bg-slate-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold text-center text-yellow-300 mb-4 title-font">JOIN THE CREW!</h3>
+                <form id="rsvpForm" class="space-y-4 max-w-lg mx-auto">
+                    <div>
+                        <label for="astronautName" class="block text-sm font-medium text-gray-300">Astronaut Name:</label>
+                        <input type="text" id="astronautName" name="astronautName" required class="mt-1 block w-full rounded-md input-field shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm p-2" placeholder="e.g., Buzz Lightyear">
+                    </div>
+                    <div>
+                        <label for="alienSpecies" class="block text-sm font-medium text-gray-300">Number of Crew Members Attending:</label>
+                        <input type="number" id="crewCount" name="crewCount" min="1" value="1" class="mt-1 block w-full rounded-md input-field shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Confirm Your Space Voyage?</label>
+                        <div class="mt-2 space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="attendance" value="yes" class="form-radio h-4 w-4 text-pink-500 border-gray-600 focus:ring-pink-400" checked>
+                                <span class="ml-2 text-gray-300">Yes, Ready for Adventure!</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="attendance" value="no" class="form-radio h-4 w-4 text-cyan-500 border-gray-600 focus:ring-cyan-400">
+                                <span class="ml-2 text-gray-300">No, Lost in a Black Hole.</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary title-font font-bold py-3 px-6 rounded-lg text-lg shadow-md hover:shadow-lg transition-all duration-150 ease-in-out transform hover:scale-105">
+                            RSVP by Stardate [RSVP Date]
+                        </button>
+                    </div>
+                </form>
+                <p id="rsvpMessage" class="mt-4 text-center text-yellow-300 font-semibold"></p>
+            </section>
+
+            <!-- Contact Info -->
+            <section class="text-center text-sm text-gray-400">
+                <p>For mission control, contact Flight Director: [Parent's Name]</p>
+                <p>Comms Channel: [Phone Number] | Email: [Email Address]</p>
+                <p class="mt-2"><strong class="text-pink-400">P.S.</strong> Space-themed costumes are highly encouraged!</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 p-6 text-center">
+            <p class="text-white font-semibold">&copy; <span id="year"></span> [Birthday Person's Name]'s Galactic Celebration. To Infinity and Beyond!</p>
+            <div class="mt-2">
+                <a href="#" class="text-cyan-200 hover:text-white mx-2">Share on SpaceBook</a> |
+                <a href="#" class="text-cyan-200 hover:text-white mx-2">Tweet from the Mothership</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date("[Date of Party, e.g., September 14, 2025 15:00:00]").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "<p class='col-span-4 text-2xl text-yellow-300 title-font'>BLAST OFF!</p>";
+            }
+        }, 1000);
+
+        // Set current year in footer
+        document.getElementById("year").innerText = new Date().getFullYear();
+
+        // RSVP Form Submission
+        const rsvpForm = document.getElementById('rsvpForm');
+        const rsvpMessage = document.getElementById('rsvpMessage');
+        if (rsvpForm) {
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const astronautName = document.getElementById('astronautName').value;
+                const attendance = document.querySelector('input[name="attendance"]:checked').value;
+                
+                if (attendance === 'yes') {
+                    rsvpMessage.textContent = `Roger that, Astronaut ${astronautName}! Your coordinates are locked in!`;
+                    rsvpMessage.className = 'mt-4 text-center text-green-400 font-semibold';
+                } else {
+                    rsvpMessage.textContent = `Sorry to hear that, ${astronautName}. We'll send you a postcard from Pluto!`;
+                    rsvpMessage.className = 'mt-4 text-center text-orange-400 font-semibold';
+                }
+                rsvpForm.reset();
+            });
+        }
+
+        // Placeholder for social media sharing
+        document.querySelectorAll('footer a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Intergalactic social sharing coming soon!');
+            });
+        });
+    </script>
+</body>
+</html>

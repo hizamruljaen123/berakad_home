@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under the Sea - Birthday Invitation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #0077be, #00bfff);
+            color: #fff;
+            min-height: 100vh;
+        }
+        .invitation-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: -50px; left: -50px;
+            width: 200px; height: 200px;
+            background: url('https://www.transparentpng.com/thumb/sea/Jb7Y1a-sea-bubbles-transparent-image.png') no-repeat center center / contain;
+            opacity: 0.2;
+            animation: bubble-drift 15s linear infinite;
+        }
+        .invitation-card::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; right: -40px;
+            width: 250px; height: 250px;
+            background: url('https://www.transparentpng.com/thumb/fish/gAVO9O-fish-hd-image.png') no-repeat center center / contain;
+            opacity: 0.3;
+            animation: fish-swim 20s linear infinite alternate;
+        }
+        @keyframes bubble-drift {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); }
+            50% { transform: translateY(-20px) translateX(10px) rotate(10deg); }
+            100% { transform: translateY(0) translateX(0) rotate(0deg); }
+        }
+        @keyframes fish-swim {
+            0% { transform: translateX(0) translateY(0) scaleX(1); }
+            50% { transform: translateX(-30px) translateY(10px) scaleX(-1); }
+            100% { transform: translateX(0) translateY(0) scaleX(1); }
+        }
+        .header-title {
+            font-family: 'Pacifico', cursive;
+            color: #ffcc00; /* Sunny yellow */
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .sub-title {
+            font-size: 1.5rem;
+            color: #f0f8ff; /* Alice blue */
+        }
+        .section-title {
+            font-family: 'Pacifico', cursive;
+            color: #ffdd57; /* Lighter yellow */
+            margin-bottom: 15px;
+        }
+        .countdown-item {
+            background-color: rgba(0, 123, 255, 0.5); /* Semi-transparent blue */
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+        .countdown-item span {
+            display: block;
+        }
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .countdown-label {
+            font-size: 0.8rem;
+            color: #e0f0ff;
+        }
+        .btn-custom {
+            background-color: #ff9900; /* Orange */
+            border-color: #ff9900;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #e68a00;
+            border-color: #e68a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .form-control {
+            background-color: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff;
+        }
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        .form-control:focus {
+            background-color: rgba(255,255,255,0.3);
+            border-color: #ffcc00;
+            box-shadow: 0 0 0 0.2rem rgba(255,204,0,0.5);
+            color: #fff;
+        }
+        .details-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #ffcc00;
+        }
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+        .social-icon {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social-icon:hover {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="invitation-card text-center">
+                    <header class="mb-4">
+                        <h1 class="header-title">You're Invited!</h1>
+                        <p class="sub-title">To an Under the Sea Adventure for [Birthday Person's Name]'s [Age]th Birthday!</p>
+                    </header>
+
+                    <section class="event-details mb-4">
+                        <h2 class="section-title">Dive Into the Fun!</h2>
+                        <p><span class="details-icon">🎉</span>Join us for a splashtastic celebration!</p>
+                        <div class="row mt-3">
+                            <div class="col-md-4 mb-3">
+                                <p><span class="details-icon">📅</span><strong>Date:</strong> [Date of Party]</p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p><span class="details-icon">⏰</span><strong>Time:</strong> [Time of Party]</p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p><span class="details-icon">📍</span><strong>Location:</strong> [Location of Party]</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="countdown-section mb-5">
+                        <h3 class="section-title">Ocean Countdown</h3>
+                        <div id="countdown" class="d-flex justify-content-center flex-wrap">
+                            <div class="countdown-item text-center">
+                                <span id="days" class="countdown-number">00</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item text-center">
+                                <span id="hours" class="countdown-number">00</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item text-center">
+                                <span id="minutes" class="countdown-number">00</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                            <div class="countdown-item text-center">
+                                <span id="seconds" class="countdown-number">00</span>
+                                <span class="countdown-label">Seconds</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="activities mb-4">
+                        <h3 class="section-title">What's in Store?</h3>
+                        <ul class="list-unstyled">
+                            <li>🐠 Mermaid & Pirate Games</li>
+                            <li>🐚 Seashell Treasure Hunt</li>
+                            <li>🐙 Ocean-themed Crafts</li>
+                            <li>🎂 Delicious Birthday Cake & Treats</li>
+                        </ul>
+                    </section>
+
+                    <section class="rsvp-section mb-4">
+                        <h3 class="section-title">Don't Be a Fish Out of Water!</h3>
+                        <p>RSVP by [RSVP Date] to [Parent's Name] at [Phone Number] or [Email Address].</p>
+                        <form id="rsvpForm" class="mt-3">
+                            <div class="form-row justify-content-center">
+                                <div class="col-sm-5 mb-2">
+                                    <input type="text" class="form-control" id="guestName" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-sm-3 mb-2">
+                                    <input type="number" class="form-control" id="guestCount" placeholder="Guests" min="1" required>
+                                </div>
+                                <div class="col-sm-auto mb-2">
+                                    <button type="submit" class="btn btn-custom btn-block">Send RSVP</button>
+                                </div>
+                            </div>
+                            <div id="rsvpMessage" class="mt-2" style="font-size: 0.9em;"></div>
+                        </form>
+                    </section>
+
+                    <footer class="footer-text">
+                        <p>We can't wait to make a splash with you!</p>
+                        <p>&copy; <span id="year"></span> [Birthday Person's Name]'s Under the Sea Party.</p>
+                        <div class="social-links mt-2">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for social icons -->
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date("[Date of Party e.g., November 15, 2025 15:00:00]").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            document.getElementById("days").innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "<div class='col-12'><p class='h4 text-warning'>The Party has Started!</p></div>";
+            }
+        }, 1000);
+
+        // Set current year in footer
+        document.getElementById("year").innerText = new Date().getFullYear();
+
+        // RSVP Form Submission
+        const rsvpForm = document.getElementById('rsvpForm');
+        const rsvpMessage = document.getElementById('rsvpMessage');
+        if (rsvpForm) {
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const guestName = document.getElementById('guestName').value;
+                if (guestName) {
+                    rsvpMessage.textContent = `Thanks, ${guestName}! We're so excited to see you there!`;
+                    rsvpMessage.className = 'mt-2 text-success';
+                } else {
+                    rsvpMessage.textContent = 'Please enter your name.';
+                    rsvpMessage.className = 'mt-2 text-danger';
+                }
+                // rsvpForm.reset(); // Optional: reset form after submission
+            });
+        }
+
+        // Social media sharing placeholder
+        document.querySelectorAll('.social-icon').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Sharing this splash-tastic party soon!');
+            });
+        });
+    </script>
+</body>
+</html>

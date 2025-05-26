@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Vintage Classic Theme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text&family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #8b7355 0%, #a0956b 50%, #8b7355 100%);
+            background-size: 400% 400%;
+            animation: vintageShift 8s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #3e2723;
+        }
+        
+        @keyframes vintageShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .vintage-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 4rem;
+            color: #5d4e37;
+            text-shadow: 3px 3px 0px #8b7355, 6px 6px 0px #a0956b;
+            animation: vintageGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes vintageGlow {
+            from { text-shadow: 3px 3px 0px #8b7355, 6px 6px 0px #a0956b, 0 0 15px rgba(93, 78, 55, 0.3); }
+            to { text-shadow: 3px 3px 0px #8b7355, 6px 6px 0px #a0956b, 0 0 25px rgba(93, 78, 55, 0.5); }
+        }
+        
+        .ornate-frame {
+            background: linear-gradient(45deg, #f5f5dc, #fff8dc);
+            border: 8px solid #8b7355;
+            border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 L25,25 L50,0 L75,25 L100,0 L100,25 L75,50 L100,75 L100,100 L75,75 L50,100 L25,75 L0,100 L0,75 L25,50 L0,25 Z" fill="%23daa520"/></svg>') 30;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 
+                0 8px 16px rgba(0,0,0,0.2),
+                inset 0 2px 4px rgba(255,255,255,0.3);
+        }
+        
+        .ornate-frame::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #daa520, #b8860b, #daa520);
+            border-radius: 24px;
+            z-index: -1;
+        }
+        
+        .pocket-watch {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #daa520, #b8860b);
+            border: 6px solid #8b7355;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            animation: watchTick 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.4);
+        }
+        
+        .pocket-watch::before {
+            content: '🕐';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: #3e2723;
+        }
+        
+        .pocket-watch::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 10px;
+            background: #8b7355;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        @keyframes watchTick {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+        
+        .vintage-btn {
+            background: linear-gradient(135deg, #daa520, #b8860b);
+            border: 3px solid #8b7355;
+            border-radius: 15px;
+            font-family: 'Old Standard TT', serif;
+            font-size: 1.2rem;
+            color: #3e2723;
+            font-weight: bold;
+            box-shadow: 
+                0 6px 0px #8b7355, 
+                0 8px 16px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .vintage-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 9px 0px #8b7355, 
+                0 12px 20px rgba(0,0,0,0.4),
+                inset 0 2px 4px rgba(255,255,255,0.3);
+            color: #3e2723;
+        }
+        
+        .vintage-btn:active {
+            transform: translateY(0px);
+            box-shadow: 
+                0 3px 0px #8b7355,
+                inset 0 2px 4px rgba(255,255,255,0.2);
+        }
+        
+        .floating-vintage {
+            position: absolute;
+            font-size: 2rem;
+            animation: vintageFloat 5s ease-in-out infinite;
+            color: #8b7355;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes vintageFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(-5deg); }
+            75% { transform: translateY(-25px) rotate(3deg); }
+        }
+        
+        .countdown-vintage {
+            background: linear-gradient(135deg, #f5f5dc, #fff8dc);
+            border: 4px solid #8b7355;
+            border-radius: 20px;
+            color: #3e2723;
+            font-weight: bold;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .vintage-form {
+            background: linear-gradient(45deg, #f5f5dc, #fff8dc);
+            border: 4px solid #8b7355;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            color: #3e2723;
+        }
+        
+        .form-control {
+            border: 3px solid #8b7355;
+            border-radius: 10px;
+            background: #fffaf0;
+            color: #3e2723;
+            font-weight: bold;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .form-control:focus {
+            border-color: #daa520;
+            box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+            background: #fffef7;
+        }
+        
+        .vintage-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #daa520, #b8860b);
+            border: 3px solid #8b7355;
+            border-radius: 50%;
+            animation: decorationSpin 8s linear infinite;
+        }
+        
+        .vintage-decoration::before {
+            content: '❦';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            color: #3e2723;
+        }
+        
+        @keyframes decorationSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .lace-border {
+            border: 2px solid #8b7355;
+            border-style: dotted;
+            border-radius: 15px;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(139, 115, 85, 0.1) 2px,
+                rgba(139, 115, 85, 0.1) 4px
+            );
+        }
+        
+        .vintage-scroll {
+            background: linear-gradient(45deg, #f5f5dc, #fff8dc);
+            border-left: 8px solid #8b7355;
+            border-right: 8px solid #8b7355;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .vintage-scroll::before,
+        .vintage-scroll::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            right: -8px;
+            height: 20px;
+            background: linear-gradient(45deg, #8b7355, #a0956b);
+        }
+        
+        .vintage-scroll::before {
+            top: -10px;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .vintage-scroll::after {
+            bottom: -10px;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .sepia-effect {
+            filter: sepia(20%) contrast(1.2) brightness(1.1);
+        }
+        
+        .old-paper {
+            background: linear-gradient(45deg, #f5f5dc 0%, #fff8dc 50%, #f5f5dc 100%);
+            background-size: 20px 20px;
+            position: relative;
+        }
+        
+        .old-paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 19px,
+                rgba(139, 115, 85, 0.1) 20px
+            );
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="sepia-effect">
+    <!-- Vintage Decorations -->
+    <div class="vintage-decoration" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="vintage-decoration" style="top: 20%; right: 10%; animation-delay: 2s;"></div>
+    <div class="vintage-decoration" style="bottom: 30%; left: 8%; animation-delay: 4s;"></div>
+    <div class="vintage-decoration" style="bottom: 20%; right: 15%; animation-delay: 1s;"></div>
+    
+    <!-- Floating Vintage Elements -->
+    <div class="floating-vintage" style="top: 15%; left: 15%; animation-delay: 0s;">🎭</div>
+    <div class="floating-vintage" style="top: 25%; right: 20%; animation-delay: 1.5s;">🏺</div>
+    <div class="floating-vintage" style="bottom: 35%; left: 12%; animation-delay: 3s;">📜</div>
+    <div class="floating-vintage" style="bottom: 25%; right: 18%; animation-delay: 0.8s;">🕯️</div>
+    <div class="floating-vintage" style="top: 55%; left: 20%; animation-delay: 2.2s;">🎨</div>
+    <div class="floating-vintage" style="top: 45%; right: 8%; animation-delay: 3.5s;">📚</div>
+
+    <div class="container py-5">
+        <!-- Header Section -->
+        <div class="text-center mb-5">
+            <div class="pocket-watch mb-4"></div>
+            <h1 class="vintage-title mb-3">VINTAGE BIRTHDAY</h1>
+            <div class="ornate-frame p-4 mx-auto old-paper" style="max-width: 500px;">
+                <h2 class="text-dark fw-bold mb-2" style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">
+                    A Timeless Celebration
+                </h2>
+                <p class="text-dark fw-bold mb-0 fs-5">
+                    🎭 Join us for an Elegant Birthday Soirée 🎭
+                </p>
+            </div>
+        </div>
+
+        <!-- Birthday Person Info -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="ornate-frame p-4 text-center old-paper">
+                    <h3 class="text-dark fw-bold mb-3" style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">
+                        Guest of Honor
+                    </h3>
+                    <div class="text-dark fw-bold mb-3" style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #5d4e37 !important;">
+                        [NAMA BIRTHDAY]
+                    </div>
+                    <div class="text-dark fw-bold fs-4 mb-3">
+                        Celebrating <span class="fw-bold fs-2" style="color: #8b7355;">[USIA]</span> Years of Timeless Memories
+                    </div>
+                    <div class="text-dark fw-bold">
+                        🏆 The Distinguished Birthday Celebrant 🏆
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="vintage-scroll p-4 h-100 old-paper">
+                    <h4 class="text-dark fw-bold mb-3" style="font-family: 'Playfair Display', serif; font-size: 1.8rem;">
+                        <i class="fas fa-calendar-alt me-2" style="color: #8b7355;"></i>
+                        Date & Time
+                    </h4>
+                    <div class="text-dark fw-bold fs-5 mb-2">
+                        📅 [TANGGAL ACARA]
+                    </div>
+                    <div class="text-dark fw-bold fs-5">
+                        🕐 [JAM ACARA]
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="vintage-scroll p-4 h-100 old-paper">
+                    <h4 class="text-dark fw-bold mb-3" style="font-family: 'Playfair Display', serif; font-size: 1.8rem;">
+                        <i class="fas fa-map-marker-alt me-2" style="color: #8b7355;"></i>
+                        Venue
+                    </h4>
+                    <div class="text-dark fw-bold fs-5 mb-2">
+                        🏛️ [LOKASI ACARA]
+                    </div>
+                    <div class="text-dark fs-6">
+                        [ALAMAT LENGKAP]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+                <div class="countdown-vintage p-4">
+                    <h4 class="text-center fw-bold mb-4" style="font-family: 'Playfair Display', serif; font-size: 2rem;">
+                        ⏰ Time Until the Celebration ⏰
+                    </h4>
+                    <div class="row text-center" id="countdown">
+                        <div class="col-3">
+                            <div class="ornate-frame p-3 mb-2" style="background: #8b7355; color: #f5f5dc;">
+                                <div id="days" class="fs-2 fw-bold">00</div>
+                            </div>
+                            <div class="fw-bold">DAYS</div>
+                        </div>
+                        <div class="col-3">
+                            <div class="ornate-frame p-3 mb-2" style="background: #8b7355; color: #f5f5dc;">
+                                <div id="hours" class="fs-2 fw-bold">00</div>
+                            </div>
+                            <div class="fw-bold">HOURS</div>
+                        </div>
+                        <div class="col-3">
+                            <div class="ornate-frame p-3 mb-2" style="background: #8b7355; color: #f5f5dc;">
+                                <div id="minutes" class="fs-2 fw-bold">00</div>
+                            </div>
+                            <div class="fw-bold">MINUTES</div>
+                        </div>
+                        <div class="col-3">
+                            <div class="ornate-frame p-3 mb-2" style="background: #8b7355; color: #f5f5dc;">
+                                <div id="seconds" class="fs-2 fw-bold">00</div>
+                            </div>
+                            <div class="fw-bold">SECONDS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RSVP Form -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="vintage-form p-4 old-paper">
+                    <h4 class="text-center fw-bold mb-4" style="font-family: 'Playfair Display', serif; font-size: 2rem;">
+                        🎭 Kindly Respond 🎭
+                    </h4>
+                    <form id="vintageForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Distinguished Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Party Size</label>
+                            <select class="form-control">
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Personal Message</label>
+                            <textarea class="form-control" rows="3" placeholder="Share your heartfelt wishes..."></textarea>
+                        </div>
+                        <button type="submit" class="btn vintage-btn w-100 py-3">
+                            🎩 Confirm Attendance 🎩
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <button onclick="shareWhatsApp()" class="btn vintage-btn">
+                        <i class="fab fa-whatsapp me-2"></i>Share Invitation
+                    </button>
+                    <button onclick="copyLink()" class="btn vintage-btn">
+                        <i class="fas fa-copy me-2"></i>Copy Link
+                    </button>
+                    <button onclick="saveCalendar()" class="btn vintage-btn">
+                        <i class="fas fa-calendar-plus me-2"></i>Save Date
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center">
+            <div class="lace-border p-3 mx-auto old-paper" style="max-width: 400px;">
+                <div class="text-dark fw-bold fs-5 mb-2">
+                    🌹 An Evening of Timeless Elegance 🌹
+                </div>
+                <div class="text-dark">
+                    "Age is merely mind over matter. If you don't mind, it doesn't matter."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2024-12-31T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Vintage Form
+        document.getElementById('vintageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            createVintageSparkle();
+            setTimeout(() => {
+                alert('🎭 Your attendance has been graciously noted! We look forward to your distinguished presence! 🎭');
+            }, 500);
+        });
+
+        // Create vintage sparkle effect
+        function createVintageSparkle() {
+            const sparkles = ['✨', '🌟', '💫', '⭐', '🎭', '🎨', '🏺'];
+            for (let i = 0; i < 12; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = '50%';
+                sparkle.style.top = '50%';
+                sparkle.style.fontSize = '1.8rem';
+                sparkle.style.color = '#8b7355';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.zIndex = '9999';
+                
+                const angle = (i / 12) * 360;
+                const distance = 80 + Math.random() * 150;
+                const duration = 2000 + Math.random() * 1000;
+                
+                sparkle.animate([
+                    { 
+                        transform: 'translate(-50%, -50%) scale(0) rotate(0deg)',
+                        opacity: 1
+                    },
+                    {
+                        transform: `translate(-50%, -50%) translate(${Math.cos(angle * Math.PI / 180) * distance}px, ${Math.sin(angle * Math.PI / 180) * distance}px) scale(1) rotate(360deg)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: duration,
+                    easing: 'ease-out'
+                });
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, duration);
+            }
+        }
+
+        // Social Share Functions
+        function shareWhatsApp() {
+            const text = encodeURIComponent('🎭 You are cordially invited to a vintage birthday celebration! Join us for an elegant evening of timeless charm and distinguished company! 🎭');
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('🎨 Invitation link has been elegantly copied to your clipboard! 🎨');
+            });
+        }
+
+        function saveCalendar() {
+            const title = encodeURIComponent('Vintage Birthday Celebration');
+            const details = encodeURIComponent('Join us for an elegant vintage-themed birthday celebration filled with timeless charm and distinguished company!');
+            const location = encodeURIComponent('[LOKASI ACARA]');
+            const startDate = '20241231T000000Z';
+            const endDate = '20241231T030000Z';
+            
+            const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+            window.open(calendarUrl, '_blank');
+        }
+
+        // Add vintage floating effect
+        function createVintageFloat() {
+            const elements = ['🎭', '🏺', '📜', '🕯️', '🎨', '📚', '⚱️', '🎪'];
+            const element = document.createElement('div');
+            element.className = 'floating-vintage';
+            element.textContent = elements[Math.floor(Math.random() * elements.length)];
+            element.style.left = Math.random() * 100 + '%';
+            element.style.top = Math.random() * 100 + '%';
+            element.style.animationDelay = Math.random() * 5 + 's';
+            element.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            
+            document.body.appendChild(element);
+            
+            setTimeout(() => {
+                element.remove();
+            }, 10000);
+        }
+
+        setInterval(createVintageFloat, 4000);
+
+        // Add vintage clock tick sound effect simulation
+        let tickInterval;
+        function startVintageTick() {
+            tickInterval = setInterval(() => {
+                // Visual tick effect on pocket watch
+                const watch = document.querySelector('.pocket-watch');
+                if (watch) {
+                    watch.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        watch.style.transform = 'scale(1)';
+                    }, 100);
+                }
+            }, 2000);
+        }
+
+        startVintageTick();
+
+        // Pause tick when page is not visible
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                clearInterval(tickInterval);
+            } else {
+                startVintageTick();
+            }
+        });
+    </script>
+</body>
+</html>

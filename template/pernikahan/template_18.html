@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bohemian Wedding - Luna & River</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower:wght@400&family=Satisfy:wght@400&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --terracotta: #c65d07;
+            --sage-green: #87a96b;
+            --dusty-rose: #dcae96;
+            --burnt-orange: #cc5500;
+            --cream: #f5e6d3;
+            --deep-purple: #6b46c1;
+            --mauve: #dda0dd;
+            --earth-brown: #8b4513;
+            --mustard: #ffdb58;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--dusty-rose) 50%, var(--sage-green) 100%);
+            min-height: 100vh;
+        }
+        
+        .boho-font {
+            font-family: 'Indie Flower', cursive;
+        }
+        
+        .script-font {
+            font-family: 'Satisfy', cursive;
+        }
+        
+        .handwriting-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .dreamcatcher-pattern {
+            background-image: 
+                radial-gradient(circle at 30% 30%, var(--sage-green) 2px, transparent 2px),
+                radial-gradient(circle at 70% 70%, var(--terracotta) 1px, transparent 1px),
+                radial-gradient(circle at 20% 80%, var(--dusty-rose) 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, var(--mauve) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px, 40px 40px, 35px 35px;
+            opacity: 0.3;
+        }
+        
+        .feather-float {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .feather {
+            position: absolute;
+            opacity: 0.6;
+            animation: featherDrift linear infinite;
+        }
+        
+        @keyframes featherDrift {
+            0% {
+                transform: translateY(-100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(50vh) translateX(20px) rotate(180deg);
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(100vh) translateX(-20px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .boho-card {
+            background: linear-gradient(135deg, rgba(245, 230, 211, 0.9) 0%, rgba(220, 174, 150, 0.9) 100%);
+            border: 2px solid var(--terracotta);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+            position: relative;
+        }
+        
+        .boho-card::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px dashed var(--sage-green);
+            border-radius: 15px;
+            opacity: 0.5;
+        }
+        
+        .mandala-border {
+            position: relative;
+            border: 3px solid var(--terracotta);
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--cream) 30%, var(--dusty-rose) 100%);
+        }
+        
+        .mandala-border::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 80%;
+            border: 2px dashed var(--sage-green);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.6;
+        }
+        
+        .mandala-border::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 60%;
+            border: 1px solid var(--deep-purple);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.4;
+        }
+        
+        .drift-in {
+            animation: driftIn 1.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(50px) rotate(5deg);
+        }
+        
+        @keyframes driftIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        .sway {
+            animation: sway 4s ease-in-out infinite;
+        }
+        
+        @keyframes sway {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        
+        .crystal-glow {
+            animation: crystalGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes crystalGlow {
+            0%, 100% { 
+                text-shadow: 0 0 10px var(--deep-purple);
+                filter: brightness(1);
+            }
+            50% { 
+                text-shadow: 0 0 20px var(--deep-purple), 0 0 30px var(--mauve);
+                filter: brightness(1.2);
+            }
+        }
+        
+        .boho-gradient {
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--burnt-orange) 50%, var(--sage-green) 100%);
+        }
+        
+        .tribal-pattern {
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    var(--cream) 10px,
+                    var(--cream) 20px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 10px,
+                    var(--dusty-rose) 10px,
+                    var(--dusty-rose) 20px
+                );
+            opacity: 0.2;
+        }
+        
+        .nature-element {
+            background: linear-gradient(45deg, var(--sage-green), var(--earth-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .boho-button {
+            background: linear-gradient(45deg, var(--terracotta), var(--burnt-orange));
+            border: 2px solid var(--sage-green);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .boho-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .boho-button:hover::before {
+            left: 100%;
+        }
+        
+        .boho-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(198, 93, 7, 0.4);
+        }
+        
+        .macrame-texture {
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--cream) 20%, transparent 20%),
+                radial-gradient(circle at 75% 75%, var(--dusty-rose) 15%, transparent 15%);
+            background-size: 40px 40px;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4 relative overflow-x-hidden">
+    <!-- Floating feathers background -->
+    <div class="feather-float">
+        <i class="fas fa-feather feather text-2xl text-orange-400" style="left: 5%; animation-duration: 20s; animation-delay: 0s;"></i>
+        <i class="fas fa-leaf feather text-xl text-green-500" style="left: 15%; animation-duration: 25s; animation-delay: 3s;"></i>
+        <i class="fas fa-feather feather text-lg text-purple-400" style="left: 25%; animation-duration: 18s; animation-delay: 6s;"></i>
+        <i class="fas fa-seedling feather text-xl text-green-600" style="left: 35%; animation-duration: 22s; animation-delay: 2s;"></i>
+        <i class="fas fa-feather feather text-lg text-pink-400" style="left: 45%; animation-duration: 24s; animation-delay: 8s;"></i>
+        <i class="fas fa-leaf feather text-xl text-orange-500" style="left: 55%; animation-duration: 19s; animation-delay: 4s;"></i>
+        <i class="fas fa-feather feather text-lg text-purple-500" style="left: 65%; animation-duration: 21s; animation-delay: 10s;"></i>
+        <i class="fas fa-spa feather text-xl text-green-400" style="left: 75%; animation-duration: 23s; animation-delay: 5s;"></i>
+        <i class="fas fa-feather feather text-lg text-orange-600" style="left: 85%; animation-duration: 17s; animation-delay: 12s;"></i>
+        <i class="fas fa-leaf feather text-xl text-pink-500" style="left: 95%; animation-duration: 26s; animation-delay: 7s;"></i>
+    </div>
+
+    <!-- Main container -->
+    <div class="max-w-md mx-auto bg-amber-50 rounded-3xl shadow-2xl overflow-hidden relative macrame-texture">
+        <!-- Bohemian Header -->
+        <div class="relative boho-gradient tribal-pattern text-white py-16 px-8">
+            <div class="absolute top-6 left-1/2 transform -translate-x-1/2">
+                <div class="mandala-border w-20 h-20 flex items-center justify-center sway">
+                    <i class="fas fa-sun crystal-glow text-2xl text-yellow-300"></i>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <div class="drift-in">
+                    <div class="boho-font text-4xl mb-4">Free Spirit Wedding</div>
+                    <div class="flex justify-center items-center mb-4">
+                        <i class="fas fa-feather text-xl mx-2 nature-element"></i>
+                        <div class="w-16 h-px bg-white"></div>
+                        <i class="fas fa-heart text-red-300 mx-4 text-lg crystal-glow"></i>
+                        <div class="w-16 h-px bg-white"></div>
+                        <i class="fas fa-feather text-xl mx-2 nature-element"></i>
+                    </div>
+                    <div class="script-font text-xl">Wild hearts can't be tamed</div>
+                </div>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="absolute bottom-4 left-4">
+                <i class="fas fa-cannabis text-2xl opacity-60 sway"></i>
+            </div>
+            <div class="absolute bottom-4 right-4">
+                <i class="fas fa-peace text-2xl opacity-60 sway" style="animation-delay: 1s;"></i>
+            </div>
+        </div>
+
+        <!-- Couple Names -->
+        <div class="py-12 px-8 text-center bg-gradient-to-b from-orange-50 to-pink-50 dreamcatcher-pattern">
+            <div class="boho-card p-8 drift-in" style="animation-delay: 0.5s;">
+                <div class="script-font text-6xl text-orange-700 mb-4">Luna</div>
+                <div class="boho-font text-lg text-orange-600 mb-4">🌙 Moon Child 🌙</div>
+                
+                <div class="flex items-center justify-center my-6">
+                    <i class="fas fa-infinity text-2xl text-purple-500 mx-4 crystal-glow"></i>
+                </div>
+                
+                <div class="script-font text-6xl text-orange-700 mb-4">River</div>
+                <div class="boho-font text-lg text-orange-600">🌊 Earth Wanderer 🌊</div>
+            </div>
+            
+            <div class="mt-8 text-center drift-in" style="animation-delay: 0.8s;">
+                <div class="handwriting-font text-2xl text-orange-700 mb-2">Two souls, one journey</div>
+                <div class="boho-font text-base text-orange-600">Love is our greatest adventure ✨</div>
+            </div>
+        </div>
+
+        <!-- Wedding Details -->
+        <div class="px-8 py-8 bg-orange-50">
+            <!-- Date & Time -->
+            <div class="boho-card p-6 mb-6 text-center drift-in" style="animation-delay: 1s;">
+                <i class="fas fa-sun text-3xl text-orange-600 mb-3 crystal-glow"></i>
+                <div class="script-font text-2xl text-orange-700 mb-2">Sacred Union</div>
+                <div class="handwriting-font text-4xl text-orange-800 mb-2">21 Juni 2024</div>
+                <div class="text-lg text-orange-600 mb-1">Jumat, 17:00 WIB</div>
+                <div class="boho-font text-base text-orange-500">Summer Solstice Celebration ☀️</div>
+            </div>
+
+            <!-- Location -->
+            <div class="boho-card p-6 mb-6 text-center drift-in" style="animation-delay: 1.2s;">
+                <i class="fas fa-tree text-3xl text-green-600 mb-3"></i>
+                <div class="script-font text-2xl text-orange-700 mb-2">Ceremony Space</div>
+                <div class="handwriting-font text-xl text-orange-800 mb-1">Mystical Forest Garden</div>
+                <div class="text-orange-600 mb-4">
+                    Jl. Alam Hijau No. 88<br>
+                    Sentul, Bogor<br>
+                    Jawa Barat
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="openLocation()" class="boho-button text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        <i class="fas fa-map-marked-alt mr-2"></i>Find Us
+                    </button>
+                    <button onclick="venueInfo()" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-all">
+                        <i class="fas fa-info-circle mr-2"></i>Venue
+                    </button>
+                </div>
+            </div>
+
+            <!-- Boho Activities -->
+            <div class="boho-card p-6 mb-6 drift-in" style="animation-delay: 1.4s;">
+                <div class="text-center mb-4">
+                    <i class="fas fa-guitar text-3xl text-purple-600 mb-2 crystal-glow"></i>
+                    <div class="script-font text-xl text-orange-700">Festival Vibes</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-purple-100 rounded-lg p-3 text-center">
+                        <i class="fas fa-music text-purple-600 text-lg mb-2"></i>
+                        <div class="boho-font text-sm">Live Acoustic</div>
+                    </div>
+                    <div class="bg-green-100 rounded-lg p-3 text-center">
+                        <i class="fas fa-seedling text-green-600 text-lg mb-2"></i>
+                        <div class="boho-font text-sm">Herb Garden</div>
+                    </div>
+                    <div class="bg-orange-100 rounded-lg p-3 text-center">
+                        <i class="fas fa-fire text-orange-600 text-lg mb-2"></i>
+                        <div class="boho-font text-sm">Fire Circle</div>
+                    </div>
+                    <div class="bg-pink-100 rounded-lg p-3 text-center">
+                        <i class="fas fa-palette text-pink-600 text-lg mb-2"></i>
+                        <div class="boho-font text-sm">Art Station</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dress Code -->
+            <div class="boho-card p-4 mb-6 text-center drift-in" style="animation-delay: 1.6s;">
+                <i class="fas fa-tshirt text-2xl text-orange-600 mb-2"></i>
+                <div class="script-font text-lg text-orange-700 mb-1">Dress Code</div>
+                <div class="boho-font text-sm text-orange-600">Boho Chic • Earth Tones • Flower Crowns Welcome! 🌸</div>
+            </div>
+
+            <!-- RSVP -->
+            <div class="text-center drift-in" style="animation-delay: 1.8s;">
+                <div class="script-font text-2xl text-orange-700 mb-2">Join Our Tribe</div>
+                <div class="boho-font text-base text-orange-600 mb-4">Let your spirit roam free with us ✨</div>
+                <button onclick="showRSVP()" class="boho-button text-white px-8 py-3 rounded-full handwriting-font text-lg w-full">
+                    <i class="fas fa-reply mr-2"></i>Send Good Vibes ✨
+                </button>
+            </div>
+
+            <!-- Gift Registry -->
+            <div class="mt-8 boho-card p-6 text-center drift-in" style="animation-delay: 2s;">
+                <i class="fas fa-gift text-3xl text-purple-600 mb-3 crystal-glow"></i>
+                <div class="script-font text-xl text-orange-700 mb-2">Blessing Fund</div>
+                <div class="boho-font text-sm text-orange-600 mb-4">
+                    Your love and presence is all we need 💕<br>
+                    But if you feel called to give:
+                </div>
+                <button onclick="copyAccount()" class="bg-orange-200 text-orange-800 px-4 py-2 rounded-lg boho-font text-sm hover:bg-orange-300 transition-all">
+                    <i class="fas fa-heart mr-2"></i>Love Fund: 3344556677
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="boho-gradient tribal-pattern text-white text-center py-12 px-8 relative">
+            <div class="absolute top-4 left-4">
+                <i class="fas fa-yin-yang text-2xl opacity-60 sway"></i>
+            </div>
+            <div class="absolute top-4 right-4">
+                <i class="fas fa-om text-2xl opacity-60 sway" style="animation-delay: 2s;"></i>
+            </div>
+            
+            <div class="script-font text-xl mb-2">Namaste & Love</div>
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <i class="fas fa-infinity text-xl crystal-glow"></i>
+                <div class="handwriting-font text-3xl">Luna & River</div>
+                <i class="fas fa-infinity text-xl crystal-glow"></i>
+            </div>
+            <div class="boho-font text-sm opacity-80">Our Beautiful Souls Family 🌟</div>
+            
+            <!-- Boho social sharing -->
+            <div class="mt-6 flex justify-center space-x-4">
+                <button onclick="shareBoho('instagram')" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-instagram text-xl"></i>
+                </button>
+                <button onclick="shareBoho('pinterest')" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-pinterest text-xl"></i>
+                </button>
+                <button onclick="shareBoho('whatsapp')" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Spiritual quote -->
+            <div class="mt-6 boho-font text-sm opacity-80 italic">
+                "Where flowers bloom, so does hope" 🌸
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLocation() {
+            alert('🌿 Opening mystical location...\n\n🌳 Mystical Forest Garden\nJl. Alam Hijau No. 88, Sentul\n\n🅿️ Natural parking area available\n🌸 Follow the flower petals to find us!\n\nSee you in the sacred space! ✨🦋');
+        }
+
+        function venueInfo() {
+            alert('🌿 Mystical Forest Garden Info:\n\n🌳 Outdoor ceremony in nature\n🔥 Sacred fire circle for evening\n🎵 Acoustic music stage\n🌸 Flower crown making station\n🧘 Meditation corner\n🍃 Herbal tea garden\n\nCome with an open heart! ✨💚');
+        }
+
+        function showRSVP() {
+            const name = prompt('🌸 Welcome, beautiful soul!\n\nWhat name should we call you?');
+            if (name) {
+                const attending = confirm(`Namaste ${name}! 🙏✨\n\nWill you be joining our sacred union ceremony?\n\n(Bring your free spirit and open heart! 💕)`);
+                if (attending) {
+                    const guests = prompt('🦋 Amazing! How many souls will be joining us?\n\n(Including your beautiful self)');
+                    const dietary = confirm('Do you have any special dietary needs for our earth-to-table feast?');
+                    alert(`🌟 Blessings ${name}!\n\n✅ ${guests || 1} beautiful soul(s) confirmed\n🌱 Dietary needs noted with love\n🦋 Your energy will make our celebration complete!\n\nCan\'t wait to dance under the stars! ✨💃`);
+                } else {
+                    alert(`💔 We\'ll miss your beautiful energy ${name}!\n\n✨ Sending you love and light anyway.\nYou\'ll be with us in spirit! 🌸🦋`);
+                }
+            }
+        }
+
+        function copyAccount() {
+            navigator.clipboard.writeText('3344556677').then(() => {
+                alert('🌸 Love fund details copied!\n\n✨ Your generosity flows like the river!\nMuch love and gratitude! 🙏💚🦋');
+            }).catch(() => {
+                alert('🌸 Love Fund: 3344556677\n\nPlease copy manually with love.\n✨ Gratitude flows your way! 🙏💚');
+            });
+        }
+
+        function shareBoho(platform) {
+            const messages = {
+                instagram: '🌸 Free spirits unite! Luna & River are getting married in a mystical forest ceremony! Come dance under the stars! ✨🦋 #BohoWedding #FreeSpirit #SacredUnion',
+                pinterest: '✨ Boho wedding inspiration! Luna & River\'s mystical forest ceremony is full of love, light, and beautiful energy! 🌸🦋 #BohoWedding #ForestWedding',
+                whatsapp: '🌿 Beautiful soul! You\'re invited to Luna & River\'s sacred union ceremony in the mystical forest! Bring your free spirit! ✨🌸🦋'
+            };
+            alert(`📱 Sharing good vibes on ${platform}:\n\n${messages[platform]}`);
+        }
+
+        // Animation observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.drift-in').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

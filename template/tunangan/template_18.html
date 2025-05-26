@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Komik - Festival Cinta Anime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Permanent+Marker&family=Comic+Neue:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f5ff;
+            background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+        }
+        
+        .anime-bg {
+            background: linear-gradient(45deg, #ffcce6, #e6f2ff, #ffebcc);
+            background-size: 300% 300%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .comic-font {
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        .manga-font {
+            font-family: 'Permanent Marker', cursive;
+        }
+        
+        .comic-border {
+            border: 4px solid #333;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+        }
+        
+        .speech-bubble {
+            position: relative;
+            background: #fff;
+            border-radius: .4em;
+            border: 3px solid #333;
+        }
+        
+        .speech-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 50px;
+            border-width: 14px 14px 0;
+            border-style: solid;
+            border-color: #fff transparent;
+            display: block;
+            width: 0;
+        }
+        
+        .speech-bubble:before {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 48px;
+            border-width: 16px 16px 0;
+            border-style: solid;
+            border-color: #333 transparent;
+            display: block;
+            width: 0;
+        }
+        
+        .anime-button {
+            animation: animePulse 2s infinite;
+            transform-style: preserve-3d;
+        }
+        
+        @keyframes animePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .manga-stripes {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 5px,
+                rgba(0,0,0,0.05) 5px,
+                rgba(0,0,0,0.05) 10px
+            );
+        }
+        
+        .panel {
+            background-color: white;
+            border: 4px solid #333;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .panel-corner {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff4d4d;
+            border: 3px solid #333;
+            transform: rotate(45deg);
+            right: -15px;
+            top: -15px;
+            z-index: 10;
+        }
+        
+        .shining-effect {
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { filter: brightness(100%); }
+            50% { filter: brightness(120%); }
+            100% { filter: brightness(100%); }
+        }
+        
+        .chibi {
+            transform: scale(0.9) translateY(10px);
+            transition: all 0.3s;
+        }
+        
+        .chibi:hover {
+            transform: scale(1) translateY(0);
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+        }
+        
+        .motion-line {
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: repeating-linear-gradient(
+                to right,
+                #333,
+                #333 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            bottom: -15px;
+            left: 0;
+            animation: speedLine 1s linear infinite;
+        }
+        
+        @keyframes speedLine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .power-up {
+            animation: powerUp 1.5s infinite;
+        }
+        
+        @keyframes powerUp {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4 sm:px-8 anime-bg">
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 overflow-hidden -z-10">
+        <div class="absolute top-1/4 right-10 w-20 h-20 rounded-full bg-pink-300 opacity-20 filter blur-lg animate-bounce"></div>
+        <div class="absolute bottom-1/3 left-1/4 w-24 h-24 rounded-full bg-blue-300 opacity-20 filter blur-lg animate-pulse"></div>
+        <div class="absolute top-1/3 left-1/3 w-16 h-16 rounded-full bg-yellow-300 opacity-20 filter blur-lg animate-spin"></div>
+    </div>
+
+    <!-- Main Invitation Card -->
+    <div class="max-w-2xl mx-auto comic-border bg-white rounded-lg overflow-hidden manga-stripes relative">
+        <!-- Red corner panel -->
+        <div class="panel-corner"></div>
+        
+        <!-- Header Section -->
+        <div class="text-center p-6 sm:p-8 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white manga-font mb-2 shining-effect">
+                愛のフェスティバル
+            </h1>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white comic-font">Festival Cinta</h2>
+            <div class="flex justify-center mt-4 mb-2">
+                <div class="w-full max-w-xs h-1 bg-white"></div>
+            </div>
+            <p class="text-white comic-font text-lg">Undangan Pernikahan Anime Style</p>
+            <div class="flex justify-center mt-4">
+                <div class="w-16 h-16 rounded-full bg-white border-4 border-black overflow-hidden chibi">
+                    <img src="https://www.pngmart.com/files/15/Anime-PNG-Transparent-Image.png" alt="Anime Icon" class="w-full h-full object-contain">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="p-6 sm:p-8">
+            <!-- Couple Section -->
+            <div class="text-center mb-8 relative">
+                <div class="flex justify-center space-x-4 sm:space-x-8 mb-4">
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-black relative chibi">
+                        <img src="https://i.pinimg.com/originals/55/e6/c2/55e6c2f45d4e1b0309a8f257f5d5f3b3.png" alt="Groom" class="w-full h-full object-cover">
+                        <div class="absolute -bottom-1 left-0 w-full text-center">
+                            <div class="text-xs bg-pink-500 text-white px-2 py-1 rounded-full inline-block comic-font">Boku</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center comic-font text-2xl font-bold">❤</div>
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-black relative chibi">
+                        <img src="https://i.pinimg.com/originals/eb/6e/86/eb6e861e144c110f6e1aa89c2a5b6f60.png" alt="Bride" class="w-full h-full object-cover">
+                        <div class="absolute -bottom-1 left-0 w-full text-center">
+                            <div class="text-xs bg-blue-500 text-white px-2 py-1 rounded-full inline-block comic-font">Watashi</div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-3xl sm:text-4xl font-bold manga-font mb-2 shining-effect">REN & SORA</h3>
+                <p class="comic-font">Inilah kisah cinta yang akan terus berlanjut...</p>
+                
+                <div class="absolute bottom-0 left-0 w-full">
+                    <div class="motion-line"></div>
+                </div>
+            </div>
+            
+            <!-- Event Details -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <!-- Date Panel -->
+                <div class="panel p-4 relative overflow-hidden">
+                    <div class="flex items-center">
+                        <div class="mr-3 text-2xl text-pink-500">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold comic-font text-lg">Tanggal</h4>
+                            <p class="text-sm">12 Desember 2024</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-pink-100 opacity-30 rounded-full -m-4"></div>
+                </div>
+                
+                <!-- Time Panel -->
+                <div class="panel p-4 relative overflow-hidden">
+                    <div class="flex items-center">
+                        <div class="mr-3 text-2xl text-blue-500">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold comic-font text-lg">Waktu</h4>
+                            <p class="text-sm">13:00 - 16:00 WIB</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-blue-100 opacity-30 rounded-full -m-4"></div>
+                </div>
+                
+                <!-- Location Panel -->
+                <div class="panel p-4 relative overflow-hidden">
+                    <div class="flex items-center">
+                        <div class="mr-3 text-2xl text-purple-500">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold comic-font text-lg">Lokasi</h4>
+                            <p class="text-sm">Tokyo Terrace, Jakarta</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-purple-100 opacity-30 rounded-full -m-4"></div>
+                </div>
+            </div>
+            
+            <!-- Speech Bubble -->
+            <div class="speech-bubble p-6 mb-8 comic-font">
+                <p class="text-center mb-0">
+                    "Dengan senpai yang memerhatikan, kami mengundang kalian untuk menyaksikan chapter baru dalam manga kehidupan kami. Datanglah dengan cosplay favoritmu!"
+                </p>
+            </div>
+            
+            <!-- Anime Characters -->
+            <div class="flex justify-around mb-8 power-up">
+                <div class="w-16 h-16 sm:w-20 sm:h-20">
+                    <img src="https://www.pngmart.com/files/12/Nezuko-Demon-Slayer-PNG-Transparent-Image.png" alt="Nezuko" class="w-full h-full object-contain">
+                </div>
+                <div class="w-16 h-16 sm:w-20 sm:h-20">
+                    <img src="https://www.pngmart.com/files/12/Tanjiro-Kamado-PNG-Transparent-Image.png" alt="Tanjiro" class="w-full h-full object-contain">
+                </div>
+                <div class="w-16 h-16 sm:w-20 sm:h-20">
+                    <img src="https://www.pngmart.com/files/12/Anya-Forger-PNG-Transparent-Image.png" alt="Anya" class="w-full h-full object-contain">
+                </div>
+            </div>
+            
+            <!-- RSVP Section -->
+            <div class="text-center mb-4">
+                <h3 class="text-xl sm:text-2xl font-bold comic-font mb-4">Konfirmasi Kehadiran</h3>
+                <button class="anime-button bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full border-2 border-black comic-font shadow-lg">
+                    <i class="fas fa-envelope mr-2"></i> RSVP Sekarang
+                </button>
+            </div>
+            
+            <!-- Footer -->
+            <div class="text-center pt-6 border-t-2 border-dashed border-gray-300 comic-font">
+                <p class="text-sm mb-1">"Every love story is beautiful, but ours is my favorite."</p>
+                <p class="text-xs italic">- Anime Lover -</p>
+                
+                <div class="flex justify-center space-x-4 mt-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center hover:bg-pink-600">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                
+                <p class="text-xs mt-4">*Dresscode: Cosplay atau anime-themed outfit</p>
+                <p class="text-xs mt-1">**Dipersilahkan membawa merchandise favorit</p>
+            </div>
+        </div>
+        
+        <!-- Bottom Motion Line -->
+        <div class="w-full h-2 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 relative">
+            <div class="absolute top-0 left-0 w-1/3 h-full bg-white opacity-30" style="transform: skewX(-30deg);"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add motion lines dynamically
+            const panels = document.querySelectorAll('.panel');
+            panels.forEach(panel => {
+                const motionLine = document.createElement('div');
+                motionLine.style.position = 'absolute';
+                motionLine.style.width = '150%';
+                motionLine.style.height = '8px';
+                motionLine.style.background = 'repeating-linear-gradient(to right, #333, #333 5px, transparent 5px, transparent 10px)';
+                motionLine.style.bottom = '0';
+                motionLine.style.left = '0';
+                motionLine.style.transform = 'translateY(100%) rotate(-3deg)';
+                motionLine.style.animation = 'speedLine 1.5s linear infinite';
+                motionLine.style.opacity = '0.5';
+                panel.appendChild(motionLine);
+            });
+            
+            // Button animation
+            const animeButton = document.querySelector('.anime-button');
+            animeButton.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            animeButton.addEventListener('mouseleave', function() {
+                this.style.animation = 'animePulse 2s infinite';
+                this.style.transform = 'translateY(0)';
+            });
+            
+            animeButton.addEventListener('click', function() {
+                alert('Arigatou gozaimasu! Terima kasih sudah mengkonfirmasi kehadiran! ٩(◕‿◕｡)۶');
+            });
+            
+            // Shining effect for names
+            setInterval(() => {
+                const elements = document.querySelectorAll('.shining-effect');
+                elements.forEach(el => {
+                    el.style.textShadow = `0 0 ${5 + Math.random() * 5}px rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.7)`;
+                });
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

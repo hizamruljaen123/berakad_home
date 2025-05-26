@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Hutan Ajaib</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Quintessential&family=Merienda:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Merienda', cursive;
+            background: linear-gradient(135deg, #22543d 0%, #2f855a 50%, #48bb78 100%);
+        }
+        .forest-bg {
+            background-image: url('https://www.transparenttextures.com/patterns/forest.png'), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+            background-blend-mode: overlay;
+        }
+        .glowing-text {
+            text-shadow: 0 0 5px #c6f6d5, 0 0 10px #c6f6d5, 0 0 15px #68d391, 0 0 20px #68d391;
+        }
+        .leaf-border {
+            border: 4px solid #68d391;
+            box-shadow: 0 0 15px #68d391;
+        }
+        .mushroom-icon {
+            animation: bounce-mushroom 2s infinite ease-in-out;
+        }
+        @keyframes bounce-mushroom {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .firefly {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #f0e68c; /* Khaki */
+            border-radius: 50%;
+            opacity: 0;
+            animation: blink-firefly 3s infinite ease-in-out;
+        }
+        @keyframes blink-firefly {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        .tree-silhouette {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .btn-forest {
+            background-color: #38a169; /* Green-600 */
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-forest:hover {
+            background-color: #2f855a; /* Green-700 */
+            transform: scale(1.05);
+        }
+        .card-enchanted {
+            background-color: rgba(26, 32, 44, 0.7); /* Gray-900 with opacity */
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="forest-bg text-green-100 min-h-screen p-4 md:p-8 relative overflow-x-hidden">
+    <!-- Fireflies -->
+    <div id="fireflies-container" class="absolute inset-0 pointer-events-none"></div>
+
+    <img src="https://www.svgrepo.com/show/163046/forest.svg" alt="Forest Silhouette" class="tree-silhouette">
+
+    <div class="container mx-auto max-w-4xl relative z-10">
+        <!-- Header -->
+        <header class="text-center py-12">
+            <i class="fas fa-tree text-6xl text-green-300 mb-4 glowing-text"></i>
+            <h1 class="text-5xl md:text-6xl font-bold glowing-text" style="font-family: 'Quintessential', cursive;">Pesta Hutan Ajaib</h1>
+            <p class="text-xl text-green-200 mt-2" style="font-family: 'Amatic SC', cursive; font-size: 2rem;">Kamu Diundang ke Perayaan Ulang Tahun Elara!</p>
+        </header>
+
+        <!-- Main Invitation Card -->
+        <main class="card-enchanted leaf-border rounded-xl p-6 md:p-10 shadow-2xl">
+            <div class="text-center mb-8">
+                <img src="https://cdn-icons-png.flaticon.com/512/2927/2927808.png" alt="Fairy" class="w-32 h-32 mx-auto rounded-full border-4 border-green-400 p-1 mb-4">
+                <h2 class="text-4xl font-bold text-green-300" style="font-family: 'Amatic SC', cursive; font-size: 3.5rem;">ELARA SANG PERI HUTAN</h2>
+                <p class="text-2xl text-green-100">Merayakan Ulang Tahunnya yang ke-</p>
+                <div class="text-7xl font-bold my-3 glowing-text">8</div>
+                <p class="text-xl text-green-200">dengan Pesta Penuh Keajaiban!</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8 text-lg">
+                <div class="bg-green-700 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-green-300 mb-3 flex items-center"><i class="fas fa-calendar-alt mr-3"></i>Tanggal & Waktu</h3>
+                    <p><strong class="text-green-200">Hari:</strong> Sabtu, 20 September 2025</p>
+                    <p><strong class="text-green-200">Jam:</strong> 14:00 - 17:00 WIB</p>
+                </div>
+                <div class="bg-green-700 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-green-300 mb-3 flex items-center"><i class="fas fa-map-marker-alt mr-3"></i>Lokasi Ajaib</h3>
+                    <p><strong class="text-green-200">Tempat:</strong> Taman Hutan Raya "Lumina"</p>
+                    <p>Jl. Setapak Ajaib No. 3, Dunia Fantasi</p>
+                </div>
+            </div>
+
+            <div class="mb-8 text-center">
+                <h3 class="text-3xl font-semibold text-green-300 mb-4" style="font-family: 'Amatic SC', cursive; font-size: 3rem;">Petualangan yang Menanti:</h3>
+                <ul class="list-none space-y-2 text-green-100 inline-block text-left">
+                    <li class="flex items-center"><i class="fas fa-hat-wizard mr-3 text-green-400"></i>Berburu Harta Karun Peri</li>
+                    <li class="flex items-center"><i class="fas fa-paint-brush mr-3 text-green-400"></i>Melukis Wajah Hutan</li>
+                    <li class="flex items-center"><i class="fas fa-music mr-3 text-green-400"></i>Menari Bersama Kelinci Ajaib</li>
+                    <li class="flex items-center"><i class="fas fa-birthday-cake mr-3 text-green-400"></i>Kue Ulang Tahun Bertema Jamur</li>
+                    <li class="flex items-center"><i class="fas fa-gift mr-3 text-green-400"></i>Hadiah Kejutan dari Pohon Bijak</li>
+                </ul>
+                <div class="mt-6">
+                    <span class="mushroom-icon text-5xl">🍄</span>
+                    <span class="mushroom-icon text-5xl mx-4" style="animation-delay: 0.5s;">🍄</span>
+                    <span class="mushroom-icon text-5xl">🍄</span>
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="bg-green-800 bg-opacity-60 p-6 rounded-lg shadow-xl mb-8 leaf-border border-green-500">
+                <h3 class="text-2xl font-semibold text-center text-green-300 mb-4">Hitung Mundur Keajaiban:</h3>
+                <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 text-center">
+                    <div>
+                        <div id="days" class="text-4xl md:text-5xl font-bold glowing-text bg-green-700 bg-opacity-50 p-3 rounded-md">00</div>
+                        <div class="text-sm text-green-200 mt-1">Hari</div>
+                    </div>
+                    <div>
+                        <div id="hours" class="text-4xl md:text-5xl font-bold glowing-text bg-green-700 bg-opacity-50 p-3 rounded-md">00</div>
+                        <div class="text-sm text-green-200 mt-1">Jam</div>
+                    </div>
+                    <div>
+                        <div id="minutes" class="text-4xl md:text-5xl font-bold glowing-text bg-green-700 bg-opacity-50 p-3 rounded-md">00</div>
+                        <div class="text-sm text-green-200 mt-1">Menit</div>
+                    </div>
+                    <div>
+                        <div id="seconds" class="text-4xl md:text-5xl font-bold glowing-text bg-green-700 bg-opacity-50 p-3 rounded-md">00</div>
+                        <div class="text-sm text-green-200 mt-1">Detik</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP Form -->
+            <div class="bg-green-700 bg-opacity-50 p-6 md:p-8 rounded-lg shadow-lg mb-8">
+                <h3 class="text-2xl md:text-3xl font-semibold text-center text-green-300 mb-6">Kirim Pesan pada Burung Hantu Bijak (RSVP):</h3>
+                <form id="rsvpForm" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-green-200">Nama Petualang:</label>
+                        <input type="text" id="name" name="name" required
+                               class="mt-1 block w-full bg-green-800 bg-opacity-70 border-green-600 rounded-md shadow-sm py-2 px-3 text-green-100 focus:outline-none focus:ring-green-400 focus:border-green-400">
+                    </div>
+                    <div>
+                        <label for="guests" class="block text-sm font-medium text-green-200">Jumlah Rombongan (termasuk kamu):</label>
+                        <input type="number" id="guests" name="guests" min="1" value="1" required
+                               class="mt-1 block w-full bg-green-800 bg-opacity-70 border-green-600 rounded-md shadow-sm py-2 px-3 text-green-100 focus:outline-none focus:ring-green-400 focus:border-green-400">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-green-200">Pesan Khusus untuk Peri Elara:</label>
+                        <textarea id="message" name="message" rows="3"
+                                  class="mt-1 block w-full bg-green-800 bg-opacity-70 border-green-600 rounded-md shadow-sm py-2 px-3 text-green-100 focus:outline-none focus:ring-green-400 focus:border-green-400"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-forest font-bold py-3 px-8 rounded-lg text-lg shadow-md hover:shadow-xl">
+                            <i class="fas fa-feather-alt mr-2"></i> Kirim Pesan Ajaib!
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="text-center">
+                <h3 class="text-xl font-semibold text-green-300 mb-3">Sebarkan Keajaiban Ini:</h3>
+                <div class="flex justify-center space-x-4">
+                    <button onclick="shareInvitation('whatsapp')" class="btn-forest p-3 rounded-full text-xl"><i class="fab fa-whatsapp"></i></button>
+                    <button onclick="shareInvitation('facebook')" class="btn-forest p-3 rounded-full text-xl"><i class="fab fa-facebook-f"></i></button>
+                    <button onclick="copyInvitation()" class="btn-forest p-3 rounded-full text-xl"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center py-8 mt-8">
+            <p class="text-green-200">&copy; 2025 Dunia Fantasi Elara. Semua mantra dilindungi.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Fireflies
+        const firefliesContainer = document.getElementById('fireflies-container');
+        const numFireflies = 50;
+        for (let i = 0; i < numFireflies; i++) {
+            const firefly = document.createElement('div');
+            firefly.classList.add('firefly');
+            firefly.style.left = Math.random() * 100 + '%';
+            firefly.style.top = Math.random() * 100 + '%';
+            firefly.style.animationDelay = Math.random() * 5 + 's';
+            firefly.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Duration between 2s and 5s
+            firefliesContainer.appendChild(firefly);
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2025-09-20T14:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            if (timeLeft < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="col-span-4 text-3xl text-center font-bold text-green-300 py-4">Pesta Ajaib Telah Dimulai!</div>';
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Form
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Pesan ajaibmu telah terkirim ke Peri Elara! Sampai jumpa di hutan!');
+            this.reset();
+        });
+
+        // Share Functions
+        const invitationURL = window.location.href;
+        const invitationTitle = document.title;
+        const invitationText = `Kamu diundang ke Pesta Hutan Ajaib Elara! Cek undangannya: ${invitationURL}`;
+
+        function shareInvitation(platform) {
+            let url = '';
+            if (platform === 'whatsapp') {
+                url = `https://wa.me/?text=${encodeURIComponent(invitationText)}`;
+            } else if (platform === 'facebook') {
+                url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(invitationURL)}`;
+            }
+            if (url) {
+                window.open(url, '_blank');
+            }
+        }
+
+        function copyInvitation() {
+            navigator.clipboard.writeText(invitationURL).then(() => {
+                alert('Tautan undangan ajaib telah disalin! Sebarkan ke teman-temanmu!');
+            }).catch(err => {
+                console.error('Gagal menyalin: ', err);
+                alert('Oops, gagal menyalin tautan. Coba lagi ya.');
+            });
+        }
+    </script>
+</body>
+</html>

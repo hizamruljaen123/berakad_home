@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Ulang Tahun - Rainbow Theme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+            background-size: 400% 400%;
+            animation: rainbowGradient 8s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes rainbowGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Balloons */
+        .balloon {
+            position: absolute;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            width: 30px;
+            height: 40px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .balloon:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 40px;
+            background: #333;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Party Hat Animation */
+        .party-hat {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            animation: confettiFall 3s linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Fun Typography */
+        .fun-title {
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .comic-text {
+            font-family: 'Comic Neue', cursive;
+        }
+
+        /* Card Styling */
+        .rainbow-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .rainbow-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            padding: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: subtract;
+            z-index: -1;
+        }
+
+        /* Button Styling */
+        .fun-button {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            color: white;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fun-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Animation Classes */
+        .bounce-in {
+            animation: bounceIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Gift Box Animation */
+        .gift-box {
+            animation: giftBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .fun-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Balloons -->
+    <div class="balloon bg-red-400" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="balloon bg-blue-400" style="top: 20%; left: 90%; animation-delay: 1s;"></div>
+    <div class="balloon bg-yellow-400" style="top: 30%; left: 10%; animation-delay: 2s;"></div>
+    <div class="balloon bg-green-400" style="top: 40%; left: 85%; animation-delay: 3s;"></div>
+    <div class="balloon bg-purple-400" style="top: 60%; left: 15%; animation-delay: 4s;"></div>
+    <div class="balloon bg-pink-400" style="top: 70%; left: 80%; animation-delay: 5s;"></div>
+
+    <!-- Confetti -->
+    <div id="confettiContainer"></div>
+
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Header Section -->
+        <header class="text-center mb-12 bounce-in">
+            <div class="rainbow-card rounded-3xl p-8 mb-8">
+                <i class="fas fa-birthday-cake text-6xl text-pink-500 mb-4 party-hat"></i>
+                <h1 class="fun-title text-6xl md:text-7xl mb-4">PESTA ULANG TAHUN</h1>
+                <div class="flex justify-center items-center mb-4">
+                    <i class="fas fa-star text-2xl text-yellow-400 mr-2"></i>
+                    <h2 class="comic-text text-2xl md:text-3xl text-purple-600 font-bold">Rainbow Celebration</h2>
+                    <i class="fas fa-star text-2xl text-yellow-400 ml-2"></i>
+                </div>
+                <p class="comic-text text-lg text-gray-700">Ayo merayakan hari spesial dengan penuh warna!</p>
+            </div>
+        </header>
+
+        <!-- Birthday Person Section -->
+        <section class="text-center mb-12 slide-up" style="animation-delay: 0.3s;">
+            <div class="rainbow-card rounded-2xl p-10">
+                <div class="relative inline-block mb-6">
+                    <div class="w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-4xl text-white"></i>
+                    </div>
+                    <div class="absolute -top-2 -right-2">
+                        <i class="fas fa-crown text-3xl text-yellow-400"></i>
+                    </div>
+                </div>
+                <h2 class="fun-title text-5xl md:text-6xl mb-6">ANDI PRATAMA</h2>
+                <div class="flex justify-center items-center mb-6">
+                    <div class="w-16 h-1 bg-gradient-to-r from-pink-400 to-purple-500 rounded"></div>
+                    <div class="mx-4 text-6xl">🎉</div>
+                    <div class="w-16 h-1 bg-gradient-to-l from-pink-400 to-purple-500 rounded"></div>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-200 to-pink-200 rounded-xl p-6 mb-6">
+                    <p class="comic-text text-2xl font-bold text-purple-700 mb-2">Berusia</p>
+                    <p class="fun-title text-6xl text-pink-600">25 TAHUN</p>
+                </div>
+                <p class="comic-text text-xl text-gray-700">
+                    "Hidup itu seperti pelangi, butuh hujan dan matahari untuk melihat keindahannya!"
+                </p>
+            </div>
+        </section>
+
+        <!-- Date & Time Section -->
+        <section class="text-center mb-12 slide-up" style="animation-delay: 0.6s;">
+            <div class="rainbow-card rounded-2xl p-8">
+                <i class="fas fa-calendar-alt text-4xl text-blue-500 mb-4"></i>
+                <h3 class="fun-title text-3xl mb-6 text-blue-600">KAPAN PESTANYA?</h3>
+                
+                <!-- Countdown Timer -->
+                <div class="grid grid-cols-4 gap-4 mb-6">
+                    <div class="bg-gradient-to-br from-red-400 to-pink-500 rounded-xl p-4 text-white">
+                        <div class="comic-text text-2xl font-bold" id="days">00</div>
+                        <div class="text-sm">Hari</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl p-4 text-white">
+                        <div class="comic-text text-2xl font-bold" id="hours">00</div>
+                        <div class="text-sm">Jam</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-xl p-4 text-white">
+                        <div class="comic-text text-2xl font-bold" id="minutes">00</div>
+                        <div class="text-sm">Menit</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl p-4 text-white">
+                        <div class="comic-text text-2xl font-bold" id="seconds">00</div>
+                        <div class="text-sm">Detik</div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-calendar text-purple-500 mr-3 text-xl"></i>
+                        <span class="comic-text text-xl font-bold text-gray-700">Sabtu, 15 Juni 2025</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-clock text-green-500 mr-3 text-xl"></i>
+                        <span class="comic-text text-xl font-bold text-gray-700">14:00 - 18:00 WIB</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="mb-12 slide-up" style="animation-delay: 0.9s;">
+            <div class="rainbow-card rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-map-marker-alt text-4xl text-red-500 mb-4"></i>
+                    <h3 class="fun-title text-3xl mb-4 text-red-600">LOKASI PESTA</h3>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl p-6 text-center">
+                    <h4 class="comic-text text-2xl font-bold text-purple-700 mb-4">Rainbow Function Hall</h4>
+                    <p class="comic-text text-lg text-gray-700 mb-4">
+                        Jl. Pelangi Indah No. 123<br>
+                        Kelurahan Warna Warni, Jakarta Selatan
+                    </p>
+                    <button class="fun-button px-8 py-3 rounded-full" onclick="openMap()">
+                        <i class="fas fa-directions mr-2"></i>Lihat Peta
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section class="mb-12 slide-up" style="animation-delay: 1.2s;">
+            <div class="rainbow-card rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-gamepad text-4xl text-green-500 mb-4"></i>
+                    <h3 class="fun-title text-3xl mb-4 text-green-600">AKTIVITAS SERU</h3>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center p-4 bg-gradient-to-br from-red-100 to-pink-100 rounded-xl">
+                        <i class="fas fa-music text-3xl text-red-500 mb-2"></i>
+                        <p class="comic-text font-bold text-gray-700">Karaoke</p>
+                    </div>
+                    <div class="text-center p-4 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl">
+                        <i class="fas fa-dice text-3xl text-blue-500 mb-2"></i>
+                        <p class="comic-text font-bold text-gray-700">Games</p>
+                    </div>
+                    <div class="text-center p-4 bg-gradient-to-br from-green-100 to-blue-100 rounded-xl">
+                        <i class="fas fa-camera text-3xl text-green-500 mb-2"></i>
+                        <p class="comic-text font-bold text-gray-700">Photo Booth</p>
+                    </div>
+                    <div class="text-center p-4 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-xl">
+                        <i class="fas fa-gift text-3xl text-yellow-500 mb-2 gift-box"></i>
+                        <p class="comic-text font-bold text-gray-700">Door Prize</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="mb-12 slide-up" style="animation-delay: 1.5s;">
+            <div class="rainbow-card rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-reply text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="fun-title text-3xl mb-4 text-purple-600">KONFIRMASI KEHADIRAN</h3>
+                    <p class="comic-text text-lg text-gray-700">Jangan lupa konfirmasi ya, biar pestanya makin meriah!</p>
+                </div>
+                
+                <form class="max-w-md mx-auto space-y-4" id="rsvpForm">
+                    <div>
+                        <input type="text" placeholder="Nama Lengkap" class="w-full p-3 border-2 border-purple-300 rounded-xl focus:border-purple-500 focus:outline-none comic-text" required>
+                    </div>
+                    <div>
+                        <input type="tel" placeholder="Nomor WhatsApp" class="w-full p-3 border-2 border-blue-300 rounded-xl focus:border-blue-500 focus:outline-none comic-text" required>
+                    </div>
+                    <div>
+                        <select class="w-full p-3 border-2 border-green-300 rounded-xl focus:border-green-500 focus:outline-none comic-text" required>
+                            <option value="">Konfirmasi Kehadiran</option>
+                            <option value="hadir">Hadir dengan senang hati! 🎉</option>
+                            <option value="tidak">Maaf tidak bisa hadir 😢</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="number" placeholder="Jumlah tamu" class="w-full p-3 border-2 border-yellow-300 rounded-xl focus:border-yellow-500 focus:outline-none comic-text" min="1" max="5">
+                    </div>
+                    <div>
+                        <textarea placeholder="Ucapan & Doa" class="w-full p-3 border-2 border-pink-300 rounded-xl focus:border-pink-500 focus:outline-none comic-text h-24 resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="fun-button w-full py-3 rounded-xl">
+                        <i class="fas fa-paper-plane mr-2"></i>Kirim Konfirmasi
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact & Social Media -->
+        <section class="mb-12 slide-up" style="animation-delay: 1.8s;">
+            <div class="rainbow-card rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-share-alt text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="fun-title text-3xl mb-4 text-blue-600">BAGIKAN KEGEMBIRAAN</h3>
+                    <p class="comic-text text-lg text-gray-700">Share undangan ini ke teman-teman</p>
+                    <p class="comic-text text-lg font-bold text-purple-600 mt-2">#AndiUltah25</p>
+                </div>
+                
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full transition-all duration-300 transform hover:scale-110" onclick="shareToSocial('whatsapp')">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </button>
+                    <button class="bg-pink-500 hover:bg-pink-600 text-white p-4 rounded-full transition-all duration-300 transform hover:scale-110" onclick="shareToSocial('instagram')">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </button>
+                    <button class="bg-blue-400 hover:bg-blue-500 text-white p-4 rounded-full transition-all duration-300 transform hover:scale-110" onclick="shareToSocial('facebook')">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </button>
+                    <button class="bg-gray-600 hover:bg-gray-700 text-white p-4 rounded-full transition-all duration-300 transform hover:scale-110" onclick="copyToClipboard()">
+                        <i class="fas fa-copy text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="text-center">
+                    <p class="comic-text text-gray-700 mb-2">Ada pertanyaan? Hubungi:</p>
+                    <p class="comic-text font-bold text-purple-600">+62 812-3456-7890</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center slide-up" style="animation-delay: 2.1s;">
+            <div class="rainbow-card rounded-2xl p-6">
+                <div class="flex justify-center items-center mb-4">
+                    <i class="fas fa-heart text-2xl text-red-500 mr-3"></i>
+                    <p class="comic-text text-lg">Terima kasih atas kehadiran dan doa Anda</p>
+                    <i class="fas fa-heart text-2xl text-red-500 ml-3"></i>
+                </div>
+                <p class="fun-title text-3xl mb-2 text-purple-600">Andi Pratama</p>
+                <p class="comic-text text-gray-600">Ulang Tahun ke-25 • 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Create confetti
+        function createConfetti() {
+            const container = document.getElementById('confettiContainer');
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                container.appendChild(confetti);
+            }
+        }
+
+        // Countdown timer
+        function updateCountdown() {
+            const targetDate = new Date('2025-06-15T14:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Open map
+        function openMap() {
+            const address = 'Jl. Pelangi Indah No. 123, Jakarta Selatan';
+            const encodedAddress = encodeURIComponent(address);
+            window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+        }
+
+        // Social media sharing
+        function shareToSocial(platform) {
+            const url = window.location.href;
+            const text = 'Ayo datang ke pesta ulang tahun Andi Pratama yang ke-25!';
+            
+            const shareUrls = {
+                whatsapp: `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`,
+                instagram: 'https://www.instagram.com/',
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+            };
+            
+            window.open(shareUrls[platform], '_blank');
+        }
+
+        // Copy to clipboard
+        function copyToClipboard() {
+            const text = 'Ayo datang ke pesta ulang tahun Andi Pratama yang ke-25! ' + window.location.href;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Link undangan berhasil disalin!');
+            });
+        }
+
+        // RSVP form submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Konfirmasi Anda telah diterima. Kami tunggu kehadiran Anda di pesta! 🎉');
+            this.reset();
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createConfetti();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>

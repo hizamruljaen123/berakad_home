@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Modern Geometric</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .modern-font {
+            font-family: 'Poppins', sans-serif;
+        }
+        .title-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .geometric-bg {
+            background-image: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+        }
+        .geometric-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='%23ffffff' points='30,0 60,30 30,60 0,30'/%3E%3Cpolygon fill='%23ffffff' points='30,15 45,30 30,45 15,30'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .slide-up {
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+        .hover-scale {
+            transition: all 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .hexagon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 20px auto;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        .diamond {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transform: rotate(45deg);
+            margin: 10px;
+        }
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid #667eea;
+        }
+        .countdown-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen geometric-bg geometric-pattern modern-font">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-lg">
+            
+            <!-- Header Card -->
+            <div class="bg-white/95 backdrop-blur-lg rounded-3xl p-8 mb-6 text-center glow-effect slide-up">
+                <!-- Geometric decoration -->
+                <div class="flex justify-center items-center mb-6">
+                    <div class="diamond opacity-70"></div>
+                    <div class="hexagon flex items-center justify-center">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <div class="diamond opacity-70"></div>
+                </div>
+                
+                <h1 class="title-font text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
+                    WEDDING INVITATION
+                </h1>
+                <div class="flex justify-center items-center mb-4">
+                    <div class="triangle opacity-60"></div>
+                    <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-4"></div>
+                    <div class="triangle opacity-60" style="transform: rotate(180deg);"></div>
+                </div>
+                <p class="text-gray-600 italic">Modern & Elegant Celebration</p>
+            </div>
+            
+            <!-- Couple Info Card -->
+            <div class="bg-white/95 backdrop-blur-lg rounded-3xl p-8 mb-6 glow-effect slide-up" style="animation-delay: 0.2s;">
+                <div class="text-center mb-8">
+                    <p class="text-gray-600 mb-6">We joyfully invite you to celebrate our union</p>
+                    
+                    <!-- Couple Display -->
+                    <div class="flex items-center justify-center space-x-8">
+                        <div class="text-center hover-scale">
+                            <div class="w-20 h-20 mx-auto mb-3 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg">
+                                <span class="text-white font-bold text-2xl transform -rotate-12">M</span>
+                            </div>
+                            <h2 class="title-font text-2xl font-bold text-gray-800">MAYA</h2>
+                            <p class="text-sm text-gray-500">Daughter of</p>
+                            <p class="text-sm text-gray-600">Mr. & Mrs. Santoso</p>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-2 hover-scale">
+                                <span class="text-white font-bold text-xl">&</span>
+                            </div>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                                <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                                <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center hover-scale">
+                            <div class="w-20 h-20 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center transform -rotate-12 shadow-lg">
+                                <span class="text-white font-bold text-2xl transform rotate-12">D</span>
+                            </div>
+                            <h2 class="title-font text-2xl font-bold text-gray-800">DAVID</h2>
+                            <p class="text-sm text-gray-500">Son of</p>
+                            <p class="text-sm text-gray-600">Mr. & Mrs. Wijaya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Details Card -->
+            <div class="bg-white/95 backdrop-blur-lg rounded-3xl p-8 mb-6 glow-effect slide-up" style="animation-delay: 0.4s;">
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Holy Matrimony -->
+                    <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl border border-purple-200">
+                        <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-church text-white"></i>
+                        </div>
+                        <h3 class="title-font font-bold text-purple-700 mb-2">HOLY MATRIMONY</h3>
+                        <p class="text-sm font-semibold text-gray-700">Saturday, June 22, 2024</p>
+                        <p class="text-sm text-gray-600">10:00 AM</p>
+                        <p class="text-xs text-gray-500 mt-2">St. Mary Cathedral</p>
+                    </div>
+                    
+                    <!-- Reception -->
+                    <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200">
+                        <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-glass-cheers text-white"></i>
+                        </div>
+                        <h3 class="title-font font-bold text-blue-700 mb-2">RECEPTION</h3>
+                        <p class="text-sm font-semibold text-gray-700">Saturday, June 22, 2024</p>
+                        <p class="text-sm text-gray-600">7:00 PM</p>
+                        <p class="text-xs text-gray-500 mt-2">Grand Ballroom Hotel</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-6">
+                    <button onclick="showLocation()" class="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 hover-scale">
+                        <i class="fas fa-map-marker-alt mr-2"></i>View Location
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Countdown Card -->
+            <div class="countdown-box rounded-3xl p-8 mb-6 text-center slide-up" style="animation-delay: 0.6s;">
+                <h3 class="title-font text-xl font-bold text-white mb-4">Countdown to Our Special Day</h3>
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-xl p-3">
+                        <div class="text-2xl font-bold text-white" id="days">00</div>
+                        <div class="text-xs text-white/80">Days</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-xl p-3">
+                        <div class="text-2xl font-bold text-white" id="hours">00</div>
+                        <div class="text-xs text-white/80">Hours</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-xl p-3">
+                        <div class="text-2xl font-bold text-white" id="minutes">00</div>
+                        <div class="text-xs text-white/80">Minutes</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-xl p-3">
+                        <div class="text-2xl font-bold text-white" id="seconds">00</div>
+                        <div class="text-xs text-white/80">Seconds</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RSVP Card -->
+            <div class="bg-white/95 backdrop-blur-lg rounded-3xl p-8 mb-6 glow-effect slide-up" style="animation-delay: 0.8s;">
+                <h3 class="title-font text-xl font-bold text-center text-gray-800 mb-6">Kindly Confirm Your Attendance</h3>
+                <div class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition">
+                    <select class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition">
+                        <option>Number of Guests</option>
+                        <option>1 Person</option>
+                        <option>2 People</option>
+                        <option>3 People</option>
+                        <option>4+ People</option>
+                    </select>
+                    <textarea placeholder="Your Message" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 h-24 resize-none transition"></textarea>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="rsvpResponse('attending')" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold py-3 rounded-xl hover:from-green-600 hover:to-emerald-600 transition hover-scale">
+                            <i class="fas fa-check mr-2"></i>Attending
+                        </button>
+                        <button onclick="rsvpResponse('not-attending')" class="bg-gradient-to-r from-red-500 to-rose-500 text-white font-semibold py-3 rounded-xl hover:from-red-600 hover:to-rose-600 transition hover-scale">
+                            <i class="fas fa-times mr-2"></i>Can't Attend
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digital Gift Card -->
+            <div class="bg-white/95 backdrop-blur-lg rounded-3xl p-8 mb-6 glow-effect slide-up" style="animation-delay: 1s;">
+                <div class="text-center mb-6">
+                    <div class="hexagon flex items-center justify-center mb-4">
+                        <i class="fas fa-gift text-white text-xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-bold text-gray-800">Wedding Gift</h3>
+                    <p class="text-gray-600 mt-2">Your presence is the greatest gift, but if you wish to honor us with a gift:</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-xl border border-purple-200">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold text-purple-700">Bank Central Asia</p>
+                                <p class="font-mono text-lg font-bold text-gray-800">9876543210</p>
+                                <p class="text-sm text-gray-600">a.n. Maya Santoso</p>
+                            </div>
+                            <button onclick="copyAccount('9876543210')" class="bg-purple-500 hover:bg-purple-600 text-white p-2 rounded-lg transition">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl border border-blue-200">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold text-blue-700">GoPay / Dana</p>
+                                <p class="font-mono text-lg font-bold text-gray-800">081234567890</p>
+                                <p class="text-sm text-gray-600">a.n. David Wijaya</p>
+                            </div>
+                            <button onclick="copyAccount('081234567890')" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Card -->
+            <div class="bg-white/95 backdrop-blur-lg rounded-3xl p-8 text-center glow-effect slide-up" style="animation-delay: 1.2s;">
+                <p class="text-gray-600 mb-4">We can't wait to celebrate with you!</p>
+                <div class="flex justify-center items-center mb-4">
+                    <div class="diamond opacity-40"></div>
+                    <h2 class="title-font text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mx-4">MAYA & DAVID</h2>
+                    <div class="diamond opacity-40"></div>
+                </div>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center text-white hover:scale-110 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white hover:scale-110 transition">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-white hover:scale-110 transition">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Countdown functionality
+        function updateCountdown() {
+            const weddingDate = new Date('2024-06-22T10:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        function showLocation() {
+            alert('Opening location in Google Maps...');
+        }
+        
+        function rsvpResponse(response) {
+            if (response === 'attending') {
+                alert('Thank you for confirming your attendance! We look forward to celebrating with you.');
+            } else {
+                alert('Thank you for letting us know. We will miss you on our special day.');
+            }
+        }
+        
+        function copyAccount(account) {
+            navigator.clipboard.writeText(account).then(() => {
+                alert('Account number copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
