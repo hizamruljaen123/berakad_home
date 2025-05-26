@@ -406,8 +406,8 @@ const templateFiles = <?php echo json_encode($templateFiles, JSON_UNESCAPED_SLAS
         let navBtnContainer = document.createElement('div');
         navBtnContainer.className = 'flex justify-center items-center mt-2';
         navBtnContainer.innerHTML = `
-            <button id="prevTemplateBtn" class="${navBtnStyle}"><i class="fas fa-chevron-left"></i> Sebelumnya</button>
-            <button id="nextTemplateBtn" class="${navBtnStyle}">Selanjutnya <i class="fas fa-chevron-right"></i></button>
+            <button id="prevTemplateBtn" class="${navBtnStyle}"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextTemplateBtn" class="${navBtnStyle}"><i class="fas fa-chevron-right"></i></button>
         `;
         // Insert nav buttons after modalTitle
         document.addEventListener('DOMContentLoaded', function() {

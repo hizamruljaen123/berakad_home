@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berakad.site - Testimoni Pelanggan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(to right, white 75%, #FBCFE8 25%);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quote-icon {
+            color: #F472B6;
+            font-size: 3rem;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .animate-testimonials {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fas fa-ring text-pink-500 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-gray-800">Berakad<span class="text-pink-500">.site</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#fitur" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Fitur</a>
+                        <a href="#template" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Template</a>
+                        <a href="#testimoni" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Testimoni</a>
+                        <a href="#faq" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                    </div>
+                </div>
+                <div class="md:ml-10 md:flex md:items-center space-x-2">
+                    <a href="#order" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
+                        Buat Undangan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Testimonials Hero -->
+    <div class="hero-section text-white py-24 relative" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1481&q=80'); background-size: cover; background-position: center;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Kepercayaan Pelanggan Kami</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto">Dengarkan pengalaman nyata dari ratusan pasangan yang telah menggunakan layanan Berakad.site</p>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-16 md:h-24">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="fill-white"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="fill-white"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="fill-white"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 bg-pink-100 text-pink-600 rounded-full text-sm font-medium mb-3">TESTIMONI</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Apa Kata Mereka Tentang Berakad.site</h2>
+                <div class="w-20 h-1 bg-pink-500 mx-auto"></div>
+            </div>
+            
+            <!-- Testimonial Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-xl p-6 relative overflow-hidden animate-testimonials" style="animation-delay: 0.1s;">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Rani & Adit</h4>
+                            <p class="text-sm text-gray-600">Jakarta - Pernikahan</p>
+                            <div class="mt-1 flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 relative z-10">
+                        "Benar-benar worth it! Ternyata bikin undangan online semudah ini. Tinggal isi data, 30 menit undangan langsung jadi! Praktis banget buat kami yang super sibuk dengan persiapan pernikahan. Template-nya juga cantik dan profesional."
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">#CepatPraktis</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full ml-2">#TemplateCantik</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-xl p-6 relative overflow-hidden animate-testimonials" style="animation-delay: 0.2s;">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Dita & Farhan</h4>
+                            <p class="text-sm text-gray-600">Bandung - Tunangan</p>
+                            <div class="mt-1 flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 relative z-10">
+                        "Templatenya sangat cantik, temen-temen pada kaget waktu lihat undangan tunangan kami. Kualitasnya premium tapi harganya terjangkau banget! Adminnya juga responsif banget dan mau bantu customize beberapa bagian."
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">#HargaTerjangkau</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full ml-2">#Responsif</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-xl p-6 relative overflow-hidden animate-testimonials" style="animation-delay: 0.3s;">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Budi & Lina</h4>
+                            <p class="text-sm text-gray-600">Surabaya - Pernikahan</p>
+                            <div class="mt-1 flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 relative z-10">
+                        "Pelayanannya super cepat dan bisa custom sesuai permintaan. Saya request tambahin Google Maps dan RSVP, langsung dikasih tanpa biaya tambahan. Efeknya sangat profesional, banyak tamu yang memuji undangan kami. Sangat direkomendasikan!"
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">#CustomRequest</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full ml-2">#PelayananCepat</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card rounded-xl p-6 relative overflow-hidden animate-testimonials" style="animation-delay: 0.4s;">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Sasha</h4>
+                            <p class="text-sm text-gray-600">Bali - Ulang Tahun</p>
+                            <div class="mt-1 flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 relative z-10">
+                        "Awalnya ragu karena harganya murah, tapi ternyata hasilnya wow! Bikin undangan ulang tahun ke-30ku beneran keren. Temen-temen pada bilang kayak undangan premium gitu. Pokoknya next event pasti pakai Berakad.site lagi!"
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">#HasilPremium</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full ml-2">#LayananMurah</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card rounded-xl p-6 relative overflow-hidden animate-testimonials" style="animation-delay: 0.5s;">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Rangga & Fitri</h4>
+                            <p class="text-sm text-gray-600">Yogyakarta - Pernikahan</p>
+                            <div class="mt-1 flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 relative z-10">
+                        "Kami pesan paket custom dengan desain khusus. Proses diskusinya sangat mudah via WhatsApp. Nggak nyangka hasilnya persis seperti yang kami inginkan! Bahkan lebih bagus dari ekspektasi. Terima kasih Berakad.site!"
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">#CustomDesain</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full ml-2">#HasilMemuaskan</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card rounded-xl p-6 relative overflow-hidden animate-testimonials" style="animation-delay: 0.6s;">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Mira</h4>
+                            <p class="text-sm text-gray-600">Medan - Pelantikan Kantor</p>
+                            <div class="mt-1 flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 relative z-10">
+                        "Sebagai event organizer, saya sering pakai jasa undangan digital. Berakad.site ini yang paling mudah dan efisien. Harga bersaing dengan fitur lengkap. Sudah beberapa kali order karena bos dan klien selalu puas dengan hasilnya."
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">#Professional</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full ml-2">#RepeatOrder</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Testimonials -->
+            <div class="mt-20">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Testimoni Langsung dari Pelanggan</h3>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Tonton pengalaman langsung dari mereka yang telah menggunakan Berakad.site</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative pt-[56.25%]">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                                    <i class="fas fa-play-circle text-6xl text-pink-500 opacity-80"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2">Rani & Adit - Pernikahan</h4>
+                            <p class="text-gray-600 text-sm">"Undangan kami siap dalam 1 jam!"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative pt-[56.25%]">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                                    <i class="fas fa-play-circle text-6xl text-pink-500 opacity-80"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold text-lg mb-2">Dita & Farhan - Tunangan</h4>
+                            <p class="text-gray-600 text-sm">"Template keren dengan harga terjangkau"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="mt-20 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6">Tunggu Apa Lagi?</h3>
+                        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">Bergabunglah dengan ribuan pelanggan yang puas dengan layanan undangan digital Berakad.site</p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="#order" class="bg-white hover:bg-gray-100 text-pink-600 font-bold py-4 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                                Buat Undangan Sekarang
+                            </a>
+                            <a href="#" class="border-2 border-white hover:bg-white/20 font-bold py-4 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                                <i class="fab fa-whatsapp mr-2"></i> Chat Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0 opacity-20">
+                    <i class="fas fa-heart text-9xl md:text-[12rem]"></i>
+                </div>
+            </div>
+            
+            <!-- Stats Section -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">5K+</div>
+                    <p class="text-gray-600">Undangan Dibuat</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">50+</div>
+                    <p class="text-gray-600">Template Pilihan</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">98%</div>
+                    <p class="text-gray-600">Tingkat Kepuasan</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-500 mb-2">24j</div>
+                    <p class="text-gray-600">Waktu Proses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Berakad.site</h3>
+                    <p class="text-gray-400">Platform pembuatan undangan online praktis dan ekonomis untuk segala acara.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Pernikahan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Tunangan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Ulang Tahun</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Resmi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Custom</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cara Pemesanan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> hello@berakad.site
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2"></i> 0812-3456-7890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 Berakad.site. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation for testimonial cards when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-testimonials');
+                }
+            });
+        }, {threshold: 0.1});
+        
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

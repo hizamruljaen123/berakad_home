@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berakad.site - Undangan Online Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #b8c6db 100%);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                         url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .template-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .template-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .wave-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-shape svg {
+            position: relative;
+            display: block;
+            width: calc(200% + 1.3px);
+            height: 150px;
+        }
+        
+        .wave-shape .shape-fill {
+            fill: #FFFFFF;
+        }
+        
+        .music-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(to right, white 80%, #FBCFE8 20%);
+        }
+        
+        .music-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .music-icon {
+            background: linear-gradient(to bottom right, #F472B6, #818CF8);
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s infinite;
+        }
+        
+        .music-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, transparent, rgba(244, 114, 182, 0.6), transparent);
+            animation: musicWave 2s linear infinite;
+        }
+        
+        @keyframes musicWave {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fas fa-ring text-pink-500 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-gray-800">Berakad<span class="text-pink-500">.site</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#fitur" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Fitur</a>
+                        <a href="#template" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Template</a>
+                        <a href="#music" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Musik</a>
+                        <a href="#testimoni" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">Testimoni</a>
+                        <a href="#faq" class="text-gray-800 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                    </div>
+                </div>
+                <div class="md:ml-10 md:flex md:items-center space-x-2">
+                    <a href="#order" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
+                        Buat Undangan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section text-white py-20 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Solusi Undangan Online Premium</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-8">Dengan Musik Eksklusif Bebas Royalti</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10">Berakad.site menyediakan berbagai template undangan online premium dilengkapi koleksi musik eksklusif dari Stefan Aramanda & soundtrack original kami yang bebas copyright.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#order" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 animate-pulse-slow">
+                        <i class="fas fa-music mr-2"></i> Buat Undangan Sekarang
+                    </a>
+                    <a href="#music" class="bg-white hover:bg-gray-100 text-pink-500 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                        Jelajahi Koleksi Musik
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="fitur" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kenapa Memilih Berakad.site?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Layanan premium kami memberikan pengalaman undangan digital yang luar biasa</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-music text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Musik Eksklusif</h3>
+                    <p class="text-gray-600">Koleksi musik wedding bebas copyright dari Stefan Aramanda dan soundtrack original kami.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user-shield text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">100% Legal</h3>
+                    <p class="text-gray-600">Semua konten musik dan template memiliki lisensi resmi, bebas masalah hak cipta.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-palette text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Template Premium</h3>
+                    <p class="text-gray-600">50+ desain eksklusif untuk semua jenis acara, dibuat oleh desainer profesional.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-sliders-h text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Kustomisasi Lengkap</h3>
+                    <p class="text-gray-600">Atur musik, animasi, warna, dan semua elemen sesuai keinginan Anda.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tachometer-alt text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Proses Kilat</h3>
+                    <p class="text-gray-600">Undangan siap hanya dalam 1-3 jam setelah pembayaran.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-headset text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Support 24/7</h3>
+                    <p class="text-gray-600">Tim kami siap membantu kapan saja melalui WhatsApp dan email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="py-16 bg-gradient-to-br from-pink-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Koleksi Musik Eksklusif</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Bekerja sama dengan Stefan Aramanda untuk menyediakan musik pernikahan bebas royalti</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Music 1 -->
+                <div class="music-card relative rounded-xl p-6 overflow-hidden">
+                    <div class="flex items-start mb-4">
+                        <div class="music-icon w-14 h-14 rounded-lg flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-music text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Cinta Suci</h3>
+                            <p class="text-sm text-gray-600">Stefan Aramanda</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Lagu romantis khusus pernikahan dengan nuansa klasik yang elegan.</p>
+                    <div class="flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full mr-2">Wedding Song</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">3:24</span>
+                    </div>
+                    <div class="music-wave"></div>
+                </div>
+                
+                <!-- Music 2 -->
+                <div class="music-card relative rounded-xl p-6 overflow-hidden">
+                    <div class="flex items-start mb-4">
+                        <div class="music-icon w-14 h-14 rounded-lg flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-music text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Bahagia Selamanya</h3>
+                            <p class="text-sm text-gray-600">Stefan Aramanda</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Lagu penuh kebahagiaan dengan paduan musik tradisional dan modern.</p>
+                    <div class="flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full mr-2">Happy Song</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">4:12</span>
+                    </div>
+                    <div class="music-wave"></div>
+                </div>
+                
+                <!-- Music 3 -->
+                <div class="music-card relative rounded-xl p-6 overflow-hidden">
+                    <div class="flex items-start mb-4">
+                        <div class="music-icon w-14 h-14 rounded-lg flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-music text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Harmoni Cinta</h3>
+                            <p class="text-sm text-gray-600">Berakad Original</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Soundtrack original kami dengan instrumen piano yang menenangkan.</p>
+                    <div class="flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full mr-2">Instrumental</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">2:56</span>
+                    </div>
+                    <div class="music-wave"></div>
+                </div>
+                
+                <!-- Music 4 -->
+                <div class="music-card relative rounded-xl p-6 overflow-hidden">
+                    <div class="flex items-start mb-4">
+                        <div class="music-icon w-14 h-14 rounded-lg flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-music text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Janji Suci</h3>
+                            <p class="text-sm text-gray-600">Stefan Aramanda</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Lagu khusus untuk momen akad nikah dengan nuansa khidmat.</p>
+                    <div class="flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full mr-2">Akad Song</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">5:18</span>
+                    </div>
+                    <div class="music-wave"></div>
+                </div>
+                
+                <!-- Music 5 -->
+                <div class="music-card relative rounded-xl p-6 overflow-hidden">
+                    <div class="flex items-start mb-4">
+                        <div class="music-icon w-14 h-14 rounded-lg flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-music text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Melodi Kebahagiaan</h3>
+                            <p class="text-sm text-gray-600">Berakad Original</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Musik instrumental dengan sentuhan gitar akustik yang romantis.</p>
+                    <div class="flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full mr-2">Acoustic</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">3:42</span>
+                    </div>
+                    <div class="music-wave"></div>
+                </div>
+                
+                <!-- Music 6 -->
+                <div class="music-card relative rounded-xl p-6 overflow-hidden">
+                    <div class="flex items-start mb-4">
+                        <div class="music-icon w-14 h-14 rounded-lg flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-music text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Symphony of Love</h3>
+                            <p class="text-sm text-gray-600">Stefan Aramanda</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Komposisi orkestra yang megah untuk momen spesial Anda.</p>
+                    <div class="flex items-center">
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full mr-2">Orchestra</span>
+                        <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full">6:05</span>
+                    </div>
+                    <div class="music-wave"></div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#order" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-pink-500 hover:bg-pink-600 md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-headphones mr-2"></i> Pilih Musik untuk Undangan Anda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Hanya 3 Langkah Mudah</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Proses pembuatan undangan yang simpel dan cepat</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="w-16 h-16 mx-auto bg-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">1</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pilih Template & Musik</h3>
+                    <p class="text-gray-600">Pilih dari koleksi template premium dan musik eksklusif kami.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="w-16 h-16 mx-auto bg-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">2</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Isi Informasi</h3>
+                    <p class="text-gray-600">Masukkan detail acara Anda melalui formulir sederhana kami.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="w-16 h-16 mx-auto bg-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">3</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Undangan Siap!</h3>
+                    <p class="text-gray-600">Tim kami akan segera memproses dan mengirimkan undangan digital Anda.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 p-6 bg-gradient-to-r from-pink-500 to-purple-600 rounded-xl shadow-sm max-w-4xl mx-auto text-white">
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-4">Dapatkan Koleksi Musik Eksklusif!</h3>
+                    <p class="mb-6">Semua paket undangan kami sudah termasuk akses ke musik premium bebas copyright.</p>
+                    <a href="#order" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-pink-600 bg-white hover:bg-gray-100 md:py-4 md:text-lg md:px-10">
+                        Pilih Paket Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <div class="w-20 h-1 bg-pink-500 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white shadow-md rounded-xl overflow-hidden">
+                    <!-- Pertanyaan 1 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left hover:bg-gray-50 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Apakah musik yang disediakan benar-benar bebas copyright?</h3>
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-5 w-5 text-pink-500">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-600">Ya, semua musik kami 100% bebas copyright. Kami bekerja sama langsung dengan Stefan Aramanda dan tim komposer kami memiliki kontrak eksklusif yang memastikan semua soundtrack original kami bebas dari masalah hak cipta.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pertanyaan 2 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left hover:bg-gray-50 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Bisakah saya request lagu tertentu untuk undangan saya?</h3>
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-5 w-5 text-pink-500">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-600">Kami sangat menyarankan menggunakan koleksi musik eksklusif kami yang sudah bebas copyright. Namun untuk lagu tertentu, kami bisa bantu cek ketersediaan lisensi dengan biaya tambahan. Hubungi tim kami via WhatsApp untuk konsultasi lebih lanjut.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pertanyaan 3 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left hover:bg-gray-50 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Apa keunggulan musik dari Stefan Aramanda dibanding yang lain?</h3>
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-5 w-5 text-pink-500">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-600">Musik dari Stefan Aramanda dibuat khusus untuk momen pernikahan dengan kualitas rekaman profesional di studio premium. Lirik dan melodi dirancang khusus untuk mengiringi berbagai tahapan acara pernikahan, mulai dari akad hingga resepsi. Dan yang terpenting, semua musik ini tidak akan Anda temukan di platform manapun karena dibuat khusus untuk pelanggan Berakad.site.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pertanyaan 4 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left hover:bg-gray-50 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Bagaimana cara mengganti musik di undangan yang sudah dibuat?</h3>
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-5 w-5 text-pink-500">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-600">Anda bisa menghubungi tim support kami via WhatsApp untuk request perubahan musik. Untuk paket Basic dan Premium, kami memberikan 1 kali gratis perubahan musik dalam 24 jam setelah undangan selesai. Perubahan tambahan dikenakan biaya Rp25.000 per perubahan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pertanyaan 5 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left hover:bg-gray-50 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Apakah ada biaya tambahan untuk menggunakan musik premium?</h3>
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-5 w-5 text-pink-500">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-600">Tidak! Semua koleksi musik dari Stefan Aramanda dan soundtrack original kami sudah termasuk dalam semua paket undangan Berakad.site tanpa biaya tambahan. Ini adalah nilai tambah eksklusif yang hanya bisa Anda dapatkan di Berakad.site.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pertanyaan 6 -->
+                    <div class="border-b border-gray-200">
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left hover:bg-gray-50 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Bisakah saya menggunakan musik ini untuk keperluan lain selain undangan?</h3>
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 h-5 w-5 text-pink-500">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-600">Lisensi musik hanya berlaku untuk penggunaan di undangan digital yang dibuat melalui Berakad.site. Jika Anda ingin menggunakan musik ini untuk keperluan lain seperti video pernikahan atau konten lainnya, Anda perlu membeli lisensi terpisah. Hubungi kami untuk informasi lebih detail.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pertanyaan 7 -->
+                    <div>
+                        <button class="faq-question flex justify-between items-center w-full p-6 text-left hover:bg-gray-50 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Apa kelebihan Berakad.site dibanding penyedia undangan digital lain?</h3>
+                            <i class="fas fa-plus text-pink-500"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-5 w-5 text-pink-500 mt-1">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-600 font-medium">Koleksi musik eksklusif bebas copyright hasil kolaborasi dengan Stefan Aramanda</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-5 w-5 text-pink-500 mt-1">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-600 font-medium">Template premium dengan animasi elegan yang tidak tersedia di tempat lain</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-5 w-5 text-pink-500 mt-1">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-600 font-medium">Proses pembuatan super cepat (biasanya siap dalam 1-3 jam saja)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-5 w-5 text-pink-500 mt-1">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-600 font-medium">Support 24/7 via WhatsApp dengan tim yang responsif</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-5 w-5 text-pink-500 mt-1">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-gray-600 font-medium">Semua konten 100% legal dan bebas masalah hak cipta</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-gray-600 mb-6">Masih ada pertanyaan lain?</p>
+                    <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-pink-500 hover:bg-pink-600">
+                        <i class="fab fa-whatsapp mr-2"></i> Hubungi WhatsApp Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-pink-500 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">🎵 Musik Eksklusif + Undangan Elegan</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Ciptakan pengalaman undangan digital yang tak terlupakan dengan koleksi musik premium dari Stefan Aramanda</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#order" class="bg-white hover:bg-gray-100 text-pink-600 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                    Buat Undangan Sekarang
+                </a>
+                <a href="#music" class="border-2 border-white hover:bg-white/10 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                    Dengarkan Demo Musik
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Berakad.site</h3>
+                    <p class="text-gray-400">Platform pembuatan undangan online praktis dan ekonomis untuk segala acara.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Pernikahan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Tunangan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Ulang Tahun</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Resmi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Undangan Custom</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Bantuan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cara Pemesanan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> hello@berakad.site
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2"></i> 0812-3456-7890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 Berakad.site. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                
+                if (answer.classList.contains('hidden')) {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+        
+        // Music animation for wave
+        const musicCards = document.querySelectorAll('.music-card');
+        
+        musicCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const wave = card.querySelector('.music-wave');
+                wave.style.animationPlayState = 'running';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const wave = card.querySelector('.music-wave');
+                wave.style.animationPlayState = 'paused';
+            });
+        });
+    </script>
+</body>
+</html>
